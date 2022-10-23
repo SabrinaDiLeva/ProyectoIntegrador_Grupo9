@@ -1,0 +1,123 @@
+.header{
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.headerContainer{
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.headerLogo{
+  display: flex;
+  align-items: center;
+}
+
+.images{
+  margin: 1rem;
+  height: 3.7rem;
+  border-radius: .5rem;
+}
+
+.headerLogo a {
+  text-decoration: none;
+}
+
+.slogan{
+  color: #545776;
+  font-size: 20px;
+  font-style: italic;
+  animation: fadeIn 2s;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @media (max-width: 800px) {
+    display:none;
+  }
+}
+
+.LogoSlogan{
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* Iniciar Session */
+.iniciarSession{
+  display: flex;
+}
+
+.iniciarSession .usuarioIniciarSession{
+  display: flex;
+  align-items: center;  
+  margin-right: 1em;
+}
+
+.linkInicioSession{
+  margin: auto 5px;  
+  text-decoration: none;
+}
+
+.iniciarSession .usuarioSessionIniciada{
+  display: none;
+}
+/* Termina Iniciar Session */
+
+
+/* Session Iniciada */
+.sessionIniciada{
+  display: flex;
+}
+
+.sessionIniciada .usuarioSessionIniciada{
+  display: flex;
+  align-items: center;  
+  margin-right: 1em;
+}
+
+.perfilUsuario{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+}
+
+.linkPerfil{
+  text-decoration: none;
+}
+
+.avatar{
+  background: #FBC02D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 120%;
+  font-weight: bold;
+  margin-top: 0.2em;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+
+}
+
+.cerrarSession{
+  margin: auto 5px;  
+  text-decoration: none;
+}
+
+
+
+.sessionIniciada .usuarioIniciarSession{
+  display: none;
+}
+
+/* Termina Session Iniciada */

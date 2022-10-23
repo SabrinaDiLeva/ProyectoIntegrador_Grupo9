@@ -1,0 +1,15 @@
+.images{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 150px;
+    padding: 5px;
+  }
+
+
+ 
+  
+  .caption{
+      font-size: 0.8rem;
+      align-self: auto;
+      width: 150px;
+  }

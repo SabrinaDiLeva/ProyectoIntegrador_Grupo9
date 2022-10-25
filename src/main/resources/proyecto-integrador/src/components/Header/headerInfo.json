@@ -1,0 +1,26 @@
+[
+    {
+        "key": 1,
+        "nombre": "primero",
+        "slogan" : "Sentite como en tu hogar",
+        "imagen": "../ui/logo.png"
+    },
+    {
+        "key": 2,
+        "nombre": "segundo",
+        "slogan" : "Tu mejor descanso en un solo lugar",
+        "imagen": "../ui/logo.png"
+    },
+    {
+        "key": 3,
+        "nombre": "tercero",
+        "slogan" : "Encuentra la estadía de tus sueños",
+        "imagen": "../ui/logo.png"
+    },
+    {
+        "key": 4,
+        "nombre": "cuarto",
+        "slogan" : "Las mejores estadías en un solo lugar",
+        "imagen": "../ui/logo.png"
+    }
+]

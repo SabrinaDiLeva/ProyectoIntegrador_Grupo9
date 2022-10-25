@@ -1,5 +1,9 @@
-.App {
+.container {
   text-align: center;
+  width: 100%;
+  font-family: 'Quicksand';
+  background-color: #FFFBE2;
+
 }
 
 .App-logo {

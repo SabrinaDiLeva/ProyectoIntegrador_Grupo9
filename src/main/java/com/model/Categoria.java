@@ -6,8 +6,9 @@ import javax.persistence.*;
 @Table(name="categorias")
 public class Categoria {
     @Id
-    @SequenceGenerator(name="categoria_sequence", sequenceName = "categoria_sequence",allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "categoria_sequence")
+    //@GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "id_categoria_sequence")
+    @SequenceGenerator(name = "id_categoria_sequence",sequenceName = "id_categoria_sequence",allocationSize = 1)
     private Long id;
 
     @Column

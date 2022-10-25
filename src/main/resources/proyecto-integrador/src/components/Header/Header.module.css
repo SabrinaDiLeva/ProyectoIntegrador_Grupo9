@@ -1,6 +1,6 @@
 .header{
-  background-color: #FBC02D;
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  background-color: #FBC02D;
   margin-bottom: 1em;
   padding:0;
   width: 100%;
@@ -58,13 +58,19 @@
 
 .iniciarSession .usuarioIniciarSession{
   display: flex;
-  align-items: center;  
-  margin-right: 1em;
+  margin-right: 2em;
 }
 
 .linkInicioSession{
-  margin: auto 5px;  
+  margin: auto 1em;  
   text-decoration: none;
+  color: #263238;
+  border: 1px solid #607D8B;
+  background-color: #FFFBE2;
+  border-radius: 5px;
+  padding: 0.5em;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .iniciarSession .usuarioSessionIniciada{
@@ -87,31 +93,47 @@
 .perfilUsuario{
   display: flex;
   flex-direction: column;
-  height: 100%;
-  align-items: center;
-}
-
-.linkPerfil{
-  text-decoration: none;
+  /* height: 100%; */
+  margin: 0 0.5em ;
+  padding: 0;
+  align-items: flex-start;
 }
 
 .avatar{
   background: #FFFBE2;
   display: flex;
+  color: #263238;
   justify-content: center;
   align-items: center;
   font-size: 120%;
   font-weight: bold;
   margin-top: 0.2em;
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
+}
 
+.saludo{
+  margin: 0;
+  padding: 0;
+  color: #263238;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.linkPerfil{
+  text-decoration: none;
+  color: #FFFBE2;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .cerrarSession{
   margin: auto 5px;  
   text-decoration: none;
+  color: #263238;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 
@@ -121,3 +143,29 @@
 }
 
 /* Termina Session Iniciada */
+
+
+/* .container p{
+  font-size: 14px;
+}
+
+.container h1{
+  font-size: 24px;
+  font-weight: bold;
+
+}
+
+.container h2{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.container h3{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.container h4{
+  font-size: 14px;
+  font-weight: bold;
+} */

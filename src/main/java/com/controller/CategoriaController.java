@@ -3,6 +3,7 @@ package com.controller;
 import com.model.Categoria;
 import com.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,11 +18,7 @@ public class CategoriaController {
 
     @PostMapping
     public ResponseEntity<Categoria> guardar(@RequestBody Categoria categoria) {
-        try{
-            return ResponseEntity.ok( categoriaService.guardar(categoria));
-        } catch (Exception e ) {
-            return ResponseEntity.badRequest().build();
-        }
+        return ResponseEntity.ok(categoriaService.guardar(categoria));
     }
 
     @GetMapping
@@ -35,26 +32,30 @@ public class CategoriaController {
         if (categoria.isPresent()) {
             return ResponseEntity.ok(categoria.get());
         }else{
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
-    @DeleteMapping
-    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
-        try {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable Long id) {
+        Optional<Categoria> categoriaBuscada=categoriaService.buscar(id);
+        if (categoriaBuscada.isPresent()){
             categoriaService.eliminar(id);
-            return ResponseEntity.ok().build();
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.ok("Se eliminó la categoria  con id=" +id+ " de la base de datos");
+        }
+        else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public ResponseEntity<Categoria> modificar(@RequestBody Categoria categoria) {
-        try {
-            return ResponseEntity.ok( categoriaService.modificar(categoria));
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().build();
+        Optional<Categoria> categoriaBuscada= categoriaService.buscar(categoria.getId());
+        if (categoriaBuscada.isPresent()){
+            return ResponseEntity.ok(categoriaService.modificar(categoria));
+        }
+        else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 }

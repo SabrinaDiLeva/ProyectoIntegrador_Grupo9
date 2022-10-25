@@ -8,14 +8,16 @@ export default function SeccionCategoria() {
 
     return (
         <>
-            <h2>Categorias</h2>
-            <p>Busca tu tipo de Alojamiento</p>
+        <div className={style.body}>
+            <h2 className={style.titulo}>Categorias</h2>
+            <p className={style.subtitulo}>Busca tu tipo de Alojamiento</p>
             <div className={style.tarjetaContainer}>
                 {categorias.map( (hotel,index) => {
                     return <Categoria key={hotel.key} imagen={hotel.imagen} nombre={hotel.nombre} caption={hotel.caption}/>
                 })
                 }
             </div>
+        </div>
         </>
     )
 }

@@ -28,20 +28,20 @@ const Header = (props) => {
           {/* termina headerLogo */}
           </div>
 
-          <div className={!loggedUser ? style.sessionIniciada : style.iniciarSession}>
+          <div className={loggedUser ? style.sessionIniciada : style.iniciarSession}>
             <div className={style.usuarioSessionIniciada}>
-              <span className={style.perfilUsuario}>
                 <div class={style.avatar}>MF</div>
-                <a className={style.linkPerfil} href="/"><p className={style.cerrarSession}>Marcos Ferro</p></a>
+              <span className={style.perfilUsuario}>
+                <p className={style.saludo}>Hola,</p>
+                <a className={style.linkPerfil} href="/">Marcos Ferro</a>
+                {/* <a className={style.cerrarSession} href="/">Cerrar Sesión</a> */}
               </span>
-              <a className={style.cerrarSession} href="/"><p className={style.cerrarSession}>Cerrar Sesión</p></a>
             {/* cierra usuarioSessionIniciada */}
             </div>
 
             <div className={style.usuarioIniciarSession}>
-              <a className={style.linkInicioSession} href="/">Iniciar Sesion</a>
-              <p>|</p>
-              <a className={style.linkInicioSession} href="/">Registrarse</a>                    
+              <button className={style.linkInicioSession} href="/" type="button">Iniciar Sesion</button>
+              <button className={style.linkInicioSession} href="/" type="button">Registrarse</button>                    
             {/* cierra usuarioIniciarSession */}
             </div>
           </div>

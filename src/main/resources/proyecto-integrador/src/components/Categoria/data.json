@@ -2,37 +2,26 @@
     {
         "key": 1,
         "imagen": "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg",
-        "nombre" : "Hotel Presidente",
-        "caption" : "Hotel Llao Llao "
+        "nombre" : "Hoteles",
+        "caption" : "807.105 Hoteles"
     },
     {
         "key": 2,
         "imagen" : "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//partnerimages/85/82/858254930.jpeg",
-        "nombre" : "Hotel",
-        "caption" : "Hotel Panamericano"
+        "nombre" : "Hostels",
+        "caption" : "807.105 Hoteles"
     },
     {
         "key": 3,
         "imagen" : "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//partnerimages/10/66/1066878870.jpeg",
-        "nombre" : "Hotel",
-        "caption" : "Hotel Aguila Mora Suites & Spa"
+        "nombre" : "Departamentos",
+        "caption" : "807.105 Hoteles"
     },
     {
         "key": 4,
         "imagen" : "https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/29/39/29392472.jpeg",
-        "nombre" : "Hotel",
-        "caption" : "Hotel Concorde"
-    },
-    {
-        "key": 5,
-        "imagen" : "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/66/53/665320036.jpeg",
-        "nombre" : "Hotel",
-        "caption" : "Hotel Arelauquen"
-    },
-    {
-        "key": 6,
-        "imagen" : "https://imgcy.trivago.com/c_limit,d_dummy.jpeg,f_auto,h_1300,q_auto,w_2000/partnerimages/78/08/780850186.jpeg",
-        "nombre" : "Hotel",
-        "caption" : "Hotel La Cascada"
+        "nombre" : "Bed and Breakfast",
+        "caption" : "807.105 Hoteles"
     }
+
 ]

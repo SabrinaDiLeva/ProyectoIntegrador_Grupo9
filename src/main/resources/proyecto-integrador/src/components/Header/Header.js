@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, {useContext } from "react";
 // import Logo from "./minicomponents/Logo";
 import style from './Header.module.css'
 import data from './headerInfo.json'
@@ -8,17 +8,13 @@ import { UserContext } from "../../hooks/UseContext";
 
 const Header = (props) => {
 
+  // usar session storage
   const loggedUser = useContext(UserContext);
   const randomSloganIndex = Math.round(Math.random() * 3);
-  const [clicked, setClicked] = useState(false);
-
-  const handleClick = () => {
-    setClicked(!clicked)
-  }
 
   return (
     <>
-      <header class={style.header}>
+      <div class={style.header}>
         <div className={style.headerContainer}>
         
           <div class={style.headerLogo}>
@@ -54,7 +50,7 @@ const Header = (props) => {
         {/* cierra headerContainer */}
         </div>  
       {/* cierra header */}
-      </header>
+      </div>
     </>
     );
 };

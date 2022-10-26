@@ -15,7 +15,10 @@ export default function Card(props) {
                 <p className={style.cardCategoria}>{props.category}</p>
                 <h1 className={style.cardNombre}>{props.title}</h1>
                 <p className={style.cardLocation}>{props.location}</p>
-                <p className={style.cardDescripcion}>{props.description}<br></br><a className={style.verMas} href='/' >Ver Mas</a></p>
+                <p className={style.cardDescripcion}>{props.description}</p>
+                <span className={style.verMasContainer}>
+                    <a className={style.verMas} href='/'>Ver Mas</a>
+                </span>
             </span>
             <button className={style.cardBoton}>Ver detalle</button>
         </div>

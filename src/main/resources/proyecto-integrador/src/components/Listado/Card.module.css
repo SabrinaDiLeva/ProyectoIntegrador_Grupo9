@@ -57,11 +57,17 @@
 
 .cardLocation{
     margin: 0;
-    padding-top: 0.5em;
+    padding-top: 1em;
+    font-size: 16px;
 }
 
 .verMas{
     font-size: small;
+}
+
+.verMasContainer{
+    width: 100%;
+    text-align: right;
 }
 
 .cardDescripcion{
@@ -70,10 +76,12 @@
     font-size: small;
     margin: 0;
     padding-top: 0.5em;
-    white-space: nowrap;
+    display: -webkit-box;   
+    -webkit-line-clamp: 3;   
+    -webkit-box-orient: vertical;     
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: right;
+    text-align: left;
 }
 
 .cardBoton{

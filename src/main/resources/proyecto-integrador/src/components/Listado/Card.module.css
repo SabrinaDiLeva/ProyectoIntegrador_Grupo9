@@ -1,0 +1,45 @@
+.tarjeta{
+    display: flex;
+    height: 70%;
+}
+
+.infoContainerImagen{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1em;
+    width: 100%;
+    
+}
+
+.infoContainerDetalle{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+.cardImage{
+    border-radius: 8px 8px 0px 0px;
+    width: 100%;
+    height: 70%;
+}
+
+.cardCategoria{
+
+}
+
+.cardNombre{
+
+}
+
+.cardLocation{
+
+}
+
+.cardDescripcion{
+
+}
+
+.cardBoton{
+
+}

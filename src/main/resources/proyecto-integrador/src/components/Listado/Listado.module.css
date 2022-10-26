@@ -1,15 +1,6 @@
-.containter{
-    display: inline-block;
-    flex-direction: column;
-    align-items:flex-start;
-    background-color: var(--colorBackgroundSecundario);
-    
-}
-
-.tarjetaContainer{
+.tarjetaListadoContainer{
     width: 100%;
     justify-content: space-between;
-    float: left;
     overflow: auto;
     scroll-snap-type: x mandatory;
     background-color: var(--colorBackgroundSecundario);
@@ -18,10 +9,6 @@
     margin-top: 5vh;
 }
 
-/* .tarjetaContainer::-webkit-scrollbar {
+/* .tarjetaListadoContainer::-webkit-scrollbar {
     display: none;
 } */
-
-.tarjetaContainer:hover:not(.active){
-    background-color: rgb(235, 235, 235);
-}

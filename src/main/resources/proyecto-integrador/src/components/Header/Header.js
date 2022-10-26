@@ -52,7 +52,7 @@ const Header = (props) => {
       {/* cierra header */}
       </div>
     </>
-    );
+  );
 };
 
 export default Header;

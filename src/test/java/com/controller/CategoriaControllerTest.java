@@ -38,6 +38,34 @@ class CategoriaControllerTest {
         Assertions.assertEquals(esperado, categoria3);
 
     }
+    @Test
+    void test02agregarNuevaCategoria() throws Exception {
+        String jsonPost = "{\n" +
+                "    \"titulo\" : \"Super Hotel\",\n" +
+                "    \"descripcion\" : \"Nuevo Hotel.\",\n" +
+                "    \"url_imagen\" : \"imagen_test\"\n" +
+                "}";
+
+        MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.post("/categoria")
+                        .contentType(MediaType.APPLICATION_JSON).content(jsonPost))
+                .andDo(MockMvcResultHandlers.print()).andReturn();
+
+        Integer estadoGet = respuesta.getResponse().getStatus();
+        Integer  estadoEsperado = 200;
+
+        Assertions.assertEquals(estadoEsperado, estadoGet);
+
+        respuesta = this.mockMvc.perform(MockMvcRequestBuilders.get("/categoria/5")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andDo(MockMvcResultHandlers.print()).andReturn();
+
+        estadoGet = respuesta.getResponse().getStatus();
+        Assertions.assertEquals(estadoEsperado, estadoGet);
+
+        String categoria3 = respuesta.getResponse().getContentAsString();
+        String esperado = "{\"id\":5,\"titulo\":\"Super Hotel\",\"descripcion\":\"Nuevo Hotel.\",\"url_imagen\":\"imagen_test\"}";
+        Assertions.assertEquals(esperado, categoria3);
+    }
     private void agregarCategoria() throws Exception {
         String jsonPost = "{\n" +
                 "    \"titulo\" : \"Hotel\",\n" +

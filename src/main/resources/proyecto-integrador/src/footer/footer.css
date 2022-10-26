@@ -1,0 +1,50 @@
+.footer-block{
+
+    height: 30px;
+    background: #FBC02D;
+    bottom: 0%;
+    padding: 0.5%;
+    position: absolute;
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    
+}
+
+.footer-text{
+    position: relative;
+    size: 8px;
+    
+}
+.footer-icons a {
+    margin: 10px;
+}
+
+.footer-icons{
+    position: relative;
+    align-items: flex-end;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 1%;
+};
+
+
+.footer-icons a {
+    margin: 10px;
+}
+
+.footer-block2{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+div .footer-block2{
+    display: flex;
+    justify-content: space-between;
+};
+
+p .footer-text{
+    font-weight: 700;
+    font-size: 12px;
+}

@@ -1,0 +1,42 @@
+[
+    {
+        "key": 1,
+         "nombre" : "Buenos Aires"
+       
+    },
+    {
+        "key": 2,
+        
+        "nombre" : "Cordoba"
+    },
+    {
+        "key": 3,
+         "nombre" : "Santa Fe"
+       
+    },
+    {
+        "key": 4,
+        
+        "nombre" : "La Pampa"
+    },
+    {
+        "key": 5,
+         "nombre" : "Corrientes"
+       
+    },
+    {
+        "key": 6,
+        
+        "nombre" : "Misiones"
+    },
+    {
+        "key": 7,
+         "nombre" : "San Luis"
+       
+    },
+    {
+        "key": 8,
+        
+        "nombre" : "San Juan"
+    }
+]

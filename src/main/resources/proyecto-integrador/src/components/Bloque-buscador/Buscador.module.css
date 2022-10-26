@@ -1,0 +1,53 @@
+.headerBlock {
+    /* display: flex; */
+    align-content: center;
+    background: #FBC02D;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.title {
+    /* display: flex; */
+    /* justify-content: space-around; */
+}
+
+.forms1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.formDondeVamos{
+
+}
+
+.formCheckIn{
+
+}
+
+.botonBuscar {
+    margin: auto 1em;
+    text-decoration: none;
+    color: var(--colorTextoPrimario);
+    border: 2px solid #607D8B;
+    background-color: var(--colorBackgroundSecundario);
+    border-radius: 5px;
+    padding: 0.5em;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s ease-out;
+}
+
+.botonBuscar:hover{
+    background-color: var(--colorBackgroundSecundario);
+    color: var(--colorTextoSecundario);
+}
+
+  
+.headerBlock h1{
+    display: flex;
+    justify-content: space-around;
+}

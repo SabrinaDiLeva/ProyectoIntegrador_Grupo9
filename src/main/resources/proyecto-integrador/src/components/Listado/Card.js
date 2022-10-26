@@ -1,16 +1,22 @@
-export default function Card() {
-    return <>
-    <div>
-        <div className="imageContainer">
-            <img className="image" src="" alt="producto"></img>
-        </div>
-        <div className="infoContainer">
-            <p className="info-categoria">Categoria</p>
-            <p className="info-producto">Producto</p>
-            <p className="info-nombre">Nombre</p>
-            <p className="info-descripcion">Descripcion</p>
-            <button className="info-boton">Ver detalle</button>
-        </div>
+import style from './Card.module.css'
+
+
+
+export default function Card(props) {
+    return (
+    <>
+    <div className={style.tarjeta}>
+        <span className={style.infoContainerImagen}>
+            <img className={style.cardImage} src={props.imagen}  alt="producto"></img>
+        </span>
+        <span className={style.infoContainerDetalle}>
+            <p className={style.cardCategoria}>{props.category}</p>
+            <p className={style.cardNombre}>{props.title}</p>
+            <p className={style.cardLocation}>{props.location}</p>
+            <p className={style.cardDescripcion}>{props.description}</p>
+            <button className={style.cardBoton}>Ver detalle</button>
+        </span>
     </div>
     </>
+    )
 }

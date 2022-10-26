@@ -1,6 +1,6 @@
 .header{
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
-  background-color: #FFFBE2;
+  background-color: var(--colorBackgroundSecundario);
   margin-bottom: 1em;
   padding:0;
   width: 100%;
@@ -40,7 +40,7 @@
   }
 
   @media (max-width: 800px) {
-    display:none;
+    display: none;
   }
 }
 
@@ -62,15 +62,21 @@
 }
 
 .linkInicioSession{
-  margin: auto 1em;  
+  margin: auto 1em;
   text-decoration: none;
-  color: #263238;
+  color: var(--colorTextoPrimario);
   border: 2px solid #607D8B;
-  background-color: #FFFBE2;
+  background-color: var(--colorBackgroundSecundario);
   border-radius: 5px;
   padding: 0.5em;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px;
+  transition: all 0.3s ease-out;
+}
+
+.linkInicioSession:hover{
+  background-color: var(--colorBackgroundPrincipal);
+  color: var(--colorTextoSecundario);
 }
 
 .iniciarSession .usuarioSessionIniciada{
@@ -100,9 +106,9 @@
 }
 
 .avatar{
-  background: #FFFBE2;
+  background: var(--colorBackgroundSecundario);
   display: flex;
-  color: #263238;
+  color: var(--colorTextoPrimario);
   justify-content: center;
   align-items: center;
   font-size: 120%;
@@ -116,14 +122,14 @@
 .saludo{
   margin: 0;
   padding: 0;
-  color: #263238;
+  color: var(--colorTextoPrimario);
   font-size: 16px;
   font-weight: 600;
 }
 
 .linkPerfil{
   text-decoration: none;
-  color: #FFFBE2;
+  color: var(--colorBackgroundSecundario);
   font-size: 16px;
   font-weight: 500;
 }
@@ -131,7 +137,7 @@
 .cerrarSession{
   margin: auto 5px;  
   text-decoration: none;
-  color: #263238;
+  color: var(--colorTextoPrimario);
   font-size: 16px;
   font-weight: 500;
 }

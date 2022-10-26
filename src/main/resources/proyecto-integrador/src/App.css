@@ -1,10 +1,28 @@
+:root {
+  --colorBackgroundPrincipal: #FBC02D;
+  --colorBackgroundSecundario: #FFFBE2;
+  --colorTextoPrimario: #263238;
+  --colorTextoSecundario: #607D8B;
+  --fontFamily: 'Quicksand';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
 .container {
   text-align: center;
-  width: 100%;
-  font-family: 'Quicksand';
-  background-color: #FFFBE2;
+  font-family: var(--fontFamily);
+  background-color: var(--colorBackgroundSecundario);
+  height: 100%;
 }
+
 button--link:visited, a:visited{
   color: transparent;
 }
 
+body {
+  background-color: var(--colorBackgroundSecundario);
+}

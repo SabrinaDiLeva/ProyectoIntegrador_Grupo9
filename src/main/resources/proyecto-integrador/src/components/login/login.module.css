@@ -1,0 +1,25 @@
+.container{
+  justify-content: center;
+  align-items: center;
+}
+.barra1{
+  width: 35%;
+  padding: 8px;
+  border-radius: 2%;
+}
+
+.barra2{
+  width: 35%;
+  padding: 8px;
+  border-radius: 2%;
+  margin-bottom: 2%;
+}
+.texto_label{
+  size: 20px;
+}
+
+.boton{
+  font-size: 15px;
+  width: 20%;
+  padding: 10px;
+}

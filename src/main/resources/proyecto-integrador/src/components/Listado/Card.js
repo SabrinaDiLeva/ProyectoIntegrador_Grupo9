@@ -3,20 +3,23 @@ import style from './Card.module.css'
 
 
 export default function Card(props) {
+
     return (
     <>
-    <div className={style.tarjeta}>
-        <span className={style.infoContainerImagen}>
+    <span className={style.tarjeta}>
+        <div className={style.infoContainerImagen}>
             <img className={style.cardImage} src={props.imagen}  alt="producto"></img>
-        </span>
-        <span className={style.infoContainerDetalle}>
-            <p className={style.cardCategoria}>{props.category}</p>
-            <p className={style.cardNombre}>{props.title}</p>
-            <p className={style.cardLocation}>{props.location}</p>
-            <p className={style.cardDescripcion}>{props.description}</p>
+        </div>
+        <div className={style.infoContainerDetalle}>
+            <span className={style.detalleContainer}>
+                <p className={style.cardCategoria}>{props.category}</p>
+                <h1 className={style.cardNombre}>{props.title}</h1>
+                <p className={style.cardLocation}>{props.location}</p>
+                <p className={style.cardDescripcion}>{props.description}<br></br><a className={style.verMas} href='/' >Ver Mas</a></p>
+            </span>
             <button className={style.cardBoton}>Ver detalle</button>
-        </span>
-    </div>
+        </div>
+    </span>
     </>
     )
 }

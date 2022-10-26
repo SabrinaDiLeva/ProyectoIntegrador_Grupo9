@@ -1,45 +1,95 @@
 .tarjeta{
     display: flex;
-    height: 70%;
+    height: 50%;
+    background-color: #FFFFFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 0 0.5em;
+    margin-bottom: 1.5vh;
+}
+
+.tarjeta:hover:not(.active){
+    background-color: #ebebeb;
 }
 
 .infoContainerImagen{
     display: flex;
     flex-direction: column;
-    padding: 0 1em;
-    width: 100%;
-    
+    align-items: flex-start;
+    padding-left: 0 .05em;
+    padding: 0 0.5em 0 0;
+    width: 12em;
 }
 
 .infoContainerDetalle{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    
+    align-items: flex-end;
+    text-align: right;
 }
 
+.detalleContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+    margin: 0 10px 0 0;
+}
+
+
 .cardImage{
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 10px 0 0 10px;
     width: 100%;
-    height: 70%;
+    height: 11em;
 }
 
 .cardCategoria{
-
+    margin: 0;
+    padding-top: 0.5em;
 }
 
 .cardNombre{
-
+    font-size: 24px;
+    line-height: 0;
+    margin: 0;
+    padding-top: 0.5em;
 }
 
 .cardLocation{
+    margin: 0;
+    padding-top: 0.5em;
+}
 
+.verMas{
+    font-size: small;
 }
 
 .cardDescripcion{
-
+    max-width: 15em;
+    text-align: left;
+    font-size: small;
+    margin: 0;
+    padding-top: 0.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
 }
 
 .cardBoton{
-
+    display: flex;
+    margin: 0.5em;
+    color: var(--colorTextoPrimario);
+    border: 2px solid  var(--colorTextoSecundario);
+    background-color: var(--colorBackgroundPrincipal);
+    border-radius: 5px;
+    padding: 0.5em;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s ease-out;
 }
+
+.cardBoton:hover{
+    background-color: var(--colorBackgroundSecundario);
+    color: var(--colorTextoSecundario);
+  }

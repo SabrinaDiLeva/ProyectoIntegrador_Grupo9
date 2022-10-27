@@ -1,0 +1,75 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    height: 100%;
+    margin: 0;
+}
+
+.titulo{
+    color: var(--colorTextoPrimario);
+    font-style: normal;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 28px;
+    margin-left: 5%;
+    margin-bottom: 0;
+}
+
+.subtitulo{
+    color: var(--colorTextoPrimario);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 5%;
+    margin-bottom: 0;
+}
+
+.tarjetaContainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 1em 0;
+}
+
+.tarjeta:hover:not(.active){
+    background-color: rgb(235, 235, 235);
+}
+
+.tarjeta{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 20%;
+    height: 15em;
+    background-color: #FFFFFF;
+    border: 1px solid #F3F1ED;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.images{
+    border-radius: 8px 8px 0px 0px;
+    width: 100%;
+    height: 70%;
+}
+
+.nombre{
+    color: var(--colorTextoPrimario);
+    padding-left: 0.5em;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.caption{
+    color: var(--colorTextoPrimario);
+    padding-left: 0.5em;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    opacity: 0.6;
+}

@@ -39,9 +39,9 @@
     100% { opacity: 1; }
   }
 
-  @media (max-width: 800px) {
+  /* @media (max-width: 800px) {
     display:none;
-  }
+  } */
 }
 
 .LogoSlogan{
@@ -84,6 +84,7 @@
   margin-right: 1em;
 }
 
+
 .perfilUsuario{
   display: flex;
   flex-direction: column;
@@ -119,5 +120,19 @@
 .sessionIniciada .usuarioIniciarSession{
   display: none;
 }
-
+.iconoMenu{
+  display: none;
+}
 /* Termina Session Iniciada */
+
+@media (max-width: 768px) {
+  .slogan{
+    display: none;
+  }
+  .sessionIniciada{
+    display: none;
+  }
+  .iconoMenu{
+    display: block;
+  }
+}

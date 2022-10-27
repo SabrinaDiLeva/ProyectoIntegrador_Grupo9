@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import style from './Header.module.css'
 import data from './headerInfo.json'
 import Logo from '../ui/logo.png'
+import icono from '../ui/iconoMenu.svg'
 import { UserContext } from "../../hooks/UseContext";
 
 
@@ -49,7 +50,9 @@ const Header = (props) => {
             {/* cierra usuarioIniciarSession */}
             </div>
           </div>
-
+          <label className={style.iconoMenu}>
+            <img className={style.images} src={icono}/>
+          </label>
 
         {/* cierra headerContainer */}
         </div>  

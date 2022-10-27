@@ -4,6 +4,7 @@ import style from './Header.module.css'
 import data from './headerInfo.json'
 import Logo from '../ui/logo.png'
 import { UserContext } from "../../hooks/UseContext";
+import { Link, Outlet } from "react-router-dom";
 
 
 const Header = (props) => {
@@ -40,8 +41,8 @@ const Header = (props) => {
             </div>
 
             <div className={style.usuarioIniciarSession}>
-              <button className={style.linkInicioSession} href="/" type="button">Iniciar Sesion</button>
-              <button className={style.linkInicioSession} href="/" type="button">Registrarse</button>                    
+              <button className={style.linkInicioSession} href="/" type="button"><Link to='/iniciar_sesion'>Iniciar Sesion</Link></button>
+              <button className={style.linkInicioSession} href="/" type="button"><Link to='/registrarse'>Registrarse</Link></button>                    
             {/* cierra usuarioIniciarSession */}
             </div>
           </div>

@@ -1,5 +1,7 @@
 package com.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.model.Categoria;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -125,13 +127,13 @@ class CategoriaControllerTest {
                 "\t\"url_imagen\":\"https://t-cf.bstatic.com/xdata/images/hotel/max1024x768/184305239.jpg?2d22fe63ae1f8960e057238c98fb436f7bd9f65854e3a5e918607c5cfa1d0a52&o=&hp=1\"\n" +
                 "}";
 
-        MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.put("/categoria/5")
+        this.mockMvc.perform(MockMvcRequestBuilders.put("/categoria/5")
                         .contentType(MediaType.APPLICATION_JSON).content(jsonPost))
                 .andDo(MockMvcResultHandlers.print()).andExpect(status().isNotFound()).andReturn();
     }
     @Test
     void test08eliminarrCategoriaInexistente() throws Exception {
-        MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.delete("/categoria/5")
+        this.mockMvc.perform(MockMvcRequestBuilders.delete("/categoria/5")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andDo(MockMvcResultHandlers.print()).andExpect(status().isNotFound()).andReturn();
     }
@@ -181,4 +183,5 @@ class CategoriaControllerTest {
     void beforeAllTestAgregarCuatroCategorias() throws Exception {
         this.agregarTodasLasCategorias();
     }
+
 }

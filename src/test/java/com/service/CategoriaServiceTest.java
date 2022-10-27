@@ -1,9 +1,7 @@
-package com.example.demo.service;
+package com.service;
 
 import com.model.Categoria;
 import com.repository.ICategoriaRepository;
-import com.service.CategoriaService;
-import com.service.ICategoriaService;
 import org.junit.jupiter.api.*;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -12,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;

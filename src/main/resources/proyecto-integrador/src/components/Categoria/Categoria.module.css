@@ -73,3 +73,23 @@
     line-height: 16px;
     opacity: 0.6;
 }
+
+
+@media(max-width: 768px){
+    .tarjetaContainer{
+        flex-wrap: wrap;
+    }
+    .tarjeta{
+        width: 40%;
+        margin-bottom: 20px;
+    }
+}
+@media(max-width: 414px){
+    .tarjetaContainer{
+        flex-wrap: wrap;
+    }
+    .tarjeta{
+        width: 85%;
+        margin-bottom: 20px;
+    }
+}

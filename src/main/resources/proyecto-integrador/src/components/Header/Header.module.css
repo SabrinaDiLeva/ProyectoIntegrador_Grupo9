@@ -175,3 +175,17 @@
   font-size: 14px;
   font-weight: bold;
 } */
+
+@media(max-width: 768px){
+  .slogan{
+    display: none;
+  }
+}
+@media(max-width: 414px){
+  .slogan{
+    display: none;
+  }
+  .linkInicioSession{
+    display: none;
+  }
+}

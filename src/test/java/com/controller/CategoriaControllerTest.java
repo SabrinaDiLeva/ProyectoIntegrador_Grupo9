@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
@@ -24,12 +25,8 @@ class CategoriaControllerTest {
     void test01buscarTodasLasCategorias() throws Exception {
         MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.get("/categoria/")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andDo(MockMvcResultHandlers.print()).andReturn();
-
-        Integer estadoGet = respuesta.getResponse().getStatus();
-        Integer  estadoEsperado = 200;
-
-        Assertions.assertEquals(estadoEsperado, estadoGet);
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isOk()).andReturn();
 
         String categoria3 = respuesta.getResponse().getContentAsString();
         String esperado = "[{\"id\":1," +
@@ -56,12 +53,7 @@ class CategoriaControllerTest {
     void test02obtenerCategoriaConIdTres() throws Exception {
         MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.get("/categoria/3")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andDo(MockMvcResultHandlers.print()).andReturn();
-
-        Integer estadoGet = respuesta.getResponse().getStatus();
-        Integer  estadoEsperado = 200;
-
-        Assertions.assertEquals(estadoEsperado, estadoGet);
+                .andDo(MockMvcResultHandlers.print()).andExpect(status().isOk()).andReturn();
 
         String categoria3 = respuesta.getResponse().getContentAsString();
         String esperado = "{\"id\":3,\"titulo\":\"Bed and breakfast\",\"descripcion\":\"Un bed and breakfast es un tipo de alojamiento en una residencia privada de pocas habitaciones, que ofrece un desayuno. Se caracterizan por un ambiente familiar y hogarenio, es usual que los duenios de los B&B vivan en el mismo inmueble.\",\"url_imagen\":\"https://hotelpropeller.com/wp-content/uploads/2013/04/Bed-and-Breakfast-Facebook-Page.jpg\"}";
@@ -76,21 +68,13 @@ class CategoriaControllerTest {
                 "    \"url_imagen\" : \"Sin URL\"\n" +
                 "}";
 
-        MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.post("/categoria")
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/categoria")
                         .contentType(MediaType.APPLICATION_JSON).content(jsonPost))
-                .andDo(MockMvcResultHandlers.print()).andReturn();
+                .andDo(MockMvcResultHandlers.print()).andExpect(status().isOk()).andReturn();
 
-        Integer estadoPost = respuesta.getResponse().getStatus();
-        Integer  estadoEsperado = 200;
-
-        Assertions.assertEquals(estadoEsperado, estadoPost);
-
-        respuesta = this.mockMvc.perform(MockMvcRequestBuilders.get("/categoria/5")
+        MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.get("/categoria/5")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andDo(MockMvcResultHandlers.print()).andReturn();
-
-        Integer estadoGet = respuesta.getResponse().getStatus();
-        Assertions.assertEquals(estadoEsperado, estadoGet);
+                .andDo(MockMvcResultHandlers.print()).andExpect(status().isOk()).andReturn();
 
         String categoria3 = respuesta.getResponse().getContentAsString();
         String esperado = "{\"id\":5,\"titulo\":\"Categoria de prueba\",\"descripcion\":\"Sin descripcion\",\"url_imagen\":\"Sin URL\"}";
@@ -100,27 +84,14 @@ class CategoriaControllerTest {
     void test04eliminarCategoria() throws Exception {
         MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.delete("/categoria/5")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andDo(MockMvcResultHandlers.print()).andReturn();
-
-
-        Integer estadoDelete = respuesta.getResponse().getStatus();
-        Integer estadoEsperado = 200;
-        Assertions.assertEquals(estadoEsperado, estadoDelete);
+                .andDo(MockMvcResultHandlers.print()).andExpect(status().isOk()).andReturn();
     }
     @Test
     void test05obtenerCategoriaEliminada() throws Exception {
-        MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.get("/categoria/5")
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/categoria/5")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andDo(MockMvcResultHandlers.print()).andReturn();
-
-        Integer estadoGet = respuesta.getResponse().getStatus();
-        Integer  estadoEsperado = 404;
-
-        Assertions.assertEquals(estadoEsperado, estadoGet);
-
-        String categoria_eliminada = respuesta.getResponse().getContentAsString();
-        String esperado = "";
-        Assertions.assertEquals(esperado, categoria_eliminada);
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(status().isNotFound()).andReturn();
 
     }
     @Test
@@ -134,12 +105,7 @@ class CategoriaControllerTest {
 
         MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.put("/categoria/4")
                         .contentType(MediaType.APPLICATION_JSON).content(jsonPost))
-                .andDo(MockMvcResultHandlers.print()).andReturn();
-
-        Integer estadoPut = respuesta.getResponse().getStatus();
-        Integer  estadoEsperado = 200;
-
-        Assertions.assertEquals(estadoEsperado, estadoPut);
+                .andDo(MockMvcResultHandlers.print()).andExpect(status().isOk()).andReturn();
 
         String categoria4 = respuesta.getResponse().getContentAsString();
         String esperado = "{\"id\":4," +
@@ -161,22 +127,13 @@ class CategoriaControllerTest {
 
         MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.put("/categoria/5")
                         .contentType(MediaType.APPLICATION_JSON).content(jsonPost))
-                .andDo(MockMvcResultHandlers.print()).andReturn();
-
-        Integer estadoPut = respuesta.getResponse().getStatus();
-        Integer  estadoEsperado = 404;
-
-        Assertions.assertEquals(estadoEsperado, estadoPut);
+                .andDo(MockMvcResultHandlers.print()).andExpect(status().isNotFound()).andReturn();
     }
     @Test
     void test08eliminarrCategoriaInexistente() throws Exception {
         MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.delete("/categoria/5")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andDo(MockMvcResultHandlers.print()).andReturn();
-
-        Integer estadoDelete = respuesta.getResponse().getStatus();
-        Integer estadoEsperado = 404;
-        Assertions.assertEquals(estadoEsperado, estadoDelete);
+                .andDo(MockMvcResultHandlers.print()).andExpect(status().isNotFound()).andReturn();
     }
     private void agregarTodasLasCategorias() throws Exception {
         String jsonPost = "{\n" +

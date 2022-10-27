@@ -50,9 +50,9 @@ const Header = (props) => {
             {/* cierra usuarioIniciarSession */}
             </div>
           </div>
-          <label className={style.iconoMenu}>
+          <div className={style.iconoMenu}>
             <img className={style.images} src={icono}/>
-          </label>
+          </div>
 
         {/* cierra headerContainer */}
         </div>  

@@ -44,7 +44,7 @@ const Buscador = () => {
             setOpen(false)
         }
     }
-    
+
     return (
         <>
             <div className={style.headerBlock}>
@@ -53,16 +53,14 @@ const Buscador = () => {
                         <h1> Busca ofertas en hoteles, casas y mucho mas...</h1>
                     </span>
                     <span className={style.formDondeVamos}>
-                        <div className={style.selectDestino}>
-                            <label for="exampleSelect"> A donde vamos ?</label>
-                            <div className={style.opcionContainer}>
-                                <input className={style.inputDestino} type='text' placeholder='Type your destination'></input>
-                                <ul className={style.inputListado}>
-                                    {provincias.map((value) => (
-                                        <li className={style.inputOpciones} value={value.key}>{value.nombre}</li>
-                                        ))}
-                                </ul>
-                            </div>
+                        <div className={style.opcionContainer}>
+                            <input className={style.inputDestino} list='inputListado' placeholder='¿A dónde vamos?' onkeyup="filterFunction()"></input>
+                            <datalist className={style.inputListado} id='inputListado'>
+                                {provincias.map((value) => (
+                                    <option className={style.inputOpciones} value={value.nombre}></option>
+                                ))}
+                            </datalist>
+
                         </div>
                         {/* <form>
                             <select name="exampleSelect" id="exampleSelect">

@@ -4,11 +4,6 @@
     background: #FBC02D;
 }
 
-.title {
-    width: 100%;
-    height: 3em;
-}
-
 .forms1 {
     display: flex;
     flex-direction: column;
@@ -18,49 +13,73 @@
     width: 100%;
 }
 
+.title {
+    display: flex;
+    width: 100%;
+    height: 3em;
+    align-items: center;
+    justify-content: center;
+}
+
 .formDondeVamos{
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 3em;
-    justify-content: space-around;
+    height: 10vh;
     align-content: center;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .opcionContainer{
     display: flex;
     flex-direction: column;
-}
-
-.selectDestino{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    flex-direction: row;
+    height: 50%;
+    width: 25%;
 }
 
 .inputDestino{
-    
+    box-sizing: border-box;
+    font-size: 16px;
+    color: var(--colorTextoPrimario);
+    border: 2px solid #607D8B;
+    background-color: var(--colorBackgroundSecundario);
+    border-radius: 5px;
+    text-align: left;
+    height: 100%;
+    padding: 2%;
+    min-width: fit-content;
+    max-width: 100%;
 }
+
+/* .inputListado{
+    background-color: var(--colorBackgroundSecundario);
+    color: var(--colorTextoSecundario);
+    border-radius: 0 0 10px 10px;
+    padding: 0 2%;
+    position: relative;
+} */
+
+.inputOpciones a:hover {
+    background-color: #f1f1f1
+}
+
+.inputListado:focus{
+    outline: 3px solid #ddd;
+}
+
+.show {display:block;}
 
 .inputOpciones{
     display: flex;
-
     list-style: none;
-}
-
-.inputListado{
-    /* display: none; */
-    text-decoration: none;
-
 }
 
 .calendarWrap{
     display: flex;
     flex-direction: column;
     height: 50%;
+    width: 25%;
 }
 
 .inputCalendario{
@@ -72,7 +91,8 @@
     height: 100%;
     text-align: center;
     font-size: 14px;
-
+    min-width: fit-content;
+    max-width: 100%;
 }
 
 .calendario{
@@ -91,7 +111,8 @@
     border: 2px solid #607D8B;
     background-color: var(--colorBackgroundSecundario);
     border-radius: 5px;
-    padding: 0.5em;
+    height: 50%;
+    width: 15%;
     font-weight: 700;
     font-size: 15px;
     transition: all 0.3s ease-out;
@@ -100,10 +121,4 @@
 .botonBuscar:hover{
     background-color: var(--colorBackgroundSecundario);
     color: var(--colorTextoSecundario);
-}
-
-  
-.headerBlock h1{
-    display: flex;
-    justify-content: space-around;
 }

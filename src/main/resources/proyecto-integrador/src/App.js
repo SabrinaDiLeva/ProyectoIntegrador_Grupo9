@@ -1,9 +1,8 @@
 import './App.css';import { BrowserRouter, Routes, Route } from "react-router-dom"
 import SeccionCategoria from './components/Categoria/SeccionCategoria';
-import SeccionHeader from './components/Header/SeccionHeader';
 import Listado from './components/Listado/Listado';
 import Footer from './components/Footer/Footer';
-import Body from './components/Body/Body';
+import Buscador from './components/Bloque-buscador/Buscador';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Layout from './components/Layout/Layout'
@@ -15,6 +14,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Layout/>}>
        <Route path='/' element={<>
+       <Buscador/> 
        <SeccionCategoria/>
        <Listado/>
        </>}/> 

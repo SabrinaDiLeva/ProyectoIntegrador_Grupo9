@@ -61,7 +61,7 @@
   margin-right: 2em;
 }
 
-.linkInicioSession{
+.button{
   margin: auto 1em;
   text-decoration: none;
   color: var(--colorTextoPrimario);
@@ -74,7 +74,7 @@
   transition: all 0.3s ease-out;
 }
 
-.linkInicioSession:hover{
+.button:hover{
   background-color: var(--colorBackgroundPrincipal);
   color: var(--colorTextoSecundario);
 }
@@ -185,7 +185,7 @@
   .slogan{
     display: none;
   }
-  .linkInicioSession{
+  .button{
     display: none;
   }
 }

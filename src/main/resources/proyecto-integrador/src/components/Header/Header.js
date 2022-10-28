@@ -41,8 +41,8 @@ const Header = (props) => {
             </div>
 
             <div className={style.usuarioIniciarSession}>
-              <button className={style.linkInicioSession} href="/" type="button"><Link to='/iniciar_sesion'>Iniciar Sesion</Link></button>
-              <button className={style.linkInicioSession} href="/" type="button"><Link to='/registrarse'>Registrarse</Link></button>                    
+              <button id={style.buttonLogin} className={style.button} href="/" type="button"><Link to='/iniciar_sesion'>Iniciar Sesion</Link></button>
+              <button id={style.buttonRegister} className={style.button} href="/" type="button"><Link to='/registrarse'>Registrarse</Link></button>                    
             {/* cierra usuarioIniciarSession */}
             </div>
           </div>

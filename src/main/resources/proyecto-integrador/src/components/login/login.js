@@ -4,28 +4,24 @@ import style from "./login.module.css";
 
 export default function Login() {
     return(
-        <div>
-            <div className={style.container}>
-                <form>
-                <h1>Iniciar sesión</h1>
-                    <div>
-                        <div>
-                            <label className={style.texto_label}>Correo electronico</label>
-                            <br/>
-                            <input  className={style.barra1} type="text"></input>
-                        </div>
-                        <div>
-                            <label className={style.texto_label}>Contraseña</label>
-                            <br/>
-                            <input  className={style.barra2} type="password"></input>
-                        </div>
-                        <button type="submit" className={style.boton}>Ingresar</button>
-                    </div>
-                </form>
-                <span>¿Aún no tienes cuenta? <a href="/">Registrate</a></span>
-            </div>
+        <>
+        <div className={style.container}>
+            <form className={style.formulario}>
+                <h1 className={style.titulo}>Iniciar sesión</h1>
+                
+                <span className={style.labelContainer}>
+                    <label className={style.label}>Correo electronico</label>
+                    <input id={style.input} className={style.mail} type="text"></input>
+                    <label className={style.label}>Contraseña</label>
+                    <input id={style.input} className={style.password} type="password"></input>
+                </span>
+                
+                <span className={style.botonContainer}>
+                    <button type="submit" className={style.boton}>Ingresar</button>
+                </span>
+            </form>
+            <span className={style.registrarse}>¿Aún no tienes cuenta? <a className={style.link} href="/">Registrate</a></span>
         </div>
-        
+        </>
     )
 }
-

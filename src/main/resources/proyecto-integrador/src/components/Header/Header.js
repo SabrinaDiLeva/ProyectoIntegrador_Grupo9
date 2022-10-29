@@ -17,6 +17,8 @@ const Header = (props) => {
     setClicked(!clicked)
   }
 
+   // document.querySelector(style.menu_on).toggleAttribute(style.visible_menu)
+
   return (
     <>
       <header class={style.header}>
@@ -50,14 +52,23 @@ const Header = (props) => {
             {/* cierra usuarioIniciarSession */}
             </div>
           </div>
-          <div className={style.iconoMenu}>
-            <img className={style.images} src={icono}/>
+          <div className={style.margen}>
+          <a href="#" className={style.menu_on} >
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
           </div>
-
         {/* cierra headerContainer */}
         </div>  
       {/* cierra header */}
       </header>
+      <nav>	
+        <ul>
+          <li><a href="#">Crear cuenta</a></li>
+          <li><a href="#">Ingresar</a></li>
+        </ul>
+      </nav>
     </>
     );
 };

@@ -2,23 +2,27 @@ import './App.css';
 import SeccionCategoria from './components/Categoria/SeccionCategoria';
 import SeccionHeader from './components/Header/SeccionHeader';
 import Listado from './components/Listado/Listado';
-import Footer from './components/Footer/Footer';
+import Footer from './components/footer/footer';
 import Buscador from './components/Bloque-buscador/Buscador';
 import Body from './components/Body/Body';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
+import Login from './components/login/login';
+import Register from './components/Register/register';
 
 function App() {
   return (
     <div className="container">
-      <Body>
+      <Login />
+
+      {/* <Body>
+
         <SeccionHeader />
         <Buscador />
         <SeccionCategoria />
-        <Listado/>
+        <Listado />
         <Footer />
-      </Body>
-   </div>
+
+      </Body> */}
+    </div>
   );
 }
 

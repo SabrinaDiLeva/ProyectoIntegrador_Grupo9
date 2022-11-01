@@ -13,11 +13,22 @@ const Header = (props) => {
   const randomSloganIndex = Math.round(Math.random() * 3);
   const [clicked, setClicked] = useState(false);
 
-  const handleClick = () => {
-    setClicked(!clicked)
-  }
+  // window.onload = () => {
+  //   const menu = document.querySelector(style.menu_on)
+  //   console.log(menu)
+  //   menu.addEventListener("click", () => {
+  //     console.log("se escucho el evento")
+  //     menu.toggleAttribute(style.visible_menu)
+  //   })
+  // }
+  const handleClick = (e) =>{
+      if (typeof e == 'object') {
+        console.log("entro")
+        //document.querySelector("style.menu_on").toggleAttribute("style.visible_menu")
+      }
+    }
 
-   // document.querySelector(style.menu_on).toggleAttribute(style.visible_menu)
+   // document.querySelector("style.menu_on).toggleAttribute(style.visible_menu)
 
   return (
     <>
@@ -53,11 +64,11 @@ const Header = (props) => {
             </div>
           </div>
           <div className={style.margen}>
-          <a href="#" className={style.menu_on} >
+          <a href="#" onClick={handleClick} className={style.menu_on}>
               <span></span>
               <span></span>
               <span></span>
-            </a>
+          </a>
           </div>
         {/* cierra headerContainer */}
         </div>  

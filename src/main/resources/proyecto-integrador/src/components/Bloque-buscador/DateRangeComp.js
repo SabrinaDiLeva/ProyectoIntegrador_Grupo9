@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import style from './Buscador.module.css';
 import provincias from './provincias.json';
-import { DateRange, Calendar } from 'react-date-range';
+import { Calendar } from 'react-date-range';
 import format from 'date-fns/format';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -43,11 +43,11 @@ const DateRangeComp = () => {
 
 
     return (
-        <div className='calendarWrap'>
+        <div className={style.calendarWrap}>
             <input
                 value={calendar}
                 readOnly
-                className='inputBox'
+                className={style.inputBox}
                 onClick={()=> setOpen(open => !open)}
             />
             <div ref={refOne}>
@@ -55,7 +55,7 @@ const DateRangeComp = () => {
                     <Calendar
                         date = {new Date()}
                         onChange = {handleSelect}
-                        className='calendarElement'
+                        className={style.calendarElement}
                     />
                 }
             </div>

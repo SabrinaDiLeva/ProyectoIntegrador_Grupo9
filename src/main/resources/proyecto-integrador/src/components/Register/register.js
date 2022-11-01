@@ -4,40 +4,40 @@ import style from "./register.module.css";
 
 export default function Register() {
     return(
-        <div>
             <div className={style.container}>
-                <form>
-                    <h1>Crear cuenta</h1>
-                    <div>
-                        <div className={style.uno}>
-                            <div className={style.dos}>
-                                <label >Nombre</label>
-                                <input width="13.5rem" type="text" id="name"/>
-                            </div>
-                            <div className={style.dos}>
-                                <label >Apellido</label>
-                                <input width="13.5rem" type="text" id="surname" />
-                            </div>
-                        </div>
-                        <label>Correo electrónico</label>
-                        <br/>
-                        <input  type="text"/>
-                        <br/>
-                        <label>Contraseña</label>
-                        <br/>
-                        <input  type="text"/>
-                        <br/>
-                        <label>Confirmar Contraseña</label>
-                        <br/>
-                        <input  type="text"/>
+                <form  className={style.formulario}>
+                    <h1 className={style.titulo}>Crear cuenta</h1>
+                    <div className={style.firstContainer}>
+                        <span className={style.labelContainer}>
+                            <label className={style.label}>Nombre</label>
+                            <input type="text" id={style.input} />
+                        </span>
+                        <span className={style.labelContainer}>
+                            <label className={style.label}>Apellido</label>
+                            <input type="text" id={style.input} />
+                        </span>
                     </div>
-                    <button type="submit">Crear Cuenta</button>
-                    <br/>
-                    <span>¿Ya tienes una cuenta? <a href="/">Iniciar sesión</a></span>
+                    <span className={style.labelContainer}>
+                        <label className={style.label}>Correo electrónico</label>
+                        <input type="text" id={style.input} className={style.mail}/>
+                    </span>
+    
+                    <span className={style.labelContainer}>
+                        <label className={style.label}>Contraseña</label>
+                        <input type="text" id={style.input} className={style.password}/>
+                    </span>
+
+                    <span className={style.labelContainer}>
+                        <label className={style.label}>Confirmar Contraseña</label>
+                        <input type="text" id={style.input} className={style.password}/>
+                    </span>
+
+                    <span className={style.botonContainer}>
+                        <button type="submit" className={style.boton}>Crear Cuenta</button>
+                    </span>
+
+                    <span className={style.registrarse}>¿Ya tienes una cuenta? <a className={style.link} href="/">Iniciar sesión</a></span>
                 </form>
-                
             </div>
-        </div>
-        
     )
 }

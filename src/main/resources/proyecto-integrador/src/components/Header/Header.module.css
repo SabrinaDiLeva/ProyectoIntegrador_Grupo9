@@ -2,7 +2,9 @@
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
   background-color: var(--colorBackgroundSecundario);
   margin-bottom: 1em;
-  padding:0;
+  position:fixed;
+  top: 0;
+  margin-bottom: 1;
   width: 100%;
 }
 

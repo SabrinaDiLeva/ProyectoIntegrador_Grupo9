@@ -9,8 +9,9 @@ export default function Listado(){
     return (
         <>
         <div className={style.tarjetaListadoContainer}>
-            { productos.map( (producto) => {
-                return <Card key={producto.key} imagen={producto.imagen} category={producto.category} name={producto.name} title={producto.title} location={producto.location} description={producto.description}/>
+            { productos.map( (producto, index) => {
+                if(index < 2)
+                    return <Card key={producto.key} imagen={producto.imagen} category={producto.category} name={producto.name} title={producto.title} location={producto.location} description={producto.description}/>
             })}
         </div>
         </>

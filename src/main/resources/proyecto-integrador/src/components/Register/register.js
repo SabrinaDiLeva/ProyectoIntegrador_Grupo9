@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./register.module.css";
+import style from "./Register.module.css";
 
 
 export default function Register() {

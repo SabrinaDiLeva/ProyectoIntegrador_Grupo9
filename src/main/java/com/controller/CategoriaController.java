@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.dto.command.CategoriaDTO;
 import com.model.Categoria;
 import com.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class CategoriaController {
     private CategoriaService categoriaService;
 
     @PostMapping
-    public ResponseEntity<Categoria> guardar(@RequestBody Categoria categoria) {
+    public ResponseEntity<Categoria> guardar(@RequestBody CategoriaDTO categoria) {
         return ResponseEntity.ok(categoriaService.guardar(categoria));
     }
 
@@ -49,10 +50,10 @@ public class CategoriaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Categoria> modificar(@RequestBody Categoria categoria) {
-        Optional<Categoria> categoriaBuscada= categoriaService.buscar(categoria.getId());
+    public ResponseEntity<Categoria> modificar(@PathVariable( name = "id") Long id, @RequestBody CategoriaDTO categoria) {
+        Optional<Categoria> categoriaBuscada= categoriaService.buscar(id);
         if (categoriaBuscada.isPresent()){
-            return ResponseEntity.ok(categoriaService.modificar(categoria));
+            return ResponseEntity.ok(categoriaService.modificar(id, categoria));
         }
         else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

@@ -49,10 +49,10 @@ public class ProductoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Producto> modificar(@RequestBody Producto producto) {
+    public ResponseEntity<Producto> modificar(@PathVariable(name = "id") Long id, @RequestBody Producto producto) {
         Optional<Producto> productoBuscado= productoService.buscar(producto.getId());
         if (productoBuscado.isPresent()){
-            return ResponseEntity.ok(productoService.modificar(producto));
+            return ResponseEntity.ok(productoService.modificar(id, producto));
         }
         else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

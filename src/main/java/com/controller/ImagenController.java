@@ -49,10 +49,10 @@ public class ImagenController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Imagen> modificar(@RequestBody Imagen imagen) {
+    public ResponseEntity<Imagen> modificar(@PathVariable(name = "id") Long id , @RequestBody Imagen imagen) {
         Optional<Imagen> imagenBuscada= imagenService.buscar(imagen.getId());
         if (imagenBuscada.isPresent()){
-            return ResponseEntity.ok(imagenService.modificar(imagen));
+            return ResponseEntity.ok(imagenService.modificar(id, imagen));
         }
         else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

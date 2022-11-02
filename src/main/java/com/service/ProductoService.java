@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProductoService implements IService<Producto>{
+public class ProductoService implements IService<Producto, Producto>{
     private IProductoRepository iProductoRepository;
 
     @Autowired
@@ -38,7 +38,7 @@ public class ProductoService implements IService<Producto>{
     }
 
     @Override
-    public Producto modificar(Producto producto) {
+    public Producto modificar(Long id, Producto producto) {
         return iProductoRepository.save(producto);
     }
 }

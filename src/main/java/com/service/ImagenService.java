@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ImagenService implements IService<Imagen>{
+public class ImagenService implements IService<Imagen, Imagen>{
     private IImagenRepository iImagenRepository;
 
     @Autowired
@@ -38,7 +38,7 @@ public class ImagenService implements IService<Imagen>{
     }
 
     @Override
-    public Imagen modificar(Imagen imagen) {
+    public Imagen modificar(Long id, Imagen imagen) {
         return iImagenRepository.save(imagen);
     }
 }

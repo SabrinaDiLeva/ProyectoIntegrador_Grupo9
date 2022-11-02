@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CaracteristicaService implements IService<Caracteristica> {
+public class CaracteristicaService implements IService<Caracteristica, Caracteristica> {
     private ICaracteristicaRepository iCaracteristicaRepository;
 
     @Autowired
@@ -38,7 +38,7 @@ public class CaracteristicaService implements IService<Caracteristica> {
     }
 
     @Override
-    public Caracteristica modificar(Caracteristica caracteristica) {
+    public Caracteristica modificar(Long id, Caracteristica caracteristica) {
         return iCaracteristicaRepository.save(caracteristica);
     }
 }

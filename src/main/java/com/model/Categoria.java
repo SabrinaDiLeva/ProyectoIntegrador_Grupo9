@@ -3,7 +3,7 @@ package com.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="categorias")
+@Table(name="categoria")
 public class Categoria {
     @Id
     @SequenceGenerator(name="categoria_sequence", sequenceName = "categoria_sequence",allocationSize = 1)

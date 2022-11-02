@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public interface IImagenService {
-    List<Imagen> listar();
-    Imagen guardar(Imagen imagen);
-    Optional<Imagen> buscar(Long id);
+public interface IService<T> {
+    List<T> listar();
+    T guardar(T item);
+    Optional<T> buscar(Long id);
     void eliminar(Long id);
-    Imagen modificar(Imagen imagen);
+    T modificar(T i);
 }

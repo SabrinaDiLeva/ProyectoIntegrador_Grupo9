@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CiudadService implements ICiudadService{
+public class CiudadService implements IService<Ciudad>{
     private ICiudadRepository iCiudadRepository;
 
     @Autowired

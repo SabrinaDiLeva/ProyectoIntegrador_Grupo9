@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import com.model.Categoria;
-import com.service.ICategoriaService;
+import com.service.IService;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class CategoriaTest {
     @Autowired
-    private ICategoriaService categoriaService;
+    private IService categoriaService;
 
     @Test
     @Order(1)

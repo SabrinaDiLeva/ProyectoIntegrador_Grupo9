@@ -4,7 +4,6 @@
   margin-bottom: 1em;
   position:fixed;
   top: 0;
-  margin-bottom: 1;
   width: 100%;
 }
 
@@ -108,7 +107,7 @@
 }
 
 .avatar{
-  background: var(--colorBackgroundSecundario);
+  background: var(--colorBackgroundPrincipal);
   display: flex;
   color: var(--colorTextoPrimario);
   justify-content: center;

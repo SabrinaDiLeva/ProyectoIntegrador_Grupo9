@@ -3,7 +3,7 @@ package com.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="categorias")
+@Table(name="categoria")
 public class Categoria {
     @Id
     //@GeneratedValue(strategy= GenerationType.SEQUENCE)

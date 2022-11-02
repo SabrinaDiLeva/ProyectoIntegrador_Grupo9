@@ -30,6 +30,11 @@ public class Categoria {
         this.url_imagen = url_imagen;
     }
 
+    public Categoria( String titulo, String descripcion, String url_imagen) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.url_imagen = url_imagen;
+    }
     public Long getId() {
         return id;
     }

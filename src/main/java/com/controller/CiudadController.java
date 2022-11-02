@@ -49,10 +49,10 @@ public class CiudadController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Ciudad> modificar(@RequestBody Ciudad ciudad) {
+    public ResponseEntity<Ciudad> modificar(@PathVariable(name = "id")Long id, @RequestBody Ciudad ciudad) {
         Optional<Ciudad> ciudadBuscada= ciudadService.buscar(ciudad.getId());
         if (ciudadBuscada.isPresent()){
-            return ResponseEntity.ok(ciudadService.modificar(ciudad));
+            return ResponseEntity.ok(ciudadService.modificar(id, ciudad));
         }
         else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

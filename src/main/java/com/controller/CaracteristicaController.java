@@ -49,10 +49,10 @@ public class CaracteristicaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Caracteristica> modificar(@RequestBody Caracteristica caracteristica) {
+    public ResponseEntity<Caracteristica> modificar(@PathVariable(name = "id") Long id, @RequestBody Caracteristica caracteristica) {
         Optional<Caracteristica> caracteristicaBuscada= caracteristicaService.buscar(caracteristica.getId());
         if (caracteristicaBuscada.isPresent()){
-            return ResponseEntity.ok(caracteristicaService.modificar(caracteristica));
+            return ResponseEntity.ok(caracteristicaService.modificar(id, caracteristica));
         }
         else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();

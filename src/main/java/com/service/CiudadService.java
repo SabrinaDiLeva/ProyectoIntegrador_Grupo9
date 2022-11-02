@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CiudadService implements IService<Ciudad>{
+public class CiudadService implements IService<Ciudad, Ciudad>{
     private ICiudadRepository iCiudadRepository;
 
     @Autowired
@@ -38,7 +38,7 @@ public class CiudadService implements IService<Ciudad>{
     }
 
     @Override
-    public Ciudad modificar(Ciudad ciudad) {
+    public Ciudad modificar(Long id, Ciudad ciudad) {
         return iCiudadRepository.save(ciudad);
     }
 }

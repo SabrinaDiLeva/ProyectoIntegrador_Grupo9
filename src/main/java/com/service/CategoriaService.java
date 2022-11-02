@@ -1,5 +1,6 @@
 package com.service;
 
+import com.dto.command.CategoriaDTO;
 import com.model.Categoria;
 import com.repository.ICategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoriaService implements IService<Categoria>{
+public class CategoriaService implements IService<Categoria,CategoriaDTO>{
     private ICategoriaRepository iCategoriaRepository;
 
     @Autowired
@@ -23,8 +24,8 @@ public class CategoriaService implements IService<Categoria>{
     }
 
     @Override
-    public Categoria guardar(Categoria categoria) {
-        return iCategoriaRepository.save(categoria);
+    public Categoria guardar(CategoriaDTO categoria) {
+        return iCategoriaRepository.save(categoria.Categoria());
     }
 
     @Override
@@ -38,7 +39,11 @@ public class CategoriaService implements IService<Categoria>{
     }
 
     @Override
-    public Categoria modificar(Categoria categoria) {
-        return iCategoriaRepository.save(categoria);
+    public Categoria modificar(Long id, CategoriaDTO categoria) {
+        Optional<Categoria> categoriaBuscada= iCategoriaRepository.findById(id);
+        if (categoriaBuscada.isPresent()){
+            return iCategoriaRepository.save(categoria.Categoria(id));
+        }
+        return new Categoria();
     }
 }

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  margin-top: 15vh;
 }
 
 .formulario{
@@ -27,7 +28,7 @@
   margin-bottom: 5px;
 }
 
-#input{
+.input{
   width: 120%;
   padding: 8px;
   border: 2px solid #607D8B;
@@ -52,4 +53,14 @@
 .boton:hover{
   background-color: var(--colorBackgroundSecundario);
   color: var(--colorTextoSecundario);
+}
+
+.errores{
+  color: red;
+  margin-bottom: 5%;
+}
+
+.errorGeneral{
+  color: red;
+  margin-bottom: 1%;
 }

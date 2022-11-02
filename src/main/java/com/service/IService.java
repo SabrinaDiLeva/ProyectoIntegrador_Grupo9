@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public interface IService<T> {
+public interface IService<T,R> {
     List<T> listar();
-    T guardar(T item);
+    T guardar(R item);
     Optional<T> buscar(Long id);
     void eliminar(Long id);
-    T modificar(T i);
+    T modificar(Long id, R i);
 }

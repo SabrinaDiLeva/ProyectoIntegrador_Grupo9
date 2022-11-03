@@ -25,7 +25,7 @@ public class CategoriaService implements IService<Categoria,CategoriaDTO>{
 
     @Override
     public Categoria guardar(CategoriaDTO categoria) {
-        return iCategoriaRepository.save(categoria.Categoria());
+        return iCategoriaRepository.save(new Categoria(categoria));
     }
 
     @Override
@@ -42,7 +42,7 @@ public class CategoriaService implements IService<Categoria,CategoriaDTO>{
     public Categoria modificar(Long id, CategoriaDTO categoria) {
         Optional<Categoria> categoriaBuscada= iCategoriaRepository.findById(id);
         if (categoriaBuscada.isPresent()){
-            return iCategoriaRepository.save(categoria.Categoria(id));
+            return iCategoriaRepository.save(new Categoria(id, categoria));
         }
         return new Categoria();
     }

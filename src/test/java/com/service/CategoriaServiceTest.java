@@ -1,5 +1,6 @@
 package com.service;
 
+import com.dto.command.CategoriaDTO;
 import com.model.Categoria;
 import com.repository.ICategoriaRepository;
 import org.junit.jupiter.api.*;
@@ -11,10 +12,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
@@ -26,11 +27,18 @@ public class CategoriaServiceTest {
 
     @Test
     public void agregarCategoria(){
-        Categoria categoria_prueba = new Categoria(1l,"titulo","descrpcion", "url-imagen");
-        when(categoriaRepository.save(categoria_prueba)).thenReturn(categoria_prueba);
-        categoriaService.guardar(categoria_prueba);
-        Assertions.assertDoesNotThrow(() -> categoriaService.guardar(categoria_prueba));
-        Assertions.assertEquals(categoriaService.guardar(categoria_prueba), categoria_prueba);
+        CategoriaDTO categoriaDTO = new CategoriaDTO( "titulo","descripcion", "url-imagen");
+        Categoria categoria = new Categoria(categoriaDTO);
+        when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
+
+        verify(categoriaRepository, times(1)).save(any(Categoria.class));
+        assertThat(categoriaService.guardar(categoriaDTO))
+                .extracting("titulo", "descripcion", "urlImagen")
+                .containsExactly(
+                        categoriaDTO.getTitulo(),
+                        categoriaDTO.getDescripcion(),
+                        categoriaDTO.getUrlImagen()
+                );
     }
 
     @Test
@@ -39,8 +47,8 @@ public class CategoriaServiceTest {
         List<Categoria> lista_categorias = new ArrayList<>(Arrays.asList(categorias));
         when(categoriaRepository.findAll()).thenReturn(lista_categorias);
         List<Categoria> lista = categoriaService.listar();
-        assertTrue(lista.size()>0);
-        assertEquals(lista_categorias, lista);
+        assertThat(lista).hasSizeGreaterThan(0)
+                .hasSameElementsAs(lista_categorias);
     }
 
     @Test
@@ -48,21 +56,29 @@ public class CategoriaServiceTest {
         List<Categoria> lista_categorias = new ArrayList<>();
         when(categoriaRepository.findAll()).thenReturn(lista_categorias);
         List<Categoria> lista = categoriaService.listar();
-        assertEquals(lista.size(), 0);
-        assertEquals(lista_categorias, lista);
+        assertThat(lista)
+                .hasSize(0)
+                .hasSameElementsAs(lista_categorias);
     }
 
     @Test
     public void actualizarCategoria(){
-        Categoria categoria_new = new Categoria(1l, "Casa en la montaña", "Un casa linda", "https://st.hzcdn.com/simgs/13c1c37a0527bc49_4-6348/home-design.jpg");
-        when(categoriaRepository.save(categoria_new)).thenReturn(categoria_new);
-        assertEquals(categoria_new,categoriaService.modificar(categoria_new));
+        final Long id = 1L;
+        CategoriaDTO categoriaDTO = new CategoriaDTO("Casa en la montaña", "Un casa linda", "https://st.hzcdn.com/simgs/13c1c37a0527bc49_4-6348/home-design.jpg");
+        Categoria categoria = new Categoria(id, categoriaDTO);
+        when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
+        assertThat(categoriaService.modificar(id, categoriaDTO))
+            .extracting("titulo", "descripcion", "urlImagen")
+            .containsExactly(
+                categoriaDTO.getTitulo(),
+                categoriaDTO.getDescripcion(),
+                categoriaDTO.getUrlImagen()
+            );
     }
 
     @Test
-    @Order(4)
     public void eliminarCategoria(){
         categoriaService.eliminar(1l);
-        verify(categoriaRepository).deleteById(1l);
+        verify(categoriaRepository, times(1)).deleteById(1l);
     }
 }

@@ -1,8 +1,11 @@
 package com.model;
 
 import com.dto.command.CategoriaDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="categoria")
@@ -21,6 +24,14 @@ public class Categoria {
 
     @Column
     private String urlImagen;
+
+    @OneToOne
+    @JoinColumn(name = "imagen_id",referencedColumnName = "id")
+    private Imagen imagen;
+
+    @OneToMany(mappedBy = "categoria")
+    @JsonIgnore
+    private Set<Producto> productos = new HashSet<>();
 
     public Categoria() {
     }

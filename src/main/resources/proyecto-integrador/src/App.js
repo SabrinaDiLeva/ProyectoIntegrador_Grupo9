@@ -1,5 +1,6 @@
 import './App.css';
 import SeccionCategoria from './components/Categoria/SeccionCategoria';
+import Header from './components/Header/Header';
 import SeccionHeader from './components/Header/SeccionHeader';
 import Listado from './components/Listado/Listado';
 import Footer from './components/Footer/Footer';
@@ -10,6 +11,13 @@ import Register from './components/Register/Register';
 
 function App() {
   return (
+<<<<<<< HEAD
+    <div className="App">
+      {/* <Login/>
+      <Register/> */}
+      <Header/>
+    </div>
+=======
     <div className="container">
       <Body>
         <SeccionHeader />
@@ -19,6 +27,7 @@ function App() {
         <Footer />
       </Body>
    </div>
+>>>>>>> 5f4d18a274173e9d662015852921d364d12d9366
   );
 }
 

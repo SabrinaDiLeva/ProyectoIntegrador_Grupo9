@@ -1,6 +1,11 @@
 package com.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name="ciudad")
 public class Ciudad {
@@ -14,6 +19,10 @@ public class Ciudad {
 
     @Column
     private String pais;
+
+    @OneToMany(mappedBy = "ciudad")
+    @JsonIgnore
+    private Set<Producto> productos = new HashSet<>();
 
     public Ciudad(){
 

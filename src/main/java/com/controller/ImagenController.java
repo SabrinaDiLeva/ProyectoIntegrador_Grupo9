@@ -28,34 +28,18 @@ public class ImagenController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Imagen> buscar(@PathVariable Long id) {
-        Optional<Imagen> imagen = imagenService.buscar(id);
-        if (imagen.isPresent()) {
-            return ResponseEntity.ok(imagen.get());
-        }else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        Imagen imagen = imagenService.buscar(id);
+        return ResponseEntity.ok(imagen);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminar(@PathVariable Long id) {
-        Optional<Imagen> imagenBuscada=imagenService.buscar(id);
-        if (imagenBuscada.isPresent()){
+    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
             imagenService.eliminar(id);
-            return ResponseEntity.ok("Se eliminó la imagen con id=" +id+ " de la base de datos");
-        }
-        else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+            return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Imagen> modificar(@PathVariable(name = "id") Long id , @RequestBody Imagen imagen) {
-        Optional<Imagen> imagenBuscada= imagenService.buscar(imagen.getId());
-        if (imagenBuscada.isPresent()){
-            return ResponseEntity.ok(imagenService.modificar(id, imagen));
-        }
-        else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        return ResponseEntity.ok(imagenService.modificar(id, imagen));
     }
 }

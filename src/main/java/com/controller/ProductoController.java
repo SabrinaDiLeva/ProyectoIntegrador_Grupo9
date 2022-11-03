@@ -28,34 +28,18 @@ public class ProductoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscar(@PathVariable Long id) {
-        Optional<Producto> producto = productoService.buscar(id);
-        if (producto.isPresent()) {
-            return ResponseEntity.ok(producto.get());
-        }else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        Producto producto = productoService.buscar(id);
+        return ResponseEntity.ok(producto);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
-        Optional<Producto> productoBuscada=productoService.buscar(id);
-        if (productoBuscada.isPresent()){
-            productoService.eliminar(id);
-            return ResponseEntity.ok("Se eliminó el producto con id=" +id+ " de la base de datos");
-        }
-        else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        productoService.eliminar(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Producto> modificar(@PathVariable(name = "id") Long id, @RequestBody Producto producto) {
-        Optional<Producto> productoBuscado= productoService.buscar(producto.getId());
-        if (productoBuscado.isPresent()){
-            return ResponseEntity.ok(productoService.modificar(id, producto));
-        }
-        else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        return ResponseEntity.ok(productoService.modificar(id, producto));
     }
 }

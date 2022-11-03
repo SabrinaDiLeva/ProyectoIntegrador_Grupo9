@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,35 +30,19 @@ public class CategoriaController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Categoria> buscar(@PathVariable Long id) {
-        Optional<Categoria> categoria = categoriaService.buscar(id);
-        if (categoria.isPresent()) {
-            return ResponseEntity.ok(categoria.get());
-        }else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        Categoria categoria = categoriaService.buscar(id);
+        return ResponseEntity.ok(categoria);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminar(@PathVariable Long id) {
-        Optional<Categoria> categoriaBuscada=categoriaService.buscar(id);
-        if (categoriaBuscada.isPresent()){
-            categoriaService.eliminar(id);
-            return ResponseEntity.ok("Se eliminó la categoria  con id=" +id+ " de la base de datos");
-        }
-        else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+        categoriaService.eliminar(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Categoria> modificar(@PathVariable( name = "id") Long id, @RequestBody CategoriaDTO categoria) {
-        Optional<Categoria> categoriaBuscada= categoriaService.buscar(id);
-        if (categoriaBuscada.isPresent()){
-            return ResponseEntity.ok(categoriaService.modificar(id, categoria));
-        }
-        else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        return ResponseEntity.ok(categoriaService.modificar(id, categoria));
     }
 }
 

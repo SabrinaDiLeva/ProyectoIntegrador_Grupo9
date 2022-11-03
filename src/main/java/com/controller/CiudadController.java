@@ -28,34 +28,19 @@ public class CiudadController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Ciudad> buscar(@PathVariable Long id) {
-        Optional<Ciudad> ciudad = ciudadService.buscar(id);
-        if (ciudad.isPresent()) {
-            return ResponseEntity.ok(ciudad.get());
-        }else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        Ciudad ciudad = ciudadService.buscar(id);
+            return ResponseEntity.ok(ciudad);
         }
-    }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminar(@PathVariable Long id) {
-        Optional<Ciudad> ciudadBuscada=ciudadService.buscar(id);
-        if (ciudadBuscada.isPresent()){
-            ciudadService.eliminar(id);
-            return ResponseEntity.ok("Se eliminó la ciudad  con id=" +id+ " de la base de datos");
-        }
-        else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+    public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+        Ciudad ciudadBuscada = ciudadService.buscar(id);
+        ciudadService.eliminar(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Ciudad> modificar(@PathVariable(name = "id")Long id, @RequestBody Ciudad ciudad) {
-        Optional<Ciudad> ciudadBuscada= ciudadService.buscar(ciudad.getId());
-        if (ciudadBuscada.isPresent()){
-            return ResponseEntity.ok(ciudadService.modificar(id, ciudad));
-        }
-        else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        return ResponseEntity.ok(ciudadService.modificar(id, ciudad));
     }
 }

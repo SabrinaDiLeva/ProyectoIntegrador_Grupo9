@@ -5,9 +5,17 @@ import com.model.Categoria;
 import java.io.Serializable;
 
 public class CategoriaDTO implements Serializable {
+    private Long id;
     private String titulo;
     private String descripcion;
     private String urlImagen;
+
+    public CategoriaDTO(Long id, String titulo, String descripcion, String url_imagen ){
+        this.id = id;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.urlImagen = url_imagen;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -21,10 +29,24 @@ public class CategoriaDTO implements Serializable {
         return urlImagen;
     }
 
-    public CategoriaDTO(String titulo, String descripcion, String url_imagen ){
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-        this.urlImagen = url_imagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
     }
 
 }

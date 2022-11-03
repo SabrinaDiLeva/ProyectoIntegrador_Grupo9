@@ -38,24 +38,53 @@ public class Categoria {
         this.urlImagen = url_imagen;
     }
 
+    public Categoria(CategoriaDTO dto) {
+        this.id = dto.getId();
+        this.titulo = dto.getTitulo();
+        this.descripcion = dto.getDescripcion();
+        this.urlImagen = dto.getUrlImagen();
+    }
+
+    public Categoria update(CategoriaDTO dto){
+        if (!dto.getTitulo().isEmpty())
+            this.titulo = dto.getTitulo();
+        if (!dto.getDescripcion().isEmpty())
+            this.descripcion = dto.getDescripcion();
+        if (!dto.getUrlImagen().isEmpty())
+            this.urlImagen = dto.getUrlImagen();
+
+        return new Categoria(this.id, this.titulo, this.descripcion, this.urlImagen );
+    }
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public Categoria(CategoriaDTO dto) {
-        this.titulo = dto.getTitulo();
-        this.descripcion = dto.getDescripcion();
-        this.urlImagen = dto.getUrlImagen();
+    public String getDescripcion() {
+        return descripcion;
     }
-    public Categoria(Long id, CategoriaDTO dto) {
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
+
+    public void setId(Long id) {
         this.id = id;
-        this.titulo = dto.getTitulo();
-        this.descripcion = dto.getDescripcion();
-        this.urlImagen = dto.getUrlImagen();
     }
 
 }

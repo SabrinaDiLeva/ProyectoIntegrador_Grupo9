@@ -4,7 +4,9 @@ import com.dto.command.CategoriaDTO;
 import com.model.Categoria;
 import com.repository.ICategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,21 +31,19 @@ public class CategoriaService implements IService<Categoria,CategoriaDTO>{
     }
 
     @Override
-    public Optional<Categoria> buscar(Long id) {
-        return iCategoriaRepository.findById(id);
+    public Categoria buscar(Long id) {
+        return iCategoriaRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
     @Override
     public void eliminar(Long id) {
+        this.buscar(id);
         iCategoriaRepository.deleteById(id);
     }
 
     @Override
-    public Categoria modificar(Long id, CategoriaDTO categoria) {
-        Optional<Categoria> categoriaBuscada= iCategoriaRepository.findById(id);
-        if (categoriaBuscada.isPresent()){
-            return iCategoriaRepository.save(new Categoria(id, categoria));
-        }
-        return new Categoria();
+    public Categoria modificar(Long id, CategoriaDTO dto) {
+        Categoria categoria = this.buscar(id);
+        return iCategoriaRepository.save(categoria.update(dto));
     }
 }

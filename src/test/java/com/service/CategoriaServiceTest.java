@@ -27,7 +27,7 @@ public class CategoriaServiceTest {
 
     @Test
     public void agregarCategoria(){
-        CategoriaDTO categoriaDTO = new CategoriaDTO( "titulo","descripcion", "url-imagen");
+        CategoriaDTO categoriaDTO = new CategoriaDTO( 1l, "titulo","descripcion", "url-imagen");
         Categoria categoria = new Categoria(categoriaDTO);
         when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
 
@@ -64,8 +64,8 @@ public class CategoriaServiceTest {
     @Test
     public void actualizarCategoria(){
         final Long id = 1L;
-        CategoriaDTO categoriaDTO = new CategoriaDTO("Casa en la montaña", "Un casa linda", "https://st.hzcdn.com/simgs/13c1c37a0527bc49_4-6348/home-design.jpg");
-        Categoria categoria = new Categoria(id, categoriaDTO);
+        CategoriaDTO categoriaDTO = new CategoriaDTO(1L, "Casa en la montaña", "Un casa linda", "https://st.hzcdn.com/simgs/13c1c37a0527bc49_4-6348/home-design.jpg");
+        Categoria categoria = new Categoria(categoriaDTO);
         when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
         assertThat(categoriaService.modificar(id, categoriaDTO))
             .extracting("titulo", "descripcion", "urlImagen")

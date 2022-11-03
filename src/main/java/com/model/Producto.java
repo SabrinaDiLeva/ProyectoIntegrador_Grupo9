@@ -1,8 +1,12 @@
 package com.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="producto")
@@ -28,6 +32,15 @@ public class Producto {
     private List<String>seguridad;
     @Column
     private String cancelacion;
+
+
+    @OneToMany(mappedBy = "producto")
+    @JsonIgnore
+    private Set<Imagen> imagens = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_id",referencedColumnName = "id")
+    private Categoria categoria;
 
     public Producto(){
 

@@ -46,6 +46,14 @@ public class Producto {
     @JoinColumn(name = "ciudad_id",referencedColumnName = "id")
     private Ciudad ciudad;
 
+    @ManyToMany
+    @JoinTable(
+            name = "caracteristicaXproducto",
+            joinColumns = @JoinColumn(name = "producto_id"),
+            inverseJoinColumns = @JoinColumn(name = "caracteristica_id")
+    )
+    private Set<Caracteristica> caracteristica = new HashSet<>();
+
     public Producto(){
 
     }

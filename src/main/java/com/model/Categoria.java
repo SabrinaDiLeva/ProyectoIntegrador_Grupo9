@@ -1,5 +1,7 @@
 package com.model;
 
+import com.dto.command.CategoriaDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,8 +9,8 @@ import javax.persistence.*;
 public class Categoria {
     @Id
     //@GeneratedValue(strategy= GenerationType.SEQUENCE)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "id_categoria_sequence")
-    @SequenceGenerator(name = "id_categoria_sequence",sequenceName = "id_categoria_sequence",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_categoria_sequence")
+    @SequenceGenerator(name = "id_categoria_sequence", sequenceName = "id_categoria_sequence", allocationSize = 1)
     private Long id;
 
     @Column
@@ -18,7 +20,7 @@ public class Categoria {
     private String descripcion;
 
     @Column
-    private String url_imagen;
+    private String urlImagen;
 
     public Categoria() {
     }
@@ -27,14 +29,15 @@ public class Categoria {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.url_imagen = url_imagen;
+        this.urlImagen = url_imagen;
     }
 
-    public Categoria( String titulo, String descripcion, String url_imagen) {
+    public Categoria(String titulo, String descripcion, String url_imagen) {
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.url_imagen = url_imagen;
+        this.urlImagen = url_imagen;
     }
+
     public Long getId() {
         return id;
     }
@@ -43,27 +46,16 @@ public class Categoria {
         this.id = id;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public Categoria(CategoriaDTO dto) {
+        this.titulo = dto.getTitulo();
+        this.descripcion = dto.getDescripcion();
+        this.urlImagen = dto.getUrlImagen();
+    }
+    public Categoria(Long id, CategoriaDTO dto) {
+        this.id = id;
+        this.titulo = dto.getTitulo();
+        this.descripcion = dto.getDescripcion();
+        this.urlImagen = dto.getUrlImagen();
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getUrl_imagen() {
-        return url_imagen;
-    }
-
-    public void setUrl_imagen(String url_imagen) {
-        this.url_imagen = url_imagen;
-    }
 }

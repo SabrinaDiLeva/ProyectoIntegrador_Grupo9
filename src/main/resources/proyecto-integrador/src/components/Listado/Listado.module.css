@@ -1,0 +1,14 @@
+.tarjetaListadoContainer{
+    width: 100%;
+    justify-content: space-between;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    background-color: var(--colorBackgroundSecundario);
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    margin-top: 5vh;
+}
+
+/* .tarjetaListadoContainer::-webkit-scrollbar {
+    display: none;
+} */

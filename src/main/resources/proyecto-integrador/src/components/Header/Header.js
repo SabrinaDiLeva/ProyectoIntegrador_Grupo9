@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, {useContext } from "react";
 // import Logo from "./minicomponents/Logo";
 import style from './Header.module.css'
 import data from './headerInfo.json'
@@ -9,8 +9,10 @@ import { UserContext } from "../../hooks/UseContext";
 
 const Header = (props) => {
 
+  // usar session storage
   const loggedUser = useContext(UserContext);
   const randomSloganIndex = Math.round(Math.random() * 3);
+<<<<<<< HEAD
   const [clicked, setClicked] = useState(false);
 
   // window.onload = () => {
@@ -29,10 +31,12 @@ const Header = (props) => {
     }
 
    // document.querySelector("style.menu_on).toggleAttribute(style.visible_menu)
+=======
+>>>>>>> 5f4d18a274173e9d662015852921d364d12d9366
 
   return (
     <>
-      <header class={style.header}>
+      <div class={style.header}>
         <div className={style.headerContainer}>
         
           <div class={style.headerLogo}>
@@ -46,20 +50,20 @@ const Header = (props) => {
           {/* termina headerLogo */}
           </div>
 
-          <div className={!loggedUser ? style.sessionIniciada : style.iniciarSession}>
+          <div className={loggedUser ? style.sessionIniciada : style.iniciarSession}>
             <div className={style.usuarioSessionIniciada}>
-              <span className={style.perfilUsuario}>
                 <div class={style.avatar}>MF</div>
-                <a className={style.linkPerfil} href="/"><p className={style.cerrarSession}>Marcos Ferro</p></a>
+              <span className={style.perfilUsuario}>
+                <p className={style.saludo}>Hola,</p>
+                <a className={style.linkPerfil} href="/">Marcos Ferro</a>
+                {/* <a className={style.cerrarSession} href="/">Cerrar Sesión</a> */}
               </span>
-              <a className={style.cerrarSession} href="/"><p className={style.cerrarSession}>Cerrar Sesión</p></a>
             {/* cierra usuarioSessionIniciada */}
             </div>
 
             <div className={style.usuarioIniciarSession}>
-              <a className={style.linkInicioSession} href="/">Iniciar Sesion</a>
-              <p>|</p>
-              <a className={style.linkInicioSession} href="/">Registrarse</a>                    
+              <button className={style.linkInicioSession} href="/" type="button">Iniciar Sesion</button>
+              <button className={style.linkInicioSession} href="/" type="button">Registrarse</button>                    
             {/* cierra usuarioIniciarSession */}
             </div>
           </div>
@@ -73,6 +77,7 @@ const Header = (props) => {
         {/* cierra headerContainer */}
         </div>  
       {/* cierra header */}
+<<<<<<< HEAD
       </header>
       <nav>	
         <ul>
@@ -80,8 +85,11 @@ const Header = (props) => {
           <li><a href="#">Ingresar</a></li>
         </ul>
       </nav>
+=======
+      </div>
+>>>>>>> 5f4d18a274173e9d662015852921d364d12d9366
     </>
-    );
+  );
 };
 
 export default Header;

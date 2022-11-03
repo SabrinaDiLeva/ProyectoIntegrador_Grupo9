@@ -1,8 +1,10 @@
 package com.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.json.JSONObject;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -25,11 +27,11 @@ public class Producto {
     @Column
     private String descripcion;
     @Column
-    private List<Date> fechas_disponibles;
+    private JSONObject fechas_disponibles;
     @Column
-    private List<String>normas;
+    private JSONObject normas;
     @Column
-    private List<String>seguridad;
+    private JSONObject seguridad;
     @Column
     private String cancelacion;
 
@@ -58,7 +60,7 @@ public class Producto {
 
     }
 
-    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion, List<Date> fechas_disponibles, List<String> normas, List<String> seguridad, String cancelacion) {
+    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion,JSONObject fechas_disponibles, JSONObject normas, JSONObject seguridad, String cancelacion) {
         this.id = id;
         this.nombre = nombre;
         this.calificacion = calificacion;
@@ -70,7 +72,7 @@ public class Producto {
         this.cancelacion = cancelacion;
     }
 
-    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion, List<Date> fechas_disponibles, List<String> normas, List<String> seguridad, String cancelacion, Categoria categoria, Ciudad ciudad) {
+    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion, JSONObject fechas_disponibles, JSONObject normas, JSONObject seguridad, String cancelacion, Categoria categoria, Ciudad ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.calificacion = calificacion;
@@ -124,27 +126,27 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public List<Date> getFechas_disponibles() {
+    public JSONObject getFechas_disponibles() {
         return fechas_disponibles;
     }
 
-    public void setFechas_disponibles(List<Date> fechas_disponibles) {
+    public void setFechas_disponibles(JSONObject fechas_disponibles) {
         this.fechas_disponibles = fechas_disponibles;
     }
 
-    public List<String> getNormas() {
+    public JSONObject getNormas() {
         return normas;
     }
 
-    public void setNormas(List<String> normas) {
+    public void setNormas(JSONObject normas) {
         this.normas = normas;
     }
 
-    public List<String> getSeguridad() {
+    public JSONObject getSeguridad() {
         return seguridad;
     }
 
-    public void setSeguridad(List<String> seguridad) {
+    public void setSeguridad(JSONObject seguridad) {
         this.seguridad = seguridad;
     }
 

@@ -7,7 +7,7 @@ export default function Login() {
         <div>
             <div className={style.container}>
                 <form>
-                <h1>Iniciar sesión</h1>
+                    <h1>Iniciar sesión</h1>
                     <div>
                         <div>
                             <label className={style.texto_label}>Correo electronico</label>

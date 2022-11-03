@@ -21,15 +21,15 @@ export default function Register() {
                         </div>
                         <label>Correo electrónico</label>
                         <br/>
-                        <input  type="text"/>
+                        <input type="text" id="email"/>
                         <br/>
                         <label>Contraseña</label>
                         <br/>
-                        <input  type="text"/>
+                        <input  type="text" id="password"/>
                         <br/>
                         <label>Confirmar Contraseña</label>
                         <br/>
-                        <input  type="text"/>
+                        <input  type="text" id="passwordConfirmada"/>
                     </div>
                     <button type="submit">Crear Cuenta</button>
                     <br/>

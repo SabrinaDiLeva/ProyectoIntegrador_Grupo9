@@ -1,6 +1,8 @@
 package com.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="caracteristica")
@@ -15,6 +17,9 @@ public class Caracteristica {
 
     @Column
     private String descripcion;
+
+    @ManyToMany(mappedBy = "caracteristica")
+    private Set<Producto> producto = new HashSet<>();
 
     public Caracteristica(){
 

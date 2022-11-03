@@ -4,9 +4,8 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     width: 35%;
-    /* height: 100%; */
+    height: 100%;
     margin: 0 0.5em;
-    margin-bottom: 1.5vh;
 }
 
 .tarjeta:hover:not(.active){
@@ -60,18 +59,19 @@
 
 .cardLocation{
     margin: 0;
-    padding-top: 1em;
+    padding-top: 0.7em;
     font-size: 16px;
 }
 
 .verMasContainer{
     width: 100%;
     text-align: right;
+    /* margin-top: 2vh; */
 }
 
 .verMas{
     padding-right: 10px;
-    font-size: small;
+    font-size: small;        
 }
 
 .cardDescripcion{
@@ -79,9 +79,10 @@
     text-align: left;
     font-size: small;
     margin: 0;
-    padding-top: 0.5em;
+    height: 100%;
+    padding-top: 0.3em;
     display: -webkit-box;   
-    -webkit-line-clamp: 3;   
+    -webkit-line-clamp: 4;   
     -webkit-box-orient: vertical;     
     overflow: hidden;
     text-overflow: ellipsis;

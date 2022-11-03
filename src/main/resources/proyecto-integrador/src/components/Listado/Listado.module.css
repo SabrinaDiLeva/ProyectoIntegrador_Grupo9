@@ -4,8 +4,9 @@
     overflow: auto;
     scroll-snap-type: x mandatory;
     background-color: var(--colorBackgroundSecundario);
-    margin-top: 1%;
-    height: 28%;
+    padding: 1vh 0;
+    /* margin-bottom: 1vh; */
+    height: 30%;
 }
 
 .tarjetaListadoContainer::-webkit-scrollbar {

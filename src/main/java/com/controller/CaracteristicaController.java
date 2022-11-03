@@ -28,34 +28,18 @@ public class CaracteristicaController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Caracteristica> buscar(@PathVariable Long id) {
-        Optional<Caracteristica> caracteristica = caracteristicaService.buscar(id);
-        if (caracteristica.isPresent()) {
-            return ResponseEntity.ok(caracteristica.get());
-        }else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        Caracteristica caracteristica = caracteristicaService.buscar(id);
+            return ResponseEntity.ok(caracteristica);
         }
-    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
-        Optional<Caracteristica> caracteristicaBuscada=caracteristicaService.buscar(id);
-        if (caracteristicaBuscada.isPresent()){
-            caracteristicaService.eliminar(id);
-            return ResponseEntity.ok("Se eliminó la caracteristica  con id=" +id+ " de la base de datos");
-        }
-        else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        Caracteristica caracteristicaBuscada=caracteristicaService.buscar(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Caracteristica> modificar(@PathVariable(name = "id") Long id, @RequestBody Caracteristica caracteristica) {
-        Optional<Caracteristica> caracteristicaBuscada= caracteristicaService.buscar(caracteristica.getId());
-        if (caracteristicaBuscada.isPresent()){
-            return ResponseEntity.ok(caracteristicaService.modificar(id, caracteristica));
-        }
-        else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
+        return ResponseEntity.ok(caracteristicaService.modificar(id, caracteristica));
     }
 }

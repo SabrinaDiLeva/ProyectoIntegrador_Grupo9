@@ -23,7 +23,6 @@ public class Imagen {
     @OneToOne(mappedBy = "imagen")
     private Categoria categoria;
 
-
     public Imagen() {
     }
 

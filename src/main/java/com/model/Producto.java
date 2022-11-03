@@ -42,6 +42,10 @@ public class Producto {
     @JoinColumn(name = "categoria_id",referencedColumnName = "id")
     private Categoria categoria;
 
+    @ManyToOne
+    @JoinColumn(name = "ciudad_id",referencedColumnName = "id")
+    private Ciudad ciudad;
+
     public Producto(){
 
     }
@@ -56,6 +60,20 @@ public class Producto {
         this.normas = normas;
         this.seguridad = seguridad;
         this.cancelacion = cancelacion;
+    }
+
+    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion, List<Date> fechas_disponibles, List<String> normas, List<String> seguridad, String cancelacion, Categoria categoria, Ciudad ciudad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.calificacion = calificacion;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.fechas_disponibles = fechas_disponibles;
+        this.normas = normas;
+        this.seguridad = seguridad;
+        this.cancelacion = cancelacion;
+        this.categoria = categoria;
+        this.ciudad = ciudad;
     }
 
     public Long getId() {

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CaracteristicaService implements ICaracteristicaService{
+public class CaracteristicaService implements IService<Caracteristica> {
     private ICaracteristicaRepository iCaracteristicaRepository;
 
     @Autowired

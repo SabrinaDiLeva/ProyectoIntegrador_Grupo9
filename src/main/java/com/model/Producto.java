@@ -27,11 +27,11 @@ public class Producto {
     @Column
     private String descripcion;
     @Column
-    private JSONObject fechas_disponibles;
+    private String fechas_disponibles;
     @Column
-    private JSONObject normas;
+    private String normas;
     @Column
-    private JSONObject seguridad;
+    private String seguridad;
     @Column
     private String cancelacion;
 
@@ -50,7 +50,7 @@ public class Producto {
 
     @ManyToMany
     @JoinTable(
-            name = "caracteristicaXproducto",
+            name = "producto_has_caracteristica",
             joinColumns = @JoinColumn(name = "producto_id"),
             inverseJoinColumns = @JoinColumn(name = "caracteristica_id")
     )
@@ -60,7 +60,7 @@ public class Producto {
 
     }
 
-    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion,JSONObject fechas_disponibles, JSONObject normas, JSONObject seguridad, String cancelacion) {
+    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion,String fechas_disponibles, String normas, String seguridad, String cancelacion) {
         this.id = id;
         this.nombre = nombre;
         this.calificacion = calificacion;
@@ -72,7 +72,7 @@ public class Producto {
         this.cancelacion = cancelacion;
     }
 
-    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion, JSONObject fechas_disponibles, JSONObject normas, JSONObject seguridad, String cancelacion, Categoria categoria, Ciudad ciudad) {
+    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion, String fechas_disponibles, String normas, String seguridad, String cancelacion, Categoria categoria, Ciudad ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.calificacion = calificacion;
@@ -126,27 +126,27 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public JSONObject getFechas_disponibles() {
+    public String getFechas_disponibles() {
         return fechas_disponibles;
     }
 
-    public void setFechas_disponibles(JSONObject fechas_disponibles) {
+    public void setFechas_disponibles(String fechas_disponibles) {
         this.fechas_disponibles = fechas_disponibles;
     }
 
-    public JSONObject getNormas() {
+    public String getNormas() {
         return normas;
     }
 
-    public void setNormas(JSONObject normas) {
+    public void setNormas(String normas) {
         this.normas = normas;
     }
 
-    public JSONObject getSeguridad() {
+    public String getSeguridad() {
         return seguridad;
     }
 
-    public void setSeguridad(JSONObject seguridad) {
+    public void setSeguridad(String seguridad) {
         this.seguridad = seguridad;
     }
 

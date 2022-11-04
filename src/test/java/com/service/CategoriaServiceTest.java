@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,7 +32,7 @@ public class CategoriaServiceTest {
         Categoria categoria = new Categoria(categoriaDTO);
         when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
 
-        verify(categoriaRepository, times(1)).save(any(Categoria.class));
+        //verify(categoriaRepository, times(1)).save(categoria);
         assertThat(categoriaService.guardar(categoriaDTO))
                 .extracting("titulo", "descripcion", "urlImagen")
                 .containsExactly(
@@ -66,7 +67,10 @@ public class CategoriaServiceTest {
         final Long id = 1L;
         CategoriaDTO categoriaDTO = new CategoriaDTO(1L, "Casa en la montaña", "Un casa linda", "https://st.hzcdn.com/simgs/13c1c37a0527bc49_4-6348/home-design.jpg");
         Categoria categoria = new Categoria(categoriaDTO);
+        when(categoriaRepository.findById(eq(id))).thenReturn(Optional.of(categoria));
         when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
+
+        //verify(categoriaRepository, times(1)).save(categoria);
         assertThat(categoriaService.modificar(id, categoriaDTO))
             .extracting("titulo", "descripcion", "urlImagen")
             .containsExactly(
@@ -78,7 +82,10 @@ public class CategoriaServiceTest {
 
     @Test
     public void eliminarCategoria(){
-        categoriaService.eliminar(1l);
-        verify(categoriaRepository, times(1)).deleteById(1l);
+        final Long id = 1L;
+        Categoria categoria = new Categoria(1L, "Casa en la montaña", "Un casa linda", "https://st.hzcdn.com/simgs/13c1c37a0527bc49_4-6348/home-design.jpg");
+        when(categoriaRepository.findById(eq(id))).thenReturn(Optional.of(categoria));
+        categoriaService.eliminar(id);
+        verify(categoriaRepository, times(1)).deleteById(id);
     }
 }

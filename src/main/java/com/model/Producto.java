@@ -1,7 +1,6 @@
 package com.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.json.JSONObject;
 
 import javax.persistence.*;
 import java.time.LocalDate;

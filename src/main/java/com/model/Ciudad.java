@@ -33,6 +33,15 @@ public class Ciudad {
         this.pais = pais;
     }
 
+    public Ciudad update(Ciudad ciudad){
+        if( ciudad.getNombre() != null)
+            this.nombre = ciudad.getNombre();
+        if( ciudad.getPais() != null )
+            this.pais = ciudad.getPais();
+
+        return new Ciudad(this.id,this.nombre, this.pais);
+    }
+
     public Long getId() {
         return id;
     }

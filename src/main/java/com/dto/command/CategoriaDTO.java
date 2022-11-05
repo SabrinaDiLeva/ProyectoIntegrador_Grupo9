@@ -8,13 +8,13 @@ public class CategoriaDTO implements Serializable {
     private Long id;
     private String titulo;
     private String descripcion;
-    private String urlImagen;
+    private Long imagenId;
 
-    public CategoriaDTO(Long id, String titulo, String descripcion, String url_imagen ){
+    public CategoriaDTO(Long id, String titulo, String descripcion, Long imagenId){
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.urlImagen = url_imagen;
+        this.imagenId = imagenId;
     }
 
     public String getTitulo() {
@@ -25,8 +25,8 @@ public class CategoriaDTO implements Serializable {
         return descripcion;
     }
 
-    public String getUrlImagen() {
-        return urlImagen;
+    public Long getImagenId() {
+        return imagenId;
     }
 
     public Long getId() {
@@ -45,8 +45,8 @@ public class CategoriaDTO implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public void setUrlImagen(String urlImagen) {
-        this.urlImagen = urlImagen;
+    public void setImagenId(Long imagenId) {
+        this.imagenId = imagenId;
     }
 
 }

@@ -2,7 +2,9 @@ package com.service;
 
 import com.dto.command.CategoriaDTO;
 import com.model.Categoria;
+import com.model.Imagen;
 import com.repository.ICategoriaRepository;
+import com.repository.IImagenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -14,10 +16,14 @@ import java.util.Optional;
 @Service
 public class CategoriaService implements IService<Categoria,CategoriaDTO>{
     private ICategoriaRepository iCategoriaRepository;
+    private IImagenRepository iImagenRepository;
+
 
     @Autowired
-    public CategoriaService(ICategoriaRepository iCategoriaRepository) {
+    public CategoriaService(ICategoriaRepository iCategoriaRepository, IImagenRepository iImagenRepository) {
         this.iCategoriaRepository = iCategoriaRepository;
+        this.iImagenRepository = iImagenRepository;
+
     }
 
     @Override
@@ -27,7 +33,10 @@ public class CategoriaService implements IService<Categoria,CategoriaDTO>{
 
     @Override
     public Categoria guardar(CategoriaDTO categoria) {
-        return iCategoriaRepository.save(new Categoria(categoria));
+        Imagen img = iImagenRepository.findById(categoria.getImagenId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Categoria c = new Categoria(categoria);
+        c.setImagen(img);
+        return iCategoriaRepository.save(c);
     }
 
     @Override

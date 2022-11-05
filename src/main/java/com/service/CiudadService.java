@@ -42,7 +42,8 @@ public class CiudadService implements IService<Ciudad, Ciudad>{
 
     @Override
     public Ciudad modificar(Long id, Ciudad ciudad) {
-        this.buscar(id);
-        return iCiudadRepository.save(ciudad);
+        Ciudad c = this.buscar(id);
+        Ciudad city = c.update(ciudad);
+        return iCiudadRepository.save(city);
     }
 }

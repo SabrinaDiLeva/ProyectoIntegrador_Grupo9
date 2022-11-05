@@ -20,7 +20,9 @@ public class CategoriaController {
 
     @PostMapping
     public ResponseEntity<Categoria> guardar(@RequestBody CategoriaDTO categoria) {
-        return ResponseEntity.ok(categoriaService.guardar(categoria));
+        Categoria c = categoriaService.guardar(categoria);
+        ResponseEntity<Categoria> r = ResponseEntity.ok(c);
+        return r;
     }
 
     @GetMapping

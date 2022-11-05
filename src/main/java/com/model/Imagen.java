@@ -67,4 +67,12 @@ public class Imagen {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    public Imagen update(Imagen imagen) {
+        if ( !imagen.getTitulo().isEmpty() )
+          this.titulo = imagen.getTitulo();
+        if ( !imagen.getUrl().isEmpty() )
+            this.url = imagen.getUrl();
+        return this;
+    }
 }

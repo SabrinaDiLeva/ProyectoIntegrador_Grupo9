@@ -69,9 +69,9 @@ public class Imagen {
     }
 
     public Imagen update(Imagen imagen) {
-        if ( !imagen.getTitulo().isEmpty() )
+        if ( imagen.getTitulo() != null )
           this.titulo = imagen.getTitulo();
-        if ( !imagen.getUrl().isEmpty() )
+        if ( imagen.getUrl() != null )
             this.url = imagen.getUrl();
         return this;
     }

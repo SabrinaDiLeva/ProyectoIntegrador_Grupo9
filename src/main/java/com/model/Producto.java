@@ -20,13 +20,13 @@ public class Producto {
     @Column
     private String nombre;
     @Column
-    private int calificacion;
+    private Integer calificacion;
     @Column
     private String titulo;
     @Column
     private String descripcion;
-    @Column
-    private String fechas_disponibles;
+    @Column(name = "fechas_disponibles")
+    private String fechasDisponibles;
     @Column
     private String normas;
     @Column
@@ -55,29 +55,29 @@ public class Producto {
     )
     private Set<Caracteristica> caracteristica = new HashSet<>();
 
-    public Producto(){
+    public Producto() {
 
     }
 
-    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion,String fechas_disponibles, String normas, String seguridad, String cancelacion) {
+    public Producto(Long id, String nombre, Integer calificacion, String titulo, String descripcion,String fechasDisponibles, String normas, String seguridad, String cancelacion) {
         this.id = id;
         this.nombre = nombre;
         this.calificacion = calificacion;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.fechas_disponibles = fechas_disponibles;
+        this.fechasDisponibles = fechasDisponibles;
         this.normas = normas;
         this.seguridad = seguridad;
         this.cancelacion = cancelacion;
     }
 
-    public Producto(Long id, String nombre, int calificacion, String titulo, String descripcion, String fechas_disponibles, String normas, String seguridad, String cancelacion, Categoria categoria, Ciudad ciudad) {
+    public Producto(Long id, String nombre, Integer calificacion, String titulo, String descripcion, String fechasDisponibles, String normas, String seguridad, String cancelacion, Categoria categoria, Ciudad ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.calificacion = calificacion;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.fechas_disponibles = fechas_disponibles;
+        this.fechasDisponibles = fechasDisponibles;
         this.normas = normas;
         this.seguridad = seguridad;
         this.cancelacion = cancelacion;
@@ -85,6 +85,30 @@ public class Producto {
         this.ciudad = ciudad;
     }
 
+    public Producto update(Producto producto){
+        if( producto.getNombre() != null )
+            this.nombre = producto.getNombre();
+        if( producto.getCalificacion() != null )
+            this.calificacion = producto.getCalificacion();
+        if( producto.getTitulo() != null )
+            this.titulo = producto.getTitulo();
+        if( producto.getDescripcion() != null)
+            this.descripcion = producto.getDescripcion();
+        if( producto.getFechasDisponibles() != null )
+            this.fechasDisponibles = producto.getFechasDisponibles();
+        if( producto.getNormas() != null )
+            this.normas = producto.getNormas();
+        if( producto.getSeguridad() != null )
+            this.seguridad = producto.getSeguridad();
+        if( producto.getCancelacion() != null )
+            this.cancelacion = producto.getCancelacion();
+        if( producto.getCategoria() != null )
+            this.categoria = producto.getCategoria();
+        if( producto.getCiudad() != null )
+            this.ciudad = producto.getCiudad();
+        
+        return new Producto(this.id, this.nombre, this.calificacion, this.titulo, this.descripcion, this.fechasDisponibles, this.normas, this.seguridad, this.cancelacion,this.categoria, this.ciudad );
+    }
     public Long getId() {
         return id;
     }
@@ -101,11 +125,27 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public int getCalificacion() {
+    public Integer getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(int calificacion) {
+    public void setImagens(Set<Imagen> imagens) {
+        this.imagens = imagens;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public void setCaracteristica(Set<Caracteristica> caracteristica) {
+        this.caracteristica = caracteristica;
+    }
+
+    public void setCalificacion(Integer calificacion) {
         this.calificacion = calificacion;
     }
 
@@ -125,12 +165,12 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public String getFechas_disponibles() {
-        return fechas_disponibles;
+    public String getFechasDisponibles() {
+        return fechasDisponibles;
     }
 
-    public void setFechas_disponibles(String fechas_disponibles) {
-        this.fechas_disponibles = fechas_disponibles;
+    public void setFechasDisponibles(String fechasDisponibles) {
+        this.fechasDisponibles = fechasDisponibles;
     }
 
     public String getNormas() {
@@ -151,6 +191,22 @@ public class Producto {
 
     public String getCancelacion() {
         return cancelacion;
+    }
+
+    public Set<Imagen> getImagens() {
+        return imagens;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public Set<Caracteristica> getCaracteristica() {
+        return caracteristica;
     }
 
     public void setCancelacion(String cancelacion) {

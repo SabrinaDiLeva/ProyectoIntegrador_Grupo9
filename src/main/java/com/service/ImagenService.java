@@ -42,8 +42,8 @@ public class ImagenService implements IService<Imagen, Imagen>{
 
     @Override
     public Imagen modificar(Long id, Imagen imagen) {
-        this.buscar(id);
-        return iImagenRepository.save(imagen);
+        Imagen img = this.buscar(id);
+        return iImagenRepository.save(img.update(imagen));
     }
 }
 

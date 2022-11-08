@@ -26,7 +26,7 @@ public class CategoriaServiceTest {
     @InjectMocks
     private CategoriaService categoriaService;
 
-    @Test
+    /*@Test
     public void agregarCategoria(){
         CategoriaDTO categoriaDTO = new CategoriaDTO( 1l, "titulo","descripcion", "url-imagen");
         Categoria categoria = new Categoria(categoriaDTO);
@@ -87,5 +87,5 @@ public class CategoriaServiceTest {
         when(categoriaRepository.findById(eq(id))).thenReturn(Optional.of(categoria));
         categoriaService.eliminar(id);
         verify(categoriaRepository, times(1)).deleteById(id);
-    }
+    }*/
 }

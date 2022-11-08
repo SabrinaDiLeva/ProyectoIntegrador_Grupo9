@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.dto.command.CaracteristicaDTO;
 import com.model.Caracteristica;
 import com.service.CaracteristicaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class CaracteristicaController {
     private CaracteristicaService caracteristicaService;
 
     @PostMapping
-    public ResponseEntity<Caracteristica> guardar(@RequestBody Caracteristica caracteristica) {
+    public ResponseEntity<Caracteristica> guardar(@RequestBody CaracteristicaDTO caracteristica) {
         return ResponseEntity.ok(caracteristicaService.guardar(caracteristica));
     }
 
@@ -39,7 +40,7 @@ public class CaracteristicaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Caracteristica> modificar(@PathVariable(name = "id") Long id, @RequestBody Caracteristica caracteristica) {
+    public ResponseEntity<Caracteristica> modificar(@PathVariable(name = "id") Long id, @RequestBody CaracteristicaDTO caracteristica) {
         return ResponseEntity.ok(caracteristicaService.modificar(id, caracteristica));
     }
 }

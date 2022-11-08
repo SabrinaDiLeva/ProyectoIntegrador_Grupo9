@@ -1,5 +1,6 @@
 package com.service;
 
+import com.dto.command.ProductoDTO;
 import com.model.Categoria;
 import com.model.Ciudad;
 import com.model.Producto;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ProductoService implements IService<Producto, Producto>{
+public class ProductoService implements IService<Producto, ProductoDTO>{
     private IProductoRepository iProductoRepository;
     private ICategoriaRepository iCategoriaRepository;
     private ICiudadRepository iCiudadRepository;
@@ -33,12 +34,11 @@ public class ProductoService implements IService<Producto, Producto>{
     }
 
     @Override
-    public Producto guardar(Producto producto) {
-        Categoria categoria = this.iCategoriaRepository.findById(producto.getCategoria().getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        Ciudad ciudad = this.iCiudadRepository.findById(producto.getCiudad().getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        producto.setCiudad(ciudad);
-        producto.setCategoria(categoria);
-        return iProductoRepository.save(producto);
+    public Producto guardar(ProductoDTO producto) {
+        Categoria categoria = iCategoriaRepository.findById(producto.getCategoriaId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Ciudad ciudad = iCiudadRepository.findById(producto.getCiudadId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Producto p = producto.newProducto(ciudad,categoria);
+        return iProductoRepository.save(p);
     }
 
     @Override
@@ -53,9 +53,9 @@ public class ProductoService implements IService<Producto, Producto>{
     }
 
     @Override
-    public Producto modificar(Long id, Producto producto) {
-        Producto p = this.buscar(id);
-        return this.guardar(p.update(producto));
+    public Producto modificar(Long id, ProductoDTO dto) {
+        Producto producto = this.buscar(id);
+        return this.guardar(dto.update(producto));
     }
 
     public List<Producto> listarPorIdCategoria(Long id) {

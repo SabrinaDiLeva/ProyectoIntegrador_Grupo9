@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.dto.command.ProductoDTO;
 import com.model.Producto;
 import com.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class ProductoController {
     private ProductoService productoService;
 
     @PostMapping
-    public ResponseEntity<Producto> guardar(@RequestBody Producto producto) {
+    public ResponseEntity<Producto> guardar(@RequestBody ProductoDTO producto) {
         return ResponseEntity.ok(productoService.guardar(producto));
     }
 
@@ -46,7 +47,7 @@ public class ProductoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Producto> modificar(@PathVariable(name = "id") Long id, @RequestBody Producto producto) {
+    public ResponseEntity<Producto> modificar(@PathVariable(name = "id") Long id, @RequestBody ProductoDTO producto) {
         return ResponseEntity.ok(productoService.modificar(id, producto));
     }
 }

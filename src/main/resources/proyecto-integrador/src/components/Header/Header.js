@@ -15,10 +15,10 @@ const Header = (props) => {
 
   return (
     <>
-      <div class={style.header}>
+      <header className={style.header}>
         <div className={style.headerContainer}>
         
-          <div class={style.headerLogo}>
+          <div className={style.headerLogo}>
             <a className={style.link} href='/'>
               <div className={style.LogoSlogan}>
                 <img className={style.images} src={Logo} alt={props.nombre}/>
@@ -31,7 +31,7 @@ const Header = (props) => {
 
           <div className={loggedUser ? style.sessionIniciada : style.iniciarSession}>
             <div className={style.usuarioSessionIniciada}>
-                <div class={style.avatar}>MF</div>
+                <div className={style.avatar}>MF</div>
               <span className={style.perfilUsuario}>
                 <p className={style.saludo}>Hola,</p>
                 <a className={style.linkPerfil} href="/">Marcos Ferro</a>
@@ -63,7 +63,7 @@ const Header = (props) => {
         {/* cierra headerContainer */}
         </div>  
       {/* cierra header */}
-      </div>
+      </header>
     </>
   );
 };

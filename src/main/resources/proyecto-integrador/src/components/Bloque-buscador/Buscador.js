@@ -78,7 +78,7 @@ const Buscador = () => {
                 <span className={style.formDondeVamos}>
                     <div className={style.opcionContainer} ref={refOne}>
                         <input className={style.inputDestino} type="text" value={searchTerm} onChange={handleChange} onClick={showHide4} placeholder="¿A dónde vamos?"></input>
-                        <div class={style.opcionContainer2}>
+                        <div className={style.opcionContainer2}>
                             <ul className={style.inputListado} id={style.listadoSelection} >
                                 {searchResults.map((value) => (
                                     <a href='/' className={style.locations}>
@@ -107,7 +107,7 @@ const Buscador = () => {
                                     editableDateInputs={true}
                                     moveRangeOnFirstSelection={false}
                                     ranges={range}
-                                    months={2}
+                                    months={window.innerWidth > 767 ? 2 : 1}
                                     direction='horizontal'
                                     className={reactStyle.calendarElement}
                                 />

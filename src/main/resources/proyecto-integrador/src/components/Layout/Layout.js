@@ -6,11 +6,11 @@ export default function Layout() {
 
     return (
         <>
+        <SeccionHeader/>
         <Body>
-            <SeccionHeader/>
-            <Footer/>
+            <Outlet/>
         </Body>
-        <Outlet/>
+        <Footer/>
         </>
     )
 }

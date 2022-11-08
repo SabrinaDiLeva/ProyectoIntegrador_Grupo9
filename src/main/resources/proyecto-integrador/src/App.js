@@ -1,10 +1,12 @@
-import './App.css';import { BrowserRouter, Routes, Route } from "react-router-dom"
+import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import SeccionCategoria from './components/Categoria/SeccionCategoria';
 import Listado from './components/Listado/Listado';
 import Buscador from './components/Bloque-buscador/Buscador';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Layout from './components/Layout/Layout'
+import Producto from './components/Tarjeta-Producto/Producto'
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
             </>}/> 
             <Route path='/registrarse' element={<>
               <Register/>
+            </>}/> 
+            <Route path='/producto' element={<>
+              <Producto/>
             </>}/> 
           </Route>
         </Routes>

@@ -13,8 +13,7 @@ import java.util.Set;
 @Table(name="producto")
 public class Producto {
     @Id
-    @SequenceGenerator(name="producto_sequence", sequenceName = "producto_sequence",allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "producto_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column

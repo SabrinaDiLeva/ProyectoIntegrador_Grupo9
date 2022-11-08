@@ -57,4 +57,11 @@ public class ProductoService implements IService<Producto, Producto>{
         Producto p = this.buscar(id);
         return this.guardar(p.update(producto));
     }
+
+    public List<Producto> listarPorIdCategoria(Long id) {
+        return iProductoRepository.findAllByCategoria_Id(id);
+    }
+    public List<Producto> listarPorIdCiudad(Long id) {
+        return iProductoRepository.findAllByCiudad_Id(id);
+    }
 }

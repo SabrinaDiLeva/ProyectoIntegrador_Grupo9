@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoriaService implements IService<Categoria,CategoriaDTO>{
+public class CategoriaService implements IService<Categoria,CategoriaDTO> {
     private ICategoriaRepository iCategoriaRepository;
     private IImagenRepository iImagenRepository;
 
@@ -34,8 +34,7 @@ public class CategoriaService implements IService<Categoria,CategoriaDTO>{
     @Override
     public Categoria guardar(CategoriaDTO categoria) {
         Imagen img = iImagenRepository.findById(categoria.getImagenId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        Categoria c = new Categoria(categoria);
-        c.setImagen(img);
+        Categoria c = categoria.newCategoria(img);
         return iCategoriaRepository.save(c);
     }
 
@@ -53,6 +52,6 @@ public class CategoriaService implements IService<Categoria,CategoriaDTO>{
     @Override
     public Categoria modificar(Long id, CategoriaDTO dto) {
         Categoria categoria = this.buscar(id);
-        return iCategoriaRepository.save(categoria.update(dto));
+        return this.guardar(dto.update(categoria));
     }
 }

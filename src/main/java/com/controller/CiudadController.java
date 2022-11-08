@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.dto.command.CiudadDTO;
 import com.model.Ciudad;
 import com.service.CiudadService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class CiudadController {
     private CiudadService ciudadService;
 
     @PostMapping
-    public ResponseEntity<Ciudad> guardar(@RequestBody Ciudad ciudad) {
+    public ResponseEntity<Ciudad> guardar(@RequestBody CiudadDTO ciudad) {
         return ResponseEntity.ok(ciudadService.guardar(ciudad));
     }
 
@@ -34,13 +35,13 @@ public class CiudadController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
-        Ciudad ciudadBuscada = ciudadService.buscar(id);
+        //Ciudad ciudadBuscada = ciudadService.buscar(id);
         ciudadService.eliminar(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Ciudad> modificar(@PathVariable(name = "id")Long id, @RequestBody Ciudad ciudad) {
+    public ResponseEntity<Ciudad> modificar(@PathVariable(name = "id")Long id, @RequestBody CiudadDTO ciudad) {
         return ResponseEntity.ok(ciudadService.modificar(id, ciudad));
     }
 }

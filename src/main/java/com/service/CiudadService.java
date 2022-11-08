@@ -1,5 +1,6 @@
 package com.service;
 
+import com.dto.command.CiudadDTO;
 import com.model.Ciudad;
 import com.repository.ICiudadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CiudadService implements IService<Ciudad, Ciudad>{
+public class CiudadService implements IService<Ciudad, CiudadDTO>{
     private ICiudadRepository iCiudadRepository;
 
     @Autowired
@@ -25,8 +26,9 @@ public class CiudadService implements IService<Ciudad, Ciudad>{
     }
 
     @Override
-    public Ciudad guardar(Ciudad ciudad) {
-        return iCiudadRepository.save(ciudad);
+    public Ciudad guardar(CiudadDTO ciudad) {
+        Ciudad c= new Ciudad(ciudad.getId(), ciudad.getNombre(), ciudad.getPais());
+        return iCiudadRepository.save(c);
     }
 
     @Override
@@ -40,10 +42,10 @@ public class CiudadService implements IService<Ciudad, Ciudad>{
         iCiudadRepository.deleteById(id);
     }
 
+
     @Override
-    public Ciudad modificar(Long id, Ciudad ciudad) {
+    public Ciudad modificar(Long id, CiudadDTO dto) {
         Ciudad c = this.buscar(id);
-        Ciudad city = c.update(ciudad);
-        return iCiudadRepository.save(city);
+        return this.guardar(dto.update(c));
     }
 }

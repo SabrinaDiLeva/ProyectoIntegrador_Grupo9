@@ -74,4 +74,12 @@ public class Imagen {
             this.url = imagen.getUrl();
         return this;
     }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
 }

@@ -3,9 +3,8 @@
     justify-content: center;
     overflow: auto;
     scroll-snap-type: x mandatory;
-    background-color: var(--colorBackgroundSecundario);
     padding: 1vh 0;
-    /* margin-bottom: 1vh; */
+    margin-top: 2vh;
     height: 30%;
 }
 

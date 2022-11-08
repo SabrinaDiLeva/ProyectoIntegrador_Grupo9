@@ -25,7 +25,14 @@ public class ProductoController {
     public ResponseEntity<List<Producto>>  listar() {
         return ResponseEntity.ok(productoService.listar());
     }
-
+    @GetMapping("/categoria/{id}")
+    public ResponseEntity<List<Producto>>  listarPorCategoria(@PathVariable Long id) {
+        return ResponseEntity.ok(productoService.listarPorIdCategoria(id));
+    }
+    @GetMapping("/ciudad/{id}")
+    public ResponseEntity<List<Producto>>  listarPorCiudad(@PathVariable Long id) {
+        return ResponseEntity.ok(productoService.listarPorIdCiudad(id));
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscar(@PathVariable Long id) {
         Producto producto = productoService.buscar(id);

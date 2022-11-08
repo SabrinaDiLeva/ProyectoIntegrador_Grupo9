@@ -12,8 +12,7 @@ import java.util.Set;
 public class Categoria {
     @Id
     //@GeneratedValue(strategy= GenerationType.SEQUENCE)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_categoria_sequence")
-    @SequenceGenerator(name = "id_categoria_sequence", sequenceName = "id_categoria_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
@@ -46,20 +45,6 @@ public class Categoria {
         this.imagen = imagen;
     }
 
-    public Categoria(CategoriaDTO dto) {
-        this.id = dto.getId();
-        this.titulo = dto.getTitulo();
-        this.descripcion = dto.getDescripcion();
-    }
-
-    public Categoria update(CategoriaDTO dto){
-        if (dto.getTitulo() != null )
-            this.titulo = dto.getTitulo();
-        if (dto.getDescripcion() != null)
-            this.descripcion = dto.getDescripcion();
-
-        return new Categoria(this.id, this.titulo, this.descripcion, this.imagen );
-    }
     public Long getId() {
         return id;
     }

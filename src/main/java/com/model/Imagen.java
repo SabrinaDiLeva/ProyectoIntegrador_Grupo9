@@ -1,9 +1,12 @@
 package com.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="imagen")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Imagen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

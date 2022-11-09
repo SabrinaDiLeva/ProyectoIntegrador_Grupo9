@@ -64,4 +64,5 @@ public class ProductoService implements IService<Producto, ProductoDTO>{
     public List<Producto> listarPorIdCiudad(Long id) {
         return iProductoRepository.findAllByCiudad_Id(id);
     }
+
 }

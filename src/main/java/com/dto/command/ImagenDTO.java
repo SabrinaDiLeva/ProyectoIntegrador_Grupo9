@@ -14,6 +14,7 @@ public class ImagenDTO implements Serializable {
     private String url;
     private Long productoId;
 
+    public ImagenDTO() { }
     public ImagenDTO(Long id, String titulo, String url, Long productoId) {
         this.id = id;
         this.titulo = titulo;

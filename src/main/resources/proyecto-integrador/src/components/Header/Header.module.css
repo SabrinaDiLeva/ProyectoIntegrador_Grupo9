@@ -2,18 +2,10 @@
   box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
   background-color: var(--colorBackgroundSecundario);
   width: 100%;
-}
-
-.sticky{
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
-  background-color: var(--colorBackgroundSecundario);
-  width: 100%;
-  position: fixed;
-  top: 0;
+  height: 10vh;
 }
 
 .headerContainer{
-  height: 80px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;

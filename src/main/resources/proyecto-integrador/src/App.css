@@ -12,10 +12,17 @@
   /* box-sizing: border-box; */
 }
 
+html{
+  height: 100%;
+}
+
+#root{
+  height: 100%;
+}
+
 .container {
   text-align: center;
-  font-family: var(--fontFamily);
-  background-color: var(--colorBackgroundSecundario);
+  font-family: var(--fontFamily), sans-serif;
   height: 100%;
 }
 
@@ -23,6 +30,6 @@ button--link:visited, a:visited{
   color: transparent;
 }
 
-body {
-  background-color: var(--colorBackgroundSecundario);
+* a{
+  text-decoration: none;
 }

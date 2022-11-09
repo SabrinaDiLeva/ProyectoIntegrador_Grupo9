@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import style from './Buscador.module.css';
 import provincias from './provincias.json';
-import { DateRange, Calendar } from 'react-date-range';
+import { Calendar } from 'react-date-range';
 import format from 'date-fns/format';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -43,11 +43,11 @@ const DateRangeComp = () => {
 
 
     return (
-        <div className='calendarWrap'>
+        <div className={style.calendarWrap}>
             <input
                 value={calendar}
                 readOnly
-                className='inputBox'
+                className={style.inputBox}
                 onClick={()=> setOpen(open => !open)}
             />
             <div ref={refOne}>
@@ -55,75 +55,12 @@ const DateRangeComp = () => {
                     <Calendar
                         date = {new Date()}
                         onChange = {handleSelect}
-                        className='calendarElement'
+                        className={style.calendarElement}
                     />
                 }
             </div>
         </div>
     )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    // const [open, setOpen] = useState(false);
-    // useEffect(() => {
-    //     setCalendar(format(new Date(), 'dd/MM/yyyy'))
-    // }, []);
-
-
-
-//     return (
-//         <>
-//             <div className={style.headerBlock}>
-//                 {/* <span className={style.title}>
-                    
-//                 </span> */}
-
-//                 <div className={style.forms1}>
-//                     <span className={style.title}>
-//                         <h1> Busca ofertas en hoteles, casas y mucho mas...</h1>
-//                     </span>
-//                     <form className={style.formDondeVamos}>
-//                         <label for="exampleSelect"> A donde vamos ?</label>
-//                         <select name="exampleSelect" id="exampleSelect">
-//                             <option value="" disabled selected>Select an option</option>
-//                             {provincias.map((value) => (
-//                                 <option value={value.key}>{value.nombre}</option>
-//                             ))}
-//                         </select>
-//                     </form>
-
-//                     <form className={style.formCheckIn}>
-//                         <label for="ckeck">Check in - Check out:</label>
-//                        <DateRange
-//                         editableDateInputs={true}
-//                         onChange={item => setState([item.selection])}
-//                         moveRangeOnFirstSelection={false}
-//                         rangeColors={['#FBC02D']}
-//                         ranges={state}
-//                         />
-//                         {/* <input type="date" id="ckeck" name="check in-out"></input> */}
-//                     </form>
-
-//                     <button className={style.botonBuscar}>Buscar</button>
-//                 </div>
-//             </div>
-//         </>
-//     )
 
 }
 

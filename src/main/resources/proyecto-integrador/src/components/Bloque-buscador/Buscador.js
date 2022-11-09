@@ -45,55 +45,79 @@ const Buscador = () => {
         }
     }
 
+    const [searchTerm, setSearchTerm] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+    const handleChange = event => {
+        setSearchTerm(event.target.value);
+    };
+
+    function showHide4() {
+        var x = document.getElementById(style.listadoSelection);
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+
+    useEffect(() => {
+        const results = provincias.filter(prov =>
+            prov.nombre.toLowerCase().includes(searchTerm)
+        );
+        setSearchResults(results);
+    }, [searchTerm]);
+    
+
     return (
         <>
-            <div className={style.headerBlock}>
-                <div className={style.forms1}>
-                    <span className={style.title}>
-                        <h1> Busca ofertas en hoteles, casas y mucho mas...</h1>
-                    </span>
-                    <span className={style.formDondeVamos}>
-                        <div className={style.opcionContainer}>
-                            <input className={style.inputDestino} list='inputListado' placeholder='¿A dónde vamos?' onkeyup="filterFunction()"></input>
-                            <datalist className={style.inputListado} id='inputListado'>
-                                {provincias.map((value) => (
-                                    <option className={style.inputOpciones} value={value.nombre}></option>
+        <div className={style.headerBlock}>
+            <div className={style.forms1}>
+                <span className={style.title}>
+                    <h1> Busca ofertas en hoteles, casas y mucho mas</h1>
+                </span>
+                <span className={style.formDondeVamos}>
+                    <div className={style.opcionContainer} ref={refOne}>
+                        <input className={style.inputDestino} type="text" value={searchTerm} onChange={handleChange} onClick={showHide4} placeholder="¿A dónde vamos?"></input>
+                        <div className={style.opcionContainer2}>
+                            <ul className={style.inputListado} id={style.listadoSelection} >
+                                {searchResults.map((value) => (
+                                    <a href='/' className={style.locations}>
+                                        <iconify-icon icon="charm:map-pin"></iconify-icon>
+                                        <span className={style.liContainer}>
+                                                <li className={style.opcionProvincia}>{value.nombre}</li>
+                                                <li className={style.opcionPais}>{value.pais}</li>
+                                        </span>
+                                    </a>
                                 ))}
-                            </datalist>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <div className={style.calendarWrap}>
+                        <input
+                            value={`${format(range[0].startDate, "dd/MM/yyyy")} to ${format(range[0].endDate, "dd/MM/yyyy")}`}
+                            readOnly
+                            className={style.inputCalendario}
+                            onClick={()=> setOpen(open => !open)}
+                        />
+                        <div className={style.calendario} ref={refOne}>
+                            {open && 
+                                <DateRange
+                                    onChange={item => setRange([item.selection])}
+                                    editableDateInputs={true}
+                                    moveRangeOnFirstSelection={false}
+                                    ranges={range}
+                                    months={window.innerWidth > 767 ? 2 : 1}
+                                    direction='horizontal'
+                                    className={reactStyle.calendarElement}
+                                />
+                            }
                         </div>
-                        {/* <form>
-                            <select name="exampleSelect" id="exampleSelect">
-                                <option value="" disabled selected>Select an option</option>
-                                
-                            </select>
-                        </form> */}
-                    
-                        <div className={style.calendarWrap}>
-                            <input
-                                value={`${format(range[0].startDate, "dd/MM/yyyy")} to ${format(range[0].endDate, "dd/MM/yyyy")}`}
-                                readOnly
-                                className={style.inputCalendario}
-                                onClick={()=> setOpen(open => !open)}
-                            />
-                            <div className={style.calendario} ref={refOne}>
-                                {open && 
-                                    <DateRange
-                                        onChange={item => setRange([item.selection])}
-                                        editableDateInputs={true}
-                                        moveRangeOnFirstSelection={false}
-                                        ranges={range}
-                                        months={2}
-                                        direction='horizontal'
-                                        className={reactStyle.calendarElement}
-                                    />
-                                }
-                            </div>
-                        </div>
-                        <button className={style.botonBuscar}>Buscar</button>
-                    </span>   
-                </div>
+                    </div>
+                    <button className={style.botonBuscar}>Buscar</button>
+                </span>   
             </div>
+        </div>
         </>
     )
 

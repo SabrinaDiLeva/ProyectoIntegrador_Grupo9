@@ -34,8 +34,8 @@ public class CategoriaService implements IService<Categoria,CategoriaDTO> {
     @Override
     public Categoria guardar(CategoriaDTO categoria) {
         Imagen img = iImagenRepository.findById(categoria.getImagenId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        Categoria c = categoria.newCategoria(img);
-        return iCategoriaRepository.save(c);
+        Optional<Categoria> result = ( img.getProducto() == null )?  Optional.of(iCategoriaRepository.save(categoria.newCategoria(img))) : Optional.empty();
+        return result.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
     }
 
     @Override

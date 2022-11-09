@@ -93,16 +93,14 @@ background-color: var(--colorBackgroundPrincipal);
 color: var(--colorTextoSecundario);
 }
 
-
-
-
-
-
-
+.contenedorImagenesAll{
+    display: flex;
+    width: 100%;
+}
 
 .contenedorImagenes{
     display: flex;
-    height: auto;
+    /* height: auto; */
     width: 90%;
 }
 
@@ -114,14 +112,24 @@ color: var(--colorTextoSecundario);
 
 .contenedorImgDerecha{
     display: grid;
-    align-items: center;
-    align-content: center;
     width: 50%;
+    justify-content: start;
+    align-content: center;
+    margin: 1vh 0 0 1vh;
+
 }
 
 .subContenedorImgDerecha{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 55%);
+    grid-template-rows: repeat(2, 50%);
+    grid-auto-flow: column;
+    grid-template-areas:
+    "a b"
+    "c d";
+    width: 100%;
+    grid-gap: 1vh 0;
+    justify-items: center;
 }
 
 .imagenIzquierda{
@@ -131,8 +139,8 @@ color: var(--colorTextoSecundario);
 }
 
 .imagenDerecha{
-    width: 45%;
-    margin: 1vh 0 0 1vh;
+    width: 85%;
+    /* margin: 1vh 0 0 1vh; */
     border-radius: 20px;
 }
 

@@ -27,7 +27,7 @@ export default function TarjetaProducto(props) {
                     <h1>{props.name}</h1>
                 </span>
                 <span className={style.headerDerecha}>
-                    <button id={style.buttonHome} className={style.button} type="button">{Icons.back}<Link to='/'></Link></button>
+                    <button id={style.buttonHome} className={style.button} type="button"><Link className={style.button} to='/'>{Icons.back}</Link></button>
                 </span>
             </div>
 
@@ -47,20 +47,19 @@ export default function TarjetaProducto(props) {
             </div>
 
             <div className={style.contenedorImagenes}>
-                <span className={style.contenedorImgIzquierda}>
-                    <img className={style.imagenIzquierda} src={props.imagen[0]} alt="imagenProductoIzquierda"></img>
-                </span>
+                <a href='#' className={style.contenedorImagenesAll}>
+                    <span className={style.contenedorImgIzquierda}>
+                        <img className={style.imagenIzquierda} src={props.imagen[0]} alt="imagenProductoIzquierda"></img>
+                    </span>
 
-                <span className={style.contenedorImgDerecha}>
-                    <span className={style.subContenedorImgDerecha}>
-                        <img className={style.imagenDerecha} src={props.imagen[1]} alt="imagenProductoDerecha"></img>
-                        <img className={style.imagenDerecha} src={props.imagen[2]} alt="imagenProductoDerecha"></img>
+                    <span className={style.contenedorImgDerecha}>
+                        <span className={style.subContenedorImgDerecha}>
+                            {props.imagen.map( (img, index) => {
+                                return index !== 0 ? <img className={style.imagenDerecha} src={img} alt="imagenProductoDerecha"></img> : ''
+                            })}
+                        </span>
                     </span>
-                    <span className={style.subContenedorImgDerecha}>
-                        <img className={style.imagenDerecha} src={props.imagen[3]} alt="imagenProductoDerecha"></img>
-                        <img className={style.imagenDerecha} src={props.imagen[4]} alt="imagenProductoDerecha"></img>
-                    </span>
-                </span>
+                </a>   
             </div>
 
             <div className={style.descriptionContainer}>
@@ -81,10 +80,10 @@ export default function TarjetaProducto(props) {
                 <span className={style.calendarContainer}>
                     <h2>Fechas disponibles</h2>
                     <DateRange 
-                        onChange={item => setRange([item.selection])}
+                        // onChange={item => setRange([item.selection])}
                         editableDateInputs={false}
                         moveRangeOnFirstSelection={false}
-                        ranges={range}
+                        // ranges={range}
                         months={window.innerWidth > 767 ? 2 : 1}
                         direction='horizontal'
                         className={style.calendarElement}

@@ -25,8 +25,8 @@ public class CategoriaServiceTest {
     ICategoriaRepository categoriaRepository;
     @InjectMocks
     private CategoriaService categoriaService;
-
-    /*@Test
+/*
+    @Test
     public void agregarCategoria(){
         CategoriaDTO categoriaDTO = new CategoriaDTO( 1l, "titulo","descripcion", "url-imagen");
         Categoria categoria = new Categoria(categoriaDTO);

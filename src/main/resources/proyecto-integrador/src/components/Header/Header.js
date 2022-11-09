@@ -42,17 +42,17 @@ const Header = (props) => {
 
             <div className={style.usuarioIniciarSession}>
               <Routes>
-                <Route path='/' element={<>
-                  <button id={style.buttonLogin} className={style.button} href="/" type="button"><Link to='/iniciar_sesion'>Iniciar Sesion</Link></button>
-                  <button id={style.buttonRegister} className={style.button} href="/" type="button"><Link to='/registrarse'>Registrarse</Link></button>
+                <Route path='/*' element={<>
+                  <button id={style.buttonLogin} className={style.button} type="button"><Link to='/iniciar_sesion'>Iniciar Sesion</Link></button>
+                  <button id={style.buttonRegister} className={style.button} type="button"><Link to='/registrarse'>Registrarse</Link></button>
                 </>}/> 
 
                 <Route path='/iniciar_sesion' element={<>
-                  <button id={style.buttonRegister} className={style.button} href="/" type="button"><Link to='/registrarse'>Registrarse</Link></button>
+                  <button id={style.buttonRegister} className={style.button} type="button"><Link to='/registrarse'>Registrarse</Link></button>
                 </>}/> 
                 
                 <Route path='/registrarse' element={<>
-                  <button id={style.buttonLogin} className={style.button} href="/" type="button"><Link to='/iniciar_sesion'>Iniciar Sesion</Link></button>
+                  <button id={style.buttonLogin} className={style.button} type="button"><Link to='/iniciar_sesion'>Iniciar Sesion</Link></button>
                 </>}/>
               </Routes> 
             {/* cierra usuarioIniciarSession */}

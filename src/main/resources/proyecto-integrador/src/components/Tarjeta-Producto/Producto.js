@@ -8,7 +8,7 @@ export default function Producto(id){
 
     return (
         <>
-            <Card key={productos.key} imagen={productos.imagen} category={productos.category} name={productos.name} title={productos.title} location={productos.location} description={productos.description} calificacion={productos.calificacion} />
+            <Card key={productos.key} imagen={productos.imagen} category={productos.category} name={productos.name} title={productos.title} location={productos.location} description={productos.description} calificacion={productos.calificacion} caracteristicas={productos.caracteristicas} politicas={productos.politicas} normasDeLaCasa = {productos.normasDeLaCasa} saludSeguridad = {productos.saludSeguridad} politicaDeCancelacion = {productos.politicaDeCancelacion} />
         </>
     )
 }

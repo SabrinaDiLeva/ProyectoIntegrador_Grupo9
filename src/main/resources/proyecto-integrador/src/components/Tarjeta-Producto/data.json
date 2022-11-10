@@ -1,14 +1,14 @@
 [
     {
         "key": 1,
-        "imagen": ["https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg"],
+        "imagen": ["https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg","https://imgcy.trivago.com/if_iw_lte_ih,c_scale,w_236/if_else,c_scale,h_160/e_improve,q_auto:low/d_dummy.jpeg,f_auto,q_auto//uploadimages/34/68/34687004.jpeg"],
         "category": "Hotel",
         "name": "Hotel 1",
         "title": "title Hotel 1",
         "location": "Cordoba",
         "description": "Cat ipsum dolor sit amet, check cat door for ambush 10 times before coming in love. I like to spend my days sleeping and eating fishes that my human fished for me we live on a luxurious yacht, sailing proudly under the sun, i like to walk on the deck, watching the horizon, dreaming of a good bowl of milk spill litter box, scratch at owner, destroy all furniture",
         "calificacion": 3,
-        "caracteristicas": ["cocina","television","aireAcondicionado","aptoMascotas","pileta","wifi","Silladeruedas"],
+        "caracteristicas": ["Cocina","Television","Aire acondicionado","aptoMascotas","Pileta","WiFi","sillaDeRuedas"],
         "normasDeLaCasa": ["check out: 10am","no se permiten fiestas","no fumar"],
         "saludSeguridad": ["se aplican las pautas de distanciamiento social y otras normas del coronavirus"],
         "politicaDeCancelacion": ["agreag las fechas de tu viaje para obtener informacion detallada"]
@@ -23,7 +23,7 @@
         "location": "Buenos Aires",
         "description": "Cat ipsum dolor sit amet, check cat door for ambush 10 times before coming in love. I like to spend my days sleeping and eating fishes that my human fished for me we live on a luxurious yacht, sailing proudly under the sun, i like to walk on the deck, watching the horizon, dreaming of a good bowl of milk spill litter box, scratch at owner, destroy all furniture",
         "calificacion": 4,
-        "caracteristicas": ["cocina","television","aireAcondicionado","aptoMascotas","pileta","wifi"],
+        "caracteristicas": ["Cocina","Television","aireAcondicionado","aptoMascotas","Pileta","WiFi"],
         "normasDeLaCasa": ["check out: 10am","no se permiten fiestas","no fumar"],
         "saludSeguridad": ["se aplican las pautas de distanciamiento social y otras normas del coronavirus"],
         "politicaDeCancelacion": ["agreag las fechas de tu viaje para obtener informacion detallada"]
@@ -37,7 +37,7 @@
         "location": "Rosario",
         "description": "Cat ipsum dolor sit amet, check cat door for ambush 10 times before coming in love. I like to spend my days sleeping and eating fishes that my human fished for me we live on a luxurious yacht, sailing proudly under the sun, i like to walk on the deck, watching the horizon, dreaming of a good bowl of milk spill litter box, scratch at owner, destroy all furniture",
         "calificacion": 3,
-        "caracteristicas": ["cocina","television","aireAcondicionado","aptoMascotas","pileta","wifi"],
+        "caracteristicas": ["Cocina","Television","aireAcondicionado","aptoMascotas","Pileta","WiFi"],
         "noSmasD de rLaCasa": ["check out: 10am","no se permiten fiestas","no fumar"],
         "saludSeguridad": ["se aplican las pautas de distanciamiento social y otras normas del coronavirus"],
         "politicaDeCancelacion": ["agreag las fechas de tu viaje para obtener informacion detallada"]
@@ -51,7 +51,7 @@
         "location": "Mar Del Plata",
         "description": "Cat ipsum dolor sit amet, check cat door for ambush 10 times before coming in love. I like to spend my days sleeping and eating fishes that my human fished for me we live on a luxurious yacht, sailing proudly under the sun, i like to walk on the deck, watching the horizon, dreaming of a good bowl of milk spill litter box, scratch at owner, destroy all furniture",
         "calificacion": 3,
-        "caracteristicas": ["cocina","television","aireAcondicionado","aptoMascotas","pileta","wifi"],
+        "caracteristicas": ["Cocina","Television","aireAcondicionado","aptoMascotas","Pileta","WiFi"],
         "noSmasD de rLaCasa": ["check out: 10am","no se permiten fiestas","no fumar"],
         "saludSeguridad": ["se aplican las pautas de distanciamiento social y otras normas del coronavirus"],
         "politicaDeCancelacion": ["agreag las fechas de tu viaje para obtener informacion detallada"]
@@ -65,7 +65,7 @@
         "location": "Guaymallen",
         "description": "Cat ipsum dolor sit amet, check cat door for ambush 10 times before coming in love. I like to spend my days sleeping and eating fishes that my human fished for me we live on a luxurious yacht, sailing proudly under the sun, i like to walk on the deck, watching the horizon, dreaming of a good bowl of milk spill litter box, scratch at owner, destroy all furniture",
         "calificacion": 3,
-        "caracteristicas": ["cocina","television","aireAcondicionado","aptoMascotas","pileta","wifi"],
+        "caracteristicas": ["Cocina","Television","aireAcondicionado","aptoMascotas","Pileta","WiFi"],
         "noSmasD de rLaCasa": ["check out: 10am","no se permiten fiestas","no fumar"],
         "saludSeguridad": ["se aplican las pautas de distanciamiento social y otras normas del coronavirus"],
         "politicaDeCancelacion": ["agreag las fechas de tu viaje para obtener informacion detallada"]
@@ -79,7 +79,7 @@
         "location": "Comodoro Rivadavia",
         "description": "Cat ipsum dolor sit amet, check cat door for ambush 10 times before coming in love. I like to spend my days sleeping and eating fishes that my human fished for me we live on a luxurious yacht, sailing proudly under the sun, i like to walk on the deck, watching the horizon, dreaming of a good bowl of milk spill litter box, scratch at owner, destroy all furniture",
         "calificacion": 3,
-        "caracteristicas": ["cocina","television","aireAcondicionado","aptoMascotas","pileta","wifi"],
+        "caracteristicas": ["Cocina","Television","aireAcondicionado","aptoMascotas","Pileta","WiFi"],
         "noSmasD de rLaCasa": ["check out: 10am","no se permiten fiestas","no fumar"],
         "saludSeguridad": ["se aplican las pautas de distanciamiento social y otras normas del coronavirus"],
         "politicaDeCancelacion": ["agreag las fechas de tu viaje para obtener informacion detallada"]
@@ -93,7 +93,7 @@
         "location": "Rio Cuarto",
         "description": "Cat ipsum dolor sit amet, check cat door for ambush 10 times before coming in love. I like to spend my days sleeping and eating fishes that my human fished for me we live on a luxurious yacht, sailing proudly under the sun, i like to walk on the deck, watching the horizon, dreaming of a good bowl of milk spill litter box, scratch at owner, destroy all furniture",
         "calificacion": 3,
-        "caracteristicas": ["cocina","television","aireAcondicionado","aptoMascotas","pileta","wifi"],
+        "caracteristicas": ["Cocina","Television","aireAcondicionado","aptoMascotas","Pileta","WiFi"],
         "noSmasD de rLaCasa": ["check out: 10am","no se permiten fiestas","no fumar"],
         "saludSeguridad": ["se aplican las pautas de distanciamiento social y otras normas del coronavirus"],
         "politicaDeCancelacion": ["agreag las fechas de tu viaje para obtener informacion detallada"]
@@ -107,7 +107,7 @@
         "location": "Las Heras",
         "description": "Cat ipsum dolor sit amet, check cat door for ambush 10 times before coming in love. I like to spend my days sleeping and eating fishes that my human fished for me we live on a luxurious yacht, sailing proudly under the sun, i like to walk on the deck, watching the horizon, dreaming of a good bowl of milk spill litter box, scratch at owner, destroy all furniture",
         "calificacion": 3,
-        "caracteristicas": ["cocina","television","aireAcondicionado","aptoMascotas","pileta","wifi"],
+        "caracteristicas": ["Cocina","Television","aireAcondicionado","aptoMascotas","Pileta","WiFi"],
         "noSmasD de rLaCasa": ["check out: 10am","no se permiten fiestas","no fumar"],
         "saludSeguridad": ["se aplican las pautas de distanciamiento social y otras normas del coronavirus"],
         "politicaDeCancelacion": ["agreag las fechas de tu viaje para obtener informacion detallada"]

@@ -2,7 +2,7 @@ import Card from "./TarjetaProducto"
 import data from "./data.json"
 
 export default function Producto(id){
-    const productos = data[1]
+    const productos = data[0]
 
     return (
         <>

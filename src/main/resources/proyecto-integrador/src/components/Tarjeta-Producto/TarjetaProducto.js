@@ -41,13 +41,13 @@ export default function TarjetaProducto(props) {
             <div className={style.contenedorImagenes}>
                 <button className={style.contenedorImagenesAll} onClick>
                     <span className={style.contenedorImgIzquierda}>
-                        <img className={style.imagenIzquierda} src={props.imagen[0]} alt="imagenProductoIzquierda"></img>
+                        <img className={style.imagenIzquierda} src={props.imagen[0].url} alt="imagenProductoIzquierda"></img>
                     </span>
 
                     <span className={style.contenedorImgDerecha}>
                         <span className={style.subContenedorImgDerecha}>
                             {props.imagen.map( (img, index) => {
-                                return <img className={style.imagenDerecha} src={img} alt="imagenProductoDerecha"></img>
+                                return index !== 0 ? <img className={style.imagenDerecha} src={img.url} alt="imagenProductoDerecha"></img> : ''
                             })}
                         </span>
                     </span>
@@ -71,7 +71,7 @@ export default function TarjetaProducto(props) {
                 })}
 
             </Carousel>
-
+            
             <div className={style.descriptionContainer}>
                 <h2>{props.title}</h2>
                 <p>{props.description}</p>
@@ -81,7 +81,7 @@ export default function TarjetaProducto(props) {
                 <h2>¿Que ofrece este lugar?</h2>
                 <span className={style.caracteristicaItms}>
                     {props.caracteristicas.map( (caracteristica) => {
-                        return <p>{Icons[caracteristica]} {caracteristica}</p>
+                        return <p>{Icons[caracteristica.nombre]} {caracteristica.nombre}</p>
                     })}
                 </span>
             </div>

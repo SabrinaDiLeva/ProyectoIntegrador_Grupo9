@@ -26,9 +26,9 @@ function App() {
             <Route path='/registrarse' element={<>
               <Register/>
             </>}/> 
-            <Route path='/producto' element={<>
+            <Route path='/producto/:id' element={
               <Producto/>
-            </>}/> 
+            }/> 
           </Route>
         </Routes>
       </BrowserRouter>

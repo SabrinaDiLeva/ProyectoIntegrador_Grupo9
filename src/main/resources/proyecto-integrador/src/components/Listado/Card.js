@@ -19,7 +19,7 @@ export default function Card(props) {
                     <a className={style.verMas} href='/'>Ver Mas</a>
                 </span>
             </span>
-            <button className={style.cardBoton}><Link className={style.button} to='/producto'>Ver detalle</Link></button>
+            <button className={style.cardBoton}><Link className={style.button} to={`/producto/${props.id}`}>Ver detalle</Link></button>
         </div>
     </span>
     </>

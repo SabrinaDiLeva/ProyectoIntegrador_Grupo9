@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -63,5 +64,36 @@ public class ProductoService implements IService<Producto, ProductoDTO>{
     }
     public List<Producto> listarPorIdCiudad(Long id) {
         return iProductoRepository.findAllByCiudad_Id(id);
+    }
+
+    public List<Producto> listarRandom() {
+        //ESTA HARD CODEADA LA CANTIDAD DE PRODUCTOS QUE TRAE
+        //EN ESTE CASO LE PEDI 3 PORQUE TENEMOS SOLO 8 PRODUCTOS CARGADOS EN LA BASE
+        List<Producto> productos= iProductoRepository.findAll();
+        List<Producto> productosRandom = new ArrayList<>();
+        System.out.println("ESTA VACIO");
+
+        int[] numerosUsados= new int[3];
+        boolean usado=false;
+        int contador=0;
+
+        while(productosRandom.size()<3){
+            usado=false;
+            int nro= (int) (Math.random()*(productos.size()-1)+1);
+            System.out.println("SE ELIGIO EL NRO "+nro);
+            for(int j=0;j<3;j++){
+                if(numerosUsados[j]==nro){
+                    usado=true;
+                }
+            }
+            if(usado==false){
+                numerosUsados[contador]=nro;
+                contador++;
+                productosRandom.add(productos.get((nro)));
+                System.out.println("SE AGREGO");
+            }
+
+        }
+        return productosRandom;
     }
 }

@@ -3,11 +3,13 @@ package com.controller;
 import com.dto.command.ProductoDTO;
 import com.model.Producto;
 import com.service.ProductoService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +28,12 @@ public class ProductoController {
     public ResponseEntity<List<Producto>>  listar() {
         return ResponseEntity.ok(productoService.listar());
     }
+
+    @GetMapping("random")
+    public ResponseEntity<List<Producto>>  listarRandom() {
+        return ResponseEntity.ok(productoService.listarRandom());
+    }
+
     @GetMapping("/categoria/{id}")
     public ResponseEntity<List<Producto>>  listarPorCategoria(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCategoria(id));

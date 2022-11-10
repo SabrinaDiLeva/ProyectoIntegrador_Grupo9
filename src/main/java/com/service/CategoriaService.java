@@ -18,7 +18,6 @@ public class CategoriaService implements IService<Categoria,CategoriaDTO> {
     private ICategoriaRepository iCategoriaRepository;
     private IImagenRepository iImagenRepository;
 
-
     @Autowired
     public CategoriaService(ICategoriaRepository iCategoriaRepository, IImagenRepository iImagenRepository) {
         this.iCategoriaRepository = iCategoriaRepository;

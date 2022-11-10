@@ -21,7 +21,9 @@ export default function SeccionCategoria() {
     useEffect(() => {
             categorias.forEach(categoria => 
                 getProductosPorCategoria(categoria.id)
-                .then(data => setCantidadPorCategoria(oldArray => [...oldArray, data.length]))
+                .then(data => {
+                    setCantidadPorCategoria(oldArray => [...oldArray, data.length])
+                })
                 .catch(() => 0)
             )
 

@@ -58,5 +58,9 @@ public class ImagenService implements IService<Imagen, ImagenDTO>{
         Imagen imagen = this.buscar(id);
         return this.guardar(dto.update(imagen));
     }
+
+    public List<Imagen> listarPorProducto(Long id) {
+        return iImagenRepository.findAllByProducto_Id(id);
+    }
 }
 

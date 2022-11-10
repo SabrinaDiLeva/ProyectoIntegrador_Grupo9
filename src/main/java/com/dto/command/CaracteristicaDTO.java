@@ -19,6 +19,9 @@ public class CaracteristicaDTO implements Serializable {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
+    public Caracteristica newCaracteristica() {
+        return new Caracteristica( this.id , this.nombre, this.descripcion);
+    }
 
     public CaracteristicaDTO update(Caracteristica caracteristica){
         if (this.nombre!= null && nombre.length() <= NOMBRE_MAX_LENGTH)

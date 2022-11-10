@@ -58,22 +58,6 @@ export default function Register() {
     const { form, errors, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validationForm);
     return (
             <div className={style.container}>
-<<<<<<< HEAD
-                <form  className={style.formulario} onSubmit={handleSubmit}>
-                    <h1 className={style.titulo}>Crear cuenta</h1>
-                    <div className={style.firstContainer}>
-                        <span className={style.labelContainer}>
-                            <label className={style.label}>Nombre</label>
-                            <input className={style.input} type="text" id={style.name}name="nombre" placeholder="Escribe tu nombre" onBlur={handleBlur} onChange={handleChange} value={form.nombre} required />
-                            {errors.nombre && <p className={style.errores}> {errors.nombre} </p>}
-                        </span>
-
-                        <span className={style.labelContainer}>
-                            <label className={style.label}>Apellido</label>
-                            <input className={style.input} type="text" id={style.surname} name="apellido" placeholder="Escribe tu apellido" onBlur={handleBlur} onChange={handleChange} value={form.apellido} required />
-                            {errors.apellido && <p className={style.errores}> {errors.apellido} </p>}
-                        </span>
-=======
                 <form>
                     <h1>Crear cuenta</h1>
                     <div>
@@ -98,7 +82,6 @@ export default function Register() {
                         <label>Confirmar Contraseña</label>
                         <br/>
                         <input  type="text" id="passwordConfirmada"/>
->>>>>>> 5848545f0901d1e8e9b410a0924121e7298f33a0
                     </div>
                     <span className={style.labelContainer}>
                         <label className={style.label}>Correo electrónico</label>

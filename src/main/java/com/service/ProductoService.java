@@ -94,6 +94,7 @@ public class ProductoService implements IService<Producto, ProductoDTO>{
             }
 
         }
+        System.out.println(productosRandom.getClass());
         return productosRandom;
     }
 }

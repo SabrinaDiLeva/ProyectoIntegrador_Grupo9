@@ -1,12 +1,20 @@
 import Card from "./TarjetaProducto"
-import data from "./data.json"
+import { useEffect, useState } from "react"
+import { getProducto } from "../../service/productoApi"
 
 export default function Producto(id){
-    const productos = data[1]
+    const [producto, setProducto] = useState({})
+
+    useEffect( () => {
+        getProducto(id).then( (data) => {
+            console.log(data);
+            setProducto(data);
+        })
+    }, [id])
 
     return (
         <>
-            <Card key={productos.key} imagen={productos.imagen} category={productos.category} name={productos.name} title={productos.title} location={productos.location} description={productos.description} calificacion={productos.calificacion} caracteristicas={productos.caracteristicas} politicas={productos.politicas} normasDeLaCasa = {productos.normasDeLaCasa} saludSeguridad = {productos.saludSeguridad} politicaDeCancelacion = {productos.politicaDeCancelacion} />
+            <Card key={producto.id} imagen={producto.imagen} category={producto.categoria} name={producto.nombre} title={producto.titulo} location={producto.ciudad} description={producto.descripcion} calificacion={producto.calificacion} caracteristicas={producto.caracteristica} politicas={producto.politicas} normasDeLaCasa = {producto.normas} saludSeguridad = {producto.seguridad} politicaDeCancelacion = {producto.cancelacion} />
         </>
     )
 }

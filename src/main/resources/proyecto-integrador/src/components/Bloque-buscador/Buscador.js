@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
-import provincias from './provincias.json';
 import { DateRange} from 'react-date-range';
 import {addDays} from 'date-fns'
+import { getCiudades } from "../../service/ciudadApi"
 
 // Styles
 import format from 'date-fns/format';
@@ -18,6 +18,17 @@ const Buscador = () => {
             key: 'selection'
         }
     ]);
+
+    const [provincias, setProvincias] = useState([])
+
+    useEffect(() => {
+        if (provincias.length === 0) {
+            getCiudades().then((data) => {
+                setProvincias(data);
+            })
+
+        }
+    }, [])
 
     // Open Close state
     const [open, setOpen] = useState(false);

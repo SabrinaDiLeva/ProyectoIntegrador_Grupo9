@@ -22,6 +22,7 @@ public class CiudadController {
         return ResponseEntity.ok(ciudadService.guardar(ciudad));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public ResponseEntity<List<Ciudad>>  listar() {
         return ResponseEntity.ok(ciudadService.listar());

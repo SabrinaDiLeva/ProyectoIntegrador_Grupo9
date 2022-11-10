@@ -7,12 +7,3 @@ export const getImagenesPorProducto = async(id) => {
     const response = await axios.get(endpoint);
     return response.data
 }
-/*
-export const getPokemonByPagina = async( pagina ) => {
-    const limite = 20
-    const offset = limite * ( pagina - 1 )
-    const endpoint = `${baseUrl}/pokemon?limit=${limite}&offset=${offset}`;
-    const response = await axios.get(endpoint);
-    return response.data.results
-}
-*/

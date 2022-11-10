@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:8080/categoria"
+const baseUrl = "http://localhost:8080/ciudad"
 
-export const getCategorias = async() => {
+export const getCiudades= async() => {
     const endpoint = `${baseUrl}/`
     const response = await axios.get(endpoint);
     return response.data

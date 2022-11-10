@@ -29,6 +29,11 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.listar());
     }
 
+    @GetMapping("random")
+    public ResponseEntity<List<Producto>>  listarRandom() {
+        return ResponseEntity.ok(productoService.listarRandom());
+    }
+
     @GetMapping("/categoria/{id}")
     public ResponseEntity<List<Producto>>  listarPorCategoria(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCategoria(id));

@@ -1,14 +1,18 @@
 package com.model;
 
+import com.dto.command.CategoriaDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name="categorias")
+@Table(name="categoria")
 public class Categoria {
     @Id
     //@GeneratedValue(strategy= GenerationType.SEQUENCE)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "id_categoria_sequence")
-    @SequenceGenerator(name = "id_categoria_sequence",sequenceName = "id_categoria_sequence",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
@@ -17,48 +21,60 @@ public class Categoria {
     @Column
     private String descripcion;
 
-    @Column
-    private String url_imagen;
+    @OneToOne
+    @JoinColumn(name = "imagen_id",referencedColumnName = "id")
+    private Imagen imagen;
+
+    @OneToMany(mappedBy = "categoria")
+    @JsonIgnore
+    private Set<Producto> productos = new HashSet<>();
 
     public Categoria() {
     }
 
-    public Categoria(Long id, String titulo, String descripcion, String url_imagen) {
+    public Categoria(Long id, String titulo, String descripcion, Imagen imagen) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.url_imagen = url_imagen;
+        this.imagen = imagen;
+    }
+
+    public Categoria(String titulo, String descripcion, Imagen imagen) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.imagen = imagen;
     }
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getTitulo() {
         return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
+    public Imagen getImagen() {
+        return this.imagen;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    public String getUrl_imagen() {
-        return url_imagen;
+    public void setImagen(Imagen imagen) {
+        this.imagen = imagen;
     }
 
-    public void setUrl_imagen(String url_imagen) {
-        this.url_imagen = url_imagen;
+    public void setId(Long id) {
+        this.id = id;
     }
+
 }

@@ -58,6 +58,7 @@ export default function Register() {
     const { form, errors, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validationForm);
     return (
             <div className={style.container}>
+<<<<<<< HEAD
                 <form  className={style.formulario} onSubmit={handleSubmit}>
                     <h1 className={style.titulo}>Crear cuenta</h1>
                     <div className={style.firstContainer}>
@@ -72,6 +73,32 @@ export default function Register() {
                             <input className={style.input} type="text" id={style.surname} name="apellido" placeholder="Escribe tu apellido" onBlur={handleBlur} onChange={handleChange} value={form.apellido} required />
                             {errors.apellido && <p className={style.errores}> {errors.apellido} </p>}
                         </span>
+=======
+                <form>
+                    <h1>Crear cuenta</h1>
+                    <div>
+                        <div className={style.uno}>
+                            <div className={style.dos}>
+                                <label >Nombre</label>
+                                <input width="13.5rem" type="text" id="name"/>
+                            </div>
+                            <div className={style.dos}>
+                                <label >Apellido</label>
+                                <input width="13.5rem" type="text" id="surname" />
+                            </div>
+                        </div>
+                        <label>Correo electrónico</label>
+                        <br/>
+                        <input type="text" id="email"/>
+                        <br/>
+                        <label>Contraseña</label>
+                        <br/>
+                        <input  type="text" id="password"/>
+                        <br/>
+                        <label>Confirmar Contraseña</label>
+                        <br/>
+                        <input  type="text" id="passwordConfirmada"/>
+>>>>>>> 5848545f0901d1e8e9b410a0924121e7298f33a0
                     </div>
                     <span className={style.labelContainer}>
                         <label className={style.label}>Correo electrónico</label>

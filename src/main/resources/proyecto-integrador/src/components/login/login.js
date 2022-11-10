@@ -36,6 +36,7 @@ const validationForm = (form) => {
 export default function Login() {
     const {form, errors, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationForm);
     return(
+<<<<<<< HEAD
         <>
         <div className={style.container}>
             <form className={style.formulario} onSubmit={handleSubmit}>
@@ -57,6 +58,28 @@ export default function Login() {
                 </span>
             </form>
             <span className={style.registrarse}>¿Aún no tienes cuenta?<Link to='/registrarse' className={style.link}>Registrate</Link></span>
+=======
+        <div>
+            <div className={style.container}>
+                <form>
+                    <h1>Iniciar sesión</h1>
+                    <div>
+                        <div>
+                            <label className={style.texto_label}>Correo electronico</label>
+                            <br/>
+                            <input  className={style.barra1} type="text"></input>
+                        </div>
+                        <div>
+                            <label className={style.texto_label}>Contraseña</label>
+                            <br/>
+                            <input  className={style.barra2} type="password"></input>
+                        </div>
+                        <button type="submit" className={style.boton}>Ingresar</button>
+                    </div>
+                </form>
+                <span>¿Aún no tienes cuenta? <a href="/">Registrate</a></span>
+            </div>
+>>>>>>> 5848545f0901d1e8e9b410a0924121e7298f33a0
         </div>
         </>
     )

@@ -3,6 +3,7 @@ import React, {useContext } from "react";
 import style from './Header.module.css'
 import data from './headerInfo.json'
 import Logo from '../ui/logo.png'
+import icono from '../ui/iconoMenu.svg'
 import { UserContext } from "../../hooks/UseContext";
 import { Link, Routes, Route} from "react-router-dom";
 
@@ -12,6 +13,27 @@ const Header = (props) => {
   // usar session storage
   const loggedUser = useContext(UserContext);
   const randomSloganIndex = Math.round(Math.random() * 3);
+<<<<<<< HEAD
+  const [clicked, setClicked] = useState(false);
+
+  // window.onload = () => {
+  //   const menu = document.querySelector(style.menu_on)
+  //   console.log(menu)
+  //   menu.addEventListener("click", () => {
+  //     console.log("se escucho el evento")
+  //     menu.toggleAttribute(style.visible_menu)
+  //   })
+  // }
+  const handleClick = (e) =>{
+      if (typeof e == 'object') {
+        console.log("entro")
+        //document.querySelector("style.menu_on").toggleAttribute("style.visible_menu")
+      }
+    }
+
+   // document.querySelector("style.menu_on).toggleAttribute(style.visible_menu)
+=======
+>>>>>>> 5f4d18a274173e9d662015852921d364d12d9366
 
   return (
     <>
@@ -58,12 +80,31 @@ const Header = (props) => {
             {/* cierra usuarioIniciarSession */}
             </div>
           </div>
-
-
+          <div className={style.margen}>
+          <a href="#" onClick={handleClick} className={style.menu_on}>
+              <span></span>
+              <span></span>
+              <span></span>
+          </a>
+          </div>
         {/* cierra headerContainer */}
         </div>  
       {/* cierra header */}
+<<<<<<< HEAD
       </header>
+=======
+<<<<<<< HEAD
+      </header>
+      <nav>	
+        <ul>
+          <li><a href="#">Crear cuenta</a></li>
+          <li><a href="#">Ingresar</a></li>
+        </ul>
+      </nav>
+=======
+      </div>
+>>>>>>> 5f4d18a274173e9d662015852921d364d12d9366
+>>>>>>> 5848545f0901d1e8e9b410a0924121e7298f33a0
     </>
   );
 };

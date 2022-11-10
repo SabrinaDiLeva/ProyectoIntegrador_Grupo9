@@ -9,11 +9,6 @@ import Layout from './components/Layout/Layout'
 import Producto from './components/Tarjeta-Producto/Producto'
 
 function App() {
-  window.onscroll = () => {
-    
-  }
-
-
 
   return (
     <div className="container">

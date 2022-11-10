@@ -1,16 +1,28 @@
 import React, {useContext } from "react";
-// import Logo from "./minicomponents/Logo";
 import style from './Header.module.css'
 import data from './headerInfo.json'
 import Logo from '../ui/logo.png'
-import { UserContext } from "../../hooks/UseContext";
 import { Link, Routes, Route} from "react-router-dom";
+import {sessionClosed} from '../../hooks/sessionStorage'
 
+var session = sessionStorage.getItem('sessionIniciada')
 
 const Header = (props) => {
 
+  if(session){
+    var loggedUser = {
+      mail: JSON.parse(session)[0].mail,
+      password: JSON.parse(session)[0].password
+    }
+  }
+
+  // const sessionClosed = () =>{
+  //   if(session){
+  //     sessionStorage.removeItem('sessionIniciada')
+  //   }
+  // }
+
   // usar session storage
-  const loggedUser = useContext(UserContext);
   const randomSloganIndex = Math.round(Math.random() * 3);
 
   return (
@@ -31,12 +43,16 @@ const Header = (props) => {
 
           <div className={loggedUser ? style.sessionIniciada : style.iniciarSession}>
             <div className={style.usuarioSessionIniciada}>
-                <div className={style.avatar}>MF</div>
+                <div className={style.avatarContainer}>
+                  <span className={style.avatar}>MF</span>
+                </div>
               <span className={style.perfilUsuario}>
+              <a className={style.linkPerfil} href="/">
                 <p className={style.saludo}>Hola,</p>
-                <a className={style.linkPerfil} href="/">Marcos Ferro</a>
+                <p className={style.saludo2}>Marcos Ferro</p>
+              </a>
               </span>
-                <button className={style.button} href="/">Cerrar Sesión</button>
+                <button className={style.button} href="/" onClick={sessionClosed}>Cerrar Sesión</button>
             {/* cierra usuarioSessionIniciada */}
             </div>
 

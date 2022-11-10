@@ -60,7 +60,6 @@
     padding: 0.5vh;
     width: 10%;
     height: 45%;
-    /* margin: 1vh; */
     background-color: var(--colorBackgroundPrincipal);
     border: 2px solid var(--colorBackgroundPrincipal);
     border-radius: 15px;
@@ -89,18 +88,20 @@
 }
 
 .button:hover{
-background-color: var(--colorBackgroundPrincipal);
-color: var(--colorTextoSecundario);
+    background-color: var(--colorBackgroundPrincipal);
+    color: var(--colorTextoSecundario);
 }
 
 .contenedorImagenesAll{
     display: flex;
     width: 100%;
+    border: none;
+    background-color: transparent;
+    align-items: center;
 }
 
 .contenedorImagenes{
     display: flex;
-    /* height: auto; */
     width: 90%;
 }
 
@@ -111,24 +112,18 @@ color: var(--colorTextoSecundario);
 }
 
 .contenedorImgDerecha{
-    display: grid;
+    display: flex;
     width: 50%;
-    justify-content: start;
-    align-content: center;
     margin: 1vh 0 0 1vh;
-
 }
 
 .subContenedorImgDerecha{
     display: grid;
-    grid-template-columns: repeat(2, 55%);
-    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, auto);
     grid-auto-flow: column;
-    grid-template-areas:
-    "a b"
-    "c d";
     width: 100%;
-    grid-gap: 1vh 0;
+    grid-gap: 1vh;
     justify-items: center;
 }
 
@@ -139,8 +134,7 @@ color: var(--colorTextoSecundario);
 }
 
 .imagenDerecha{
-    width: 85%;
-    /* margin: 1vh 0 0 1vh; */
+    width: 95%;
     border-radius: 20px;
 }
 
@@ -158,7 +152,6 @@ color: var(--colorTextoSecundario);
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 2vh; */
     width: 100%;
     margin: 5vh 0 3vh 0;
 }
@@ -181,7 +174,6 @@ color: var(--colorTextoSecundario);
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-left: 1vh; */
 }
 
 .caracteristicaItms > p > *{
@@ -304,4 +296,8 @@ color: var(--colorTextoSecundario);
 
 .politica > *{
     margin: 0 0 2vh 0;
+}
+
+.carrousel{
+    display: none;
 }

@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
 import style from "./tarjetaProducto.module.css";
 import { Link } from "react-router-dom";
 import { DateRange } from 'react-date-range';
-import {addDays} from 'date-fns'
 import { Icons } from '../ui/icons';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
 
 export default function TarjetaProducto(props) {
     const totalStars = 10;
@@ -53,11 +54,24 @@ export default function TarjetaProducto(props) {
                 </button>   
             </div>
 
-            <div className="modal-content">
-                <span className="close">&times;</span>
-                <p>Some text in the Modal..</p>
-            </div>
+            <Carousel
+                autoPlay
+                infiniteLoop
+                showArrows={window.innerWidth < 992 ? false : true}
+                showThumbs={window.innerWidth < 992 ? false : true}
+                showIndicators={false}
+                className={style.carrousel}
+            >
+                {props.imagen.map( (img, index) => {
+                    return <>
+                        <div className={style.carrouselContainer}>
+                            <img className={style.imagenDerecha} src={img} alt="imagenProductoDerecha"></img>
+                        </div>
+                    </> 
+                })}
 
+            </Carousel>
+            
             <div className={style.descriptionContainer}>
                 <h2>{props.title}</h2>
                 <p>{props.description}</p>

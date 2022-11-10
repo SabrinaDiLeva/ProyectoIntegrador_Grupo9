@@ -16,13 +16,6 @@ const Header = (props) => {
     }
   }
 
-  // const sessionClosed = () =>{
-  //   if(session){
-  //     sessionStorage.removeItem('sessionIniciada')
-  //   }
-  // }
-
-  // usar session storage
   const randomSloganIndex = Math.round(Math.random() * 3);
 
   return (

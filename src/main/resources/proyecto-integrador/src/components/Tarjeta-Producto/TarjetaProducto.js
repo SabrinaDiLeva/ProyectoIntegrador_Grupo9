@@ -6,16 +6,7 @@ import {addDays} from 'date-fns'
 import { Icons } from '../ui/icons';
 
 export default function TarjetaProducto(props) {
-
-    const [range, setRange] = useState([
-        {
-            startDate: new Date(),
-            endDate: addDays(new Date(), 7),
-            key: 'selection'
-        }
-    ]);
-
-    const totalStars = 5;
+    const totalStars = 10;
     const activeStars = props.calificacion;
 
     return(
@@ -47,7 +38,7 @@ export default function TarjetaProducto(props) {
             </div>
 
             <div className={style.contenedorImagenes}>
-                <a href='#' className={style.contenedorImagenesAll}>
+                <button className={style.contenedorImagenesAll} onClick>
                     <span className={style.contenedorImgIzquierda}>
                         <img className={style.imagenIzquierda} src={props.imagen[0]} alt="imagenProductoIzquierda"></img>
                     </span>
@@ -59,7 +50,12 @@ export default function TarjetaProducto(props) {
                             })}
                         </span>
                     </span>
-                </a>   
+                </button>   
+            </div>
+
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Some text in the Modal..</p>
             </div>
 
             <div className={style.descriptionContainer}>

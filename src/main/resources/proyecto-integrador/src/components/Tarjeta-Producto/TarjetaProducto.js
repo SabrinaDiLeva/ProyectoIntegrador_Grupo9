@@ -40,21 +40,21 @@ export default function TarjetaProducto(props) {
             <div className={style.contenedorImagenes}>
                 <button className={style.contenedorImagenesAll} onClick>
                     <span className={style.contenedorImgIzquierda}>
-                        <img className={style.imagenIzquierda} src={props.imagen[0]} alt="imagenProductoIzquierda"></img>
+                        <img className={style.imagenIzquierda} src={props.imagen[0].url} alt="imagenProductoIzquierda"></img>
                     </span>
 
                     <span className={style.contenedorImgDerecha}>
                         <span className={style.subContenedorImgDerecha}>
                             {props.imagen.map( (img, index) => {
-                                return index !== 0 ? <img className={style.imagenDerecha} src={img} alt="imagenProductoDerecha"></img> : ''
+                                return index !== 0 ? <img className={style.imagenDerecha} src={img.url} alt="imagenProductoDerecha"></img> : ''
                             })}
                         </span>
                     </span>
                 </button>   
             </div>
 
-            <div class="modal-content">
-                <span class="close">&times;</span>
+            <div className="modal-content">
+                <span className="close">&times;</span>
                 <p>Some text in the Modal..</p>
             </div>
 
@@ -67,7 +67,7 @@ export default function TarjetaProducto(props) {
                 <h2>¿Que ofrece este lugar?</h2>
                 <span className={style.caracteristicaItms}>
                     {props.caracteristicas.map( (caracteristica) => {
-                        return <p>{Icons[caracteristica]} {caracteristica}</p>
+                        return <p>{Icons[caracteristica.nombre]} {caracteristica.nombre}</p>
                     })}
                 </span>
             </div>

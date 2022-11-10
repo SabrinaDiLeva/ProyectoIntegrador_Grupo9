@@ -46,7 +46,7 @@ public class ImagenServiceTest {
     @Test
     public void agregarImagen(){
         ImagenDTO imagenDTO = new ImagenDTO( 1L, "titulo","url", 1L);
-        Producto producto = new Producto(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1,1);
+        Producto producto = new Producto(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",new Categoria(),new Ciudad());
         Imagen imagen = imagenDTO.newImagen(producto);
         when(imagenRepository.save(any(Imagen.class))).thenReturn(imagen);
         when(productoRepository.findById(1L)).thenReturn(Optional.of(producto));
@@ -59,38 +59,38 @@ public class ImagenServiceTest {
                         imagenDTO.getProductoId()
                 );
     }
-    /*
+
     @Test
     public void listarImagenes(){
         ImagenDTO[] imagenes = {new ImagenDTO(1l,"test", "test", 1L), new ImagenDTO(2l,"test", "test", 2L)};
         List<ImagenDTO> lista = new ArrayList<>(Arrays.asList(imagenes));
-        List<ImagenDTO> lista_imagenes = lista.stream().map(c -> c.newImagen(new Producto(c.getProductoId(), "nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",new Categoria(1l,"titulo","descripcion",3l),1))).toList();
+        List<Imagen> lista_imagenes= lista.stream().map(c -> c.newImagen(new Producto(c.getProductoId(),"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",new Categoria(),new Ciudad()))).toList();
         when(imagenRepository.findAll()).thenReturn(lista_imagenes);
         List<Imagen> lista_c = imagenService.listar();
         assertThat(lista_c).hasSizeGreaterThan(0)
                 .hasSameElementsAs(lista_imagenes);
     }
-    */
-    /*
+
+
     @Test
     public void buscarImagen(){
         final Long id = 1L;
-        ImagenDTO imagenDTO = new Imagen( id, "titulo","descripcion", id);
-        Producto producto = new Producto(id, "nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1,1);
+        ImagenDTO imagenDTO = new ImagenDTO( id, "titulo","descripcion", id);
+        Producto producto = new Producto(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",new Categoria(),new Ciudad());
         Imagen imagen = imagenDTO.newImagen(producto);
         when(productoRepository.findById(eq(id))).thenReturn(Optional.of(producto));
         when(imagenRepository.findById(id)).thenReturn(Optional.of(imagen));
         when(imagenRepository.save(any(Imagen.class))).thenReturn(imagen);
 
         assertThat(imagenService.guardar(imagenDTO))
-                .extracting("titulo", "descripcion", "producto.id")
+                .extracting("titulo", "descripcion", "imagen.id")
                 .containsExactly(
                         imagenDTO.getTitulo(),
                         imagenDTO.getUrl(),
                         imagenDTO.getProductoId()
                 );
     }
-    */
+
 
     @Test
     public void listarImagenesVacias(){
@@ -101,12 +101,11 @@ public class ImagenServiceTest {
                 .hasSize(0)
                 .hasSameElementsAs(lista_imagenes);
     }
-    /*
     @Test
     public void actualizarImagen(){
         final Long id = 1L;
-        ImagenDTO imagenDTO = new ImagenDTO(id, "Casa en la montaña", "Un casa linda", id);
-        Producto producto = new Producto(id, "nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1,1);
+        ImagenDTO imagenDTO = new ImagenDTO(id, "test", "test", id);
+        Producto producto = new Producto(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",new Categoria(),new Ciudad());
         Imagen imagen = imagenDTO.newImagen(producto);
 
         when(productoRepository.findById(eq(id))).thenReturn(Optional.of(producto));
@@ -114,16 +113,16 @@ public class ImagenServiceTest {
         when(imagenRepository.save(any(Imagen.class))).thenReturn(imagen);
 
         assertThat(imagenService.modificar(id, imagenDTO))
-                .extracting("titulo", "url", "producto.id")
+                .extracting("titulo", "descripcion", "imagen.id")
                 .containsExactly(
                         imagenDTO.getTitulo(),
                         imagenDTO.getUrl(),
-                        imagen.getProducto()
+                        imagenDTO.getProductoId()
                 );
     }
 
-     */
-    /*
+
+
     @Test
     public void eliminarImagen(){
         final Long id = 1L;
@@ -133,19 +132,19 @@ public class ImagenServiceTest {
         verify(imagenRepository, times(1)).deleteById(id);
     }
 
-     */
 
     @Test
     public void agregarImagenConProductoQueNoExisteLanzaNotFound(){
         final Long id = 1L;
-        ImagenDTO imagenDTO = new ImagenDTO( 1L, "titulo","descripcion", id);
-        Producto produto = new Producto();
-        Imagen imagen = imagenDTO.newImagen(produto);
+        ImagenDTO imagenDTO = new ImagenDTO( 1L, "titulo","url", id);
+        Producto producto = new Producto(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",new Categoria(),new Ciudad());
+        Imagen imagen = imagenDTO.newImagen(producto);
         when(imagenRepository.save(any(Imagen.class))).thenReturn(imagen);
         when(productoRepository.findById(eq(id))).thenReturn(Optional.empty());
 
         Assertions.assertThrows( ResponseStatusException.class, () -> imagenService.guardar(imagenDTO));
     }
+
 
     @Test
     public void buscarImagenQueNoExisteLanzaNotFound(){

@@ -38,7 +38,7 @@ public class ProductoService implements IService<Producto, ProductoDTO>{
     public Producto guardar(ProductoDTO producto) {
         Categoria categoria = iCategoriaRepository.findById(producto.getCategoriaId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         Ciudad ciudad = iCiudadRepository.findById(producto.getCiudadId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        Producto p = producto.newProducto(ciudad,categoria);
+        Producto p = producto.newProducto(categoria,ciudad);
         return iProductoRepository.save(p);
     }
 

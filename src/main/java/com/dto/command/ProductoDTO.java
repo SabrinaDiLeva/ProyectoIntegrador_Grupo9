@@ -41,7 +41,7 @@ public class ProductoDTO implements Serializable {
         this.ciudadId = ciudadId;
         this.categoriaId = categoriaId;
     }
-    public Producto newProducto(Ciudad ciudad, Categoria categoria) {
+    public Producto newProducto(Categoria categoria, Ciudad ciudad) {
         return new Producto( this.id , this.nombre,this.calificacion,this.titulo,this.descripcion,this.fechas_disponibles,this.normas,this.seguridad,this.cancelacion,categoria,ciudad);
     }
 

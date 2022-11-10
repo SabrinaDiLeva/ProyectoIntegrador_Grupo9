@@ -9,8 +9,7 @@ export default function SeccionCategoria() {
     return (
         <>
         <div className={style.body}>
-            <h2 className={style.titulo}>Categorias</h2>
-            <p className={style.subtitulo}>Busca tu tipo de Alojamiento</p>
+            <h1 className={style.titulo}>Busca tu tipo de Alojamiento</h1>
             <div className={style.tarjetaContainer}>
                 {categorias.map( (hotel,index) => {
                     return <Categoria key={hotel.key} imagen={hotel.imagen} nombre={hotel.nombre} caption={hotel.caption}/>

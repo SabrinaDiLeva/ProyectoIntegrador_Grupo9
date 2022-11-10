@@ -1,33 +1,43 @@
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import SeccionCategoria from './components/Categoria/SeccionCategoria';
-import Header from './components/Header/Header';
-import SeccionHeader from './components/Header/SeccionHeader';
 import Listado from './components/Listado/Listado';
-import Footer from './components/Footer/Footer';
 import Buscador from './components/Bloque-buscador/Buscador';
-import Body from './components/Body/Body';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import Layout from './components/Layout/Layout'
+import Producto from './components/Tarjeta-Producto/Producto'
 
 function App() {
+  window.onscroll = () => {
+    
+  }
+
+
+
   return (
-<<<<<<< HEAD
-    <div className="App">
-      {/* <Login/>
-      <Register/> */}
-      <Header/>
-    </div>
-=======
     <div className="container">
-      <Body>
-        <SeccionHeader />
-        <Buscador />
-        <SeccionCategoria />
-        <Listado/>
-        <Footer />
-      </Body>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route path='/' element={<>
+              <Buscador/> 
+              <SeccionCategoria/>
+              <Listado/>
+            </>}/> 
+            <Route path='/iniciar_sesion' element={<>
+              <Login/>
+            </>}/> 
+            <Route path='/registrarse' element={<>
+              <Register/>
+            </>}/> 
+            <Route path='/producto' element={<>
+              <Producto/>
+            </>}/> 
+          </Route>
+        </Routes>
+      </BrowserRouter>
    </div>
->>>>>>> 5f4d18a274173e9d662015852921d364d12d9366
   );
 }
 

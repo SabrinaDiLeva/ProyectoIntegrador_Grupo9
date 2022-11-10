@@ -79,14 +79,13 @@
     text-align: left;
     font-size: small;
     margin: 0;
-    height: 100%;
+    height: auto;
     padding-top: 0.3em;
     display: -webkit-box;   
     -webkit-line-clamp: 4;   
     -webkit-box-orient: vertical;     
     overflow: hidden;
     text-overflow: ellipsis;
-    text-align: left;
 }
 
 .cardBoton{

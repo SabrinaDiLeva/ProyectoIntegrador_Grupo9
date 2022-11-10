@@ -39,11 +39,11 @@ public class Categoria {
         this.imagen = imagen;
     }
 
-    public Categoria(String titulo, String descripcion, Imagen imagen) {
+    /*public Categoria(String titulo, String descripcion, Imagen imagen) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.imagen = imagen;
-    }
+    }*/
 
     public Long getId() {
         return id;

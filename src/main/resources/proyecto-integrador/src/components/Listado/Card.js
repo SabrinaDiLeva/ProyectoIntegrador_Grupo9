@@ -7,7 +7,7 @@ export default function Card(props) {
     <>
     <span className={style.tarjeta}>
         <div className={style.infoContainerImagen}>
-            <img className={style.cardImage} src={props.imagen}  alt="producto"></img>
+            <img className={style.cardImage} src={props.imagen.url}  alt="producto"></img>
         </div>
         <div className={style.infoContainerDetalle}>
             <span className={style.detalleContainer}>
@@ -19,7 +19,7 @@ export default function Card(props) {
                     <a className={style.verMas} href='/'>Ver Mas</a>
                 </span>
             </span>
-            <button className={style.cardBoton}><Link className={style.button} to='/producto'>Ver detalle</Link></button>
+            <button className={style.cardBoton}><Link className={style.button} to={`/producto/${props.id}`}>Ver detalle</Link></button>
         </div>
     </span>
     </>

@@ -67,8 +67,6 @@ const Header = (props) => {
             {/* cierra usuarioIniciarSession */}
             </div>
           </div>
-
-
         {/* cierra headerContainer */}
         </div>  
       {/* cierra header */}

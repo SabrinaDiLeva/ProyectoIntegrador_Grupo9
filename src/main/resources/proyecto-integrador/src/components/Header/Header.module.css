@@ -161,6 +161,10 @@
 .sessionIniciada .usuarioIniciarSession{
   display: none;
 }
+.iconoMenu{
+  display: none;
+}
+/* Termina Session Iniciada */
 
 /* Termina Session Iniciada */
 

@@ -25,7 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class CategoriaControllerTest {
     @Autowired
     private MockMvc mockMvc;
-
+/*
     @Test
     void test01buscarTodasLasCategorias() throws Exception {
         MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.get("/categoria/")
@@ -134,5 +134,5 @@ class CategoriaControllerTest {
             throw new RuntimeException(e);
        }
     }
-
+*/
 }

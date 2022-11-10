@@ -13,29 +13,24 @@ export default function Listado() {
     useEffect(() => {
         if (recomendados.length === 0) {
             getProductosRandom().then((data) => {
-                console.log(`DATA: ${typeof data}`);
                 setRecomendados(data);
-                console.log(`RECOMENDADOS: ${recomendados}`);
             })
         }
     }, [])
 
     useEffect(() => {
-        recomendados.forEach(producto =>
+        recomendados.forEach(producto =>{
             getImagenesPorProducto(producto.id)
-                .then(data => setPortadas(oldArray => [...oldArray, data.length]))
-                .catch(() => "")
+                .then(data => setPortadas(oldArray => [...oldArray, data[0]]))
+                .catch(() => {})
+        }
         )
-        console.log(`PORTADAS: ${portadas}`);
-        console.log(`RECOMENDADOS: ${recomendados}`);
-
     }, [recomendados])
 
     return (
         <>
             <div className={style.tarjetaListadoContainer}>
-                {recomendados.map((producto, index) => <Card key={producto.id} imagen={portadas[index].url} category={producto.categoria} name={producto.nombre} title={producto.titulo} location={producto.ciudad} description={producto.descripcion} />
-                )}
+                {(recomendados.length !== 0 && portadas.length !== 0) ? recomendados.map((producto, index) => <Card key={producto.id} imagen={portadas[index]} category={producto.categoria.titulo} name={producto.nombre} title={producto.titulo} location={producto.ciudad.nombre} description={producto.descripcion}/>) : <></>}
             </div>
         </>
     )

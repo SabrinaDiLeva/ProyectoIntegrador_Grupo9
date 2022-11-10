@@ -8,7 +8,7 @@ export default function Card(props) {
     <>
     <span className={style.tarjeta}>
         <div className={style.infoContainerImagen}>
-            <img className={style.cardImage} src={props.imagen}  alt="producto"></img>
+            <img className={style.cardImage} src={props.imagen.url}  alt="producto"></img>
         </div>
         <div className={style.infoContainerDetalle}>
             <span className={style.detalleContainer}>

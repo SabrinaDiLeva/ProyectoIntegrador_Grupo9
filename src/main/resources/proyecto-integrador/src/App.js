@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import SeccionCategoria from './components/Categoria/SeccionCategoria';
 import Listado from './components/Listado/Listado';
 import Buscador from './components/Bloque-buscador/Buscador';
-import Login from './components/Login/login';
+import Login from './components/Login/Login';
 import Register from './components/Register/register';
 import Layout from './components/Layout/Layout'
 import Producto from './components/Tarjeta-Producto/Producto'

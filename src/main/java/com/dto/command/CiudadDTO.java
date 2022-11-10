@@ -2,6 +2,7 @@ package com.dto.command;
 
 import com.model.Categoria;
 import com.model.Ciudad;
+import com.model.Imagen;
 
 import java.io.Serializable;
 
@@ -16,6 +17,9 @@ public class CiudadDTO implements Serializable {
         this.id = id;
         this.nombre = nombre;
         this.pais = pais;
+    }
+    public Ciudad newCiudad() {
+        return new Ciudad( this.id , this.nombre, this.pais);
     }
 
     public CiudadDTO update(Ciudad ciudad){

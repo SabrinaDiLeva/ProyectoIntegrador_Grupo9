@@ -1,6 +1,7 @@
 package com.service;
 
 //import com.dto.command.ProductoDTO;
+import com.dto.command.ProductoDTO;
 import com.model.Producto;
 import com.repository.IProductoRepository;
 import org.junit.jupiter.api.MethodOrderer;
@@ -26,10 +27,10 @@ class ProductoServiceTest {
         IProductoRepository productoRepository;
         @InjectMocks
         private ProductoService productoService;
-    /*
+/*
         @Test
         public void agregarProducto(){
-            ProductoDTO productoDTO = new ProductoDTO( 1l, "titulo","descripcion", "url-imagen");
+            ProductoDTO productoDTO = new ProductoDTO( 1L, "titulo","descripcion", "url-imagen");
             Producto producto = new Producto(productoDTO);
             when(productoRepository.save(any(Producto.class))).thenReturn(producto);
 

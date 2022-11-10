@@ -24,6 +24,7 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.guardar(producto));
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public ResponseEntity<List<Producto>>  listar() {
         return ResponseEntity.ok(productoService.listar());

@@ -13,6 +13,7 @@ export const getProductosPorCategoria = async (id) => {
     const response = await axios.get(endpoint);
     return response.data
 }
+
 export const getProductosRandom = async () => {
     const endpoint = `${baseUrl}/random`
     const response = await axios.get(endpoint);

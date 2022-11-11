@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import {React} from "react";
 import style from "./login.module.css";
 import { useForm } from "../../hooks/useForm";
 import { Link } from "react-router-dom";
@@ -15,20 +15,12 @@ const validationForm = (form) => {
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
-    if(!form.email.trim()){
-        errors.email = "El campo 'email' es requerido"
-    } else if(!regexEmail.test(form.email.trim())) {
+    if(!regexEmail.test(form.email.trim())){
         errors.email = "El email ingresado es incorrecto"
     }
 
-    if(!form.password.trim()){
-        errors.password = "El campo 'contraseña' es requerido"
-
-    } else if(!regexName.test(form.password.trim())) {
+    if(!regexName.test(form.password.trim())){
         errors.password = "La contraseña ingresada es incorrecta"
-
-    } else if(form.password.trim().length < 6){
-        errors.password = "La contraseña debe contener al menos 6 caracteres"
     }
 
     return errors;

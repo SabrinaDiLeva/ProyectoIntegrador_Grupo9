@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
 import style from './Buscador.module.css';
-import provincias from './provincias.json';
 import { Calendar } from 'react-date-range';
 import format from 'date-fns/format';
 import 'react-date-range/dist/styles.css'; // main css file

@@ -1,4 +1,4 @@
-import React, {useContext } from "react";
+import React from "react";
 import style from './Header.module.css'
 import data from './headerInfo.json'
 import Logo from '../ui/logo.png'

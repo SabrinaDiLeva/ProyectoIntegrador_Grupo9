@@ -5,8 +5,8 @@ import Listado from './components/Listado/Listado.js';
 import Buscador from './components/Bloque-buscador/Buscador.js';
 import Layout from './components/Layout/Layout.js'
 import Producto from './components/Tarjeta-Producto/Producto.js'
-import Login from './components/Login/login';
 import Register from './components/Register/Register';
+import Login from './components/Login/login';
 
 function App() {
 
@@ -21,10 +21,9 @@ function App() {
               <Listado/>
             </>}/> 
             <Route path='/iniciar_sesion' element={<>
-              <Login/>              
+              <Login/>
             </>}/> 
             <Route path='/registrarse' element={<>
-              {/* <Register/> */}
               <Register/>
             </>}/> 
             <Route path='/producto/:id' element={

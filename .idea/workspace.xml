@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="50cd8db7-d546-414d-9044-787430022e4c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GITHUB Y TRELLO LINK AL PROYECTO COMPLETO" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/GITHUB Y TRELLO LINK AL PROYECTO COMPLETO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apache-tomcat-9.0.68.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/apache-tomcat-9.0.68.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ProyectoIntegradorGrupo9Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ProyectoIntegradorGrupo9Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/CaracteristicaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/controller/CaracteristicaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/CategoriaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/controller/CategoriaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/CiudadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/controller/CiudadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/ImagenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/controller/ImagenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/controller/ProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dto/command/CaracteristicaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/dto/command/CaracteristicaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dto/command/CategoriaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/dto/command/CategoriaDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dto/command/CiudadDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/dto/command/CiudadDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dto/command/ImagenDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/dto/command/ImagenDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dto/command/ProductoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/dto/command/ProductoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/Caracteristica.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/model/Caracteristica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/model/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/Ciudad.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/model/Ciudad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/Imagen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/model/Imagen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/model/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/model/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/repository/ICaracteristicaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/repository/ICaracteristicaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/repository/ICategoriaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/repository/ICategoriaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/repository/ICiudadRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/repository/ICiudadRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/repository/IImagenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/repository/IImagenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/repository/IProductoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/repository/IProductoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/CaracteristicaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/service/CaracteristicaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/CategoriaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/service/CategoriaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/CiudadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/service/CiudadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/service/IService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/ImagenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/service/ImagenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/service/ProductoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/babel-plugin-macros.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/babel-plugin-macros.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Bloque-buscador/Buscador.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Bloque-buscador/Buscador.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Bloque-buscador/Buscador.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Bloque-buscador/Buscador.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Bloque-buscador/BuscadorReact.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Bloque-buscador/BuscadorReact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Bloque-buscador/DateRangeComp.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Bloque-buscador/DateRangeComp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Bloque-buscador/provincias.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Bloque-buscador/provincias.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Body/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Body/Body.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Body/Body.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Body/Body.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Categoria/Categoria.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Categoria/Categoria.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Categoria/Categoria.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Categoria/Categoria.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Categoria/SeccionCategoria.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Categoria/SeccionCategoria.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Categoria/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Categoria/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Header/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Header/SeccionHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Header/SeccionHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Header/headerInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Header/headerInfo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Header/minicomponents/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Header/minicomponents/Logo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Layout/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Listado/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Listado/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Listado/Card.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Listado/Card.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Listado/Listado.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Listado/Listado.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Listado/Listado.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Listado/Listado.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Listado/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Listado/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Register/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Register/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Register/register.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Register/register.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Tarjeta-Producto/Producto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Tarjeta-Producto/Producto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Tarjeta-Producto/TarjetaProducto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Tarjeta-Producto/TarjetaProducto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Tarjeta-Producto/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Tarjeta-Producto/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/Tarjeta-Producto/tarjetaProducto.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Tarjeta-Producto/tarjetaProducto.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/footer/Footer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/footer/Footer.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/footer/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/footer/footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/login/login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/login/login.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/ui/iconoMenu.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/ui/iconoMenu.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/ui/iconoMenuDos.png" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/ui/iconoMenuDos.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/ui/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/ui/icons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/ui/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/ui/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/components/ui/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/ui/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/hooks/UseContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/hooks/UseContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/hooks/UseToString.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/hooks/UseToString.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/hooks/hooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/hooks/hooks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/hooks/sessionStorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/hooks/sessionStorage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/hooks/useForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/hooks/useForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/service/categoriaApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/categoriaApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/service/ciudadApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/ciudadApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/service/imagenApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/imagenApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/proyecto-integrador/src/service/productoApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/productoApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ProyectoIntegradorGrupo9ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/ProyectoIntegradorGrupo9ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/controller/CategoriaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/controller/CategoriaControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/service/CaracteristicaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/service/CaracteristicaServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/service/CategoriaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/service/CategoriaServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/service/CiudadServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/service/CiudadServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/service/ImagenServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/service/ImagenServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/service/ProductoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/service/ProductoServiceTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HbcpX6UWL0YkxmaQGdwZKZFJUZ" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MARCOS\Desktop\Proyecto Integrador\ProyectoIntegrador_Grupo9\Backend" />
+      <recent name="C:\Users\MARCOS\Desktop\Proyecto Integrador\ProyectoIntegrador_Grupo9\Frontend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50cd8db7-d546-414d-9044-787430022e4c" name="Changes" comment="" />
+      <created>1668557411397</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668557411397</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

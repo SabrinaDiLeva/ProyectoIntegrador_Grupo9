@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  height: 100%;
+  font-family: var(--fontFamily), sans-serif;
+}
+
+code {
+  font-family: var(--fontFamily);
+}
+
+#root{
+  height: 100%;
+}

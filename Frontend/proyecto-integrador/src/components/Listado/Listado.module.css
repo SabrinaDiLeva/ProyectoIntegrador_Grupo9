@@ -1,0 +1,13 @@
+.tarjetaListadoContainer{
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    padding: 1vh 0;
+    margin-top: 2vh;
+    height: 30%;
+}
+
+.tarjetaListadoContainer::-webkit-scrollbar {
+    display: none;
+}

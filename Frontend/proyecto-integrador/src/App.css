@@ -1,0 +1,35 @@
+:root {
+  --colorBackgroundPrincipal: #FBC02D;
+  --colorBackgroundSecundario: #FFFBE2;
+  --colorTextoPrimario: #263238;
+  --colorTextoSecundario: #607D8B;
+  --fontFamily: 'Quicksand';
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+html{
+  height: 100%;
+}
+
+#root{
+  height: 100%;
+}
+
+.container {
+  text-align: center;
+  font-family: var(--fontFamily), sans-serif;
+  height: 100%;
+}
+
+button--link:visited, a:visited{
+  color: transparent;
+}
+
+* a{
+  text-decoration: none;
+}

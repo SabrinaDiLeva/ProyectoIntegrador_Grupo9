@@ -1,12 +1,12 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import SeccionCategoria from './components/Categoria/SeccionCategoria';
-import Listado from './components/Listado/Listado';
-import Buscador from './components/Bloque-buscador/Buscador';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
-import Layout from './components/Layout/Layout'
-import Producto from './components/Tarjeta-Producto/Producto'
+import SeccionCategoria from './components/Categoria/SeccionCategoria.js';
+import Listado from './components/Listado/Listado.js';
+import Buscador from './components/Bloque-buscador/Buscador.js';
+import Login from './components/Login/Login.js';
+import Register from './components/Register/Register.js';
+import Layout from './components/Layout/Layout.js'
+import Producto from './components/Tarjeta-Producto/Producto.js'
 
 function App() {
 

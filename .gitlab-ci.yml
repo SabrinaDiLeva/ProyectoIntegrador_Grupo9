@@ -13,6 +13,8 @@ build-backend:
     - mvn clean install 
     - mvn compile war:war
     - mvn package
+    - cd target
+    - ll
 
   artifacts:
     paths:

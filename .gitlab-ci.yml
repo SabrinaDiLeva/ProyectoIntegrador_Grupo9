@@ -14,7 +14,7 @@ build-backend:
     - mvn compile war:war
     - mvn package
     - cd target
-    - ll
+    - ls
 
   artifacts:
     paths:

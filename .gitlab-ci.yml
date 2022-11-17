@@ -18,7 +18,7 @@ build-backend:
 
   artifacts:
     paths:
-      - Backend/target/ProyectoIntegrador_Grupo9.war
+      - Backend/target/demo.war
 
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'
@@ -67,7 +67,7 @@ deploy-backend:
   script:
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo apt install openjdk-18-jdk -y"
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop tomcat"
-    - scp ./Backend/target/ProyectoIntegrador_Grupo9.war ubuntu@$DEPLOY_SERVER_IP:~/ProyectoIntegrador_Grupo9.war
+    - scp ./Backend/target/demo.war ubuntu@$DEPLOY_SERVER_IP:~/demo.war
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start tomcat"
 
   rules:

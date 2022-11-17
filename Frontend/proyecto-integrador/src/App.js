@@ -6,7 +6,7 @@ import Buscador from './components/Bloque-buscador/Buscador.js';
 import Layout from './components/Layout/Layout.js'
 import Producto from './components/Tarjeta-Producto/Producto.js'
 import Login from './components/Login/login';
-import Register from './components/Register/register'
+import Register from './components/Register/register';
 
 function App() {
 

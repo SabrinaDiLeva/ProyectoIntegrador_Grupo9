@@ -43,7 +43,7 @@ public class ImagenController {
         return ResponseEntity.ok(imagenService.modificar(id, imagen));
     }
 
-    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/producto/{id}")
     public ResponseEntity<List<Imagen>>  listarPorProducto(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(imagenService.listarPorProducto(id));

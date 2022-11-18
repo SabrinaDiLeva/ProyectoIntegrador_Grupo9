@@ -31,10 +31,6 @@ public class Imagen {
         this.url = url;
     }
 
-    public Imagen(Long id, String url) {
-        this.id = id;
-        this.url = url;
-    }
 
     public Imagen(Long id, String titulo, String url, Producto producto) {
         this.id = id;

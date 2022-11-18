@@ -27,21 +27,17 @@ public class ProductoDTO implements Serializable {
     private Long ciudadId;
     private Long categoriaId;
 
-    public ProductoDTO(Long id, String nombre, int calificacion, String titulo, String descripcion, String fechas_disponibles, String normas, String seguridad, String cancelacion, Long categoriaId, Long ciudadId) {
+    public ProductoDTO(Long id, String nombre, int calificacion, String titulo, String descripcion, Long categoriaId, Long ciudadId) {
         this.id = id;
         this.nombre = nombre;
         this.calificacion = calificacion;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.fechas_disponibles = fechas_disponibles;
-        this.normas = normas;
-        this.seguridad = seguridad;
-        this.cancelacion = cancelacion;
         this.ciudadId = ciudadId;
         this.categoriaId = categoriaId;
     }
     public Producto newProducto(Categoria categoria, Ciudad ciudad) {
-        return new Producto( this.id , this.nombre,this.calificacion,this.titulo,this.descripcion,this.fechas_disponibles,this.normas,this.seguridad,this.cancelacion,categoria,ciudad);
+        return new Producto( this.id , this.nombre,this.calificacion,this.titulo,this.descripcion,categoria,ciudad);
     }
 
     public ProductoDTO update(Producto producto){
@@ -51,7 +47,7 @@ public class ProductoDTO implements Serializable {
             producto.setTitulo(this.titulo);
         Long ciudadId = ( this.ciudadId == null )? producto.getCiudad().getId() : this.ciudadId;
         Long categoriaId = ( this.categoriaId == null )? producto.getCategoria().getId() : this.categoriaId;
-        return new ProductoDTO(producto.getId(), producto.getNombre(),producto.getCalificacion(), producto.getTitulo(), producto.getDescripcion(), producto.getFechasDisponibles(), producto.getNormas(), producto.getSeguridad(), producto.getCancelacion(), categoriaId,ciudadId );
+        return new ProductoDTO(producto.getId(), producto.getNombre(),producto.getCalificacion(), producto.getTitulo(), producto.getDescripcion(), categoriaId,ciudadId );
     }
     public Long getId() {
         return id;

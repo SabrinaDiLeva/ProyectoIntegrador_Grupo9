@@ -32,7 +32,7 @@ import static org.mockito.Mockito.when;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
 public class ImagenServiceTest {
-    @Mock
+    /*@Mock
     IImagenRepository imagenRepository;
 
     @Mock
@@ -151,4 +151,5 @@ public class ImagenServiceTest {
 
         assertThrows(ResponseStatusException.class, () -> imagenService.guardar(imagenDTO));
     }
+    */
 }

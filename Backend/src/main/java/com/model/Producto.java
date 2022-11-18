@@ -23,12 +23,12 @@ public class Producto {
     private String descripcion;
     //@Column(name = "fechas_disponibles")
     //private String fechasDisponibles;
-    @Column
-    private String normas;
-    @Column
-    private String seguridad;
-    @Column
-    private String cancelacion;
+    //@Column
+    //private String normas;
+    //@Column
+    //private String seguridad;
+    //@Column
+    //private String cancelacion;
 
 
     @OneToMany(mappedBy = "producto")
@@ -58,6 +58,30 @@ public class Producto {
             inverseJoinColumns = @JoinColumn(name="fecha_id")
     )
     private Set<Fecha> fecha = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name="producto_has_norma",
+            joinColumns= @JoinColumn(name="producto_id"),
+            inverseJoinColumns=@JoinColumn(name="norma_id")
+    )
+    private Set<Norma> norma = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name="producto_has_seguridad",
+            joinColumns = @JoinColumn(name="producto_id"),
+            inverseJoinColumns=@JoinColumn(name="seguridad_id")
+    )
+    private Set<Seguridad> seguridad = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name="producto_has_cancelacion",
+            joinColumns = @JoinColumn(name="producto_id"),
+            inverseJoinColumns = @JoinColumn(name="cancelacion_id")
+    )
+    private Set<Cancelacion> cancelacion=new HashSet<>();
 
     public Producto() {
 
@@ -161,23 +185,23 @@ public class Producto {
         this.fecha = fechasDisponibles;
     }
 
-    public String getNormas() {
-        return normas;
+    public Set<Norma> getNormas() {
+        return norma;
     }
 
-    public void setNormas(String normas) {
-        this.normas = normas;
+    public void setNormas(Set<Norma> norma) {
+        this.norma = norma;
     }
 
-    public String getSeguridad() {
+    public Set<Seguridad> getSeguridad() {
         return seguridad;
     }
 
-    public void setSeguridad(String seguridad) {
+    public void setSeguridad(Set<Seguridad> seguridad) {
         this.seguridad = seguridad;
     }
 
-    public String getCancelacion() {
+    public Set<Cancelacion> getCancelacion() {
         return cancelacion;
     }
 
@@ -197,7 +221,7 @@ public class Producto {
         return caracteristica;
     }
 
-    public void setCancelacion(String cancelacion) {
+    public void setCancelacion(Set<Cancelacion> cancelacion) {
         this.cancelacion = cancelacion;
     }
 }

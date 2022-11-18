@@ -1,5 +1,10 @@
 package com.model;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name="usuario")
 public class Usuario {
@@ -23,21 +28,28 @@ public class Usuario {
     private String ciudad;
 
     //relacion con rol
+    @ManyToOne
+    @JoinColumn(name = "rol_id",referencedColumnName = "id")
+    private Rol rol;
+
 
     //relacion con reserva
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnore
+    private Set<Reserva> reservas = new HashSet<>();
 
     public Usuario(){
 
     }
 
-    public Usuario(Long id, String nombre, String apellido, String email, String contrasenia, String ciudad){
+    public Usuario(Long id, String nombre, String apellido, String email, String contrasenia, String ciudad, Rol rol){
         this.id=id;
         this.nombre=nombre;
         this.apellido=apellido;
         this.email=email;
         this.contrasenia=contrasenia;
         this.ciudad=ciudad;
-
+        this.rol=rol;
     }
 
     public Long getId() {
@@ -86,5 +98,13 @@ public class Usuario {
 
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+    }
+
+    public Rol getRol(){
+        return rol;
+    }
+
+    public void setRol(Rol rol){
+        this.rol=rol;
     }
 }

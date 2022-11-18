@@ -1,6 +1,8 @@
 package com.model;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,19 +19,27 @@ public class Reserva {
 
     @Column
     private LocalDateTime fin;
-    
-    //relacion con producto
 
     //relacion con usuario
+    @ManyToOne
+    @JoinColumn(name = "usuario_id",referencedColumnName = "id")
+    private Usuario usuario;
+
+    //relacion con producto
+    @ManyToOne
+    @JoinColumn(name = "producto_id",referencedColumnName = "id")
+    private Producto producto;
 
     public Reserva(){
 
     }
 
-    public Reserva(Long id, LocalDateTime inicio, LocalDateTime fin){
+    public Reserva(Long id, LocalDateTime inicio, LocalDateTime fin, Usuario usuario, Producto producto){
         this.id=id;
         this.inicio=inicio;
         this.fin=fin;
+        this.usuario=usuario;
+        this.producto=producto;
     }
 
     public Long getId() {
@@ -54,5 +64,21 @@ public class Reserva {
 
     public void setFin(LocalDateTime fin){
         this.fin=fin;
+    }
+
+    public Usuario getUsuario(){
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario){
+        this.usuario=usuario;
+    }
+
+    public Producto getProducto(){
+        return producto;
+    }
+
+    public void setProducto(Producto producto){
+        this.producto=producto;
     }
 }

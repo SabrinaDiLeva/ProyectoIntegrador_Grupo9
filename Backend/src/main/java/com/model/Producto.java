@@ -83,6 +83,12 @@ public class Producto {
     )
     private Set<Cancelacion> cancelacion=new HashSet<>();
 
+
+    @OneToMany(mappedBy = "producto")
+    @JsonIgnore
+    private Set<Reserva> reservas = new HashSet<>();
+
+
     public Producto() {
 
     }

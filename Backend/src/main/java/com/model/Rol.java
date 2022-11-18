@@ -1,5 +1,8 @@
 package com.model;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +17,10 @@ public class Rol {
     private String nombre;
 
     //relacion con usuario
-
+    @OneToMany(mappedBy = "rol")
+    @JsonIgnore
+    private Set<Usuario> usuarios = new HashSet<>();
+    
     public Rol(){
 
     }
@@ -23,7 +29,7 @@ public class Rol {
         this.id=id;
         this.nombre=nombre;
     }
-    
+
     public Long getId() {
         return id;
     }

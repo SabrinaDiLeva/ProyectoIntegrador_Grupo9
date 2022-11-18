@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50cd8db7-d546-414d-9044-787430022e4c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="50cd8db7-d546-414d-9044-787430022e4c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,25 +35,71 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/MARCOS/Desktop/Proyecto Integrador/gitlab/grupo-09/Backend",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.1793893",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\MARCOS\Desktop\Proyecto Integrador\gitlab\grupo-09" />
       <recent name="C:\Users\MARCOS\Desktop\Proyecto Integrador\ProyectoIntegrador_Grupo9\Backend" />
       <recent name="C:\Users\MARCOS\Desktop\Proyecto Integrador\ProyectoIntegrador_Grupo9\Frontend" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="ProyectoIntegradorGrupo9Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ProyectoIntegradorGrupo9Application" />
-      <module name="grupo-09" />
+  <component name="RunManager" selected="JUnit.All in demo">
+    <configuration name="All in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CaracteristicaServiceTest.agregarCaracteristica" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.service" />
+      <option name="MAIN_CLASS_NAME" value="com.service.CaracteristicaServiceTest" />
+      <option name="METHOD_NAME" value="agregarCaracteristica" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java.com.service in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="java.com.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="java.com.service" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProyectoIntegradorGrupo9Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ProyectoIntegradorGrupo9Application" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.*" />
@@ -68,7 +112,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ProyectoIntegradorGrupo9Application" />
+        <item itemvalue="JUnit.All in demo" />
+        <item itemvalue="JUnit.CaracteristicaServiceTest.agregarCaracteristica" />
+        <item itemvalue="JUnit.java.com.service in demo" />
+        <item itemvalue="Spring Boot.ProyectoIntegradorGrupo9Application" />
       </list>
     </recent_temporary>
   </component>

@@ -2,7 +2,6 @@ package com.service;
 
 import com.dto.command.CategoriaDTO;
 import com.model.Categoria;
-import com.model.Imagen;
 import com.repository.ICategoriaRepository;
 import com.repository.IImagenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +15,10 @@ import java.util.Optional;
 @Service
 public class CategoriaService implements IService<Categoria,CategoriaDTO> {
     private ICategoriaRepository iCategoriaRepository;
-    private IImagenRepository iImagenRepository;
 
     @Autowired
     public CategoriaService(ICategoriaRepository iCategoriaRepository, IImagenRepository iImagenRepository) {
         this.iCategoriaRepository = iCategoriaRepository;
-        this.iImagenRepository = iImagenRepository;
 
     }
 
@@ -32,8 +29,9 @@ public class CategoriaService implements IService<Categoria,CategoriaDTO> {
 
     @Override
     public Categoria guardar(CategoriaDTO categoria) {
-        Imagen img = iImagenRepository.findById(categoria.getImagenId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        Optional<Categoria> result = ( img.getProducto() == null )?  Optional.of(iCategoriaRepository.save(categoria.newCategoria(img))) : Optional.empty();
+        //Imagen img = iImagenRepository.findById(categoria.getImagenId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        //Optional<Categoria> result = ( img.getProducto() == null )?  Optional.of(iCategoriaRepository.save(categoria.newCategoria(img))) : Optional.empty();
+        Optional<Categoria> result =  Optional.of(iCategoriaRepository.save(categoria.newCategoria()));
         return result.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST));
     }
 

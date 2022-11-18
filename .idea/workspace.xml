@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50cd8db7-d546-414d-9044-787430022e4c" name="Changes" comment="" />
+    <list default="true" id="50cd8db7-d546-414d-9044-787430022e4c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,25 +31,28 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HbcpX6UWL0YkxmaQGdwZKZFJUZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\MARCOS\Desktop\Proyecto Integrador\ProyectoIntegrador_Grupo9\Backend" />
       <recent name="C:\Users\MARCOS\Desktop\Proyecto Integrador\ProyectoIntegrador_Grupo9\Frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in demo">
+  <component name="RunManager" selected="Unknown.ProyectoIntegradorGrupo9Application678305717">
     <configuration name="All in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <option name="PACKAGE_NAME" value="" />
@@ -115,7 +120,6 @@
         <item itemvalue="JUnit.All in demo" />
         <item itemvalue="JUnit.CaracteristicaServiceTest.agregarCaracteristica" />
         <item itemvalue="JUnit.java.com.service in demo" />
-        <item itemvalue="Spring Boot.ProyectoIntegradorGrupo9Application" />
       </list>
     </recent_temporary>
   </component>

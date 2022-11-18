@@ -20,9 +20,8 @@ public class Categoria {
     @Column
     private String descripcion;
 
-    @OneToOne
-    @JoinColumn(name = "imagen_id",referencedColumnName = "id")
-    private Imagen imagen;
+    @Column
+    private String url_imagen;
 
     @OneToMany(mappedBy = "categoria")
     @JsonIgnore
@@ -31,11 +30,11 @@ public class Categoria {
     public Categoria() {
     }
 
-    public Categoria(Long id, String titulo, String descripcion, Imagen imagen) {
+    public Categoria(Long id, String titulo, String descripcion, String url) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.imagen = imagen;
+        this.url_imagen = url;
     }
 
     /*public Categoria(String titulo, String descripcion, Imagen imagen) {
@@ -56,8 +55,8 @@ public class Categoria {
         return descripcion;
     }
 
-    public Imagen getImagen() {
-        return this.imagen;
+    public String getImagen() {
+        return this.url_imagen;
     }
 
     public void setTitulo(String titulo) {
@@ -68,8 +67,8 @@ public class Categoria {
         this.descripcion = descripcion;
     }
 
-    public void setImagen(Imagen imagen) {
-        this.imagen = imagen;
+    public void setImagen(String imagen) {
+        this.url_imagen = imagen;
     }
 
     public void setId(Long id) {

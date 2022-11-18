@@ -22,9 +22,6 @@ public class Imagen {
     @JoinColumn(name = "producto_id",referencedColumnName = "id")
     private Producto producto;
 
-    @OneToOne(mappedBy = "imagen")
-    private Categoria categoria;
-
     public Imagen() {
     }
 

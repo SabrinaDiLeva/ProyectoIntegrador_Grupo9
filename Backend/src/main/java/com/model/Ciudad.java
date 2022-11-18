@@ -14,7 +14,7 @@ public class Ciudad {
     private Long id;
 
     @Column
-    private String nombre;
+    private String ciudad;
 
     @Column
     private String pais;
@@ -28,17 +28,17 @@ public class Ciudad {
     }
     public Ciudad(Long id, String nombre, String pais) {
         this.id = id;
-        this.nombre = nombre;
+        this.ciudad = nombre;
         this.pais = pais;
     }
 
     public Ciudad update(Ciudad ciudad){
         if( ciudad.getNombre() != null)
-            this.nombre = ciudad.getNombre();
+            this.ciudad = ciudad.getNombre();
         if( ciudad.getPais() != null )
             this.pais = ciudad.getPais();
 
-        return new Ciudad(this.id,this.nombre, this.pais);
+        return new Ciudad(this.id,this.ciudad, this.pais);
     }
 
     public Long getId() {
@@ -50,11 +50,11 @@ public class Ciudad {
     }
 
     public String getNombre() {
-        return nombre;
+        return ciudad;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.ciudad = nombre;
     }
 
     public String getPais() {

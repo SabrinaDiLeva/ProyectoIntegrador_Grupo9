@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:8080/producto"
+const baseUrl = "http://3.14.41.232:8080/producto"
 
 export const getProducto = async (id) => {
     const endpoint = `${baseUrl}/${id}`

@@ -55,7 +55,7 @@ const validationForm = (form) => {
 };
 
 function Register() {
-  const { form, errors, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validationForm);
+    const { form, errors, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validationForm);
     return (
             <div className={style.container}>
                 <form  className={style.formulario} onSubmit={handleSubmit}>

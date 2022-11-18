@@ -21,19 +21,19 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.guardar(producto));
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping
     public ResponseEntity<List<Producto>>  listar() {
         return ResponseEntity.ok(productoService.listar());
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping("/random")
     public ResponseEntity<List<Producto>>  listarRandom() {
         return ResponseEntity.ok(productoService.listarRandom());
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping("/categoria/{id}")
     public ResponseEntity<List<Producto>>  listarPorCategoria(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCategoria(id));
@@ -42,7 +42,7 @@ public class ProductoController {
     public ResponseEntity<List<Producto>>  listarPorCiudad(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCiudad(id));
     }
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscar(@PathVariable Long id) {
         Producto producto = productoService.buscar(id);

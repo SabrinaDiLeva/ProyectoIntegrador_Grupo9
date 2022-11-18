@@ -3,7 +3,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 @Entity
@@ -13,8 +13,31 @@ public class Fecha {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /*@Column
-    @JsonFormat("yyyy-MM-dd")
-    private LocalDateTime fecha;*/
+    @Column
+    private LocalDate fecha;
     
+    public Fecha(){
+
+    }
+
+    public Fecha(Long id, LocalDate fecha){
+        this.id=id;
+        this.fecha=fecha;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDate getFecha(){
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha){
+        this.fecha=fecha;
+    }
 }

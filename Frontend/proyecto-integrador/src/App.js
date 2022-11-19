@@ -5,8 +5,8 @@ import Listado from './components/Listado/Listado.js';
 import Buscador from './components/Bloque-buscador/Buscador.js';
 import Layout from './components/Layout/Layout.js'
 import Producto from './components/Tarjeta-Producto/Producto.js'
-import Login from './components/Login/Login.js';
-import Register from './components/Register/Register.js';
+import Login from './components/Loginas/Loginas.js';
+import Register from './components/Registeras/Registerasdas.js';
 
 function App() {
 

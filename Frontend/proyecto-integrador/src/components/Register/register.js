@@ -11,6 +11,7 @@ const initialForm = {
     repassword: "",
 };
 
+
 const validationForm = (form) => {
     let errors = {};
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;

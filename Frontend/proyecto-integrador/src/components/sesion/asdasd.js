@@ -3,6 +3,8 @@ import style from "./login.module.css";
 import { useForm } from "../../hooks/useForm";
 import { Link } from "react-router-dom";
 
+
+
 const initialForm = {
     email:"",
     password:"",
@@ -24,7 +26,9 @@ const validationForm = (form) => {
     return errors;
 };
 
-function Login() {
+
+
+function Login(){
     const {form, errors, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationForm);
     return(
         <>
@@ -54,4 +58,4 @@ function Login() {
 }
 
 
-export default Login
+export default Login;

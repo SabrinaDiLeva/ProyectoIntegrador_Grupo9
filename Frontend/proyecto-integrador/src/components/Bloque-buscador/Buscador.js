@@ -25,6 +25,7 @@ const Buscador = () => {
         if (provincias.length === 0) {
             getCiudades().then((data) => {
                 setProvincias(data);
+                console.log(data);
             })
         }
     }, [])

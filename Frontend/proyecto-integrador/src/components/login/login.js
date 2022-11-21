@@ -26,10 +26,7 @@ const validationForm = (form) => {
     return errors;
 };
 
-
-
-export default function Login() {
-
+function Login() {
     const {form, errors, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationForm);
     return(
         <>
@@ -58,3 +55,4 @@ export default function Login() {
     )
 }
 
+export default Login

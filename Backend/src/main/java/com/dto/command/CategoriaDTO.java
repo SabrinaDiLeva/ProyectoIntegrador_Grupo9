@@ -1,26 +1,26 @@
 package com.dto.command;
 
 import com.model.Categoria;
-import com.model.Imagen;
 
 import java.io.Serializable;
 
 public class CategoriaDTO implements Serializable {
-    public static final int DESCRIPTION_MAX_LENGTH = 300;
+    public static final int DESCRIPTION_MAX_LENGTH = 100;
     public static final int TITULO_MAX_LENGTH = 45;
+    public static final int URL_MAX_LENGTH=300;
     private Long id;
     private String titulo;
     private String descripcion;
-    private Long imagenId;
+    private String url;
 
-    public CategoriaDTO(Long id, String titulo, String descripcion, Long imagenId){
+    public CategoriaDTO(Long id, String titulo, String descripcion, String url){
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.imagenId = imagenId;
+        this.url = url;
     }
-    public Categoria newCategoria(Imagen imagen) {
-        return new Categoria( this.id , this.titulo, this.descripcion, imagen);
+    public Categoria newCategoria() {
+        return new Categoria( this.id , this.titulo, this.descripcion, this.url);
     }
 
     public CategoriaDTO update(Categoria categoria){
@@ -28,9 +28,10 @@ public class CategoriaDTO implements Serializable {
             categoria.setTitulo(this.titulo);
         if (this.descripcion != null && descripcion.length() <= DESCRIPTION_MAX_LENGTH)
             categoria.setDescripcion(this.descripcion);
-        Long id = ( this.imagenId == null )? categoria.getImagen().getId() : this.imagenId;
+        if (this.url != null && url.length() <= URL_MAX_LENGTH)
+            categoria.setDescripcion(this.descripcion);
 
-        return new CategoriaDTO(categoria.getId(), categoria.getTitulo(), categoria.getDescripcion(), id );
+        return new CategoriaDTO(categoria.getId(), categoria.getTitulo(), categoria.getDescripcion(), categoria.getImagen() );
     }
 
     public String getTitulo() {
@@ -41,8 +42,8 @@ public class CategoriaDTO implements Serializable {
         return descripcion;
     }
 
-    public Long getImagenId() {
-        return imagenId;
+    public String getImagenId() {
+        return url;
     }
 
     public Long getId() {
@@ -61,8 +62,8 @@ public class CategoriaDTO implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public void setImagenId(Long imagenId) {
-        this.imagenId = imagenId;
+    public void setImagenId(String imagen) {
+        this.url = imagen;
     }
 
 }

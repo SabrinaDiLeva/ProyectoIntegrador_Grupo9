@@ -21,14 +21,14 @@ public class Producto {
     private String titulo;
     @Column
     private String descripcion;
-    @Column(name = "fechas_disponibles")
-    private String fechasDisponibles;
-    @Column
-    private String normas;
-    @Column
-    private String seguridad;
-    @Column
-    private String cancelacion;
+    //@Column(name = "fechas_disponibles")
+    //private String fechasDisponibles;
+    //@Column
+    //private String normas;
+    //@Column
+    //private String seguridad;
+    //@Column
+    //private String cancelacion;
 
 
     @OneToMany(mappedBy = "producto")
@@ -51,32 +51,62 @@ public class Producto {
     )
     private Set<Caracteristica> caracteristica = new HashSet<>();
 
+    @ManyToMany
+    @JoinTable(
+            name="producto_has_fecha",
+            joinColumns = @JoinColumn(name="producto_id"),
+            inverseJoinColumns = @JoinColumn(name="fecha_id")
+    )
+    private Set<Fecha> fecha = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name="producto_has_norma",
+            joinColumns= @JoinColumn(name="producto_id"),
+            inverseJoinColumns=@JoinColumn(name="norma_id")
+    )
+    private Set<Norma> norma = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name="producto_has_seguridad",
+            joinColumns = @JoinColumn(name="producto_id"),
+            inverseJoinColumns=@JoinColumn(name="seguridad_id")
+    )
+    private Set<Seguridad> seguridad = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name="producto_has_cancelacion",
+            joinColumns = @JoinColumn(name="producto_id"),
+            inverseJoinColumns = @JoinColumn(name="cancelacion_id")
+    )
+    private Set<Cancelacion> cancelacion=new HashSet<>();
+
+
+    @OneToMany(mappedBy = "producto")
+    @JsonIgnore
+    private Set<Reserva> reservas = new HashSet<>();
+
+
     public Producto() {
 
     }
 
-    public Producto(Long id, String nombre, Integer calificacion, String titulo, String descripcion,String fechasDisponibles, String normas, String seguridad, String cancelacion) {
+    public Producto(Long id, String nombre, Integer calificacion, String titulo, String descripcion) {
         this.id = id;
         this.nombre = nombre;
         this.calificacion = calificacion;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.fechasDisponibles = fechasDisponibles;
-        this.normas = normas;
-        this.seguridad = seguridad;
-        this.cancelacion = cancelacion;
     }
 
-    public Producto(Long id, String nombre, Integer calificacion, String titulo, String descripcion, String fechasDisponibles, String normas, String seguridad, String cancelacion, Categoria categoria, Ciudad ciudad) {
+    public Producto(Long id, String nombre, Integer calificacion, String titulo, String descripcion, Categoria categoria, Ciudad ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.calificacion = calificacion;
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.fechasDisponibles = fechasDisponibles;
-        this.normas = normas;
-        this.seguridad = seguridad;
-        this.cancelacion = cancelacion;
         this.categoria = categoria;
         this.ciudad = ciudad;
     }
@@ -90,20 +120,12 @@ public class Producto {
             this.titulo = producto.getTitulo();
         if( producto.getDescripcion() != null)
             this.descripcion = producto.getDescripcion();
-        if( producto.getFechasDisponibles() != null )
-            this.fechasDisponibles = producto.getFechasDisponibles();
-        if( producto.getNormas() != null )
-            this.normas = producto.getNormas();
-        if( producto.getSeguridad() != null )
-            this.seguridad = producto.getSeguridad();
-        if( producto.getCancelacion() != null )
-            this.cancelacion = producto.getCancelacion();
         if( producto.getCategoria() != null )
             this.categoria = producto.getCategoria();
         if( producto.getCiudad() != null )
             this.ciudad = producto.getCiudad();
         
-        return new Producto(this.id, this.nombre, this.calificacion, this.titulo, this.descripcion, this.fechasDisponibles, this.normas, this.seguridad, this.cancelacion,this.categoria, this.ciudad );
+        return new Producto(this.id, this.nombre, this.calificacion, this.titulo, this.descripcion, this.categoria, this.ciudad );
     }
     public Long getId() {
         return id;
@@ -161,31 +183,31 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public String getFechasDisponibles() {
-        return fechasDisponibles;
+    public Set<Fecha> getFechasDisponibles() {
+        return fecha;
     }
 
-    public void setFechasDisponibles(String fechasDisponibles) {
-        this.fechasDisponibles = fechasDisponibles;
+    public void setFechasDisponibles(Set<Fecha> fechasDisponibles) {
+        this.fecha = fechasDisponibles;
     }
 
-    public String getNormas() {
-        return normas;
+    public Set<Norma> getNormas() {
+        return norma;
     }
 
-    public void setNormas(String normas) {
-        this.normas = normas;
+    public void setNormas(Set<Norma> norma) {
+        this.norma = norma;
     }
 
-    public String getSeguridad() {
+    public Set<Seguridad> getSeguridad() {
         return seguridad;
     }
 
-    public void setSeguridad(String seguridad) {
+    public void setSeguridad(Set<Seguridad> seguridad) {
         this.seguridad = seguridad;
     }
 
-    public String getCancelacion() {
+    public Set<Cancelacion> getCancelacion() {
         return cancelacion;
     }
 
@@ -205,7 +227,7 @@ public class Producto {
         return caracteristica;
     }
 
-    public void setCancelacion(String cancelacion) {
+    public void setCancelacion(Set<Cancelacion> cancelacion) {
         this.cancelacion = cancelacion;
     }
 }

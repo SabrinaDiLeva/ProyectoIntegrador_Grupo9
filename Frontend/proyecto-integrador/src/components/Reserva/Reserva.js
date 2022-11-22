@@ -1,5 +1,6 @@
 import style from "./reserva.module.css"
 import Detalle from "./bloques/Detalles.js"
+import DatosPersonales from "./bloques/DatosPersonales"
 import Titulo from "../Tarjeta-Producto/subcomponents/Titulo"
 import Politicas from "../Tarjeta-Producto/subcomponents/Politicas"
 import { useEffect, useState } from "react"
@@ -54,29 +55,7 @@ export default function Reserva() {
                         <div className={style.form_data}>
                             {/*Formulario con los datos*/}
                             <form className={style.formulario}>
-
-                                <span className={style.labelContainer}>
-                                    <div>
-                                    <label className={style.label}>Nombre</label>
-                                    <input id={style.password} className={style.input} type="text" name="nombre" placeholder="nombre"></input>
-                                    </div>
-
-                                    <div>
-                                    <label className={style.label}>Apellido</label>
-                                    <input id={style.password} className={style.input} type="text" name="apellido" placeholder="apellido"></input>
-                                    </div>
-
-                                    <div>
-                                    <label className={style.label}>Correo electronico</label>
-                                    <input id={style.mail} className={style.input} type="email" name="email" placeholder="correo"></input>
-                                    </div>
-
-                                    <div>
-                                    <label className={style.label}>Ciudad</label>
-                                    <input id={style.password} className={style.input} type="text" name="ciudad" placeholder="ciudad"></input>
-                                    </div>
-                                </span>
-
+                                <DatosPersonales/>
                             </form>
                         </div>
                         <h1 className={style.titulo}>Seleccioná tu fecha de reserva</h1>

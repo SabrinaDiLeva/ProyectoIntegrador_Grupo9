@@ -6,8 +6,8 @@
     margin: 3vw 3vw;
 }
 
-.form >  div{
-    margin: 3vw 3vw;
+.form > div{
+    margin: 1vw 1vw;
     border: 2vw solid white;
     border-top: 0vw solid white;
     border-radius: 10px;
@@ -17,7 +17,7 @@
 
 
 .form h1 {
-    font-size: 2rem;
+    font-size: 20px;
     text-align: left;
 }
 

@@ -9,6 +9,8 @@ import Titulo from "../Tarjeta-Producto/subcomponents/Titulo"
 import Politicas from "../Tarjeta-Producto/subcomponents/Politicas"
 //Calendario
 import Calendario from "./bloques/Calendario"
+//Form de Reserva
+import { useForm } from "../../hooks/useFormReserva"
 
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
@@ -36,6 +38,8 @@ export default function Reserva() {
 
     const [producto, setProducto] = useState({})
     const [imagenes, setImagenes] = useState([])
+    //Obtener info del sessionStorage?
+    const [usuario, setUsuario] = useState([])
 
     useEffect( () => {
         getProducto(id).then( (data) => {
@@ -43,6 +47,7 @@ export default function Reserva() {
             setProducto(data);
         })
     }, [id])
+    
     
     useEffect( () => {
         getImagenesPorProducto(id).then( (data) => {
@@ -52,6 +57,42 @@ export default function Reserva() {
     }, [id])
 
 */}
+    const initialForm = {
+        //¿Poner info del SessionStorage o de la API?
+        name: "Nombre",
+        lastname: "Apellido",
+        email: "Email",
+        city: "",
+        checkInDate: "DD/MM/YYYY",
+        checkOutDate: "DD/MM/YYYY"
+    }
+
+    const validationForm = (form) => {
+        let errors = {};
+        //Cambiar Regex para ciudades
+        let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    
+        if(!regexName.test(form.city.trim())){
+            errors.city = "Ingrese caracteres válidos"
+        }
+
+        //Validar que la fechas estén disponibles
+        //Básicamente que se encuentren en el atributo del Producto
+    };
+    {/* Se debe recolectar la información y mandarsela al padre, dueño del form. */}
+    {/* Uso de Hook UseForm
+    1. Crea los valores iniciales
+    2. Crea la validación de campos
+    3. Importa
+       - form: Objeto que posee los campos del formulario a llenar
+       - errors: concatena los errores que existen en el login
+       - handleChange: Al cambiar el campo, useForm actualiza los campos del form (dependiendo de quien fue el que cambio)
+       - handleSubmit: Al enviar el formulario, valida que el usuario y contraseña coincidan. Si coincide, guarda en sessionStorage y redirije al home
+    4. form. utiliza para darle valores al form.
+    5. errors. utiliza para mostrar los errores
+*/}
+
+    const {form, handleChange, handleChangeManual, handleSubmit} = useForm(initialForm, validationForm);
     return (
         <>
             <div className={style.container}>
@@ -62,12 +103,12 @@ export default function Reserva() {
                         <h1 className={style.titulo}>Completá tus datos</h1>
                         <div className={style.form_data}>
                             {/*Formulario con los datos*/}
-                            <form className={style.formulario}>
-                                <DatosPersonales />
+                            <form className={style.formulario} onSubmit={handleSubmit}>
+                                <DatosPersonales formValues={form} handleChange={handleChange}/>
                             </form>
                         </div>
                         <h1 className={style.titulo}>Seleccioná tu fecha de reserva</h1>
-                        <Calendario/>
+                        <Calendario formValues={form} handleChange={handleChangeManual}/>
                         {/*
                             Hora de llegada
                         <h1 className={style.titulo}>Tu horario de llegada</h1>
@@ -76,7 +117,7 @@ export default function Reserva() {
                         */}
                     </div>
                     <div className={style.details}>
-                        <Detalle category={producto.categoria} image={imagenes[0]} title={producto.titulo} city={producto.ciudad} />
+                        <Detalle category={producto.categoria} image={imagenes[0]} title={producto.titulo} city={producto.ciudad} checkInDate={form.checkInDate} checkOutDate={form.checkOutDate} />
                     </div>
                 </div>
                 <Politicas normasDeLaCasa={producto.normas} saludSeguridad={producto.seguridad} politicaDeCancelacion={producto.cancelacion} />

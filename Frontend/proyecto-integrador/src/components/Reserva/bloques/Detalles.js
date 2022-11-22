@@ -23,17 +23,17 @@ export default function Detalles(props) {
                         </div>
                         <div className={style.dates}>
                             <div className={style.checkIn}>
-                                <p>Check in: </p><p>27/12/2022</p>
+                                <span>Check in: </span><span>{`${props.checkInDate}`}</span>
                             </div>
                             <hr />
                             {/* Checkin: Fecha de entrada */}
                             <div className={style.checkOut}>
-                                <span>Check out: </span><span>07/01/2023</span>
+                                <span>Check out: </span><span>{`${props.checkOutDate}`}</span>
                             </div>
                             <hr />
                             {/* Checkout: Fecha de salida*/}
                         </div>
-                        <button className={style.button}> Confirmar reserva </button>
+                        <button type="submit" className={style.button}> Confirmar reserva </button>
                         {/* Boton de confirmación de reserva */}
                     </div>
                 </div>

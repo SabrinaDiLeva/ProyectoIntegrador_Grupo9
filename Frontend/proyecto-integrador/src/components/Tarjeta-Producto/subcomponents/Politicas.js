@@ -8,21 +8,21 @@ export default function Politicas(props) {
                 <span className={style.politica}>
                     <h4>Normas de la casa</h4>
                     {props.normasDeLaCasa.map( (value) => {
-                        return <p>{value}</p>
+                        return <p>{value.norma}</p>
                     })}
                 </span>
 
                 <span className={style.politica}>
                     <h4>Salud y seguridad</h4>
                     {props.saludSeguridad.map( (value) => {
-                        return <p>{value}</p>
+                        return <p>{value.politica}</p>
                     })}
                 </span>
 
                 <span className={style.politica}>
                     <h4>Politica de cancelacion</h4>
                     {props.politicaDeCancelacion.map( (value) => {
-                        return <p>{value}</p>
+                        return <p>{value.politica}</p>
                     })}
                 </span>
 

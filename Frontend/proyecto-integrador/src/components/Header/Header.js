@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
 import style from './Header.module.css'
 import data from './headerInfo.json'
 import Logo from '../ui/logo.png'
 import { Link, Routes, Route} from "react-router-dom";
-import {sessionClosed} from '../../hooks/sessionStorage'
+import {sessionClosed} from '../../hooks/sessionStorage';
+import NavBar from './navBar';
 
-var session = sessionStorage.getItem('sessionIniciada')
+const session = sessionStorage.getItem('sessionIniciada')
 
 const Header = (props) => {
 
@@ -33,7 +34,8 @@ const Header = (props) => {
             </a>
           {/* termina headerLogo */}
           </div>
-
+          <NavBar/>
+          
           <div className={loggedUser ? style.sessionIniciada : style.iniciarSession}>
             <div className={style.usuarioSessionIniciada}>
                 <div className={style.avatarContainer}>
@@ -42,13 +44,13 @@ const Header = (props) => {
               <span className={style.perfilUsuario}>
               <a className={style.linkPerfil} href="/">
                 <p className={style.saludo}>Hola,</p>
-                <p className={style.saludo2}>Marcos Ferro</p>
+                <p className={style.saludo2}>{loggedUser ? loggedUser.mail.split("@")[0] : ''}</p>
               </a>
               </span>
                 <button className={style.button} href="/" onClick={sessionClosed}>Cerrar Sesión</button>
             {/* cierra usuarioSessionIniciada */}
             </div>
-
+            
             <div className={style.usuarioIniciarSession}>
               <Routes>
                 <Route path='/*' element={<>
@@ -76,5 +78,3 @@ const Header = (props) => {
 };
 
 export default Header;
-
-

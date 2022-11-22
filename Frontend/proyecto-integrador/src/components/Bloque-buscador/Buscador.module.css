@@ -55,7 +55,6 @@
 }
 
 .inputListado{
-    display: none;
     background-color: var(--colorBackgroundSecundario);
     color: var(--colorTextoSecundario);
     border-radius: 0 0 10px 10px;

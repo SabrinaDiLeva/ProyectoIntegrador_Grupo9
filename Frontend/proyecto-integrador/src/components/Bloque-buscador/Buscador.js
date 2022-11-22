@@ -61,9 +61,21 @@ const Buscador = () => {
         setSearchTerm(event.target.value);
     };
 
+    function showHide() {
+        var listado = document.getElementById(style.listadoSelection);
+        var input = document.getElementById("inputDestino");
+
+        input.addEventListener('focus', function() {
+            listado.style.display = 'block';
+        });
+        input.addEventListener('focusout', function() {
+            listado.style.display = 'none';
+        });
+    }
+
     useEffect(() => {
         const results = provincias.filter(prov =>
-            prov.nombre.toLowerCase().includes(searchTerm)
+            prov.nombre.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setSearchResults(results);
     }, [searchTerm]);
@@ -71,6 +83,9 @@ const Buscador = () => {
 
     return (
         <>
+        {
+        console.log(searchResults)
+        }
         <div className={style.headerBlock}>
             <div className={style.forms1}>
                 <span className={style.title}>
@@ -78,18 +93,20 @@ const Buscador = () => {
                 </span>
                 <span className={style.formDondeVamos}>
                     <div className={style.opcionContainer} ref={refOne}>
-                        <input id="inputDestino" className={style.inputDestino} type="search" value={searchTerm} onChange={handleChange} placeholder="¿A dónde vamos?"></input>
+                        <input id="inputDestino" className={style.inputDestino} type="search" value={searchTerm} onChange={handleChange} onClick={showHide} placeholder="¿A dónde vamos?"></input>
                         <div className={style.opcionContainer2}>
                             <ul className={style.inputListado} id={style.listadoSelection} >
-                                {searchResults.map((value) => (
-                                    <a href='/' className={style.locations}>
+                                {
+                                searchResults.map((value) => {
+                                    console.log(value.nombre)
+                                    return (<a href='/' className={style.locations}>
                                         <iconify-icon icon="charm:map-pin"></iconify-icon>
                                         <span className={style.liContainer}>
                                                 <li className={style.opcionProvincia}>{value.nombre}</li>
                                                 <li className={style.opcionPais}>{value.pais}</li>
                                         </span>
-                                    </a>
-                                ))}
+                                    </a>)
+                                })}
                             </ul>
                         </div>
                     </div>

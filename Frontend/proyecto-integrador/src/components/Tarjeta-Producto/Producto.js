@@ -26,8 +26,7 @@ export default function Producto(){
 
     return (
         <>
-        {/*Corregir debido a que ya no son strings*/}
-            {(imagenes.length !== 0 && producto !== undefined)? <Card key={producto.id} imagen={imagenes} category={producto.categoria.titulo} name={producto.nombre} title={producto.titulo} location={producto.ciudad.nombre} description={producto.descripcion} calificacion={producto.calificacion} caracteristicas={producto.caracteristica} politicas={producto.politicas} normasDeLaCasa = {producto.normas.split(';')} saludSeguridad = {producto.seguridad.split(';')} politicaDeCancelacion = {producto.cancelacion.split(';')} /> : <></>}
+            {(imagenes.length !== 0 && producto !== undefined)? <Card key={producto.id} imagen={imagenes} category={producto.categoria.titulo} name={producto.nombre} title={producto.titulo} location={producto.ciudad.nombre} description={producto.descripcion} calificacion={producto.calificacion} caracteristicas={producto.caracteristica} politicas={producto.politicas} normasDeLaCasa = {producto.normas} saludSeguridad = {producto.seguridad} politicaDeCancelacion = {producto.cancelacion} /> : <></>}
         </>
     )
 }

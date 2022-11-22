@@ -22,9 +22,6 @@ public class Imagen {
     @JoinColumn(name = "producto_id",referencedColumnName = "id")
     private Producto producto;
 
-    @OneToOne(mappedBy = "imagen")
-    private Categoria categoria;
-
     public Imagen() {
     }
 
@@ -34,10 +31,6 @@ public class Imagen {
         this.url = url;
     }
 
-    public Imagen(Long id, String url) {
-        this.id = id;
-        this.url = url;
-    }
 
     public Imagen(Long id, String titulo, String url, Producto producto) {
         this.id = id;

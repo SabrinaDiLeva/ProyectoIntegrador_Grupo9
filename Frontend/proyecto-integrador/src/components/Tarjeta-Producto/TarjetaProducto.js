@@ -1,5 +1,6 @@
 import style from "./tarjetaProducto.module.css";
-import { Link } from "react-router-dom";
+import Titulo from "./subcomponents/Titulo"
+import Politicas from "./subcomponents/Politicas"
 import { DateRange } from 'react-date-range';
 import { Icons } from '../ui/icons';
 import { Carousel } from 'react-responsive-carousel';
@@ -13,15 +14,7 @@ export default function TarjetaProducto(props) {
     return(
         <>
         <div className={style.container}>
-            <div className={style.header}>
-                <span className={style.headerIzquierda}>
-                    <h3>{props.category}</h3>
-                    <h1>{props.name}</h1>
-                </span>
-                <span className={style.headerDerecha}>
-                    <button id={style.buttonHome} className={style.button} type="button"><Link className={style.button} to='/'>{Icons.back}</Link></button>
-                </span>
-            </div>
+           <Titulo category={props.category} name={props.name} /> 
 
             <div className={style.subHeader}>
                 <span className={style.subHeaderIzquierda}>
@@ -105,32 +98,8 @@ export default function TarjetaProducto(props) {
                 </span>
             </div>
 
-            <div className={style.politicasAllContainer}>
-                <h2>¿Que ofrece este lugar?</h2>
-                <span className={style.politicasContainer}>
-                    <span className={style.politica}>
-                        <h4>Normas de la casa</h4>
-                        {props.normasDeLaCasa.map( (value) => {
-                            return <p>{value}</p>
-                        })}
-                    </span>
+            <Politicas normasDeLaCasa={props.normasDeLaCasa} saludSeguridad={props.saludSeguridad} politicaDeCancelacion={props.politicaDeCancelacion} />
 
-                    <span className={style.politica}>
-                        <h4>Salud y seguridad</h4>
-                        {props.saludSeguridad.map( (value) => {
-                            return <p>{value}</p>
-                        })}
-                    </span>
-
-                    <span className={style.politica}>
-                        <h4>Politica de cancelacion</h4>
-                        {props.politicaDeCancelacion.map( (value) => {
-                            return <p>{value}</p>
-                        })}
-                    </span>
-
-                </span>
-            </div>
         </div>
         </>
     )

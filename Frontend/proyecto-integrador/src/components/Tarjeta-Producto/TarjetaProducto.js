@@ -8,8 +8,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 
 export default function TarjetaProducto(props) {
-    const totalStars = 10;
-    const activeStars = props.calificacion;
+    const totalStars = 5;
+    const activeStars = ( props.calificacion * totalStars ) / 10;
 
     return(
         <>
@@ -27,7 +27,7 @@ export default function TarjetaProducto(props) {
                             return index < activeStars ? Icons.estrellaLlena : Icons.estrellaVacia;
                         })}
                     </span>
-                    <p>{props.calificacion}</p>
+                    <p>{activeStars.toFixed(0)}</p>
                 </span>
             </div>
 

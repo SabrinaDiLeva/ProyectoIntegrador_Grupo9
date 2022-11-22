@@ -1,8 +1,15 @@
 import style from "./reserva.module.css"
+//Tarjeta detalle
 import Detalle from "./bloques/Detalles.js"
+//Formulario para llenar de datos
 import DatosPersonales from "./bloques/DatosPersonales"
+// Header secundario con titulo y botón de retorno
 import Titulo from "../Tarjeta-Producto/subcomponents/Titulo"
+//BloquePoliticas
 import Politicas from "../Tarjeta-Producto/subcomponents/Politicas"
+//Calendario
+import Calendario from "./bloques/Calendario"
+
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 import { getProducto } from "../../service/productoApi"
@@ -22,6 +29,7 @@ export default function Reserva() {
     const imagenes = [
         "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
     ]
+
     {/*
     let { id } = useParams();
     
@@ -55,17 +63,17 @@ export default function Reserva() {
                         <div className={style.form_data}>
                             {/*Formulario con los datos*/}
                             <form className={style.formulario}>
-                                <DatosPersonales/>
+                                <DatosPersonales />
                             </form>
                         </div>
                         <h1 className={style.titulo}>Seleccioná tu fecha de reserva</h1>
-                        <div className={style.calendar}>
-                            {/*Calendario de reservas*/}
-                        </div>
+                        <Calendario/>
+                        {/*
+                            Hora de llegada
                         <h1 className={style.titulo}>Tu horario de llegada</h1>
                         <div className={style.arrival_time}>
-                            {/*Hora de llegada*/}
                         </div>
+                        */}
                     </div>
                     <div className={style.details}>
                         <Detalle category={producto.categoria} image={imagenes[0]} title={producto.titulo} city={producto.ciudad} />

@@ -74,7 +74,7 @@
         border: 20px solid white;
         border-top: 0px;
         border-right: 0px;
-        border-radius: 5%;
+        border-radius: 10px;
     }
 
     .product > img {

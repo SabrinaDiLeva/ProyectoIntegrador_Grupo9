@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { renderMatches } from "react-router-dom";
 
 export const useForm = (initialForm, validateForm) => {
     const [form, setForm] = useState(initialForm);
-    const [errors, setErros] = useState({});
+    const [errors, setErrors] = useState({});
 
     const credencialesValidas = {
         email:"grupo9@dh.com",
@@ -18,17 +17,15 @@ export const useForm = (initialForm, validateForm) => {
         });
     };
 
-    const handleBlur = (e) => {
-        handleChange(e);
-        setErros(validateForm(form));
-    };
-
     const handleSubmit = (e) => {
+        handleChange(e);
+        setErrors(validateForm(form));
+
         var url = window.location.href
 
         e.preventDefault();
         if(form.email.trim() !== credencialesValidas.email || form.password.trim() !== credencialesValidas.password) {
-            setErros({
+            setErrors({
                 ...errors,
                 "errorGeneral":"El usuario o contraseña son incorrectos"
             })
@@ -39,6 +36,6 @@ export const useForm = (initialForm, validateForm) => {
     };
 
     return {
-        form, errors, handleChange, handleBlur, handleSubmit
+        form, errors, handleChange, handleSubmit
     };
 };

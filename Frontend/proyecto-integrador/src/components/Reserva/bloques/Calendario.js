@@ -1,10 +1,10 @@
 import { DateRange } from 'react-date-range';
 import { addDays } from 'date-fns'
-import reactStyle from '../../Bloque-buscador/BuscadorReact.css';
+import reactStyle from './calendarioRange.css';
 import style from './calendario.module.css';
 import { useState, useEffect } from 'react';
 
-export default function Calendario() {
+export default function Calendario(props) {
     const [range, setRange] = useState([
         {
             startDate: new Date(),
@@ -13,7 +13,7 @@ export default function Calendario() {
         }
     ]);
 
-    const [columns, setColumns ] = useState(1);
+    const [columns, setColumns] = useState(1);
 
     useEffect( () => {
         function handleResize() {
@@ -22,11 +22,25 @@ export default function Calendario() {
         window.addEventListener('resize', handleResize)
     })
 
+    const actualizarRango = (item) => {
+        let date = item.selection.startDate
+        let checkin = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+        date = item.selection.endDate
+        let checkout = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+
+        setRange([item.selection]);
+        props.handleChange({
+            "checkInDate": checkin,
+            "checkOutDate": checkout,
+        })
+
+    }
+
 
     return (
         <div className={style.calendar}>
             <DateRange
-                onChange={item => setRange([item.selection])}
+                onChange={item => actualizarRango(item)}
                 editableDateInputs={true}
                 moveRangeOnFirstSelection={false}
                 ranges={range}

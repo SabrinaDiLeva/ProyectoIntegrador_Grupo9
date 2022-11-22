@@ -8,6 +8,7 @@ import Register from './components/Register/Register';
 import Layout from './components/Layout/Layout'
 import Producto from './components/Tarjeta-Producto/Producto'
 import Reserva from './components/Reserva/Reserva'
+import ReservaExito from './components/ReservaExito/ReservaExito'
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
             }/> 
             <Route path='/reserva/producto/:id' element={
               <Reserva/>
+            }/> 
+            <Route path='/exito' element={
+              <ReservaExito/>
             }/> 
           </Route>
         </Routes>

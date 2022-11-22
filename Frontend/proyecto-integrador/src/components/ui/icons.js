@@ -1,11 +1,12 @@
 import { FaArrowLeft, FaSink, FaStarHalf, FaWheelchair, FaWifi, FaSwimmingPool, FaDog} from 'react-icons/fa';
-import { FiMonitor } from 'react-icons/fi';
+import { FiMonitor, FiCheckCircle } from 'react-icons/fi';
 import { RiTempColdLine } from 'react-icons/ri';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 
 
 export const Icons = {
+    Ok: <FiCheckCircle/>,
     Cocina: <FaSink/>,
     Television: <FiMonitor/>,
     "Aire acondicionado": <RiTempColdLine/>,

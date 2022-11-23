@@ -3,13 +3,14 @@ import { FiMonitor, FiCheckCircle, FiCoffee } from 'react-icons/fi';
 import { RiSunFill, RiTempColdLine, RiParkingFill } from 'react-icons/ri';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { CgScreen } from 'react-icons/cg';
-import { MdOutlineLocalLaundryService, MdOutlineSportsHandball, MdBed, MdLocalBar } from 'react-icons/md';
+import { MdLocationOn, MdOutlineLocalLaundryService, MdOutlineSportsHandball, MdBed, MdLocalBar } from 'react-icons/md';
 import { GiPartyPopper } from 'react-icons/gi';
 
 
 
 export const Icons = {
     Ok: <FiCheckCircle/>,
+    location: <MdLocationOn/>,
     Cocina: <FaSink/>,
     Television: <FiMonitor/>,
     "Aire acondicionado": <RiTempColdLine/>,

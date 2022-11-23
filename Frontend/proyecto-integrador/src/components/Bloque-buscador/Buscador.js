@@ -80,13 +80,8 @@ const Buscador = () => {
         setSearchResults(results);
     }, [searchTerm]);
 
-    
-
     return (
         <>
-        {
-        console.log(searchResults)
-        }
         <div className={style.headerBlock}>
             <div className={style.forms1}>
                 <span className={style.title}>
@@ -99,7 +94,6 @@ const Buscador = () => {
                             <ul className={style.inputListado} id={style.listadoSelection} >
                                 {
                                 searchResults.map((value) => {
-                                    console.log(value.nombre)
                                     return (<a href='/' className={style.locations}>
                                         <iconify-icon icon="charm:map-pin"></iconify-icon>
                                         <span className={style.liContainer}>

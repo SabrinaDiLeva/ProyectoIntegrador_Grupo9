@@ -10,17 +10,24 @@ import reactStyle from './BuscadorReact.css';
 
 
 const Buscador = () => {
-        // date State
-    const [range, setRange] = useState([
-        {
-            startDate: new Date(),
-            endDate: addDays(new Date(), 7),
-            key: 'selection'
-        }
-    ]);
 
+    // Open Close state
+    const [open, setOpen] = useState(false);
+    // date State
+    const [range, setRange] = useState([ {
+        startDate: new Date(),
+        endDate: addDays(new Date(), 7),
+        key: 'selection'
+    } ]);
+    // Provincias selector state
     const [provincias, setProvincias] = useState([])
+    // Predictivo para el buscador de provincias state
+    const [searchTerm, setSearchTerm] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
 
+    // get the target element to toggle calendar
+    const refOne = useRef(null)
+    
     useEffect(() => {
         if (provincias.length === 0) {
             getCiudades().then((data) => {
@@ -29,11 +36,12 @@ const Buscador = () => {
         }
     }, [])
 
-    // Open Close state
-    const [open, setOpen] = useState(false);
-    
-    // get the target element to toggle calendar
-    const refOne = useRef(null)
+    useEffect(() => {
+        const results = provincias.filter(prov =>
+            prov.nombre.toLowerCase().includes(searchTerm)
+        );
+        setSearchResults(results);
+    }, [searchTerm]);
 
     useEffect(() => {
         // set current date on component
@@ -55,31 +63,9 @@ const Buscador = () => {
         }
     }
 
-    const [searchTerm, setSearchTerm] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
     const handleChange = event => {
         setSearchTerm(event.target.value);
     };
-
-    function showHide() {
-        var listado = document.getElementById(style.listadoSelection);
-        var input = document.getElementById("inputDestino");
-
-        input.addEventListener('focus', function() {
-            listado.style.display = 'block';
-        });
-        input.addEventListener('focusout', function() {
-            listado.style.display = 'none';
-        });
-    }
-
-    useEffect(() => {
-        const results = provincias.filter(prov =>
-            prov.nombre.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        setSearchResults(results);
-    }, [searchTerm]);
-    
 
     return (
         <>
@@ -93,7 +79,7 @@ const Buscador = () => {
                 </span>
                 <span className={style.formDondeVamos}>
                     <div className={style.opcionContainer} ref={refOne}>
-                        <input id="inputDestino" className={style.inputDestino} type="search" value={searchTerm} onChange={handleChange} onClick={showHide} placeholder="¿A dónde vamos?"></input>
+                        <input id="inputDestino" className={style.inputDestino} type="search" value={searchTerm} onChange={handleChange} placeholder="¿A dónde vamos?"></input>
                         <div className={style.opcionContainer2}>
                             <ul className={style.inputListado} id={style.listadoSelection} >
                                 {

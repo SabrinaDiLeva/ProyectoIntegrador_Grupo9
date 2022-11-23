@@ -1,15 +1,24 @@
+import React, { useState }from 'react';
 import style from "./tarjetaProducto.module.css";
 import Titulo from "./subcomponents/Titulo"
 import Politicas from "./subcomponents/Politicas"
 import { DateRange } from 'react-date-range';
 import { Icons } from '../ui/icons';
-import { Carousel } from 'react-responsive-carousel';
+import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import Carrousel from "./Carrousel";
+import { MdClose } from "react-icons/md"
 
 
 export default function TarjetaProducto(props) {
-    const totalStars = 10;
-    const activeStars = props.calificacion;
+    const totalStars = 5;
+    const activeStars = (props.calificacion * totalStars) / 10;
+
+    const [carrouselOpen, setcarrouselOpen] = useState(false)
+
+    const handleToggle = () => {
+      setcarrouselOpen(!carrouselOpen)
+    }
 
     return(
         <>
@@ -27,12 +36,12 @@ export default function TarjetaProducto(props) {
                             return index < activeStars ? Icons.estrellaLlena : Icons.estrellaVacia;
                         })}
                     </span>
-                    <p>{props.calificacion}</p>
+                    <p>{activeStars.toFixed(0)}</p>
                 </span>
             </div>
 
             <div className={style.contenedorImagenes}>
-                <button className={style.contenedorImagenesAll} onClick>
+                <button className={style.contenedorImagenesAll} onClick={handleToggle}>
                     <span className={style.contenedorImgIzquierda}>
                         <img className={style.imagenIzquierda} src={props.imagen[0].url} alt="imagenProductoIzquierda"></img>
                     </span>
@@ -47,23 +56,16 @@ export default function TarjetaProducto(props) {
                 </button>   
             </div>
 
-            <Carousel
-                autoPlay
-                infiniteLoop
-                showArrows={window.innerWidth < 992 ? false : true}
-                showThumbs={window.innerWidth < 992 ? false : true}
-                showIndicators={false}
-                className={style.carrousel}
-            >
-                {props.imagen.map( (img, index) => {
-                    return <>
-                        <div className={style.carrouselContainer}>
-                            <img className={style.imagenDerecha} src={img} alt="imagenProductoDerecha"></img>
-                        </div>
-                    </> 
-                })}
-
-            </Carousel>
+            {carrouselOpen && 
+                <>
+                    <div className={style.carrouselContainer}>
+                        <button className={style.carrouselButton} onClick={handleToggle}>
+                            <MdClose className={style.menuCerrado} />
+                        </button>
+                        <Carrousel imagenes={props.imagen}/>
+                    </div>
+                </>
+            }
             
             <div className={style.descriptionContainer}>
                 <h2>{props.title}</h2>
@@ -94,7 +96,7 @@ export default function TarjetaProducto(props) {
                 </span>
                 <span className={style.iniciarReservaContainer}>
                     <h3>Agrega tus fechas de viaje para obtener precios exactos</h3>
-                    <button className={style.botonBuscar}>Iniciar reserva</button>
+                    <button className={style.botonBuscar} type="button"><Link to='/reserva/producto/{props.id}'>Iniciar reserva</Link></button>
                 </span>
             </div>
 

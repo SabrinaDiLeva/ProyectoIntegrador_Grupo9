@@ -91,17 +91,18 @@
     color: var(--colorTextoSecundario);
 }
 
+.contenedorImagenes{
+    display: flex;
+    width: 90%;
+    margin-top: 1vh;
+}
+
 .contenedorImagenesAll{
     display: flex;
     width: 100%;
     border: none;
     background-color: transparent;
     align-items: center;
-}
-
-.contenedorImagenes{
-    display: flex;
-    width: 90%;
 }
 
 .contenedorImgIzquierda{
@@ -113,7 +114,7 @@
 .contenedorImgDerecha{
     display: flex;
     width: 50%;
-    margin: 1vh 0 0 1vh;
+    padding: 1vh 0 0 1vh;
 }
 
 .subContenedorImgDerecha{
@@ -297,6 +298,33 @@
     margin: 0 0 2vh 0;
 }
 
+.carrouselContainer {
+    
+}
+
 .carrousel{
-    display: none;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    backdrop-filter: blur(5px);
+    height: calc(100vh - 15vh);
+}
+
+.imagenCarrousel{
+    width: 90%;
+}
+
+.carrouselContainer .carrouselButton {
+    position: fixed;
+    top: 12vh;
+    right: 5vh;
+    z-index: 10;
+    cursor: pointer;
+    background: var(--colorBackgroundSecundario);
+    font-size: 3vh;
+    border: none;
+}
+
+.carrouselContainer .carrouselButton svg{
+    display: flex;
 }

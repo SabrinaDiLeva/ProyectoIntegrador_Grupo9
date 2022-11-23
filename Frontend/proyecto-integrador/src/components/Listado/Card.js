@@ -1,6 +1,6 @@
 import style from './Card.module.css'
 import { Icons } from '../ui/icons';
-import Boton from '../Boton/Boton';
+import Boton from '../Botones/BotonLinkTo';
 
 export default function Card(props) {
 
@@ -21,7 +21,7 @@ export default function Card(props) {
                     <a className={style.verMas} href={`/producto/${props.id}`}>ver más</a>             
                 </span>
             </div>
-                <Boton endpoint={`/producto/${props.id}`} text={"Ver detalle"}/>
+                <Boton to={`/producto/${props.id}`} text={"Ver detalle"}/>
         </div>
     </span>
     </>

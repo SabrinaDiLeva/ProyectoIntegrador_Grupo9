@@ -79,6 +79,7 @@ const Buscador = () => {
         );
         setSearchResults(results);
     }, [searchTerm]);
+
     
 
     return (

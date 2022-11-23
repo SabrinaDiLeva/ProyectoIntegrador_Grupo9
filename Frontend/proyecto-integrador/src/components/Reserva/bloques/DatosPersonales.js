@@ -7,7 +7,6 @@ export default function DatosPersonales() {
     const [lastname, setLastname] = useState("User's lastname");
     const [email, setEmail] = useState("User's email");
 
-
     return (
         <span className={style.labelContainer}>
             <div>

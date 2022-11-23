@@ -61,12 +61,25 @@ const Buscador = () => {
         setSearchTerm(event.target.value);
     };
 
+    function showHide() {
+        var listado = document.getElementById(style.listadoSelection);
+        var input = document.getElementById("inputDestino");
+
+        input.addEventListener('focus', function() {
+            listado.style.display = 'block';
+        });
+        input.addEventListener('focusout', function() {
+            listado.style.display = 'none';
+        });
+    }
+
     useEffect(() => {
         const results = provincias.filter(prov =>
             prov.nombre.toLowerCase().includes(searchTerm)
         );
         setSearchResults(results);
     }, [searchTerm]);
+
     
 
     return (
@@ -78,7 +91,7 @@ const Buscador = () => {
                 </span>
                 <span className={style.formDondeVamos}>
                     <div className={style.opcionContainer} ref={refOne}>
-                        <input id="inputDestino" className={style.inputDestino} type="search" value={searchTerm} onChange={handleChange} placeholder="¿A dónde vamos?"></input>
+                        <input id="inputDestino" className={style.inputDestino} type="search" value={searchTerm} onChange={handleChange} onClick={showHide} placeholder="¿A dónde vamos?"></input>
                         <div className={style.opcionContainer2}>
                             <ul className={style.inputListado} id={style.listadoSelection} >
                                 {searchResults.map((value) => (

@@ -1,85 +1,38 @@
-.body{
+.tarjeta {
     display: flex;
     flex-direction: column;
-    align-items:flex-start;
-    margin: 0;
+    border-radius: 8px;
+    box-shadow: 0px 3px 2px lightgrey;
+    margin: 7px;
 }
 
-.titulo{
-    color: var(--colorTextoPrimario);
-    font-style: normal;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 28px;
-    margin-left: 5%;
-    margin-top: 1em;
-}
-
-.tarjetaContainer{
-    display: flex;
+.tarjeta img {
     width: 100%;
-    justify-content: center;
-    /* padding: 1em 0; */
-}
-
-.tarjeta:hover:not(.active){
-    background-color: rgb(235, 235, 235);
-}
-
-.tarjeta{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin: 0 1em;
-    width: 22%;
-    background-color: #FFFFFF;
-    border: 1px solid #F3F1ED;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: var(--colorBackgroundSecundario);
-    border-radius: 10px;
-    justify-content: flex-start;
-}
-
-.images{
+    height: 30vh;
+    object-fit: cover;
     border-radius: 8px 8px 0px 0px;
-    width: 100%;
-    height: 80%;
 }
 
-.nombre{
-    color: var(--colorTextoPrimario);
-    padding-left: 0.5em;
-    margin-top: 2%;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
+.tarjeta>p {
+    text-align: left;
+    margin: 0px 15px;
 }
 
-.caption{
-    color: var(--colorTextoPrimario);
-    padding-left: 0.5em;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    opacity: 0.6;
+.caption {
+    color: gray;
+    font-size: 0.85em;
+    font-weight: bold;
+    padding: 3px 0px 10px;
 }
 
-
-@media(max-width: 768px){
-    .tarjetaContainer{
-        flex-wrap: wrap;
-    }
-    .tarjeta{
-        width: 40%;
-        margin-bottom: 20px;
-    }
+.nombre {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 0px 3px;
 }
-@media(max-width: 414px){
-    .tarjetaContainer{
-        flex-wrap: wrap;
-    }
-    .tarjeta{
-        width: 85%;
-        margin-bottom: 20px;
+
+@media (min-width: 780px) {
+    .tarjeta {
+        width: 20%;
     }
 }

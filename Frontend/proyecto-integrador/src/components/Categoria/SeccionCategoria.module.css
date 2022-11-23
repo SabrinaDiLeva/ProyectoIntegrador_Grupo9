@@ -1,0 +1,23 @@
+.body{
+    display: flex;
+    flex-direction: column;
+}
+.tarjetaContainer {
+   display: flex;
+   flex-direction: column;
+}
+
+@media (min-width: 420px) {
+    .tarjetaContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+ }
+
+@media (min-width: 780px) {
+    .tarjetaContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+ }

@@ -1,0 +1,52 @@
+import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import SeccionCategoria from './components/Categoria/SeccionCategoria';
+<<<<<<< HEAD:src/main/resources/proyecto-integrador/src/App.js
+import Header from './components/Header/Header';
+import SeccionHeader from './components/Header/SeccionHeader';
+=======
+>>>>>>> 4ae06938fb9f1be33d67916b025e7cb8a3da9317:Frontend/proyecto-integrador/src/App.js
+import Listado from './components/Listado/Listado';
+import Buscador from './components/Bloque-buscador/Buscador';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import Layout from './components/Layout/Layout'
+import Producto from './components/Tarjeta-Producto/Producto'
+import Reserva from './components/Reserva/Reserva'
+import ReservaExito from './components/ReservaExito/ReservaExito'
+
+function App() {
+
+  return (
+    <div className="container">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route path='/' element={<>
+              <Buscador/> 
+              <SeccionCategoria/>
+              <Listado/>
+            </>}/> 
+            <Route path='/iniciar_sesion' element={<>
+              <Login/>
+            </>}/> 
+            <Route path='/registrarse' element={<>
+              <Register/>
+            </>}/> 
+            <Route path='/producto/:id' element={
+              <Producto/>
+            }/> 
+            <Route path='/reserva/producto/:id' element={
+              <Reserva/>
+            }/> 
+            <Route path='/exito' element={
+              <ReservaExito/>
+            }/> 
+          </Route>
+        </Routes>
+      </BrowserRouter>
+   </div>
+  );
+}
+
+export default App;

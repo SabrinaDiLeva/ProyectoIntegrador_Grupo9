@@ -66,9 +66,9 @@ public class ProductoService implements IService<Producto, ProductoDTO>{
     }
 
     public List<Producto> listarRandom() {
-        //EN ESTE CASO LE PEDI 3 PORQUE TENEMOS SOLO 8 PRODUCTOS CARGADOS EN LA BASE
+        //EN ESTE CASO LE PEDI 4 PORQUE TENEMOS SOLO 8 PRODUCTOS CARGADOS EN LA BASE
         List<Producto> productos= iProductoRepository.findAll();
         Collections.shuffle(productos);
-        return productos.subList(0,3);
+        return productos.subList(0,4);
     }
 }

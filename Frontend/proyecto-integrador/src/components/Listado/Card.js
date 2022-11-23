@@ -1,5 +1,6 @@
 import style from './Card.module.css'
-import { Link } from "react-router-dom";
+import { Icons } from '../ui/icons';
+import Boton from '../Boton/Boton';
 
 export default function Card(props) {
 
@@ -10,16 +11,17 @@ export default function Card(props) {
             <img className={style.cardImage} src={props.imagen}  alt="producto"></img>
         </div>
         <div className={style.infoContainerDetalle}>
-            <span className={style.detalleContainer}>
+            <div className={style.detalleContainer}>
                 <p className={style.cardCategoria}>{props.category}</p>
                 <h1 className={style.cardNombre}>{props.title}</h1>
-                <p className={style.cardLocation}>{props.location}</p>
-                <p className={style.cardDescripcion}>{props.description}</p>
-                <span className={style.verMasContainer}>
-                    <a className={style.verMas} href='/'>Ver Mas</a>
+                <p className={style.cardLocation}>{Icons.location} {props.location}</p>
+                <span className={style.textoContainer}>
+                <span className={style.cardDescripcion}>{props.description}
                 </span>
-            </span>
-            <button className={style.cardBoton}><Link className={style.button} to={`/producto/${props.id}`}>Ver detalle</Link></button>
+                    <a className={style.verMas} href={`/producto/${props.id}`}>ver más</a>             
+                </span>
+            </div>
+                <Boton endpoint={`/producto/${props.id}`} text={"Ver detalle"}/>
         </div>
     </span>
     </>

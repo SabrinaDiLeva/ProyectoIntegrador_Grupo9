@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/producto")
+@CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
 public class ProductoController {
     @Autowired
     private ProductoService productoService;
@@ -21,19 +22,19 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.guardar(producto));
     }
 
-    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
+    // @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping
     public ResponseEntity<List<Producto>>  listar() {
         return ResponseEntity.ok(productoService.listar());
     }
 
-    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
+    // @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping("/random")
     public ResponseEntity<List<Producto>>  listarRandom() {
         return ResponseEntity.ok(productoService.listarRandom());
     }
 
-    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
+    // @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping("/categoria/{id}")
     public ResponseEntity<List<Producto>>  listarPorCategoria(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCategoria(id));
@@ -42,7 +43,7 @@ public class ProductoController {
     public ResponseEntity<List<Producto>>  listarPorCiudad(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCiudad(id));
     }
-    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
+    // @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscar(@PathVariable Long id) {
         Producto producto = productoService.buscar(id);

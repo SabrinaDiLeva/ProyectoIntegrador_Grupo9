@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/ciudad")
+@CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
 public class CiudadController {
     @Autowired
     private CiudadService ciudadService;
@@ -21,7 +22,7 @@ public class CiudadController {
         return ResponseEntity.ok(ciudadService.guardar(ciudad));
     }
 
-    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
+    // @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping
     public ResponseEntity<List<Ciudad>>  listar() {
         return ResponseEntity.ok(ciudadService.listar());

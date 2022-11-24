@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/imagen")
+@CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
 public class ImagenController {
     @Autowired
     private ImagenService imagenService;
@@ -43,7 +44,7 @@ public class ImagenController {
         return ResponseEntity.ok(imagenService.modificar(id, imagen));
     }
 
-    @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
+    // @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping("/producto/{id}")
     public ResponseEntity<List<Imagen>>  listarPorProducto(@PathVariable(name = "id") Long id) {
         return ResponseEntity.ok(imagenService.listarPorProducto(id));

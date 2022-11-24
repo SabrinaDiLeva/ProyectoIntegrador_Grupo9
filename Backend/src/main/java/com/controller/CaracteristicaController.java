@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/caracteristica")
+@CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
 public class CaracteristicaController {
     @Autowired
     private CaracteristicaService caracteristicaService;

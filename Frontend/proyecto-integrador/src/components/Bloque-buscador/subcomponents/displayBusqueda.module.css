@@ -1,0 +1,40 @@
+.opcionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Listado del buscador*/
+.inputListado {
+    background-color: var(--colorBackgroundSecundario);
+    color: var(--colorTextoSecundario);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.4);
+    list-style-type: none;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+}
+
+.inputDestino {
+    font-size: 16px;
+    color: var(--colorTextoPrimario);
+    border: 2px solid #607D8B;
+    background-color: var(--colorBackgroundSecundario);
+    border-radius: 5px;
+    text-align: left;
+    padding: 2%;
+}
+
+.inputListado::-webkit-scrollbar {
+    display: none;
+}
+
+.inputListado:focus {
+    outline: 3px solid #ddd;
+}
+
+@media (min-width: 430px){
+}

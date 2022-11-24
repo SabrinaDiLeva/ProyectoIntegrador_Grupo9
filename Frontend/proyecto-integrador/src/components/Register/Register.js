@@ -56,19 +56,16 @@ const validationForm = (form) => {
 
 export default function Register() {
     const {form, errors, handleChange, handleBlur, handleRegister} = useForm(initialForm, validationForm);
-
     return (
             <div className={style.container}>
                 <form  className={style.formulario} onSubmit={handleRegister}>
                     <h1 className={style.titulo}>Crear cuenta</h1>
-
-                    {errors.errorGeneral && 
-                        <p className={style.errorGeneral}> {errors.errorGeneral} </p>
-                    }
+                    
+                    {errors.errorGeneral && <p className={style.errorGeneral}> {errors.errorGeneral} </p>}
                     <div className={style.firstContainer}>
                         <span className={style.labelContainer}>
                             <label className={style.label}>Nombre</label>
-                            <input className={style.input} type="text" id={style.name} name="nombre" placeholder="Escribe tu nombre" onBlur={handleBlur} onChange={handleChange} value={form.nombre} required />
+                            <input className={style.input} type="text" id={style.name}name="nombre" placeholder="Escribe tu nombre" onBlur={handleBlur} onChange={handleChange} value={form.nombre} required />
                         </span>
 
                         <span className={style.labelContainer}>
@@ -83,12 +80,12 @@ export default function Register() {
     
                     <span className={style.labelContainer}>
                         <label className={style.label}>Contraseña</label>
-                        <input type="password" id={style.password} className={style.input}name="password" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.password} required />
+                        <input type="text" id={style.password} className={style.input}name="password" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.password} required />
                     </span>
 
                     <span className={style.labelContainer}>
                         <label className={style.label}>Confirmar Contraseña</label>
-                        <input type="password" id={style.repassword} className={style.input}name="repassword" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.repassword} required />
+                        <input type="text" id={style.repassword} className={style.input}name="repassword" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.repassword} required />
                     </span>
 
                     <span className={style.botonContainer}>

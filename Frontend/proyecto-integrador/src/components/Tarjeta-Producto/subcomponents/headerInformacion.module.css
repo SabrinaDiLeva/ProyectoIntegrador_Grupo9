@@ -1,0 +1,15 @@
+.subHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1.5vh 1vw;
+}
+
+.subHeaderIzquierda{
+    font-size: 0.8em;
+}
+
+.subHeaderDerecha {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,6 +1,5 @@
 import style from "./titulo.module.css";
-import { Icons } from '../../ui/icons';
-import { Link } from "react-router-dom";
+import BotonBack from "../../Botones/BotonBack"
 
 export default function Titulo(props) {
     return (
@@ -11,7 +10,7 @@ export default function Titulo(props) {
                     <h1>{props.name}</h1>
                 </span>
                 <span className={style.headerDerecha}>
-                    <button id={style.buttonHome} className={style.button} type="button"><Link className={style.button} to='/'>{Icons.back}</Link></button>
+                    <BotonBack to={'/'}/>
                 </span>
             </div>
         </div>

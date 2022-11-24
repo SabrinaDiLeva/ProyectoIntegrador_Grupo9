@@ -1,7 +1,7 @@
 import style from './Card.module.css'
 import { Icons } from '../ui/icons';
 import Boton from '../Botones/BotonLinkTo';
-import Estrellas from "../Tarjeta-Producto/subcomponents/CalificaciónEstrellas"
+import Estrellas from "../Tarjeta-Producto/subcomponents/CalificacionEstrellas"
 
 export default function Card(props) {
 

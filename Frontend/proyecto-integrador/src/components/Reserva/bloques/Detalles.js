@@ -1,4 +1,5 @@
 import style from "./detalle.module.css"
+import { Link } from "react-router-dom";
 
 export default function Detalles(props) {
     return (
@@ -33,7 +34,7 @@ export default function Detalles(props) {
                             <hr />
                             {/* Checkout: Fecha de salida*/}
                         </div>
-                        <button type="submit" className={style.button}> Confirmar reserva </button>
+                        <button type="submit" className={style.button}><Link to='/exito' className={style.link}>Confirmar reserva</Link></button>
                         {/* Boton de confirmación de reserva */}
                     </div>
                 </div>

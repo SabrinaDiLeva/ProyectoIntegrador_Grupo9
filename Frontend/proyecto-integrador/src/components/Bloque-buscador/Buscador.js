@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { getCiudades } from "../../service/ciudadApi"
 import Boton from "../Botones/BotonLinkTo"
 
@@ -10,6 +10,7 @@ import Calendario from './subcomponents/Calendario';
 
 const Buscador = () => {
 
+    // Provincias selector state
     const [provincias, setProvincias] = useState([])
 
     useEffect(() => {
@@ -19,24 +20,24 @@ const Buscador = () => {
             })
         }
     }, [])
-    
+
 
     return (
         <>
-        <div className={style.headerBlock}>
+            <div className={style.headerBlock}>
                 <h1 className={style.title}> Busca ofertas en hoteles, casas y mucho más</h1>
                 <div className={style.formDondeVamos}>
                     <div className={style.container}>
-                    <DisplayBusqueda provincias={provincias}/>
+                        <DisplayBusqueda provincias={provincias} />
                     </div>
                     <div className={style.container}>
-                    <Calendario />
+                        <Calendario />
                     </div>
                     <div className={style.containerBoton}>
-                        <Boton to={`/`} text={"Buscar"}/>
+                        <Boton to={`/`} text={"Buscar"} />
                     </div>
-                </div>   
-        </div>
+                </div>
+            </div>
         </>
     )
 

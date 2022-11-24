@@ -6,15 +6,13 @@ export default function Galeria(props) {
 
     <div className={style.contenedorImagenes}>
     <button className={style.contenedorImagenesAll} onClick={props.handleToggle}>
-        <span className={style.contenedorImgIzquierda}>
+        <div className={style.contenedorImgIzquierda}>
             <Imagen src={props.imagenes[0].url} alt={props.imagenes[0].titulo} />
-        </span>
+        </div>
         <span className={style.contenedorImgDerecha}>
-            <span className={style.subContenedorImgDerecha}>
                 {props.imagenes.map((img, index) => {
-                    return index !== 0 ? <Imagen className={style.imagenDerecha} src={img.url} alt={img.titulo} /> : ''
+                    return (index !== 0 && index < 5) ? <div className={style.subContenedorImgDerecha}><Imagen className={style.imagenDerecha} src={img.url} alt={img.titulo} /></div> : ''
                 })}
-            </span>
         </span>
     </button>
 </div>

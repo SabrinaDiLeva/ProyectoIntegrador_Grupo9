@@ -23,7 +23,7 @@ export const useForm = (initialForm, validateForm) => {
         setErros(validateForm(form));
     };
 
-    const handleSubmit = (e) => {
+    const handleLogin = (e) => {
         var url = window.location.href
 
         e.preventDefault();
@@ -38,7 +38,29 @@ export const useForm = (initialForm, validateForm) => {
         }
     };
 
+    const handleRegister = (e) => {
+        var url = window.location.href;
+        var session = JSON.parse(sessionStorage.getItem('sessionRegistrada')) || [];
+
+        e.preventDefault();
+        if(form.email.trim() === credencialesValidas.email /*|| form.email.trim() === session.email*/){
+            setErros({
+                ...errors,
+                "errorGeneral":"El mail ingresado ya esta registrado"
+            })
+        }else if(form.nombre.trim() === '' || form.apellido.trim() === '' || form.email.trim() === '' || form.password.trim() === '' || form.repassword.trim() === ''){
+            setErros({
+                ...errors,
+                "errorGeneral":"Complete todos los datos"
+            })
+        }else{
+            session.push({mail: form.email, password: form.password, nombre: form.nombre, apellido: form.apellido})
+            sessionStorage.setItem('sessionRegistrada', JSON.stringify(session) )
+            window.location.href = url.substring(0, window.location.href.indexOf('registrarse'));
+        }
+    }
+
     return {
-        form, errors, handleChange, handleBlur, handleSubmit
+        form, errors, handleChange, handleBlur, handleLogin, handleRegister
     };
 };

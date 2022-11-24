@@ -30,11 +30,11 @@ const validationForm = (form) => {
 
 export default function Login() {
 
-    const {form, errors, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationForm);
+    const {form, errors, handleChange, handleBlur, handleLogin} = useForm(initialForm, validationForm);
     return(
         <>
         <div className={style.container}>
-            <form className={style.formulario} onSubmit={handleSubmit}>
+            <form className={style.formulario} onSubmit={handleLogin}>
                 <h1 className={style.titulo}>Iniciar sesión</h1>
                 
                 {errors.errorGeneral && <p className={style.errorGeneral}> {errors.errorGeneral} </p>}

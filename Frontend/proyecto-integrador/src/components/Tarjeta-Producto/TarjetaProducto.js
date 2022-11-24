@@ -7,6 +7,7 @@ import { Icons } from '../ui/icons';
 import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Carrousel from "./Carrousel";
+import Estrellas from "./subcomponents/CalificaciónEstrellas"
 import { MdClose } from "react-icons/md"
 
 
@@ -31,11 +32,7 @@ export default function TarjetaProducto(props) {
                     <p>Cerca del centro</p>
                 </span>
                 <span className={style.subHeaderDerecha}>
-                    <span className={style.calificacion}>
-                        {[...new Array(totalStars)].map((arr, index) => {
-                            return index < activeStars ? Icons.estrellaLlena : Icons.estrellaVacia;
-                        })}
-                    </span>
+                    <Estrellas activeStars={activeStars} totalStars={totalStars} />
                     <p>{activeStars.toFixed(0)}</p>
                 </span>
             </div>

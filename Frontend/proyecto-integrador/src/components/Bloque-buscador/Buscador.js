@@ -24,7 +24,7 @@ const Buscador = () => {
     return (
         <>
         <div className={style.headerBlock}>
-                <h1 className={style.title}> Busca ofertas en hoteles, casas y mucho mas</h1>
+                <h1 className={style.title}> Busca ofertas en hoteles, casas y mucho más</h1>
                 <div className={style.formDondeVamos}>
                     <div className={style.container}>
                     <DisplayBusqueda provincias={provincias}/>

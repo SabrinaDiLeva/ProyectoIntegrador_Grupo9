@@ -1,7 +1,7 @@
 .footerBlock{
     display: flex;
     height: 5vh;
-    background: var(--colorBackgroundPrincipal);
+    background: var(--colorTextoPrimario);
     width: 100%;
 }
 
@@ -29,7 +29,9 @@ small{
 
 .footerIcons{
     margin-right: 1vh;
+    color: white;
 }
+
 
 .icono{
     margin-left: 1vh;

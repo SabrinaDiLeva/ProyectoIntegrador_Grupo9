@@ -1,23 +1,37 @@
-.body{
+.body {
     display: flex;
     flex-direction: column;
 }
+
 .tarjetaContainer {
-   display: flex;
-   flex-direction: column;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo {
+    padding: 20px 10px 2px;
+    text-align: left;
+    font-size: 1.2em;
 }
 
 @media (min-width: 430px) {
-    .tarjetaContainer{
+    .tarjetaContainer {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
- }
+}
 
 @media (min-width: 780px) {
-    .tarjetaContainer{
+    .tarjetaContainer {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
- }
+
+    .titulo {
+        padding: 20px 25px 2px;
+        text-align: left;
+        font-size: 1.2em;
+    }
+
+}

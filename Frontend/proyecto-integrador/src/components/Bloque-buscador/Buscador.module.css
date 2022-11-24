@@ -20,7 +20,9 @@
     padding: 20px 20px 10px;
 }
 
-
+.containerBoton{
+    color: white;
+}
 @media (min-width: 430px) {
     .formDondeVamos {
         display: flex;

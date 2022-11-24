@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { renderMatches } from "react-router-dom";
 
 export const useForm = (initialForm, validateForm) => {
     const [form, setForm] = useState(initialForm);
-    const [errors, setErrors] = useState({});
+    const [errors, setErros] = useState({});
 
     const credencialesValidas = {
         email:"grupo9@dh.com",
@@ -17,15 +18,17 @@ export const useForm = (initialForm, validateForm) => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleBlur = (e) => {
         handleChange(e);
-        setErrors(validateForm(form));
+        setErros(validateForm(form));
+    };
 
+    const handleLogin = (e) => {
         var url = window.location.href
 
         e.preventDefault();
         if(form.email.trim() !== credencialesValidas.email || form.password.trim() !== credencialesValidas.password) {
-            setErrors({
+            setErros({
                 ...errors,
                 "errorGeneral":"El usuario o contraseña son incorrectos"
             })
@@ -35,7 +38,29 @@ export const useForm = (initialForm, validateForm) => {
         }
     };
 
+    const handleRegister = (e) => {
+        var url = window.location.href;
+        var session = JSON.parse(sessionStorage.getItem('sessionRegistrada')) || [];
+
+        e.preventDefault();
+        if(form.email.trim() === credencialesValidas.email /*|| form.email.trim() === session.email*/){
+            setErros({
+                ...errors,
+                "errorGeneral":"El mail ingresado ya esta registrado"
+            })
+        }else if(form.nombre.trim() === '' || form.apellido.trim() === '' || form.email.trim() === '' || form.password.trim() === '' || form.repassword.trim() === ''){
+            setErros({
+                ...errors,
+                "errorGeneral":"Complete todos los datos"
+            })
+        }else{
+            session.push({mail: form.email, password: form.password, nombre: form.nombre, apellido: form.apellido})
+            sessionStorage.setItem('sessionRegistrada', JSON.stringify(session) )
+            window.location.href = url.substring(0, window.location.href.indexOf('registrarse'));
+        }
+    }
+
     return {
-        form, errors, handleChange, handleSubmit
+        form, errors, handleChange, handleBlur, handleLogin, handleRegister
     };
 };

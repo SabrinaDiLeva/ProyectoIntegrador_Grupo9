@@ -1,5 +1,6 @@
 :root {
   --colorBackgroundPrincipal: #FBC02D;
+  --colorBackgroundPrincipalOpacity: rgb(251,192,45,0.5);
   --colorBackgroundSecundario: #FFFBE2;
   --colorTextoPrimario: #263238;
   --colorTextoSecundario: #607D8B;
@@ -28,4 +29,9 @@ html{
 
 * a{
   text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+    color: inherit;
 }

@@ -5,8 +5,7 @@
     background-color: var(--colorTextoSecundario);
     border-radius: 5px;
     width: 100%;
-    min-height: fit-content;
-    max-height: 50px;
+    height: 100%;
     font-weight: 700;
     font-size: 15px;
     transition: all 0.3s ease-out;

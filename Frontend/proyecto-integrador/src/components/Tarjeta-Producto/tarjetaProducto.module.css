@@ -52,9 +52,6 @@
     justify-content: space-evenly;
 }
 
-.calificacion{
-    display: flex;
-}
 
 .subHeaderDerecha > p{
     padding: 0.5vh;

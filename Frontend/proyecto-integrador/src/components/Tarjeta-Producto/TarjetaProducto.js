@@ -11,7 +11,7 @@ import { MdClose } from "react-icons/md"
 import HeaderInformacion from './subcomponents/HeaderInformacion';
 import Caracteristicas from './subcomponents/Caracteristicas';
 import Galeria from './subcomponents/Galeria';
-
+import Boton from "../Botones/BotonLinkTo";
 
 export default function TarjetaProducto(props) {
 
@@ -66,14 +66,23 @@ export default function TarjetaProducto(props) {
                     <Caracteristicas caracteristicas={props.caracteristicas} />
 
                     <div className={style.calendarWrap}>
-                        <span className={style.calendarContainer}>
+                        <div className={style.title}>
                             <h2>Fechas disponibles</h2>
-                            <Calendario formValues={form} handleChange={handleChangeManual} />
-                        </span>
-                        <span className={style.iniciarReservaContainer}>
-                            <h3>Agrega tus fechas de viaje para obtener precios exactos</h3>
-                            <button className={style.botonBuscar} type="button"><Link to='/reserva/producto/{props.id}'>Iniciar reserva</Link></button>
-                        </span>
+                        </div>
+                        <div className={style.containerCalendarReserva}>
+                            <div className={style.calendarContainer}>
+                                <Calendario formValues={form} handleChange={handleChangeManual} />
+                            </div>
+                            <div className={style.iniciarReservaContainer}>
+                                <div className={style.title}>
+                                    <h3>Agrega tus fechas de viaje para obtener precios exactos</h3>
+                                </div>
+
+                                <div className={style.BotonContainer}>
+                                    <Boton to={'/reserva/producto/{props.id}'} text={"Iniciar reserva"} />
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <Politicas normasDeLaCasa={props.normasDeLaCasa} saludSeguridad={props.saludSeguridad} politicaDeCancelacion={props.politicaDeCancelacion} />

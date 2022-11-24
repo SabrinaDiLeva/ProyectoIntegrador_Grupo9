@@ -1,11 +1,8 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import SeccionCategoria from './components/Categoria/SeccionCategoria';
-<<<<<<< HEAD:src/main/resources/proyecto-integrador/src/App.js
 import Header from './components/Header/Header';
 import SeccionHeader from './components/Header/SeccionHeader';
-=======
->>>>>>> 4ae06938fb9f1be33d67916b025e7cb8a3da9317:Frontend/proyecto-integrador/src/App.js
 import Listado from './components/Listado/Listado';
 import Buscador from './components/Bloque-buscador/Buscador';
 import Login from './components/Login/Login';

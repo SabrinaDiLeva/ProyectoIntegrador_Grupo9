@@ -67,11 +67,6 @@ const Header = (props) => {
             {/* cierra usuarioIniciarSession */}
             </div>
           </div>
-<<<<<<< HEAD:src/main/resources/proyecto-integrador/src/components/Header/Header.js
-
-
-=======
->>>>>>> 4ae06938fb9f1be33d67916b025e7cb8a3da9317:Frontend/proyecto-integrador/src/components/Header/Header.js
         {/* cierra headerContainer */}
         </div>  
       {/* cierra header */}

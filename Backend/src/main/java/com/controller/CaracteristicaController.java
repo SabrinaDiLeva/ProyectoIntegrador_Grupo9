@@ -16,10 +16,10 @@ public class CaracteristicaController {
     @Autowired
     private CaracteristicaService caracteristicaService;
 
-    @PostMapping
+    /*@PostMapping
     public ResponseEntity<Caracteristica> guardar(@RequestBody CaracteristicaDTO caracteristica) {
         return ResponseEntity.ok(caracteristicaService.guardar(caracteristica));
-    }
+    }*/
 
     @GetMapping
     public ResponseEntity<List<Caracteristica>>  listar() {
@@ -31,7 +31,7 @@ public class CaracteristicaController {
         Caracteristica caracteristica = caracteristicaService.buscar(id);
             return ResponseEntity.ok(caracteristica);
         }
-
+    /* 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
         Caracteristica caracteristicaBuscada=caracteristicaService.buscar(id);
@@ -41,5 +41,5 @@ public class CaracteristicaController {
     @PutMapping("/{id}")
     public ResponseEntity<Caracteristica> modificar(@PathVariable(name = "id") Long id, @RequestBody CaracteristicaDTO caracteristica) {
         return ResponseEntity.ok(caracteristicaService.modificar(id, caracteristica));
-    }
+    }*/
 }

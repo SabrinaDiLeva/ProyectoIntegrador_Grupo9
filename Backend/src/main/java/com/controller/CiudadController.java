@@ -16,10 +16,10 @@ public class CiudadController {
     @Autowired
     private CiudadService ciudadService;
 
-    @PostMapping
+    /*@PostMapping
     public ResponseEntity<Ciudad> guardar(@RequestBody CiudadDTO ciudad) {
         return ResponseEntity.ok(ciudadService.guardar(ciudad));
-    }
+    }*/
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
@@ -32,7 +32,7 @@ public class CiudadController {
         Ciudad ciudad = ciudadService.buscar(id);
             return ResponseEntity.ok(ciudad);
         }
-
+        /* 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         //Ciudad ciudadBuscada = ciudadService.buscar(id);
@@ -43,5 +43,5 @@ public class CiudadController {
     @PutMapping("/{id}")
     public ResponseEntity<Ciudad> modificar(@PathVariable(name = "id")Long id, @RequestBody CiudadDTO ciudad) {
         return ResponseEntity.ok(ciudadService.modificar(id, ciudad));
-    }
+    }*/
 }

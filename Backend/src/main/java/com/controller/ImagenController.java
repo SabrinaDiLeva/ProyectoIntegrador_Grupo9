@@ -15,11 +15,11 @@ import java.util.List;
 public class ImagenController {
     @Autowired
     private ImagenService imagenService;
-
+    /* 
     @PostMapping
     public ResponseEntity<Imagen> guardar(@RequestBody ImagenDTO imagen) {
         return ResponseEntity.ok(imagenService.guardar(imagen));
-    }
+    }*/
 
     @GetMapping
     public ResponseEntity<List<Imagen>>  listar() {
@@ -31,7 +31,7 @@ public class ImagenController {
         Imagen imagen = imagenService.buscar(id);
         return ResponseEntity.ok(imagen);
     }
-
+    /* 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
             imagenService.eliminar(id);
@@ -41,7 +41,7 @@ public class ImagenController {
     @PutMapping("/{id}")
     public ResponseEntity<Imagen> modificar(@PathVariable(name = "id") Long id , @RequestBody ImagenDTO imagen) {
         return ResponseEntity.ok(imagenService.modificar(id, imagen));
-    }
+    }*/
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/producto/{id}")

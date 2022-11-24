@@ -16,10 +16,10 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
-    @PostMapping
+    /*@PostMapping
     public ResponseEntity<Categoria> guardar(@RequestBody CategoriaDTO categoria) {
         return ResponseEntity.ok(categoriaService.guardar(categoria));
-    }
+    }*/
 
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
@@ -33,6 +33,7 @@ public class CategoriaController {
         return ResponseEntity.ok(categoria);
     }
 
+    /* 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         categoriaService.eliminar(id);
@@ -42,6 +43,6 @@ public class CategoriaController {
     @PutMapping("/{id}")
     public ResponseEntity<Categoria> modificar(@PathVariable( name = "id") Long id, @RequestBody CategoriaDTO categoria) {
         return ResponseEntity.ok(categoriaService.modificar(id, categoria));
-    }
+    }*/
 }
 

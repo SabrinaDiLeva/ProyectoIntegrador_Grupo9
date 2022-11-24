@@ -30,29 +30,7 @@ export default function Login() {
 
     const {form, errors, handleChange, handleSubmit} = useForm(initialForm, validationForm);
     return(
-<<<<<<< HEAD:src/main/resources/proyecto-integrador/src/components/login/login.js
-        <div>
-            <div className={style.container}>
-                <form>
-                    <h1>Iniciar sesión</h1>
-                    <div>
-                        <div>
-                            <label className={style.texto_label}>Correo electronico</label>
-                            <br/>
-                            <input  className={style.barra1} type="text"></input>
-                        </div>
-                        <div>
-                            <label className={style.texto_label}>Contraseña</label>
-                            <br/>
-                            <input  className={style.barra2} type="password"></input>
-                        </div>
-                        <button type="submit" className={style.boton}>Ingresar</button>
-                    </div>
-                </form>
-                <span>¿Aún no tienes cuenta? <a href="/">Registrate</a></span>
-            </div>
-=======
-        <>
+        
         <div className={style.container}>
             <form className={style.formulario} onSubmit={handleSubmit}>
                 <h1 className={style.titulo}>Iniciar sesión</h1>
@@ -73,7 +51,6 @@ export default function Login() {
                 </span>
             </form>
             <span className={style.registrarse}>¿Aún no tienes cuenta?<Link to='/registrarse' className={style.link}>Registrate</Link></span>
->>>>>>> 4ae06938fb9f1be33d67916b025e7cb8a3da9317:Frontend/proyecto-integrador/src/components/login/login.js
         </div>
         
     )

@@ -211,7 +211,7 @@
     align-content: flex-start;
   }
   
-  li {
+  .navBar li {
     display: block;
     padding: 10px 40px;
     text-decoration: none;

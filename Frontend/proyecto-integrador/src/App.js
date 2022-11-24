@@ -5,7 +5,7 @@ import Listado from './components/Listado/Listado';
 import Buscador from './components/Bloque-buscador/Buscador';
 import Layout from './components/Layout/Layout'
 import Producto from './components/Tarjeta-Producto/Producto'
-import Reserva from './components/Reserva/Reserva'
+import ReservaWrapper from './components/Reserva/ReservaWrapper'
 import ReservaExito from './components/ReservaExito/ReservaExito'
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
@@ -32,7 +32,7 @@ function App() {
               <Producto/>
             }/> 
             <Route path='/reserva/producto/:id' element={
-              <Reserva/>
+              <ReservaWrapper />
             }/> 
             <Route path='/exito' element={
               <ReservaExito/>

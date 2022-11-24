@@ -26,10 +26,6 @@ html{
   height: 100%;
 }
 
-button--link:visited, a:visited{
-  color: transparent;
-}
-
 * a{
   text-decoration: none;
 }

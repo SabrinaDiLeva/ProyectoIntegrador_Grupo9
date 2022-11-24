@@ -21,7 +21,9 @@ export default function Card(props) {
                     <a className={style.verMas} href={`/producto/${props.id}`}>ver más</a>             
                 </span>
             </div>
+            <div className={style.BotonContainer}>
                 <Boton to={`/producto/${props.id}`} text={"Ver detalle"}/>
+            </div>
         </div>
     </span>
     </>

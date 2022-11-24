@@ -1,0 +1,40 @@
+.headerBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--colorBackgroundPrincipal);
+    width: 100vw
+}
+    
+.formDondeVamos{
+    width: 100%;
+}
+
+.formDondeVamos > div{
+    padding: 0px 20px 5px;
+}
+.title {
+   font-size: 1.4em;
+   padding: 20px 20px 10px;
+}
+
+
+@media (min-width: 430px){
+    .formDondeVamos{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        align-items: center;
+    }
+.formDondeVamos > div{
+    padding: 0px 10px 10px;
+
+}
+.container{
+    width: 30vw;
+}
+
+.containerBoton{
+    width: 8vw;
+}
+}

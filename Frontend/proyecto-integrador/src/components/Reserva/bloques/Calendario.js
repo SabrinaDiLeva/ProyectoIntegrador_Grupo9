@@ -13,7 +13,7 @@ export default function Calendario(props) {
         }
     ]);
 
-    const [columns, setColumns] = useState(1);
+    const [columns, setColumns] = useState(window.innerWidth > 1024 ? 2 : 1);
 
     useEffect( () => {
         function handleResize() {

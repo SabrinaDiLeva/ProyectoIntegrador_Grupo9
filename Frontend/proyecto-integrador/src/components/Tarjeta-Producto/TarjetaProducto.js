@@ -3,7 +3,6 @@ import style from "./tarjetaProducto.module.css";
 import Titulo from "./subcomponents/Titulo"
 import Politicas from "./subcomponents/Politicas"
 import Calendario from "../Reserva/bloques/Calendario"
-import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Carrousel from "./Carrousel";
 import { useForm } from "../../hooks/useFormReserva"
@@ -79,7 +78,7 @@ export default function TarjetaProducto(props) {
                                 </div>
 
                                 <div className={style.BotonContainer}>
-                                    <Boton to={'/reserva/producto/{props.id}'} text={"Iniciar reserva"} />
+                                    <Boton to={`/reserva/producto/${props.id}`} text={"Iniciar reserva"} />
                                 </div>
                             </div>
                         </div>

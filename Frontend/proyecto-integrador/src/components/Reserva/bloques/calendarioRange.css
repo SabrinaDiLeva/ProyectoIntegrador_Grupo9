@@ -546,7 +546,8 @@
 
 .rdrSelected, .rdrInRange, .rdrStartEdge, .rdrEndEdge{
   pointer-events: none;
-  background-color: var(--colorBackgroundSecundario);
+  background-color: var(--colorBackgroundPrincipalOpacity);
+
 }
 
 .rdrInRange{}

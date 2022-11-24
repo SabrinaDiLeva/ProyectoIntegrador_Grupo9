@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categoria")
 @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
+@RequestMapping("/categoria")
 public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;

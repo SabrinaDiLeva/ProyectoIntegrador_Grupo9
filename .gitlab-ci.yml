@@ -66,7 +66,9 @@ deploy-backend:
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo apt install openjdk-18-jdk -y"
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop tomcat"
     - scp ./Backend/target/ProyectoIntegrador_Grupo9.war ubuntu@$DEPLOY_SERVER_IP:/home/ubuntu/tmp/ProyectoIntegrador_Grupo9.war
+    - scp ./Backend/src/main/resources/application.properties ubuntu@$DEPLOY_SERVER_IP:/home/ubuntu/tmp/application.properties
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo mv /home/ubuntu/tmp/ProyectoIntegrador_Grupo9.war /opt/tomcat/webapps/ProyectoIntegrador_Grupo9.war"
+    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo mv /home/ubuntu/tmp/application.properties /opt/tomcat/application.properties"
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start tomcat"
 
   rules:

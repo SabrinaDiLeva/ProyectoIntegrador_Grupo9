@@ -28,14 +28,14 @@ frontend_build_job:
   stage: build
   image: node:latest
   script:
-    - cd ./Frontend
+    - cd ./Frontend/proyecto-integrador
     - echo "Start building App"
     - npm install
     - CI=false npm run build
     - echo "Build successfully!"
   artifacts:
     paths:
-      - Frontend/build/
+      - Frontend/proyecto-integrador/build/
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'
       changes:
@@ -65,7 +65,8 @@ deploy-backend:
   script:
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo apt install openjdk-18-jdk -y"
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop tomcat"
-    - scp ./Backend/target/ProyectoIntegrador_Grupo9.war ubuntu@$DEPLOY_SERVER_IP:~/ProyectoIntegrador_Grupo9.war
+    - scp ./Backend/target/ProyectoIntegrador_Grupo9.war ubuntu@$DEPLOY_SERVER_IP:/home/ubuntu/tmp/ProyectoIntegrador_Grupo9.war
+    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo mv /home/ubuntu/tmp/ProyectoIntegrador_Grupo9.war /opt/tomcat/webapps/ProyectoIntegrador_Grupo9.war"
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start tomcat"
 
   rules:
@@ -81,7 +82,7 @@ frontend_deploy_job:
       - pip3 install awscli
       - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
       - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-      - aws s3 sync ./Frontend/build s3://$S3_BUCKET_NAME --delete
+      - aws s3 sync ./Frontend/proyecto-integrador/build s3://$S3_BUCKET_NAME --delete
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'
       changes:

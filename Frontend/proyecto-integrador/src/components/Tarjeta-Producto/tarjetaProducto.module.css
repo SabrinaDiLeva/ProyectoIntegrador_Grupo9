@@ -10,6 +10,19 @@
     margin: 5vh 0px;
 }
 
+.descriptionContainer{
+    text-align: left;
+    margin: 0px 2vw;
+}
+
+.descriptionContainer > h2{
+    margin: 15px 0vw;
+    font-size: 1.2em;
+}
+
+.descriptionContainer > p{
+    font-size: 0.85em;
+}
 /*
 CARROUSEL
 */

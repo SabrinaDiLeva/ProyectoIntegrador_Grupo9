@@ -12,7 +12,7 @@ const Buscador = () => {
 
     // Provincias selector state
     const [provincias, setProvincias] = useState([])
-
+    
     useEffect(() => {
         if (provincias.length === 0) {
             getCiudades().then((data) => {

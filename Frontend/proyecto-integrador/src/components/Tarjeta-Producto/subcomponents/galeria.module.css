@@ -1,0 +1,8 @@
+.contenedorImagenes {
+    width: 100%;
+    background-color: transparent;
+}
+
+.contenedorImgDerecha{
+    display: none;
+}

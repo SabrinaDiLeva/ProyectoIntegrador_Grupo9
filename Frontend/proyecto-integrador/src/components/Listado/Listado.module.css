@@ -1,11 +1,11 @@
 .container{
     display: flex;
     flex-direction: column;
-    background-color: var(--colorBackgroundSecundario);
+    background-color: var(--colorBackgroundPrincipal);
     margin: 50px 0px 2px;
 }
 
-h2 {
+.container h2 {
     align-self: flex-start;
     margin: 25px 20px 2px;
 }

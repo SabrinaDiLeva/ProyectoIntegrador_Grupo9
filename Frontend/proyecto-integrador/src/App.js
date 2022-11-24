@@ -5,12 +5,12 @@ import Header from './components/Header/Header';
 import SeccionHeader from './components/Header/SeccionHeader';
 import Listado from './components/Listado/Listado';
 import Buscador from './components/Bloque-buscador/Buscador';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
 import Layout from './components/Layout/Layout'
 import Producto from './components/Tarjeta-Producto/Producto'
 import Reserva from './components/Reserva/Reserva'
 import ReservaExito from './components/ReservaExito/ReservaExito'
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 function App() {
 

@@ -1,0 +1,27 @@
+.locations{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    padding:  16px 0px 16px 16px;
+    max-width: fit-content;
+}
+
+.locations:hover {
+    background-color: var(--colorBackgroundSecundario);
+    opacity: 50%;
+}
+
+.liContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.opcionProvincia{
+    list-style: none;
+}
+
+.opcionPais{
+    list-style: none;
+    font-size: small;
+    color: gray
+}

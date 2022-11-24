@@ -23,6 +23,7 @@
 .containerBoton{
     color: white;
 }
+
 @media (min-width: 430px) {
     .formDondeVamos {
         display: flex;

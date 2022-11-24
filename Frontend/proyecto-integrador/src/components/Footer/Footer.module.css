@@ -1,7 +1,7 @@
 .footerBlock{
     display: flex;
     height: 5vh;
-    background: var(--colorTextoPrimario);
+    background: var(--colorBackgroundPrincipal);
     width: 100%;
 }
 

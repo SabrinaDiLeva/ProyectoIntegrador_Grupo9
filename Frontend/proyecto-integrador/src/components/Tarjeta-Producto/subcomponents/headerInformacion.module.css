@@ -12,4 +12,18 @@
 .subHeaderDerecha {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
+
+.subHeaderDerecha>p {
+    padding: 0.5vh;
+    width: 10%;
+    height: 45%;
+    background-color: var(--colorBackgroundPrincipal);
+    border: 2px solid var(--colorBackgroundPrincipal);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

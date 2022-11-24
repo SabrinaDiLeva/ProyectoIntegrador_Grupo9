@@ -210,6 +210,7 @@
     flex-wrap: wrap;
     align-content: flex-start;
   }
+
   
   .navBar li {
     display: block;
@@ -230,7 +231,9 @@
     justify-content: flex-end;
     align-items: flex-end;
   }
-
+  .usuarioSessionIniciada {
+    display: none !important;
+  }
   .menuNav li:nth-child(2) {
     border-bottom: 1px solid rgb(112, 107, 38);
     margin-top: 1vh;

@@ -1,0 +1,19 @@
+.caracteristicas>h2 {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid var(--colorTextoSecundario);
+}
+
+.caracteristicaItems {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 3vh 0px;
+}
+
+@media (min-width: 1000px) {
+    .caracteristicaItems {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}

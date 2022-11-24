@@ -5,13 +5,16 @@
   --colorTextoPrimario: #263238;
   --colorTextoSecundario: #607D8B;
   --fontFamily: 'Quicksand';
+  --borderShadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 * {
   margin: 0;
   padding: 0;
   /* box-sizing: border-box; */
+  border-width: 0px;
 }
+
 
 html{
   height: 100%;

@@ -2,26 +2,26 @@ import style from "./politicas.module.css"
 
 export default function Politicas(props) {
     return (
-            <div className={style.politicasAllContainer}>
-            <h2>¿Que ofrece este lugar?</h2>
+        <div className={style.politicasAllContainer}>
+            <h2>Qué tenés que saber</h2>
             <span className={style.politicasContainer}>
                 <span className={style.politica}>
                     <h4>Normas de la casa</h4>
-                    {props.normasDeLaCasa.map( (value) => {
+                    {props.normasDeLaCasa.map((value) => {
                         return <p>{value.norma}</p>
                     })}
                 </span>
 
                 <span className={style.politica}>
                     <h4>Salud y seguridad</h4>
-                    {props.saludSeguridad.map( (value) => {
+                    {props.saludSeguridad.map((value) => {
                         return <p>{value.politica}</p>
                     })}
                 </span>
 
                 <span className={style.politica}>
                     <h4>Politica de cancelacion</h4>
-                    {props.politicaDeCancelacion.map( (value) => {
+                    {props.politicaDeCancelacion.map((value) => {
                         return <p>{value.politica}</p>
                     })}
                 </span>

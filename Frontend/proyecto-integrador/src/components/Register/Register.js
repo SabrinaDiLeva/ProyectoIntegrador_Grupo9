@@ -55,40 +55,37 @@ const validationForm = (form) => {
 };
 
 export default function Register() {
-    const { form, errors, handleChange, handleBlur, handleSubmit } = useForm(initialForm, validationForm);
+    const {form, errors, handleChange, handleBlur, handleRegister} = useForm(initialForm, validationForm);
     return (
             <div className={style.container}>
-                <form  className={style.formulario} onSubmit={handleSubmit}>
+                <form  className={style.formulario} onSubmit={handleRegister}>
                     <h1 className={style.titulo}>Crear cuenta</h1>
+                    
+                    {errors.errorGeneral && <p className={style.errorGeneral}> {errors.errorGeneral} </p>}
                     <div className={style.firstContainer}>
                         <span className={style.labelContainer}>
                             <label className={style.label}>Nombre</label>
                             <input className={style.input} type="text" id={style.name}name="nombre" placeholder="Escribe tu nombre" onBlur={handleBlur} onChange={handleChange} value={form.nombre} required />
-                            {errors.nombre && <p className={style.errores}> {errors.nombre} </p>}
                         </span>
 
                         <span className={style.labelContainer}>
                             <label className={style.label}>Apellido</label>
                             <input className={style.input} type="text" id={style.surname} name="apellido" placeholder="Escribe tu apellido" onBlur={handleBlur} onChange={handleChange} value={form.apellido} required />
-                            {errors.apellido && <p className={style.errores}> {errors.apellido} </p>}
                         </span>
                     </div>
                     <span className={style.labelContainer}>
                         <label className={style.label}>Correo electrónico</label>
                         <input type="email" id={style.email} className={style.input} name="email" placeholder="Escribe tu email" onBlur={handleBlur} onChange={handleChange} value={form.email} required />
-                        {errors.email && <p className={style.errores}> {errors.email} </p>}
                     </span>
     
                     <span className={style.labelContainer}>
                         <label className={style.label}>Contraseña</label>
                         <input type="text" id={style.password} className={style.input}name="password" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.password} required />
-                        {errors.password && <p className={style.errores}> {errors.password} </p>}
                     </span>
 
                     <span className={style.labelContainer}>
                         <label className={style.label}>Confirmar Contraseña</label>
                         <input type="text" id={style.repassword} className={style.input}name="repassword" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.repassword} required />
-                        {errors.repassword && <p className={style.errores}> {errors.repassword} </p>}
                     </span>
 
                     <span className={style.botonContainer}>

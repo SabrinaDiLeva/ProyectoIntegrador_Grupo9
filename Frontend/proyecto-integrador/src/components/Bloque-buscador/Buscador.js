@@ -10,17 +10,24 @@ import reactStyle from './BuscadorReact.css';
 
 
 const Buscador = () => {
-        // date State
-    const [range, setRange] = useState([
-        {
-            startDate: new Date(),
-            endDate: addDays(new Date(), 7),
-            key: 'selection'
-        }
-    ]);
 
+    // Open Close state
+    const [open, setOpen] = useState(false);
+    // date State
+    const [range, setRange] = useState([ {
+        startDate: new Date(),
+        endDate: addDays(new Date(), 7),
+        key: 'selection'
+    } ]);
+    // Provincias selector state
     const [provincias, setProvincias] = useState([])
+    // Predictivo para el buscador de provincias state
+    const [searchTerm, setSearchTerm] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
 
+    // get the target element to toggle calendar
+    const refOne = useRef(null)
+    
     useEffect(() => {
         if (provincias.length === 0) {
             getCiudades().then((data) => {
@@ -29,11 +36,12 @@ const Buscador = () => {
         }
     }, [])
 
-    // Open Close state
-    const [open, setOpen] = useState(false);
-    
-    // get the target element to toggle calendar
-    const refOne = useRef(null)
+    useEffect(() => {
+        const results = provincias.filter(prov =>
+            prov.nombre.toLowerCase().includes(searchTerm)
+        );
+        setSearchResults(results);
+    }, [searchTerm]);
 
     useEffect(() => {
         // set current date on component
@@ -55,19 +63,9 @@ const Buscador = () => {
         }
     }
 
-    const [searchTerm, setSearchTerm] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
     const handleChange = event => {
         setSearchTerm(event.target.value);
     };
-
-    useEffect(() => {
-        const results = provincias.filter(prov =>
-            prov.nombre.toLowerCase().includes(searchTerm)
-        );
-        setSearchResults(results);
-    }, [searchTerm]);
-    
 
     return (
         <>

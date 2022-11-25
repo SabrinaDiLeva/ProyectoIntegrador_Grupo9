@@ -1,9 +1,8 @@
 import axios from "axios";
-
-const baseUrl = "http://localhost:8080/categoria"
+import BASEURL from './EndPoint';
 
 export const getCategorias = async() => {
-    const endpoint = `${baseUrl}/`
+    const endpoint = `${BASEURL}/categoria`
     const response = await axios.get(endpoint);
     return response.data
 }

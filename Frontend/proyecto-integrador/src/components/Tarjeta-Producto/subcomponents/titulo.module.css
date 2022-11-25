@@ -1,0 +1,41 @@
+.header>* {
+    margin: 0 3vh;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    height: 4%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 12vh;
+    background-color: var(--colorBackgroundPrincipal);
+    box-shadow: var(--borderShadow);
+}
+
+.headerIzquierda {
+    text-align: left;
+    width: 80vw;
+    font-size: 2.5vw;
+}
+
+.category h3 {
+    color: var(--colorTextoSecundario)
+}
+
+@media (min-width: 420px) {
+    .headerIzquierda {
+        text-align: left;
+        width: 80vw;
+        font-size: 1vw;
+    }
+
+}

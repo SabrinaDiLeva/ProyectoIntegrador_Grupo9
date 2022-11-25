@@ -24,7 +24,6 @@ export const useForm = (initialForm, validateForm) => {
     };
 
     const handleLogin = (e) => {
-        var url = window.location.href
 
         e.preventDefault();
         if(form.email.trim() !== credencialesValidas.email || form.password.trim() !== credencialesValidas.password) {
@@ -34,7 +33,7 @@ export const useForm = (initialForm, validateForm) => {
             })
         }else{
             sessionStorage.setItem('sessionIniciada',JSON.stringify([{mail: form.email, password: form.password}]));
-            window.location.href = url.substring(0,window.location.href.indexOf('iniciar'))
+            window.history.back()
         }
     };
 
@@ -56,7 +55,7 @@ export const useForm = (initialForm, validateForm) => {
         }else{
             session.push({mail: form.email, password: form.password, nombre: form.nombre, apellido: form.apellido})
             sessionStorage.setItem('sessionRegistrada', JSON.stringify(session) )
-            window.location.href = url.substring(0, window.location.href.indexOf('registrarse'));
+            window.history.back()
         }
     }
 

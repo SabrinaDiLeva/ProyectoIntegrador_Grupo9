@@ -80,12 +80,12 @@ export default function Register() {
     
                     <span className={style.labelContainer}>
                         <label className={style.label}>Contraseña</label>
-                        <input type="text" id={style.password} className={style.input}name="password" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.password} required />
+                        <input type="password" id={style.password} className={style.input}name="password" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.password} required />
                     </span>
 
                     <span className={style.labelContainer}>
                         <label className={style.label}>Confirmar Contraseña</label>
-                        <input type="text" id={style.repassword} className={style.input}name="repassword" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.repassword} required />
+                        <input type="password" id={style.repassword} className={style.input}name="repassword" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.repassword} required />
                     </span>
 
                     <span className={style.botonContainer}>

@@ -1,107 +1,85 @@
 .tarjeta{
     display: flex;
-    background-color: var(--colorBackgroundSecundario);
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    width: 35%;
-    height: 100%;
-    margin: 0 0.5em;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: var(--borderShadow);
+    margin: 7px;
+    background-color: white;
 }
 
-.tarjeta:hover:not(.active){
-    background-color: #ebebeb;
-}
-
-.infoContainerImagen{
+.infoContainerImagen {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0 0.5em 0 0;
-    width: 50%;
-}
-
-.infoContainerDetalle{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-    width: 50%;
-    justify-content: center;
-}
-
-.detalleContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: right;
     width: 100%;
-    height: 70%;
 }
 
+.tarjeta img {
+    border-radius: 8px 8px 0px 0px;
+}
 
-.cardImage{
-    border-radius: 10px 0 0 10px;
-    width: 100%;
-    height: 100%;
+.tarjeta .infoContainerDetalle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detalleContainer {
+    font-size: 12px;
+    text-align: left;
+    padding: 10px;
 }
 
 .cardCategoria{
-    margin: 0;
-    padding-top: 0.5em;
+    color: gray;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .cardNombre{
-    font-size: 24px;
-    line-height: 0;
-    margin: 0;
-    padding-top: 0.5em;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 2px 0px 15px;
 }
 
 .cardLocation{
-    margin: 0;
-    padding-top: 0.7em;
-    font-size: 16px;
-}
-
-.verMasContainer{
-    width: 100%;
-    text-align: right;
-    /* margin-top: 2vh; */
-}
-
-.verMas{
-    padding-right: 10px;
-    font-size: small;        
+    font-size: 1em;
+    padding: 0px 0px 15px;
 }
 
 .cardDescripcion{
-    /* max-width: 15em; */
-    text-align: left;
-    font-size: small;
-    margin: 0;
-    height: auto;
-    padding-top: 0.3em;
-    display: -webkit-box;   
+     display: -webkit-box;   
     -webkit-line-clamp: 4;   
     -webkit-box-orient: vertical;     
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.cardBoton{
-    display: flex;
-    margin: 0.5em;
-    color: var(--colorTextoPrimario);
-    border: 2px solid  var(--colorTextoSecundario);
-    background-color: var(--colorBackgroundPrincipal);
-    border-radius: 5px;
-    padding: 0.5em;
-    font-weight: 700;
-    font-size: 16px;
-    transition: all 0.3s ease-out;
+.BotonContainer {
+    width: 75%;
+    height: 15%;
+    margin: 5px;
 }
 
-.cardBoton:hover{
-    background-color: var(--colorBackgroundSecundario);
-    color: var(--colorTextoSecundario);
-  }
+@media (min-width: 430px){
+    .tarjeta{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tarjeta img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px 0px 0px 8px;
+    }
+
+    .infoContainerDetalle{
+        justify-content: space-evenly;
+    }
+}

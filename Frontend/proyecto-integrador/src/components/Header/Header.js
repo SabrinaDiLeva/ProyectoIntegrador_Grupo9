@@ -51,7 +51,7 @@ const Header = (props) => {
                 {/* {loggedUser ? `${loggedUser.name} ${loggedUser.apellido}` : '' } ESTO VA DENTRO DEL P EN LUGAR DE MF  */}
               </a>
               </span>
-                <button className={style.button} href="/" onClick={sessionClosed}>Cerrar Sesión</button>
+              <button className={style.button} href="/" onClick={sessionClosed}>Cerrar Sesión</button>
             {/* cierra usuarioSessionIniciada */}
             </div>
             

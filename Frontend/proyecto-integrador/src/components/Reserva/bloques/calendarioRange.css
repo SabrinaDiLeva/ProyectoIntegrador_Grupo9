@@ -5,10 +5,6 @@
     font-size: 12px;
 }
 
-.rdrDateDisplayWrapper{
-    background-color: rgb(239, 242, 247);
-}
-
 .rdrDateDisplay{
     margin: 0.833em;
 }
@@ -16,7 +12,7 @@
 .rdrDateDisplayItem{
     border-radius: 4px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.21);
+    box-shadow: var(--borderShadow);
     border: 1px solid transparent;
 }
 
@@ -392,7 +388,7 @@
 /* ----- React styles CSS ----- */
 .rdrCalendarWrapper {
   box-sizing: border-box;
-  background: rgb(231, 223, 223);
+  background: white;
   color: var(--colorTextoPrimario);
   display: inline-flex;
   flex-direction: column;
@@ -488,9 +484,7 @@
 }
 
 .rdrDateDisplayWrapper{
-    background-color: var(--colorBackgroundPrincipal);
-    color: var(--colorTextoPrimario);
-    text-decoration: none;
+    display: none;
 }
 
 .rdrMonthName{}
@@ -552,7 +546,8 @@
 
 .rdrSelected, .rdrInRange, .rdrStartEdge, .rdrEndEdge{
   pointer-events: none;
-  background-color: var(--colorBackgroundSecundario);
+  background-color: var(--colorBackgroundPrincipalOpacity);
+
 }
 
 .rdrInRange{}

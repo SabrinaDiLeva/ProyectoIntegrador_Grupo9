@@ -1,5 +1,5 @@
 import Categoria from "./Categoria"
-import style from './Categoria.module.css'
+import style from './SeccionCategoria.module.css'
 import { useEffect, useState } from "react"
 import { getCategorias } from "../../service/categoriaApi"
 import { getProductosPorCategoria } from "../../service/productoApi"
@@ -12,6 +12,7 @@ export default function SeccionCategoria() {
     useEffect(() => {
         if (categorias.length === 0) {
             getCategorias().then((data) => {
+                console.log(data)
                 setCategorias(data);
             })
 
@@ -32,7 +33,7 @@ export default function SeccionCategoria() {
     return (
         <>
             <div className={style.body}>
-                <h1 className={style.titulo}>Busca tu tipo de Alojamiento</h1>
+                <h1 className={style.titulo}>Busca tu tipo de alojamiento</h1>
                 <div className={style.tarjetaContainer}>
                     {categorias.map((categoria, index) => <Categoria key={categoria.id} imagen={categoria.imagen} titulo={categoria.titulo} caption={`${cantidadPorCategoria[index]} resultados encontrados`} />)}
                 </div>

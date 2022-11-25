@@ -11,12 +11,12 @@ build-backend:
     - cd ./Backend
     - echo "Compiling the code..."
     - mvn clean install 
-    - mvn compile war:war
+    - mvn compile jar:jar
     - mvn package
 
   artifacts:
     paths:
-      - Backend/target/PIGrupo9.war
+      - Backend/target/PIGrupo9.jar
 
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'

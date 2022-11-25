@@ -1,0 +1,24 @@
+.contenedorImagenes {
+    width: 100%;
+    background-color: transparent;
+}
+
+.contenedorImgDerecha {
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    .contenedorImagenesAll{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px 
+    }
+    .contenedorImgDerecha{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .subContenedorImgDerecha{
+        margin: 0px 3px 3px;
+    } 
+}

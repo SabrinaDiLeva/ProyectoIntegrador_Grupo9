@@ -1,5 +1,5 @@
 .header{
-  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--borderShadow);
   background-color: var(--colorBackgroundSecundario);
   width: 100%;
   height: 10vh;
@@ -177,6 +177,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    z-index: 10;
   }
   
   .navBar button {
@@ -209,8 +210,9 @@
     flex-wrap: wrap;
     align-content: flex-start;
   }
+
   
-  li {
+  .navBar li {
     display: block;
     padding: 10px 40px;
     text-decoration: none;
@@ -229,7 +231,9 @@
     justify-content: flex-end;
     align-items: flex-end;
   }
-
+  .usuarioSessionIniciada {
+    display: none !important;
+  }
   .menuNav li:nth-child(2) {
     border-bottom: 1px solid rgb(112, 107, 38);
     margin-top: 1vh;

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
 @RequestMapping("/caracteristica")
 public class CaracteristicaController {
     @Autowired
@@ -34,7 +35,7 @@ public class CaracteristicaController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
-        Caracteristica caracteristicaBuscada=caracteristicaService.buscar(id);
+        Caracteristica caracteristicaBuscada = caracteristicaService.buscar(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 

@@ -2,7 +2,11 @@ import React from 'react';
 import style from './Header.module.css'
 import data from './headerInfo.json'
 import Logo from '../ui/logo.png'
+<<<<<<< HEAD
 import { Link, Routes, Route } from "react-router-dom";
+=======
+import { Link, Routes, Route} from "react-router-dom";
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
 import {sessionClosed} from '../../hooks/sessionStorage';
 import NavBar from './navBar';
 
@@ -13,9 +17,13 @@ const Header = (props) => {
   if(session){
     var loggedUser = {
       mail: JSON.parse(session)[0].mail,
+<<<<<<< HEAD
       password: JSON.parse(session)[0].password,
       // name: `${JSON.parse(session)[0].nombre.charAt(0).toUpperCase()}${JSON.parse(session)[0].nombre.slice(1)}`,
       // apellido: `${JSON.parse(session)[0].apellido.charAt(0).toUpperCase()}${JSON.parse(session)[0].apellido.slice(1)}`,
+=======
+      password: JSON.parse(session)[0].password
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
     }
   }
 
@@ -42,6 +50,7 @@ const Header = (props) => {
             <div className={style.usuarioSessionIniciada}>
                 <div className={style.avatarContainer}>
                   <span className={style.avatar}>MF</span>
+<<<<<<< HEAD
                     {/* {loggedUser ? `${loggedUser.name.charAt(0)} ${loggedUser.apellido.charAt(0)}` : '' } ESTO VA DENTRO DEL SPAN EN LUGAR DE MF*/}
                 </div>
                 <span className={style.perfilUsuario}>
@@ -52,6 +61,16 @@ const Header = (props) => {
               </a>
               </span>
               <button className={style.button} href="/" onClick={sessionClosed}>Cerrar Sesión</button>
+=======
+                </div>
+              <span className={style.perfilUsuario}>
+              <a className={style.linkPerfil} href="/">
+                <p className={style.saludo}>Hola,</p>
+                <p className={style.saludo2}>{loggedUser ? loggedUser.mail.split("@")[0] : ''}</p>
+              </a>
+              </span>
+                <button className={style.button} href="/" onClick={sessionClosed}>Cerrar Sesión</button>
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
             {/* cierra usuarioSessionIniciada */}
             </div>
             

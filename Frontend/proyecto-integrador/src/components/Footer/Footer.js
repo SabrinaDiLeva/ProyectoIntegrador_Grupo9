@@ -4,7 +4,10 @@ import { brands } from '@fortawesome/fontawesome-svg-core/import.macro';
 import style from './Footer.module.css';
 
 function Footer() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
     return (
         <>
         <div className={style.footerBlock}>
@@ -26,4 +29,8 @@ function Footer() {
     )
 }
 
+<<<<<<< HEAD
 export default Footer;
+=======
+export default Footer
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634

@@ -1,5 +1,9 @@
 .header{
+<<<<<<< HEAD
   box-shadow: var(--borderShadow);
+=======
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
   background-color: var(--colorBackgroundSecundario);
   width: 100%;
   height: 10vh;
@@ -177,7 +181,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+<<<<<<< HEAD
     z-index: 10;
+=======
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
   }
   
   .navBar button {
@@ -210,9 +217,14 @@
     flex-wrap: wrap;
     align-content: flex-start;
   }
+<<<<<<< HEAD
 
   
   .navBar li {
+=======
+  
+  li {
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
     display: block;
     padding: 10px 40px;
     text-decoration: none;
@@ -231,9 +243,13 @@
     justify-content: flex-end;
     align-items: flex-end;
   }
+<<<<<<< HEAD
   .usuarioSessionIniciada {
     display: none !important;
   }
+=======
+
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
   .menuNav li:nth-child(2) {
     border-bottom: 1px solid rgb(112, 107, 38);
     margin-top: 1vh;

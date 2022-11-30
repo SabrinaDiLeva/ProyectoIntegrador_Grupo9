@@ -19,6 +19,10 @@
     "font-awesome": "^4.7.0",
     "fontawesome": "^5.6.3",
     "react": "^18.2.0",
+<<<<<<< HEAD
+=======
+    "react-burger-menu": "^3.0.8",
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
     "react-date-picker": "^9.0.0",
     "react-date-range": "^1.4.0",
     "react-dom": "^18.2.0",

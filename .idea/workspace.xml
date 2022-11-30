@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="50cd8db7-d546-414d-9044-787430022e4c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/ProyectoIntegradorGrupo9Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/ProyectoIntegradorGrupo9Application.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/controller/CaracteristicaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/controller/CaracteristicaController.class" afterDir="false" />
@@ -57,6 +58,9 @@
       <change beforePath="$PROJECT_DIR$/Backend/target/test-classes/com/service/ProductoServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/test-classes/com/service/ProductoServiceTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/.idea/workspace.xml" afterDir="false" />
     </list>
+=======
+    <list default="true" id="50cd8db7-d546-414d-9044-787430022e4c" name="Changes" comment="" />
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,18 +85,26 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HbcpX6UWL0YkxmaQGdwZKZFJUZ" />
+<<<<<<< HEAD
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+=======
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+<<<<<<< HEAD
     "WebServerToolWindowFactoryState": "false",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Project",
+=======
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
   }
@@ -171,6 +183,10 @@
         <item itemvalue="JUnit.All in demo" />
         <item itemvalue="JUnit.CaracteristicaServiceTest.agregarCaracteristica" />
         <item itemvalue="JUnit.java.com.service in demo" />
+<<<<<<< HEAD
+=======
+        <item itemvalue="Spring Boot.ProyectoIntegradorGrupo9Application" />
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +198,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668557411397</updated>
+<<<<<<< HEAD
       <workItem from="1669421681581" duration="235000" />
+=======
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
     </task>
     <servers />
   </component>

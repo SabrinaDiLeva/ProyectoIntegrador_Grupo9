@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container{
     display: flex;
     flex-direction: column;
@@ -17,3 +18,18 @@
     }
 
 }
+=======
+.tarjetaListadoContainer{
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    padding: 1vh 0;
+    margin-top: 2vh;
+    height: 30%;
+}
+
+.tarjetaListadoContainer::-webkit-scrollbar {
+    display: none;
+}
+>>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634

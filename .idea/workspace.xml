@@ -5,7 +5,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50cd8db7-d546-414d-9044-787430022e4c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/ProyectoIntegradorGrupo9Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/ProyectoIntegradorGrupo9Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/controller/CaracteristicaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/controller/CaracteristicaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/controller/CategoriaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/controller/CategoriaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/controller/CiudadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/controller/CiudadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/controller/ImagenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/controller/ImagenController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/controller/ProductoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/controller/ProductoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/controller/ReservaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/controller/ReservaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/controller/UsuarioController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/CaracteristicaDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/CaracteristicaDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/CategoriaDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/CategoriaDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/CiudadDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/CiudadDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/ImagenDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/ImagenDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/ProductoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/ProductoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/ReservaDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/ReservaDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/UsuarioDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/dto/command/UsuarioDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Cancelacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Cancelacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Caracteristica.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Caracteristica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Categoria.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Categoria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Ciudad.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Ciudad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Fecha.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Fecha.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Imagen.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Imagen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Norma.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Norma.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Producto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Reserva.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Reserva.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Rol.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Rol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Seguridad.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Seguridad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/repository/ICaracteristicaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/repository/ICaracteristicaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/repository/ICategoriaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/repository/ICategoriaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/repository/ICiudadRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/repository/ICiudadRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/repository/IImagenRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/repository/IImagenRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/repository/IProductoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/repository/IProductoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/repository/IReservaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/repository/IReservaRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/repository/IRolRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/repository/IRolRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/repository/IUsuarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/repository/IUsuarioRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/service/CaracteristicaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/service/CaracteristicaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/service/CategoriaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/service/CategoriaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/service/CiudadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/service/CiudadService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/service/IService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/service/IService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/service/ImagenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/service/ImagenService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/service/ProductoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/service/ProductoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/service/ReservaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/service/ReservaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/classes/com/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/classes/com/service/UsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/test-classes/com/ProyectoIntegradorGrupo9ApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/test-classes/com/ProyectoIntegradorGrupo9ApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/test-classes/com/controller/CategoriaControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/test-classes/com/controller/CategoriaControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/test-classes/com/service/CaracteristicaServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/test-classes/com/service/CaracteristicaServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/test-classes/com/service/CategoriaServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/test-classes/com/service/CategoriaServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/test-classes/com/service/CiudadServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/test-classes/com/service/CiudadServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/test-classes/com/service/ImagenServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/test-classes/com/service/ImagenServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/target/test-classes/com/service/ProductoServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/target/test-classes/com/service/ProductoServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,21 +88,22 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\MARCOS\Desktop\Proyecto Integrador\ProyectoIntegrador_Grupo9\Backend" />
       <recent name="C:\Users\MARCOS\Desktop\Proyecto Integrador\ProyectoIntegrador_Grupo9\Frontend" />
     </key>
   </component>
-  <component name="RunManager" selected="Unknown.ProyectoIntegradorGrupo9Application678305717">
+  <component name="RunManager" selected="JUnit.All in demo">
     <configuration name="All in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <option name="PACKAGE_NAME" value="" />
@@ -131,6 +182,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668557411397</updated>
+      <workItem from="1669421681581" duration="235000" />
     </task>
     <servers />
   </component>

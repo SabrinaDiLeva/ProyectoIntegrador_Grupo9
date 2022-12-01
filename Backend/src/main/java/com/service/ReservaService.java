@@ -59,4 +59,8 @@ public class ReservaService implements IService<Reserva,ReservaDTO> {
         return this.guardar(dto.update(reserva));
     }
 
+    public List<Reserva> listarPorIdUsuario(Long id){
+        return iReservaRepository.findAllByUsuario_Id(id);
+    }
+
 }

@@ -26,7 +26,11 @@ public class ReservaController {
     public ResponseEntity<List<Reserva>>  listar() {
         return ResponseEntity.ok(reservaService.listar());
     }
-
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/usuario/{id}")
+    public ResponseEntity<List<Reserva>>  listarPorUsuario(@PathVariable Long id) {
+        return ResponseEntity.ok(reservaService.listarPorIdUsuario(id));
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Reserva> buscar(@PathVariable Long id) {
         Reserva reserva = reservaService.buscar(id);

@@ -111,6 +111,21 @@ public class Producto {
         this.ciudad = ciudad;
     }
 
+    public Producto(Long id, String nombre, Integer calificacion, String titulo, String descripcion, Categoria categoria, Ciudad ciudad, Set<Caracteristica> caracteristicas, Set<Fecha> fechas, Set<Norma> normas, Set<Seguridad> seguridad, Set<Cancelacion> cancelacion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.calificacion = calificacion;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.categoria = categoria;
+        this.ciudad = ciudad;
+        this.caracteristica=caracteristicas;
+        this.fecha=fechas;
+        this.norma=normas;
+        this.seguridad=seguridad;
+        this.cancelacion=cancelacion;
+    }
+
     public Producto update(Producto producto){
         if( producto.getNombre() != null )
             this.nombre = producto.getNombre();

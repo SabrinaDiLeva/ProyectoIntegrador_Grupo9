@@ -65,7 +65,7 @@ public class ProductoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Producto> modificar(@PathVariable(name = "id") Long id, @RequestBody ProductoDTO producto) {
-        return ResponseEntity.ok(productoService.modificar(id, producto));
+    public ResponseEntity<Producto> modificar(@PathVariable(name = "id") Long id, @RequestBody ProductoDTO productoIngresado) {
+        return ResponseEntity.ok(productoService.modificar(id, productoIngresado));
     }
 }

@@ -20,6 +20,9 @@ public class UsuarioDTO implements Serializable {
     private String ciudad;
     private Long rol_id;
 
+    public UsuarioDTO(){
+        
+    }
     public UsuarioDTO(Long id, String nombre, String apellido, String email, String contrasenia, String ciudad, Long rol_id){
         this.id=id;
         this.nombre=nombre;

@@ -47,9 +47,7 @@ public class ProductoController {
     @GetMapping("/filtrar/{ciudad}/{inicio}/{fin}")
     public ResponseEntity<List<Producto>>  filtrarBusqueda(@PathVariable Long ciudad,@PathVariable String inicio, @PathVariable String fin) {
         LocalDate i =LocalDate.parse(inicio);
-        System.out.println("fecha inicio: "+i);
         LocalDate f =LocalDate.parse(fin);
-        System.out.println("fecha inicio: "+f);
         return ResponseEntity.ok(productoService.filtrarBusqueda(ciudad,i,f));
     }
 

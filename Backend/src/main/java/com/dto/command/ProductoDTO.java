@@ -27,6 +27,9 @@ public class ProductoDTO implements Serializable {
     private Long ciudadId;
     private Long categoriaId;
 
+    public ProductoDTO(){
+        
+    }
     public ProductoDTO(Long id, String nombre, int calificacion, String titulo, String descripcion, Long categoriaId, Long ciudadId) {
         this.id = id;
         this.nombre = nombre;

@@ -11,6 +11,9 @@ public class CaracteristicaDTO implements Serializable {
     private String nombre;
     private String descripcion;
 
+    public CaracteristicaDTO(){
+        
+    }
     public CaracteristicaDTO(Long id, String nombre, String descripcion) {
         this.id = id;
         this.nombre = nombre;

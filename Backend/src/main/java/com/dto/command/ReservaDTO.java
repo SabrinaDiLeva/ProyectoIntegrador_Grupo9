@@ -13,6 +13,9 @@ public class ReservaDTO implements Serializable {
     private Long usuarioId;
     private Long productoId;
 
+    public ReservaDTO(){
+        
+    }
     public ReservaDTO(Long id, LocalDateTime inicio, LocalDateTime fin, Long usuario, Long producto){
         this.id=id;
         this.inicio=inicio;

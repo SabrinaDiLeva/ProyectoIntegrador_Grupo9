@@ -68,7 +68,7 @@ deploy-backend:
     # - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop tomcat"
     - scp ./Backend/target/PIGrupo9.jar ubuntu@$DEPLOY_SERVER_IP:/home/ubuntu/tmp/PIGrupo9.jar
     # - ssh ubuntu@$DEPLOY_SERVER_IP "sudo mv /home/ubuntu/tmp/PIGrupo9.war /opt/tomcat/webapps/PIGrupo9.war"
-    - ssh ubuntu@$DEPLOY_SERVER_IP "cd /home/ubuntu/tmp/; sudo nohup java -jar PIGrupo9.jar &."
+    # - ssh ubuntu@$DEPLOY_SERVER_IP "cd /home/ubuntu/tmp/; sudo nohup java -jar PIGrupo9.jar &."
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start PIGrupo9" # agregar cuando se arme el servicio
     # - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start tomcat"
 

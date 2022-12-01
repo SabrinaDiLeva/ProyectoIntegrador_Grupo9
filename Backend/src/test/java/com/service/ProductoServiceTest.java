@@ -1,37 +1,40 @@
-package com.service;
+// package com.service;
 
-//import com.dto.command.ProductoDTO;
-import com.dto.command.ProductoDTO;
-import com.model.Categoria;
-import com.model.Ciudad;
-import com.model.Imagen;
-import com.model.Producto;
-import com.repository.ICategoriaRepository;
-import com.repository.ICiudadRepository;
-import com.repository.IProductoRepository;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.mockito.ArgumentMatchers;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.server.ResponseStatusException;
+// //import com.dto.command.ProductoDTO;
+// import com.dto.command.ProductoDTO;
+// import com.model.Categoria;
+// import com.model.Ciudad;
+// import com.model.Imagen;
+// import com.model.Producto;
+// import com.repository.ICategoriaRepository;
+// import com.repository.ICiudadRepository;
+// import com.repository.IProductoRepository;
+// import org.junit.jupiter.api.Assertions;
+// import org.junit.jupiter.api.MethodOrderer;
+// import org.junit.jupiter.api.Test;
+// import org.junit.jupiter.api.TestMethodOrder;
+// import org.mockito.ArgumentMatchers;
+// import org.mockito.InjectMocks;
+// import org.mockito.Mock;
+// import org.springframework.boot.test.context.SpringBootTest;
+// import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+// import java.util.ArrayList;
+// import java.util.Arrays;
+// import java.util.List;
+// import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.*;
+// import static org.assertj.core.api.Assertions.assertThat;
+// import static org.junit.jupiter.api.Assertions.*;
+// import static org.mockito.ArgumentMatchers.eq;
+// import static org.mockito.Mockito.*;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@SpringBootTest
-public class ProductoServiceTest {
+// @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+// @SpringBootTest
+// public class ProductoServiceTest {
+
+// DE ACA PARA ABAJO YA ESTABA COMENTADO
+
         /*@Mock
         IProductoRepository productoRepository;
         @Mock
@@ -220,4 +223,4 @@ public class ProductoServiceTest {
         }
 */
 
-}
+// }

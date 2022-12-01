@@ -26,32 +26,16 @@ const validationForm = (form) => {
     return errors;
 };
 
-
-
-<<<<<<< HEAD
-export default function Login() {
-
+function Login(){
     const {form, errors, handleChange, handleBlur, handleLogin} = useForm(initialForm, validationForm);
+    
     return(
         <>
         <div className={style.container}>
             <form className={style.formulario} onSubmit={handleLogin}>
                 <h1 className={style.titulo}>Iniciar sesión</h1>
                 
-                {errors.errorGeneral && 
-                    <p className={style.errorGeneral}> {errors.errorGeneral} </p>
-                }
-=======
-function Login(){
-    const {form, errors, handleChange, handleBlur, handleSubmit} = useForm(initialForm, validationForm);
-    return(
-        <>
-        <div className={style.container}>
-            <form className={style.formulario} onSubmit={handleSubmit}>
-                <h1 className={style.titulo}>Iniciar sesión</h1>
-                
                 {errors.errorGeneral && <p className={style.errorGeneral}> {errors.errorGeneral} </p>}
->>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
                 <span className={style.labelContainer}>
                     <label className={style.label}>Correo electronico</label>
                     <input id={style.mail} className={style.input} type="email" name="email" placeholder="Escribe tu email" onBlur={handleBlur} onChange={handleChange} value={form.email} required></input>
@@ -72,8 +56,4 @@ function Login(){
     )
 }
 
-<<<<<<< HEAD
-=======
-
 export default Login;
->>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634

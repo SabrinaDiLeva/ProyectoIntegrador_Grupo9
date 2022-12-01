@@ -23,12 +23,7 @@ export const useForm = (initialForm, validateForm) => {
         setErros(validateForm(form));
     };
 
-<<<<<<< HEAD
     const handleLogin = (e) => {
-=======
-    const handleSubmit = (e) => {
-        var url = window.location.href
->>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
 
         e.preventDefault();
         if(form.email.trim() !== credencialesValidas.email || form.password.trim() !== credencialesValidas.password) {
@@ -38,7 +33,6 @@ export const useForm = (initialForm, validateForm) => {
             })
         }else{
             sessionStorage.setItem('sessionIniciada',JSON.stringify([{mail: form.email, password: form.password}]));
-<<<<<<< HEAD
             window.history.back()
         }
     };
@@ -67,13 +61,5 @@ export const useForm = (initialForm, validateForm) => {
 
     return {
         form, errors, handleChange, handleBlur, handleLogin, handleRegister
-=======
-            window.location.href = url.substring(0,window.location.href.indexOf('iniciar'))
-        }
-    };
-
-    return {
-        form, errors, handleChange, handleBlur, handleSubmit
->>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
     };
 };

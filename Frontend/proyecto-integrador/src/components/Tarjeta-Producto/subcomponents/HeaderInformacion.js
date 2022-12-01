@@ -6,15 +6,15 @@ export default function HeaderInformacion(props){
     const activeStars = (props.calificacion * totalStars) / 10;
 
     return (
-            <div className={style.subHeader}>
-                <span className={style.subHeaderIzquierda}>
-                    <h3>{props.location}</h3>
-                    <p>Cerca del centro</p>
-                </span>
-                <span className={style.subHeaderDerecha}>
-                    <Estrellas activeStars={activeStars} totalStars={totalStars} />
-                    <p>{activeStars.toFixed(0)}</p>
-                </span>
-            </div>
+        <div className={style.subHeader}>
+            <span className={style.subHeaderIzquierda}>
+                <h3>{props.location}</h3>
+                <p>Cerca del centro</p>
+            </span>
+            <span className={style.subHeaderDerecha}>
+                <Estrellas activeStars={activeStars} totalStars={totalStars} />
+                <p>{activeStars.toFixed(0)}</p>
+            </span>
+        </div>
     )
 }

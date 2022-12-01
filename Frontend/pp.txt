@@ -1,1 +1,59 @@
 a
+
+Buscador 
+
+    
+    
+
+    return (
+        <>
+        <div className={style.headerBlock}>
+            <div className={style.forms1}>
+                <span className={style.title}>
+                    <h1> Busca ofertas en hoteles, casas y mucho mas</h1>
+                </span>
+                <span className={style.formDondeVamos}>
+                    <div className={style.opcionContainer} ref={refOne}>
+                        <input id="inputDestino" className={style.inputDestino} type="search" value={searchTerm} onChange={handleChange} placeholder="¿A dónde vamos?"></input>
+                        <div className={style.opcionContainer2}>
+                            <ul className={style.inputListado} id={style.listadoSelection} >
+                                {searchResults.map((value) => (
+                                    <a href='/' className={style.locations}>
+                                        <iconify-icon icon="charm:map-pin"></iconify-icon>
+                                        <span className={style.liContainer}>
+                                                <li className={style.opcionProvincia}>{value.nombre}</li>
+                                                <li className={style.opcionPais}>{value.pais}</li>
+                                        </span>
+                                    </a>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className={style.calendarWrap}>
+                        <input
+                            value={`${format(range[0].startDate, "dd/MM/yyyy")} to ${format(range[0].endDate, "dd/MM/yyyy")}`}
+                            readOnly
+                            className={style.inputCalendario}
+                            onClick={()=> setOpen(open => !open)}
+                        />
+                        <div className={style.calendario} ref={refOne}>
+                            {open && 
+                                <DateRange
+                                    onChange={item => setRange([item.selection])}
+                                    editableDateInputs={true}
+                                    moveRangeOnFirstSelection={false}
+                                    ranges={range}
+                                    months={window.innerWidth > 767 ? 2 : 1}
+                                    direction='horizontal'
+                                    className={reactStyle.calendarElement}
+                                />
+                            }
+                        </div>
+                    </div>
+                    <button className={style.botonBuscar}>Buscar</button>
+                </span>   
+            </div>
+        </div>
+
+termina Buscador

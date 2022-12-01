@@ -3,17 +3,23 @@ package com.service;
 import com.dto.command.ProductoDTO;
 import com.model.Categoria;
 import com.model.Ciudad;
+import com.model.Fecha;
 import com.model.Producto;
 import com.repository.ICategoriaRepository;
 import com.repository.ICiudadRepository;
 import com.repository.IProductoRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ProductoService implements IService<Producto, ProductoDTO>{
@@ -70,5 +76,33 @@ public class ProductoService implements IService<Producto, ProductoDTO>{
         List<Producto> productos= iProductoRepository.findAll();
         Collections.shuffle(productos);
         return productos.subList(0,4);
+    }
+
+    public List<Producto> filtrarBusqueda(Long ciudad, LocalDate inicio, LocalDate fin){
+        List<Producto> productosCiudad = iProductoRepository.findAllByCiudad_Id(ciudad);
+        List<Producto> resultado = new ArrayList<>();
+        for(Producto producto: productosCiudad){
+            Set<Fecha> fechas = producto.getFechasDisponibles();
+            List<LocalDate> fechasDisponibles = new ArrayList<>();
+            for(Fecha fecha : fechas){
+                fechasDisponibles.add(fecha.getFecha());
+            }
+            List<LocalDate> fechasIngresadas = diasEntreDosFechas(inicio,fin);
+            if(fechasDisponibles.containsAll(fechasIngresadas)){
+                resultado.add(producto);
+            }
+        }
+        
+        return resultado;
+    }
+
+    public List<LocalDate> diasEntreDosFechas(LocalDate inicio, LocalDate fin){
+        List<LocalDate> fechas = new ArrayList<>();
+        LocalDate fecha = inicio;
+        while(ChronoUnit.DAYS.between(fecha, fin)>=0){
+            fechas.add(fecha);
+            fecha=fecha.plusDays(1);
+        }
+        return fechas;
     }
 }

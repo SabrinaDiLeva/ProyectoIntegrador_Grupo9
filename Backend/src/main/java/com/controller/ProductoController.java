@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -42,6 +43,16 @@ public class ProductoController {
     public ResponseEntity<List<Producto>>  listarPorCiudad(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCiudad(id));
     }
+
+    @GetMapping("/filtrar/{ciudad}/{inicio}/{fin}")
+    public ResponseEntity<List<Producto>>  filtrarBusqueda(@PathVariable Long ciudad,@PathVariable String inicio, @PathVariable String fin) {
+        LocalDate i =LocalDate.parse(inicio);
+        System.out.println("fecha inicio: "+i);
+        LocalDate f =LocalDate.parse(fin);
+        System.out.println("fecha inicio: "+f);
+        return ResponseEntity.ok(productoService.filtrarBusqueda(ciudad,i,f));
+    }
+
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscar(@PathVariable Long id) {

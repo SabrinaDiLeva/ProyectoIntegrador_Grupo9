@@ -28,15 +28,15 @@ function App() {
             <Route path='/registrarse' element={<>
               <Register/>
             </>}/> 
-            <Route path='/producto/:id' element={
+            <Route path='/producto/:id' element={<>
               <Producto/>
-            }/> 
-            <Route path='/reserva/producto/:id' element={
+            </>}/> 
+            <Route path='/reserva/producto/:id' element={<>
               <ReservaWrapper />
-            }/> 
-            <Route path='/exito' element={
+            </>}/> 
+            <Route path='/exito' element={<>
               <ReservaExito/>
-            }/> 
+            </>}/> 
           </Route>
         </Routes>
       </BrowserRouter>

@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -28,6 +29,19 @@ public class CiudadService implements IService<Ciudad, CiudadDTO>{
     public Ciudad guardar(CiudadDTO ciudad) {
         Ciudad c= new Ciudad(ciudad.getId(), ciudad.getNombre(), ciudad.getPais());
         return iCiudadRepository.save(c);
+    }
+
+    public List<Ciudad> filtrarCiudades(String inicio){
+        List<Ciudad> ciudades = iCiudadRepository.findAll();
+        List<Ciudad> filtradas = new ArrayList<>();
+        for(Ciudad ciudad : ciudades){
+            String nombre = ciudad.getNombre();
+            String subcadena = nombre.substring(0,3);
+            if(subcadena.equals(inicio)){
+                filtradas.add(ciudad);
+            }
+        }
+        return filtradas;
     }
 
     @Override

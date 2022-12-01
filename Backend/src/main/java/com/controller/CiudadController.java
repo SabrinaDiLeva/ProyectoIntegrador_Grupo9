@@ -27,6 +27,12 @@ public class CiudadController {
         return ResponseEntity.ok(ciudadService.listar());
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/inicio/{inicio}")
+    public ResponseEntity<List<Ciudad>>  filtrarCiudades(@PathVariable String inicio) {
+        return ResponseEntity.ok(ciudadService.filtrarCiudades(inicio));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Ciudad> buscar(@PathVariable Long id) {
         Ciudad ciudad = ciudadService.buscar(id);

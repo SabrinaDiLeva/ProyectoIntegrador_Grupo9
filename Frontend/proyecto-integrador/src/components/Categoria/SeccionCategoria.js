@@ -1,6 +1,5 @@
 import Categoria from "./Categoria"
 import style from './SeccionCategoria.module.css'
-import style from './Categoria.module.css'
 import { useEffect, useState } from "react"
 import { getCategorias } from "../../service/categoriaApi"
 import { getProductosPorCategoria } from "../../service/productoApi"

@@ -52,7 +52,6 @@ const Header = (props) => {
               </a>
               </span>
               <button className={style.button} href="/" onClick={sessionClosed}>Cerrar Sesión</button>
-
             {/* cierra usuarioSessionIniciada */}
             </div>
             

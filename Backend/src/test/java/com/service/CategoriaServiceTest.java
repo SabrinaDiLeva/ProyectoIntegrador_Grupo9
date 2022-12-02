@@ -1,30 +1,32 @@
-package com.service;
+// package com.service;
 
-import com.dto.command.CategoriaDTO;
-import com.model.Categoria;
-import com.model.Imagen;
-import com.model.Producto;
-import com.repository.ICategoriaRepository;
-import com.repository.IImagenRepository;
-import org.junit.jupiter.api.*;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.web.server.ResponseStatusException;
+// import com.dto.command.CategoriaDTO;
+// import com.model.Categoria;
+// import com.model.Imagen;
+// import com.model.Producto;
+// import com.repository.ICategoriaRepository;
+// import com.repository.IImagenRepository;
+// import org.junit.jupiter.api.*;
+// import org.mockito.InjectMocks;
+// import org.mockito.Mock;
+// import org.springframework.boot.test.context.SpringBootTest;
+// import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+// import java.util.ArrayList;
+// import java.util.Arrays;
+// import java.util.List;
+// import java.util.Optional;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+// import static org.assertj.core.api.Assertions.assertThat;
+// import static org.junit.jupiter.api.Assertions.*;
+// import static org.mockito.ArgumentMatchers.any;
+// import static org.mockito.Mockito.*;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@SpringBootTest
-public class CategoriaServiceTest {
+// @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+// @SpringBootTest
+// public class CategoriaServiceTest {
+
+// DE ACA PARA ABAJO YA ESTABA COMENTADO
    /*  @Mock
     ICategoriaRepository categoriaRepository;
     @Mock
@@ -148,4 +150,4 @@ public class CategoriaServiceTest {
         assertThrows(ResponseStatusException.class, () -> categoriaService.guardar(categoriaDTO));
     }
     */
-}
+// }

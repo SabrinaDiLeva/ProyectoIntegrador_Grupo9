@@ -210,6 +210,8 @@
     flex-wrap: wrap;
     align-content: flex-start;
   }
+
+  
   .navBar li {
     display: block;
     padding: 10px 40px;

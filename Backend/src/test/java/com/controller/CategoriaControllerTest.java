@@ -1,4 +1,4 @@
-package com.controller;
+/*package com.controller;
 
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,10 @@ import org.springframework.test.web.servlet.MockMvc;
 class CategoriaControllerTest {
     @Autowired
     private MockMvc mockMvc;
-/*
+
+*/
+// DE ACA PARA ABAJO YA ESTABA COMENTADO
+    /*
     @Test
     void test01buscarTodasLasCategorias() throws Exception {
         MvcResult respuesta = this.mockMvc.perform(MockMvcRequestBuilders.get("/categoria/")
@@ -123,4 +126,4 @@ class CategoriaControllerTest {
        }
     }
 */
-}
+// }

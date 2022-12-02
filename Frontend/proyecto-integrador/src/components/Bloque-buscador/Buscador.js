@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React, { useEffect, useRef, useState } from 'react';
-=======
-import React, { useEffect, useState } from 'react';
->>>>>>> 2329d54fe8c19d4891240a5f3cfb2746d0393dae
 import { getCiudades } from "../../service/ciudadApi"
 import DisplayBusqueda from './subcomponents/DisplayBusqueda';
 import Calendario from './subcomponents/Calendario';

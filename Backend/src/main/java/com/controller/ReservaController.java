@@ -21,7 +21,7 @@ public class ReservaController {
         return ResponseEntity.ok(reservaService.guardar(reserva));
     }
 
-@CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
+    @CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
     @GetMapping
     public ResponseEntity<List<Reserva>>  listar() {
         return ResponseEntity.ok(reservaService.listar());

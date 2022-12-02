@@ -28,6 +28,7 @@ export default function Listado() {
         }
         )
     }, [recomendados])
+    
     return (
         <>
         <div className={style.container}>

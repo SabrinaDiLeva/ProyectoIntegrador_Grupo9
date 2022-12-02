@@ -64,13 +64,10 @@ deploy-backend:
     
   script:
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo apt install openjdk-18-jdk -y"
-    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo killall java"
-    # - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop PIGrupo9" # agregar cuando se arme el servicio
+    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop PIGrupo9"
     - scp ./Backend/target/PIGrupo9.jar ubuntu@$DEPLOY_SERVER_IP:/home/ubuntu/tmp/PIGrupo9.jar
     - ssh ubuntu@$DEPLOY_SERVER_IP "sudo mv /home/ubuntu/tmp/PIGrupo9.jar /home/ubuntu/ProyectoIntegrador_Grupo9/PIGrupo9.jar"
-    # - ssh ubuntu@$DEPLOY_SERVER_IP "cd /home/ubuntu/ProyectoIntegrador_Grupo9/; sudo nohup java -jar PIGrupo9.jar &." 
-    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo nohup java -jar /home/ubuntu/ProyectoIntegrador_Grupo9/PIGrupo9.jar &" # comentar cuando genere el servicio
-    # - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start PIGrupo9" # agregar cuando se arme el servicio
+    - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start PIGrupo9"
 
   rules:
     - if: '$CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "main"'

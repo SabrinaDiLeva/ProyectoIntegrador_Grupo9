@@ -21,7 +21,7 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioService.guardar(usuario));
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping
     public ResponseEntity<List<Usuario>>  listar() {
         return ResponseEntity.ok(usuarioService.listar());

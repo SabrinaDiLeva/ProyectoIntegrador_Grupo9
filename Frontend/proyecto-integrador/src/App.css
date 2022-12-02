@@ -1,33 +1,22 @@
 :root {
   --colorBackgroundPrincipal: #FBC02D;
-<<<<<<< HEAD
   --colorBackgroundPrincipalOpacity: rgb(251,192,45,0.5);
-=======
->>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
   --colorBackgroundSecundario: #FFFBE2;
   --colorTextoPrimario: #263238;
   --colorTextoSecundario: #607D8B;
   --fontFamily: 'Quicksand';
-<<<<<<< HEAD
   --borderShadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
-=======
->>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
 }
 
 * {
   margin: 0;
   padding: 0;
   /* box-sizing: border-box; */
-<<<<<<< HEAD
   border-width: 0px;
   color: var(--colorTextoPrimario)
 }
 
 
-=======
-}
-
->>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
 html{
   height: 100%;
 }
@@ -42,7 +31,6 @@ html{
   height: 100%;
 }
 
-<<<<<<< HEAD
 * a{
   text-decoration: none;
 }
@@ -55,12 +43,12 @@ a:visited{
 a:link{
     text-decoration: none;
     color: inherit;
-=======
+}
+
 button--link:visited, a:visited{
   color: transparent;
 }
 
 * a{
   text-decoration: none;
->>>>>>> daa76d218e2402f4e2ed7e8a758ce90f18001634
 }

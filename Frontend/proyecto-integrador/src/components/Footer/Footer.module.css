@@ -1,0 +1,38 @@
+.footerBlock{
+    display: flex;
+    height: 5vh;
+    background: var(--colorBackgroundPrincipal);
+    width: 100%;
+}
+
+.footerBlock2{
+    display: flex;
+    margin: 0 0.5%;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.footerText{
+    display: flex;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+small{
+    font-size: 10px;
+    padding-left: 0.3vh;
+    font-weight: 700;
+}
+
+.footerIcons{
+    margin-right: 1vh;
+    color: white;
+}
+
+
+.icono{
+    margin-left: 1vh;
+}

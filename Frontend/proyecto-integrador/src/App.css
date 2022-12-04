@@ -1,0 +1,46 @@
+:root {
+  --colorBackgroundPrincipal: #FBC02D;
+  --colorBackgroundPrincipalOpacity: rgb(251,192,45,0.5);
+  --colorBackgroundSecundario: #FFFBE2;
+  --colorTextoPrimario: #263238;
+  --colorTextoSecundario: #607D8B;
+  --fontFamily: 'Quicksand';
+  --borderShadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  border-width: 0px;
+  color: var(--colorTextoPrimario)
+}
+
+
+html{
+  height: 100%;
+}
+
+#root{
+  height: 100%;
+}
+
+.container {
+  text-align: center;
+  font-family: var(--fontFamily), sans-serif;
+  height: 100%;
+}
+
+* a{
+  text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:link{
+    text-decoration: none;
+    color: inherit;
+}

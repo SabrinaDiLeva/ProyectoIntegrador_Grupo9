@@ -1,0 +1,63 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: beige;
+    height: 100%;
+}
+
+.tarjetaExito{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20vh 20vw
+}
+
+.tarjetaExito{
+    border-radius: 50px;
+    background-color: white;
+    box-shadow: var(--borderShadow);
+}
+
+.tarjetaExito > * {
+    margin: 8px 10px;
+}
+
+.icon {
+    font-size: 4.5rem;
+}
+.thanks{
+    font-size: 1.5rem;
+}
+.confirm{
+    font-size: 1rem;
+}
+
+.button {
+    text-decoration: none;
+    color: var(--colorTextoPrimario);
+    border: 2px solid var(--colorBackgroundPrincipal);
+    background-color: var(--colorBackgroundPrincipal);
+    border-radius: 5px;
+    width: 40%;
+    height: 100%;
+    min-height: 40px;
+    max-height: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s ease-out;
+    margin: 5px
+}
+
+.button>* {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: var(--colorBackgroundPrincipal);
+    color: var(--colorTextoSecundario);
+}

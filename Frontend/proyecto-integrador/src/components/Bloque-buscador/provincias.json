@@ -1,0 +1,46 @@
+[
+    {
+        "key": 1,
+        "nombre" : "Buenos Aires",
+        "pais": "Argentina"
+       
+    },
+    {
+        "key": 2,
+        "nombre" : "Cordoba",
+        "pais": "Argentina"
+    },
+    {
+        "key": 3,
+        "nombre" : "Santa Fe",
+        "pais": "Argentina"
+       
+    },
+    {
+        "key": 4,
+        "nombre" : "La Pampa",
+        "pais": "Argentina"
+    },
+    {
+        "key": 5,
+        "nombre" : "Corrientes",
+        "pais": "Argentina"
+       
+    },
+    {
+        "key": 6,        
+        "nombre" : "Misiones",
+        "pais": "Argentina"
+    },
+    {
+        "key": 7,
+        "nombre" : "San Luis",
+        "pais": "Argentina"
+       
+    },
+    {
+        "key": 8,
+        "nombre" : "San Juan",
+        "pais": "Argentina"
+    }
+]

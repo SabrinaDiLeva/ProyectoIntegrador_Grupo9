@@ -1,0 +1,2 @@
+REPOSITORIO PRINCIPAL  (github) -----------> https://github.com/SabrinaDiLeva/ProyectoIntegrador_Grupo9
+REPOSITORIO SECUNDARIO (gitlab) -----------> https://gitlab.ctd.academy/ctd/proyecto-integrador-1022/0521-pt-c7/grupo-09

@@ -12,7 +12,6 @@ export default function SeccionCategoria() {
     useEffect(() => {
         if (categorias.length === 0) {
             getCategorias().then((data) => {
-                console.log(data)
                 setCategorias(data);
             })
 

@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     background-color: beige;
+    height: 100%;
 }
 
 .tarjetaExito{
@@ -24,7 +25,6 @@
 
 .icon {
     font-size: 4.5rem;
-    color: green;
 }
 .thanks{
     font-size: 1.5rem;

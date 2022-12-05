@@ -1,9 +1,8 @@
 import axios from "axios";
-
-const baseUrl = "http://localhost:8080/ciudad"
+import BASEURL from './EndPoint';
 
 export const getCiudades= async() => {
-    const endpoint = `${baseUrl}/`
+    const endpoint = `${BASEURL}/ciudad/`
     const response = await axios.get(endpoint);
     return response.data
 }

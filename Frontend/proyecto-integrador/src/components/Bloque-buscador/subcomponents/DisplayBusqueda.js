@@ -13,7 +13,7 @@ export default function DisplayBusqueda(props) {
     };
 
     useEffect(() => {
-        const results = props.provincias.filter(prov =>
+        const results = (searchTerm === "")? [] : props.provincias.filter(prov =>
             prov.nombre.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setSearchResults(results);
@@ -26,10 +26,10 @@ export default function DisplayBusqueda(props) {
         var listado = document.getElementById("inputListado");
         listado.style.display = 'none';
         var input = document.getElementById("inputDestino");
-
         input.addEventListener('focus', function () {
             listado.style.display = 'block';
         });
+    
         input.addEventListener('focusout', function () {
             listado.style.display = 'none';
         });

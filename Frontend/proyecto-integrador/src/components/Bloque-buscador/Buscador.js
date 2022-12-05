@@ -1,18 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getCiudades } from "../../service/ciudadApi"
+import DisplayBusqueda from './subcomponents/DisplayBusqueda';
+import Calendario from './subcomponents/Calendario';
 import Boton from "../Botones/BotonLinkTo"
 
 // Styles
 import style from './Buscador.module.css';
-import DisplayBusqueda from './subcomponents/DisplayBusqueda';
-import Calendario from './subcomponents/Calendario';
 
 
 const Buscador = () => {
-
     // Provincias selector state
     const [provincias, setProvincias] = useState([])
-    
+
     useEffect(() => {
         if (provincias.length === 0) {
             getCiudades().then((data) => {
@@ -20,8 +19,7 @@ const Buscador = () => {
             })
         }
     }, [])
-
-
+  
     return (
         <>
             <div className={style.headerBlock}>
@@ -40,7 +38,6 @@ const Buscador = () => {
             </div>
         </>
     )
-
 }
 
 export default Buscador;

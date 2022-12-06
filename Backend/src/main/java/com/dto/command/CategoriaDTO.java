@@ -45,7 +45,7 @@ public class CategoriaDTO implements Serializable {
         return descripcion;
     }
 
-    public String getImagenId() {
+    public String getUrl() {
         return url;
     }
 
@@ -65,7 +65,7 @@ public class CategoriaDTO implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public void setImagenId(String imagen) {
+    public void setUrl(String imagen) {
         this.url = imagen;
     }
 

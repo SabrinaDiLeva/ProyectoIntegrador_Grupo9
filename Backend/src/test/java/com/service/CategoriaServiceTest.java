@@ -25,7 +25,7 @@ import static org.mockito.Mockito.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
 public class CategoriaServiceTest {
-   /*  @Mock
+    @Mock
     ICategoriaRepository categoriaRepository;
     @Mock
     IImagenRepository imagenRepository;
@@ -34,48 +34,44 @@ public class CategoriaServiceTest {
 
     @Test
     public void agregarCategoria(){
-        CategoriaDTO categoriaDTO = new CategoriaDTO( 1L, "titulo","descripcion", 1L);
-        Imagen img = new Imagen(1L, "titulo", "url");
-        Categoria categoria = categoriaDTO.newCategoria(img);
+        CategoriaDTO categoriaDTO = new CategoriaDTO( 1L, "titulo","descripcion", "url");
+        Categoria categoria = categoriaDTO.newCategoria();
         when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
-        when(imagenRepository.findById(1L)).thenReturn(Optional.of(img));
 
         assertThat(categoriaService.guardar(categoriaDTO))
-                .extracting("titulo", "descripcion", "imagen.id")
+                .extracting("titulo", "descripcion", "url_imagen")
                 .containsExactly(
                         categoriaDTO.getTitulo(),
                         categoriaDTO.getDescripcion(),
-                        categoriaDTO.getImagenId()
+                        categoriaDTO.getUrl()
                 );
     }
-
+     
     @Test
     public void listarCategorias(){
-        CategoriaDTO[] categorias = {new CategoriaDTO(1l,"test", "test", 1L), new CategoriaDTO(2l,"test", "test", 2L)};
+        CategoriaDTO[] categorias = {new CategoriaDTO(1l,"test", "test", "test"), new CategoriaDTO(2l,"test", "test", "test")};
         List<CategoriaDTO> lista = new ArrayList<>(Arrays.asList(categorias));
-        List<Categoria> lista_categorias = lista.stream().map(c -> c.newCategoria(new Imagen(c.getImagenId(), "titulo", "url"))).toList();
+        List<Categoria> lista_categorias = lista.stream().map(c -> c.newCategoria()).toList();
         when(categoriaRepository.findAll()).thenReturn(lista_categorias);
         List<Categoria> lista_c = categoriaService.listar();
         assertThat(lista_c).hasSizeGreaterThan(0)
                 .hasSameElementsAs(lista_categorias);
     }
-
+    
     @Test
     public void buscarCategoria(){
         final Long id = 1L;
-        CategoriaDTO categoriaDTO = new CategoriaDTO( id, "titulo","descripcion", id);
-        Imagen img = new Imagen(id, "titulo", "url" );
-        Categoria categoria = categoriaDTO.newCategoria(img);
-        when(imagenRepository.findById(eq(id))).thenReturn(Optional.of(img));
+        CategoriaDTO categoriaDTO = new CategoriaDTO( id, "titulo","descripcion", "url");
+        Categoria categoria = categoriaDTO.newCategoria();
         when(categoriaRepository.findById(id)).thenReturn(Optional.of(categoria));
         when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
 
         assertThat(categoriaService.guardar(categoriaDTO))
-                .extracting("titulo", "descripcion", "imagen.id")
+                .extracting("titulo", "descripcion", "url_imagen")
                 .containsExactly(
                         categoriaDTO.getTitulo(),
                         categoriaDTO.getDescripcion(),
-                        categoriaDTO.getImagenId()
+                        categoriaDTO.getUrl()
                 );
     }
 
@@ -91,58 +87,35 @@ public class CategoriaServiceTest {
     @Test
     public void actualizarCategoria(){
         final Long id = 1L;
-        CategoriaDTO categoriaDTO = new CategoriaDTO(id, "Casa en la montaña", "Un casa linda", id);
-        Imagen img = new Imagen(id, "titulo", "url");
-        Categoria categoria = categoriaDTO.newCategoria(img);
+        CategoriaDTO categoriaDTO = new CategoriaDTO(id, "titulo", "descripcion", "url");
+        Categoria categoria = categoriaDTO.newCategoria();
 
-        when(imagenRepository.findById(eq(id))).thenReturn(Optional.of(img));
         when(categoriaRepository.findById(eq(id))).thenReturn(Optional.of(categoria));
         when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
 
         assertThat(categoriaService.modificar(id, categoriaDTO))
-            .extracting("titulo", "descripcion", "imagen.id")
+            .extracting("titulo", "descripcion", "url_imagen")
             .containsExactly(
                 categoriaDTO.getTitulo(),
                 categoriaDTO.getDescripcion(),
-                categoriaDTO.getImagenId()
+                categoriaDTO.getUrl()
             );
     }
 
     @Test
     public void eliminarCategoria(){
         final Long id = 1L;
-        Categoria categoria = new Categoria(id, "Casa en la montaña", "Un casa linda", new Imagen(id, "titulo", "url"));
+        Categoria categoria = new Categoria(id, "titulo", "descripcion", "url");
         when(categoriaRepository.findById(eq(id))).thenReturn(Optional.of(categoria));
         categoriaService.eliminar(id);
         verify(categoriaRepository, times(1)).deleteById(id);
     }
-    @Test
-    public void agregarCategoriaConUnaImagenConProductoAsociadoLanzaBadRequest(){
-        final Long id = 1L;
-        CategoriaDTO categoriaDTO = new CategoriaDTO( 1L, "titulo","descripcion", id);
-        Imagen img = new Imagen(id, "titulo", "url", new Producto());
-        Categoria categoria = categoriaDTO.newCategoria(img);
-        when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
-        when(imagenRepository.findById(eq(id))).thenReturn(Optional.of(img));
 
-        Assertions.assertThrows( ResponseStatusException.class, () -> categoriaService.guardar(categoriaDTO));
-    }
-    @Test
-    public void agregarCategoriaConImagenQueNoExisteLanzaNotFound(){
-        final Long id = 1L;
-        CategoriaDTO categoriaDTO = new CategoriaDTO( 1L, "titulo","descripcion", id);
-        Imagen img = new Imagen(id, "titulo", "url", new Producto());
-        Categoria categoria = categoriaDTO.newCategoria(img);
-        when(categoriaRepository.save(any(Categoria.class))).thenReturn(categoria);
-        when(imagenRepository.findById(eq(id))).thenReturn(Optional.empty());
-
-        Assertions.assertThrows( ResponseStatusException.class, () -> categoriaService.guardar(categoriaDTO));
-    }
-
+    /* 
     @Test
     public void buscarCategoriaQueNoExisteLanzaNotFound(){
         final Long id = 1L;
-        CategoriaDTO categoriaDTO = new CategoriaDTO( 1L, "titulo","descripcion", id);
+        CategoriaDTO categoriaDTO = new CategoriaDTO( 1L, "titulo","descripcion", "url");
         when(categoriaRepository.findById(id)).thenReturn(Optional.empty());
 
         assertThrows(ResponseStatusException.class, () -> categoriaService.guardar(categoriaDTO));

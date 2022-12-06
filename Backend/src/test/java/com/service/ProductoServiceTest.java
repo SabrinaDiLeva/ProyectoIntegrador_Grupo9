@@ -32,7 +32,7 @@ import static org.mockito.Mockito.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
 public class ProductoServiceTest {
-        /*@Mock
+        @Mock
         IProductoRepository productoRepository;
         @Mock
         ICategoriaRepository categoriaRepository;
@@ -44,8 +44,8 @@ public class ProductoServiceTest {
 
         @Test
         public void agregarProducto(){
-                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1l,1l);
-                Categoria categoria = new Categoria(1l,"titulo","descripcion",new Imagen());
+                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion",1l,1l);
+                Categoria categoria = new Categoria(1L,"titulo","descripcion","url");
                 Ciudad ciudad = new Ciudad(1l,"nombre","pais");
 
                 Producto producto = productoDTO.newProducto(categoria,ciudad);
@@ -54,29 +54,25 @@ public class ProductoServiceTest {
                 when(ciudadRepository.findById(1L)).thenReturn(Optional.of(ciudad));
 
                 assertThat(productoService.guardar(productoDTO))
-                        .extracting("nombre", "calificacion", "titulo","descripcion","fechasDisponibles","normas","seguridad","cancelacion","categoria.id","ciudad.id")
+                        .extracting("nombre", "calificacion", "titulo","descripcion","categoria.id","ciudad.id")
                         .containsExactly(
                                 productoDTO.getNombre(),
                                 productoDTO.getCalificacion(),
                                 productoDTO.getTitulo(),
                                 productoDTO.getDescripcion(),
-                                productoDTO.getFechas_disponibles(),
-                                productoDTO.getNormas(),
-                                productoDTO.getSeguridad(),
-                                productoDTO.getCancelacion(),
                                 productoDTO.getCategoriaId(),
                                 productoDTO.getCiudadId()
                         );
         }
 
 
-
+        
         @Test
         public void listarProductos(){
-                ProductoDTO[] productos = {new ProductoDTO(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1l,1l),
-                        new ProductoDTO(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1l,1l)};
+                ProductoDTO[] productos = {new ProductoDTO(1L,"nombre",10,"titulo","descripcion",1l,1l),
+                        new ProductoDTO(1L,"nombre",10,"titulo","descripcion",1l,1l)};
                 List<ProductoDTO> lista = new ArrayList<>(Arrays.asList(productos));
-                List<Producto> lista_productos = lista.stream().map(c -> c.newProducto(new Categoria(c.getCategoriaId(), "titulo", "descripcion",new Imagen()),
+                List<Producto> lista_productos = lista.stream().map(c -> c.newProducto(new Categoria(c.getCategoriaId(), "titulo", "descripcion","url"),
                         new Ciudad(c.getCiudadId(),"nombre","pais"))).toList();
                 when(productoRepository.findAll()).thenReturn(lista_productos);
                 List<Producto> lista_c = productoService.listar();
@@ -87,8 +83,8 @@ public class ProductoServiceTest {
         @Test
         public void buscarProducto(){
                 final Long id = 1L;
-                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1l,1l);;
-                Categoria categoria = new Categoria(1l,"titulo","descripcion",new Imagen());
+                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion",1l,1l);;
+                Categoria categoria = new Categoria(1l,"titulo","descripcion","url");
                 Ciudad ciudad = new Ciudad(1l,"nombre","pais");
 
                 Producto producto = productoDTO.newProducto(categoria,ciudad);
@@ -98,16 +94,12 @@ public class ProductoServiceTest {
                 when(productoRepository.save(ArgumentMatchers.any(Producto.class))).thenReturn(producto);
 
                 assertThat(productoService.guardar(productoDTO))
-                        .extracting("nombre", "calificacion", "titulo","descripcion","fechasDisponibles","normas","seguridad","cancelacion","categoria.id","ciudad.id")
+                        .extracting("nombre", "calificacion", "titulo","descripcion","categoria.id","ciudad.id")
                         .containsExactly(
                                 productoDTO.getNombre(),
                                 productoDTO.getCalificacion(),
                                 productoDTO.getTitulo(),
                                 productoDTO.getDescripcion(),
-                                productoDTO.getFechas_disponibles(),
-                                productoDTO.getNormas(),
-                                productoDTO.getSeguridad(),
-                                productoDTO.getCancelacion(),
                                 productoDTO.getCategoriaId(),
                                 productoDTO.getCiudadId()
                         );
@@ -125,8 +117,8 @@ public class ProductoServiceTest {
         @Test
         public void actualizarProducto(){
                 final Long id = 1L;
-                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1l,1l);;
-                Categoria categoria = new Categoria(1l,"titulo","descripcion",new Imagen());
+                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion",1l,1l);;
+                Categoria categoria = new Categoria(1l,"titulo","descripcion","url");
                 Ciudad ciudad = new Ciudad(1l,"nombre","pais");
 
                 Producto producto = productoDTO.newProducto(categoria,ciudad);
@@ -136,17 +128,13 @@ public class ProductoServiceTest {
                 when(productoRepository.findById(eq(id))).thenReturn(Optional.of(producto));
                 when(productoRepository.save(ArgumentMatchers.any(Producto.class))).thenReturn(producto);
 
-                assertThat(productoService.modificar(id, productoDTO))
-                        .extracting("nombre", "calificacion", "titulo","descripcion","fechasDisponibles","normas","seguridad","cancelacion","categoria.id","ciudad.id")
+                assertThat(productoService.guardar(productoDTO))
+                        .extracting("nombre", "calificacion", "titulo","descripcion","categoria.id","ciudad.id")
                         .containsExactly(
                                 productoDTO.getNombre(),
                                 productoDTO.getCalificacion(),
                                 productoDTO.getTitulo(),
                                 productoDTO.getDescripcion(),
-                                productoDTO.getFechas_disponibles(),
-                                productoDTO.getNormas(),
-                                productoDTO.getSeguridad(),
-                                productoDTO.getCancelacion(),
                                 productoDTO.getCategoriaId(),
                                 productoDTO.getCiudadId()
                         );
@@ -155,7 +143,7 @@ public class ProductoServiceTest {
         @Test
         public void eliminarProducto(){
                 final Long id = 1L;
-                Producto producto= new Producto(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",new Categoria(),new Ciudad());
+                Producto producto= new Producto(1L,"nombre",10,"titulo","descripcion",new Categoria(),new Ciudad());
                 when(productoRepository.findById(eq(id))).thenReturn(Optional.of(producto));
                 productoService.eliminar(id);
                 verify(productoRepository, times(1)).deleteById(id);
@@ -164,8 +152,8 @@ public class ProductoServiceTest {
         @Test
         public void agregarProductoConCategoriaQueNoExisteLanzaNotFound(){
                 final Long id = 1L;
-                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1l,1l);
-                Categoria categoria = new Categoria(1l,"titulo","descripcion",new Imagen());
+                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion",1l,1l);
+                Categoria categoria = new Categoria(1l,"titulo","descripcion","url");
                 Ciudad ciudad = new Ciudad(1l,"nombre","pais");
 
                 Producto producto = productoDTO.newProducto(categoria,ciudad);
@@ -180,8 +168,8 @@ public class ProductoServiceTest {
         @Test
         public void agregarProductoConCiudadQueNoExisteLanzaNotFound(){
                 final Long id = 1L;
-                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1l,1l);
-                Categoria categoria = new Categoria(1l,"titulo","descripcion",new Imagen());
+                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion",1l,1l);
+                Categoria categoria = new Categoria(1l,"titulo","descripcion","url");
                 Ciudad ciudad = new Ciudad(1l,"nombre","pais");
 
                 Producto producto = productoDTO.newProducto(categoria,ciudad);
@@ -196,8 +184,8 @@ public class ProductoServiceTest {
         @Test
         public void agregarProductoConCategoriaYCiudadQueNoExistenLanzaNotFound(){
                 final Long id = 1L;
-                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1l,1l);
-                Categoria categoria = new Categoria(1l,"titulo","descripcion",new Imagen());
+                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion",1l,1l);
+                Categoria categoria = new Categoria(1l,"titulo","descripcion","url");
                 Ciudad ciudad = new Ciudad(1l,"nombre","pais");
 
                 Producto producto = productoDTO.newProducto(categoria,ciudad);
@@ -209,11 +197,11 @@ public class ProductoServiceTest {
                 Assertions.assertThrows( ResponseStatusException.class, () -> productoService.guardar(productoDTO));
         }
 
-
+/* 
         @Test
         public void buscarProductoQueNoExisteLanzaNotFound(){
                 final Long id = 1L;
-                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion","fechas","normas","seguridad","cancelacion",1l,1l);
+                ProductoDTO productoDTO = new ProductoDTO(1L,"nombre",10,"titulo","descripcion",1l,1l);
                 when(productoRepository.findById(id)).thenReturn(Optional.empty());
 
                 assertThrows(ResponseStatusException.class, () -> productoService.guardar(productoDTO));

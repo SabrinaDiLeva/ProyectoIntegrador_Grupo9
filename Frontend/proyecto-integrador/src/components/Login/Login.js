@@ -36,25 +36,21 @@ export default function Login() {
         <div className={style.container}>
             <form className={style.formulario} onSubmit={handleLogin}>
                 <h1 className={style.titulo}>Iniciar sesión</h1>
+                {errors.errorGeneral && <p className={style.errorGeneral}> {errors.errorGeneral} </p>}
                 
-                {errors.errorGeneral && 
-                    <p className={style.errorGeneral}> {errors.errorGeneral} </p>
-                }
                 <span className={style.labelContainer}>
                     <label className={style.label}>Correo electronico</label>
                     <input id={style.mail} className={style.input} type="email" name="email" placeholder="Escribe tu email" onBlur={handleBlur} onChange={handleChange} value={form.email} required></input>
-                    {errors.email && <p className={style.errores}> {errors.email} </p>}
 
                     <label className={style.label}>Contraseña</label>
                     <input id={style.password} className={style.input} type="password" name="password" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.password} required></input>
-                    {errors.password && <p className={style.errores}> {errors.password} </p>}
                 </span>
 
                 <span className={style.botonContainer}>
                     <button type="submit" className={style.boton}>Ingresar</button>
                 </span>
             </form>
-            <span className={style.registrarse}>¿Aún no tienes cuenta?<Link to='/registrarse' className={style.link}>Registrate</Link></span>
+            <span className={style.registrarse}>¿Aún no tienes cuenta?<Link to='/registrarse' className={style.link}> Registrate</Link></span>
         </div>
         </>
     )

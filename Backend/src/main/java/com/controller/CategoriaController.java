@@ -22,7 +22,6 @@ public class CategoriaController {
         return ResponseEntity.ok(categoriaService.guardar(categoria));
     }
 
-    // @CrossOrigin(origins = "http://grupo9c7front.s3-website.us-east-2.amazonaws.com")
     @GetMapping
     public ResponseEntity<List<Categoria>>  listar() {
         return ResponseEntity.ok(categoriaService.listar());

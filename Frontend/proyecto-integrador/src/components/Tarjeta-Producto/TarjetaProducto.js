@@ -63,7 +63,7 @@ export default function TarjetaProducto(props) {
                     </div>
 
                     <Caracteristicas caracteristicas={props.caracteristicas} />
-
+{/* Comentado porque nos dijeron que era redundante tener el calendario a menos que guardemos la información de reserva.
                     <div className={style.calendarWrap}>
                         <div className={style.title}>
                             <h2>Fechas disponibles</h2>
@@ -83,6 +83,7 @@ export default function TarjetaProducto(props) {
                             </div>
                         </div>
                     </div>
+*/}
 
                     <Politicas normasDeLaCasa={props.normasDeLaCasa} saludSeguridad={props.saludSeguridad} politicaDeCancelacion={props.politicaDeCancelacion} />
 

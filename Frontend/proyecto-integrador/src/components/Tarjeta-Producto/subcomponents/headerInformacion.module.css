@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 1.5vh 1vw;
+    margin: 2vh 5vw 0vh;
+    font-size: 3vh;
 }
 
 .subHeaderIzquierda{
@@ -27,3 +28,8 @@
     align-items: center;
 }
 
+@media (min-width: 420px) {
+    .subHeader {
+        font-size: 3.7vh;
+    }
+}

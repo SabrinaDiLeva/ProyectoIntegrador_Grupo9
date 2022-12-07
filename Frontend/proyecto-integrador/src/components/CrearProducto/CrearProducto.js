@@ -17,38 +17,51 @@ export default function CrearProducto() {
                 <div className={style.subContainer}>
                     <form className={style.formulario}>
                         <div className={style.productoInfoContainer}>
-                            <span className={style.infoContainer1}>
+                            <div className={style.infoContainer1}>
+                                <span className={style.infoLabelContainer}>
                                 <label className={style.infoLabel}>Nombre de la Propiedad</label>
                                 <input type="text" className={style.infoInput} autoComplete='off' placeholder='Hotel Hermitage'></input>
-                                
+                                </span>
+
+                                <span className={style.infoLabelContainer}>
                                 <label className={style.infoLabel}>Categoria</label>
                                 <input type="text" className={style.infoInput} autoComplete='off' placeholder='Hotel'></input>
-                                
+                                </span>
+
+                                <span className={style.infoLabelContainer}>
                                 <label className={style.infoLabel}>Direccion</label>
                                 <input type="text" className={style.infoInput} autoComplete='off' placeholder='Av. Colon 1643'></input>
-                                
+                                </span>
+
+                                <span className={style.infoLabelContainer}>
                                 <label className={style.infoLabel}>Ciudad</label>
                                 <input type="text" className={style.infoInput} autoComplete='off' placeholder='Ciudad'></input>
-                            </span>
-                            <span className={style.infoContainer2}>
+                                </span>
+
+                            </div>
+                            <div className={style.infoContainer2}>
                                 <label className={style.infoLabel}>Descripcion</label>
                                 <input type="text" className={style.descriptionInput} autoComplete='off' placeholder='Escriba aqui'></input>
-                            </span>
+                            </div>
                         </div>
 
                         <h2 className={style.titulo2}>Agregar Atributos</h2>
                         <div className={style.productoCaracteristicasContainer}>
-                            <span className={style.caracteristicasContainer}>
-                                <label className={style.caracteristicaLabel}>Nombre</label>
-                                <input type="text" className={style.caracteristicaInput} autoComplete='off' placeholder='Wifi'></input>
-                            </span>
-                            <span className={style.buttonAgregarContainer}>
-                                <button className={style.buttonAgregar}>{Icons.agregar}</button>
-                            </span>
-                            <span className={style.caracteristicasContainer}>
-                                <label className={style.caracteristicaLabel}>Icono</label>
-                                <input type="text" className={style.caracteristicaInput} autoComplete='off' placeholder='WiFi'></input>
-                            </span>
+                            <div className={style.caracteristicasContainer1}>
+                                <span className={style.caracteristicasSubContainer}>
+                                    <label className={style.caracteristicaLabel}>Nombre</label>
+                                    <input type="text" className={style.caracteristicaInput} autoComplete='off' placeholder='Wifi'></input>
+                                </span>
+                                <span className={style.caracteristicasSubContainer}>
+                                    <label className={style.caracteristicaLabel}>Icono</label>
+                                    <input type="text" className={style.caracteristicaInput} autoComplete='off' placeholder='WiFi'></input>
+                                </span>
+                            </div>
+                            <div className={style.caracteristicasContainer2}>
+                                <span className={style.buttonAgregarContainer}>
+                                    <button className={style.buttonAgregar}>{Icons.agregar}</button>
+                                </span>
+                            </div>
                         </div>
 
 

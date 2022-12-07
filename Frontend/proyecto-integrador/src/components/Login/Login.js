@@ -26,6 +26,12 @@ const validationForm = (form) => {
     return errors;
 };
 
+// window.addEventListener("submit", function () {
+//     const email = document.querySelector("input[name='email']").value;
+//     const paswword = document.querySelector("input[name='password']").value;
+
+    
+// })
 
 
 export default function Login() {

@@ -1,32 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import style from "./CrearProducto.module.css";
 import Titulo from "../Tarjeta-Producto/subcomponents/Titulo"
-import { useForm } from "../../hooks/useFormReserva"
 import { Icons } from '../ui/icons';
 import Boton from '../Botones/BotonLinkTo';
 
 
 export default function CrearProducto() {
 
-    const initialForm = {
-        checkInDate: "DD/MM/YYYY",
-        checkOutDate: "DD/MM/YYYY"
-    }
-
-    const validationForm = (form) => {
-        let errors = {};
-        //Cambiar Regex para ciudades
-        let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-
-        if (!regexName.test(form.city.trim())) {
-            errors.city = "Ingrese caracteres válidos"
-        }
-
-        //Validar que la fechas estén disponibles
-        //Básicamente que se encuentren en el atributo del Producto
-    };
-    const { form, handleChange, handleChangeManual, handleSubmit } = useForm(initialForm, validationForm);
-    
     return (
         <>
             <Titulo name={'Administracion de Productos'} />
@@ -62,12 +42,13 @@ export default function CrearProducto() {
                                 <label className={style.caracteristicaLabel}>Nombre</label>
                                 <input type="text" className={style.caracteristicaInput} autoComplete='off' placeholder='Wifi'></input>
                             </span>
-
+                            <span className={style.buttonAgregarContainer}>
+                                <button className={style.buttonAgregar}>{Icons.agregar}</button>
+                            </span>
                             <span className={style.caracteristicasContainer}>
                                 <label className={style.caracteristicaLabel}>Icono</label>
                                 <input type="text" className={style.caracteristicaInput} autoComplete='off' placeholder='WiFi'></input>
                             </span>
-                            <button className={style.button}>{Icons.agregar}</button>
                         </div>
 
 
@@ -76,7 +57,7 @@ export default function CrearProducto() {
                             <span className={style.politicaContainer}>
                                 <h3 className={style.titulo3}>Normas de la Casa</h3>
                                 <label className={style.politicaLabel}>Descripcion</label>
-                                <input type="text" className={style.descriptInput} autoComplete='off' placeholder='Escriba aqui'></input>
+                                <input type="text" className={style.politicaInput} autoComplete='off' placeholder='Escriba aqui'></input>
                             </span>
 
                             <span className={style.politicaContainer}>

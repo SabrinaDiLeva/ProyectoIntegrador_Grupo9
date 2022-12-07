@@ -9,6 +9,8 @@ import ReservaWrapper from './components/Reserva/ReservaWrapper'
 import ReservaExito from './components/ReservaExito/ReservaExito'
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import CrearProducto from './components/CrearProducto/CrearProducto';
+import ProductoExito from './components/ProductoExito/ProductoExito';
 
 function App() {
 
@@ -28,9 +30,15 @@ function App() {
             <Route path='/registrarse' element={<>
               <Register/>
             </>}/> 
+            <Route path='/crearproducto' element={<>
+              <CrearProducto />
+            </>}/>
+            <Route path='/crearproducto/exito' element={<>
+              <ProductoExito/>
+            </>}/>
             <Route path='/producto/:id' element={
               <Producto/>
-            }/> 
+            }/>
             <Route path='/reserva/producto/:id' element={
               <ReservaWrapper />
             }/> 

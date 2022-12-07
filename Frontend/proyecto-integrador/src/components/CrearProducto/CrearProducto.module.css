@@ -1,0 +1,145 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo1{
+    text-align: left;
+    padding: 2vh 0 1vh 3vw;
+    background-color: var(--colorBackgroundSecundario);
+}
+
+.subContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+.productoInfoContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+}
+
+.infoContainer1{
+    display: flex;
+    flex-direction: column;
+    margin: 0 4vw;
+    text-align: left;
+}
+
+.infoContainer2{
+    display: flex;
+    flex-direction: column;
+    margin: 0 4vw;
+    text-align: left;
+}
+
+.infoLabel{
+    width: 10em;
+    margin: 1vh 0 0 2vw;
+}
+
+.infoInput{
+    width: 80%;
+    border: 2px solid #607D8B;
+    border-radius: 5px;
+    box-shadow: var(--borderShadow);
+    margin: 0.5vh 3vw;
+    padding: 1vh;
+    font-style: italic;
+}
+
+.descriptionInput{
+    width: 80%;
+    border: 2px solid #607D8B;
+    border-radius: 5px;
+    box-shadow: var(--borderShadow);
+    margin: 0.5vh 3vw;
+    padding: 1vh;
+    height: 10vh;
+    font-style: italic;
+}
+
+.titulo2{
+    text-align: left;
+    width: 10em;
+    margin: 1vh 0 0 3vw;
+}
+
+.productoCaracteristicasContainer{}
+
+.caracteristicasContainer{}
+
+.caracteristicaLabel{
+    width: 10em;
+}
+
+.caracteristicaInput{
+    border: 2px solid #607D8B;
+    border-radius: 5px;
+    box-shadow: var(--borderShadow);
+    font-style: italic;
+}
+
+.productoPoliticasContainer{}
+
+.politicaContainer{}
+
+.titulo3{
+    text-align: left;
+    width: 10em;
+    margin: 1vh 0 0 6vw;
+}
+
+.politicaLabel{
+    width: 10em;
+}
+
+.politicaInput{
+    border: 2px solid #607D8B;
+    border-radius: 5px;
+    box-shadow: var(--borderShadow);
+    font-style: italic;
+}
+
+.imagenContainer{}
+
+.imagenInput{
+    border: 2px solid #607D8B;
+    border-radius: 5px;
+    box-shadow: var(--borderShadow);
+}
+
+.BotonContainer{}
+
+.button {
+    text-decoration: none;
+    color: var(--colorTextoPrimario);
+    border: 2px solid var(--colorBackgroundPrincipal);
+    background-color: var(--colorBackgroundPrincipal);
+    border-radius: 5px;
+    width: 3vh;
+    aspect-ratio: 1;
+    transition: all 0.3s ease-out;
+}
+
+.button:hover {
+    background-color: var(--colorBackgroundSecundario);
+    color: var(--colorTextoSecundario);
+}
+
+@media(max-width: 768px) {
+    
+
+}
+
+@media(max-width: 414px) {
+    
+}
+

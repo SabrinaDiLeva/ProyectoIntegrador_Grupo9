@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 2vh 0;
 }
 
 .titulo1{
@@ -46,7 +47,7 @@
 }
 
 .infoInput{
-    width: 80%;
+    width: 90%;
     border: 2px solid #607D8B;
     border-radius: 5px;
     box-shadow: var(--borderShadow);
@@ -56,7 +57,7 @@
 }
 
 .descriptionInput{
-    width: 80%;
+    width: 90%;
     border: 2px solid #607D8B;
     border-radius: 5px;
     box-shadow: var(--borderShadow);
@@ -74,12 +75,22 @@
 
 .productoCaracteristicasContainer{
     display: flex;
-    flex-direction: column;
     background-color: var(--colorBackgroundSecundario);
     padding: 1vh;
+    align-items: center;
 }
 
-.caracteristicasContainer{
+.caracteristicasContainer1{
+    width: 70%;
+}
+
+.caracteristicasContainer2{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.caracteristicasSubContainer{
     display: flex;
     flex-direction: column;
     margin: 0 4vw;
@@ -88,8 +99,8 @@
 
 .buttonAgregarContainer{
     display: flex;
-    justify-content: flex-end;
-    margin: 2vh 3vw 0 0;
+    justify-content: flex-start;
+    margin: 3vh 0 0 0;
 }
 
 .buttonAgregar{
@@ -99,8 +110,8 @@
     background-color: var(--colorBackgroundPrincipal);
     border-radius: 5px;
     transition: all 0.3s ease-out;
-    width: 12%;
     aspect-ratio: 1;
+    /* margin: 3vh 0 0 0; */
 }
 
 .buttonAgregar >*{
@@ -113,7 +124,7 @@
 }
 
 .caracteristicaInput{
-    width: 80%;
+    width: 100%;
     border: 2px solid #607D8B;
     border-radius: 5px;
     box-shadow: var(--borderShadow);
@@ -147,7 +158,7 @@
 }
 
 .politicaInput{
-    width: 80%;
+    width: 90%;
     border: 2px solid #607D8B;
     border-radius: 5px;
     box-shadow: var(--borderShadow);
@@ -164,7 +175,7 @@
 }
 
 .imagenInput{
-    width: 60%;
+    width: 70%;
     border: 2px solid #607D8B;
     border-radius: 5px;
     box-shadow: var(--borderShadow);
@@ -215,13 +226,77 @@
 }
 
 @media(min-width: 768px) {
+    .subContainer{
+        border: 2px solid #607D8B;
+        border-radius: 5px;
+        margin: 2vh;
+    }
+
     .infoContainer1{
         display: grid;
-        
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .infoInput{
+        width: 80%;
+        font-size: 1em; 
+    }
+
+    .descriptionInput{
+        width: 90%;
+        font-size: 1em; 
+    }
+
+    .caracteristicaInput{
+        width: 100%;
+        font-size: 1em; 
+    }
+
+    .politicaInput{
+        width: 90%;
+        font-size: 1em; 
+    }
+
+    .imagenInput{
+        width: 70%;
+        font-size: 1em; 
+    }
+    
+    .imagenContainer > .button{
+        width: 7%;
     }
 }
 
-@media(min-width: 414px) {
+@media(min-width: 1024px) {
+    .caracteristicasContainer1{
+        display: flex;
+        width: 100%;
+        font-size: 1em;
+        justify-content: space-between;
+    }
+
+    .caracteristicasSubContainer{
+        width: 100%;
+        margin: 0 0 0 4vw;
+    }
+
+    .caracteristicasContainer2{
+        width: 30%;
+        margin: 0 0 0 2vw;
+    }
+
+    .caracteristicaInput{
+        width: 100%;
+    }
     
+    .imagenInput{
+        width: 80%;
+    }
+    
+    .imagenContainer > .button{
+        width: 3%;
+        margin: 0;
+    }
 }
 

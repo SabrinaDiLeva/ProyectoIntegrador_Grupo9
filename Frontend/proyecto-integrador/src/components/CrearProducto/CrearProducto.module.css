@@ -45,6 +45,41 @@
     width: 10em;
     margin: 1vh 0 0 3vw;
 }
+.inputContainer{
+    position: relative;
+    width: 100%;
+}
+
+.infoLabelContainer{
+    width: 100%;
+}
+
+.inputContainer > .infoInput{
+    width: 95%;
+}
+
+.inputListado {
+    background-color: var(--colorBackgroundSecundario);
+    color: var(--colorTextoSecundario);
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--borderShadow);
+    list-style-type: none;
+    overflow-y: auto;
+    position: absolute;
+    top: 3vh;
+    /* bottom: 0; */
+    z-index: 1;
+    width: 94%;
+    margin: 0.5vh 3vw;
+}
+
+.inputListado::-webkit-scrollbar {
+    display: none;
+}
+
+.inputListado:focus {
+    outline: 3px solid #ddd;
+}
 
 .infoInput{
     width: 90%;
@@ -243,6 +278,10 @@
         font-size: 1em; 
     }
 
+    .inputListado{
+        width: 85%;
+    }
+    
     .descriptionInput{
         width: 90%;
         font-size: 1em; 

@@ -30,10 +30,10 @@ function App() {
             <Route path='/registrarse' element={<>
               <Register/>
             </>}/> 
-            <Route path='/crearproducto' element={<>
+            <Route path='/administracion/crearproducto' element={<>
               <CrearProducto />
             </>}/>
-            <Route path='/crearproducto/exito' element={<>
+            <Route path='/administracion/crearproducto/exito' element={<>
               <ProductoExito/>
             </>}/>
             <Route path='/producto/:id' element={

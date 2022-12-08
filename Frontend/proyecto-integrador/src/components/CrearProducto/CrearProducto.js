@@ -1,11 +1,53 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import style from "./CrearProducto.module.css";
 import Titulo from "../Tarjeta-Producto/subcomponents/Titulo"
 import { Icons } from '../ui/icons';
 import Boton from '../Botones/BotonLinkTo';
-
+import { getCiudades } from "../../service/ciudadApi"
+import { getCategorias } from "../../service/categoriaApi"
+import ListadoCiudad from './subcomponentes/ListadoCiudad';
+import ListadoCategoria from './subcomponentes/ListadoCategoria';
 
 export default function CrearProducto() {
+    const [searchTermCiudades, setSearchTermCiudades] = useState("");
+    
+    // Obtener Ciudades
+    const handleChangeCiudades = event => {
+        setSearchTermCiudades(event.target.value);
+    };
+    
+    useEffect( () => {
+        var listaCiudad = document.getElementById("inputListadoCiudad");
+        listaCiudad.style.display = 'none';
+        var inputCiudad = document.getElementById("infoInputCiudad");
+        inputCiudad.addEventListener('focus', function () {
+            listaCiudad.style.display = 'block';
+        });
+    
+        inputCiudad.addEventListener('focusout', function () {
+            listaCiudad.style.display = 'none';
+        });
+    }, [] );
+    
+
+    // Obtener Categorias
+    const [searchTermCategoria, setSearchTermCategoria] = useState("");
+    const handleChangeCategoria = event => {
+        setSearchTermCategoria(event.target.value);
+    };
+
+    useEffect( () => {
+        var listaCategoria = document.getElementById("inputListadoCategoria");
+        listaCategoria.style.display = 'none';
+        var inputCategoria = document.getElementById("infoInputCategoria");
+        inputCategoria.addEventListener('focus', function () {
+            listaCategoria.style.display = 'block';
+        });
+    
+        inputCategoria.addEventListener('focusout', function () {
+            listaCategoria.style.display = 'none';
+        });
+    }, [] );
 
     return (
         <>
@@ -24,18 +66,28 @@ export default function CrearProducto() {
                                 </span>
 
                                 <span className={style.infoLabelContainer}>
-                                <label className={style.infoLabel}>Categoria</label>
-                                <input type="text" className={style.infoInput} autoComplete='off' placeholder='Hotel'></input>
+                                    <label className={style.infoLabel}>Categoria</label>
+                                    <span className={style.inputContainer}>
+                                        <input type="search" id='infoInputCategoria' className={style.infoInput} autoComplete='off' value={searchTermCategoria} onChange={handleChangeCategoria} placeholder='Hotel'></input>
+                                        <ul className={style.inputListado} id="inputListadoCategoria" >
+                                            <ListadoCategoria />
+                                        </ul>
+                                    </span>
                                 </span>
 
                                 <span className={style.infoLabelContainer}>
-                                <label className={style.infoLabel}>Direccion</label>
-                                <input type="text" className={style.infoInput} autoComplete='off' placeholder='Av. Colon 1643'></input>
-                                </span>
+                                    <label className={style.infoLabel}>Direccion</label>
+                                    <input type="text" className={style.infoInput} autoComplete='off' placeholder='Av. Colon 1643'></input>
+                                    </span>
 
                                 <span className={style.infoLabelContainer}>
-                                <label className={style.infoLabel}>Ciudad</label>
-                                <input type="text" className={style.infoInput} autoComplete='off' placeholder='Ciudad'></input>
+                                    <label className={style.infoLabel}>Ciudad</label>
+                                    <span className={style.inputContainer}>
+                                        <input type="search" id='infoInputCiudad' className={style.infoInput} autoComplete='off' value={searchTermCiudades} onChange={handleChangeCiudades} placeholder='Ciudad'></input>
+                                        <ul className={style.inputListado} id="inputListadoCiudad" >
+                                            <ListadoCiudad />
+                                        </ul>
+                                    </span>
                                 </span>
 
                             </div>

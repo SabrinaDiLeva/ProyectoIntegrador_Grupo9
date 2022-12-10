@@ -23,7 +23,7 @@ const NavBar = (props) => {
 
     return (
         <>
-            <nav className={`${ !props.hide ? style.showMenu : style.hideMenu}`}>
+            <nav className={` ${style.navBar} ${ !props.hide ? style.showMenu : style.hideMenu}`}>
                 <div className={`${style.menu}`}>
                     <ul className={style.menuNav}>
                         <div className={style.burger}>

@@ -1,6 +1,0 @@
-com\service\CategoriaService.class
-com\service\ICategoriaService.class
-com\controller\CategoriaController.class
-com\example\demo\ProyectoIntegradorGrupo9Application.class
-com\model\Categoria.class
-com\repository\ICategoriaRepository.class

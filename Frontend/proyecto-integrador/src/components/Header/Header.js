@@ -35,7 +35,7 @@ const Header = (props) => {
     console.log(element)
 
     element.style.overflowY = scroll ? 'scroll' : 'hidden';
-    element.style.height = scroll ? '87%' : 'unset';
+    element.style.height = scroll ? '89%' : 'unset';
   }, [scroll])
 
   return (

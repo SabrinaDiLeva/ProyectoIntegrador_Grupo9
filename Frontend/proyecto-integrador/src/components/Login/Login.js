@@ -37,10 +37,8 @@ export default function Login() {
         <div className={style.container}>
             <form className={style.formulario} onSubmit={handleLogin}>
                 <h1 className={style.titulo}>Iniciar sesión</h1>
+                {errors.errorGeneral && <p className={style.errorGeneral}> {errors.errorGeneral} </p>}
                 
-                {errors.errorGeneral && 
-                    <p className={style.errorGeneral}> {errors.errorGeneral} </p>
-                }
                 <span className={style.labelContainer}>
                     <label className={style.label}>Correo electronico</label>
                     <input id={style.mail} className={`${style.input} ${ errors.email ? style.errores : ''}`} type="email" name="email" placeholder="Escribe tu email" onBlur={handleBlur} onChange={handleChange} value={form.email} required></input>

@@ -5,6 +5,8 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { CgScreen } from 'react-icons/cg';
 import { MdLocationOn, MdOutlineLocalLaundryService, MdOutlineSportsHandball, MdBed, MdLocalBar } from 'react-icons/md';
 import { GiPartyPopper } from 'react-icons/gi';
+import {TbPlus} from 'react-icons/tb'
+import {ImCross} from 'react-icons/im'
 
 export const Icons = {
     Ok: <FiCheckCircle/>,
@@ -32,5 +34,7 @@ export const Icons = {
     "Sauna": <FaHotTub/>,
     "Jacuzzi": <FaHotTub/>,
     "Salón de fistas": <GiPartyPopper/>,
-    "Lavandería": <MdOutlineLocalLaundryService/>,    
+    "Lavandería": <MdOutlineLocalLaundryService/>,
+    agregar: <TbPlus/>,
+    cancelar: <ImCross/>
 }

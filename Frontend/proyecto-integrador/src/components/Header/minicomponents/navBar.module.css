@@ -1,0 +1,131 @@
+.hideMenu {
+    display: none;
+}
+
+.showMenu .menu .menuNav .burger{
+    background-color: var(--colorBackgroundPrincipal);
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.menuNav {
+    list-style-type: none;
+}
+
+.showMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-decoration: none;
+    position: absolute;
+    z-index: 100;
+    top: -3px;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    backdrop-filter: blur(2px);
+}
+
+.showMenu .menu li {
+    padding: 10px 30px;
+    text-decoration: none;
+    color: var(--colorTextoPrimario);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: right;
+    white-space: nowrap;
+    border-bottom: 1px solid rgb(112, 107, 38);
+}
+
+.showMenu .menu .menuTitle {
+    background-color: var(--colorBackgroundPrincipal);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 20vh;
+}
+
+
+.showMenu .menu .option{
+    overflow: hidden;
+    transition: background-color 0.5s 0s;
+}
+
+.showMenu .menu .option:hover{
+    background-color: var(--colorBackgroundPrincipalOpacity);
+}
+
+.showMenu .menu{
+    background-color: var(--colorBackgroundSecundario);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    right: 0px;
+    width: 70%;
+    animation: menu-display;
+    animation-duration: 2s;
+    overflow: hidden;
+}
+
+@media (min-width: 425px) {
+    .hideMenu {
+        display: flex;
+        visibility: hidden;
+    }
+    
+    .showMenu{
+        display: none;
+    }
+
+    .menuNav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .burger {
+        display: none;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .usuario {
+        visibility: visible;
+    }
+
+    .option {
+        visibility: visible;
+        background-color: var(--colorBackgroundSecundario);
+        border: 1px solid black;
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 15px;
+        padding: 5px;
+        white-space: nowrap;
+        height: 20px;
+        margin: 0px 5px;
+    }
+
+    .link {
+        align-self: center;
+    }
+
+    .social{
+        display: none;
+    }
+}
+
+@keyframes menu-display{
+    0%   {width: 0%}
+    100% {width: 70%;}
+}
+
+@keyframes menu-hide{
+    0%   {width: 0%}
+    100% {width: 70%;
+    display: none;}
+}

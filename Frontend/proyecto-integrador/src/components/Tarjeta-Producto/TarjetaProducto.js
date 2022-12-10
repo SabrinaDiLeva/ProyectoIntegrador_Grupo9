@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from "./tarjetaProducto.module.css";
 import Titulo from "./subcomponents/Titulo"
 import Politicas from "./subcomponents/Politicas"
@@ -6,24 +6,32 @@ import Calendario from "../Reserva/bloques/Calendario"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Carrousel from "./Carrousel";
 import { useForm } from "../../hooks/useFormReserva"
-import { MdClose } from "react-icons/md"
 import HeaderInformacion from './subcomponents/HeaderInformacion';
 import Caracteristicas from './subcomponents/Caracteristicas';
 import Galeria from './subcomponents/Galeria';
 import Boton from "../Botones/BotonLinkTo";
 
+ 
+
 export default function TarjetaProducto(props) {
 
-    const [carrouselOpen, setcarrouselOpen] = useState(false)
+    const [carrouselOpen, setCarrouselOpen] = useState(true)
 
     const handleToggle = () => {
-        setcarrouselOpen(!carrouselOpen)
+        setCarrouselOpen(!carrouselOpen)
     }
 
     const initialForm = {
         checkInDate: "DD/MM/YYYY",
         checkOutDate: "DD/MM/YYYY"
     }
+
+    useEffect( () => {
+        function handleResize() {
+            setCarrouselOpen(window.innerWidth < 1024 )
+        }
+        window.addEventListener('resize', handleResize)
+    })
 
     const validationForm = (form) => {
         let errors = {};
@@ -44,18 +52,14 @@ export default function TarjetaProducto(props) {
                 <Titulo category={props.category} name={props.name} />
                 <HeaderInformacion location={props.location} calificacion={props.calificacion} />
                 <div className={style.subContainer}>
-                    <Galeria imagenes={props.imagen} handleToggle={handleToggle} />
+                    <div className={style.imgContainer}>
+                        <div className={style.galeria}>
+                            <Galeria  imagenes={props.imagen} handleToggle={handleToggle} />
+                        </div>
 
-                    {carrouselOpen &&
-                        <>
-                            <div className={style.carrouselContainer}>
-                                <button className={style.carrouselButton} onClick={handleToggle}>
-                                    <MdClose className={style.menuCerrado} />
-                                </button>
-                                <Carrousel imagenes={props.imagen} />
-                            </div>
-                        </>
-                    }
+                        {carrouselOpen && <Carrousel imagenes={props.imagen} handleToggle={handleToggle}/>
+                        }
+                    </div>
 
                     <div className={style.descriptionContainer}>
                         <h2>{props.title}</h2>
@@ -72,18 +76,18 @@ export default function TarjetaProducto(props) {
                             <div className={style.calendarContainer}>
                                 <Calendario formValues={form} handleChange={handleChangeManual} />
                             </div>
-                            <div className={style.iniciarReservaContainer}>
-                                <div className={style.title}>
+
+                        </div>
+                    </div>
+*/}                           <div className={style.iniciarReservaContainer}>
+                                <div className={style.subtitle}>
                                     <h3>Agrega tus fechas de viaje para obtener precios exactos</h3>
                                 </div>
 
                                 <div className={style.BotonContainer}>
-                                    <Boton to={`/reserva/producto/${props.id}`} text={"Iniciar reserva"} />
+                                    <Boton to={sessionStorage.getItem('sessionIniciada') ? `/reserva/producto/${props.id}` : `/iniciar_sesion`} text={"Iniciar reserva"} />
                                 </div>
                             </div>
-                        </div>
-                    </div>
-*/}
 
                     <Politicas normasDeLaCasa={props.normasDeLaCasa} saludSeguridad={props.saludSeguridad} politicaDeCancelacion={props.politicaDeCancelacion} />
 

@@ -1,0 +1,152 @@
+.header{
+  box-shadow: var(--borderShadow);
+  background-color: var(--colorBackgroundSecundario);
+  width: 100%;
+}
+
+.headerContainer{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.images{
+  margin: 2vh;
+  height: 6vh;
+  border-radius: 1vh;
+}
+
+/* Iniciar Session */
+.iniciarSession{
+  display: flex;
+}
+
+.iniciarSession .usuarioIniciarSession{
+  display: flex;
+  margin-right: 1vh;
+}
+
+.button{
+  margin: auto 1vh;
+  text-decoration: none;
+  color: var(--colorTextoPrimario);
+  border: 2px solid #607D8B;
+  background-color: var(--colorBackgroundSecundario);
+  border-radius: 5px;
+  padding: .8vh;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease-out;
+}
+
+.button:hover{
+  background-color: var(--colorBackgroundPrincipal);
+  color: var(--colorTextoSecundario);
+}
+
+.iniciarSession .usuarioSessionIniciada{
+  display: none;
+}
+/* Termina Iniciar Session */
+
+
+/* Session Iniciada */
+.sessionIniciada{
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.sessionIniciada .usuarioSessionIniciada{
+  display: flex;
+  align-items: center;
+  margin-right: 1vh;
+  width: 60%;
+  justify-content: flex-end;
+  gap: 1vh;
+}
+
+
+.cerrarSession{
+  text-decoration: none;
+  color: var(--colorTextoPrimario);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.sessionIniciada .usuarioIniciarSession{
+  display: none;
+}
+
+/* Termina Session Iniciada */
+
+.navBar{
+  display: none;
+}
+
+@media(max-width: 425px){
+  .button{
+    display: none;
+  }
+
+  .navBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
+  }
+  
+  .navBar button {
+    position: fixed;
+    right: 40px;
+    z-index: 10;
+    cursor: pointer;
+    background: transparent;;
+    border: none;
+  }
+  
+  .menuNav {
+    overflow-y: scroll;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    background: var(--colorBackgroundSecundario);
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 0;
+    overflow: hidden;
+  }
+  
+  .menuNav.showMenu {
+    display: flex;
+    background: var(--colorBackgroundSecundario);
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 80%;
+    backdrop-filter: blur(5px);
+  }
+
+  
+  .usuarioSessionIniciada {
+    display: none !important;
+  }
+
+  .hamburguesaButton{
+    display: flex;
+  }
+
+  .menuCerrado{
+    width: 5vh;
+    height: 4vh;
+  }
+
+  .menuAbierto{
+    width: 5vh;
+    height: 4vh;
+    display: flex;
+  }
+}

@@ -15,11 +15,11 @@ const validationForm = (form) => {
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
 
-    if(!regexEmail.test(form.email.trim())){
+    if(form.email.trim() && !regexEmail.test(form.email.trim() )){
         errors.email = "El email ingresado es incorrecto"
     }
 
-    if(!regexName.test(form.password.trim())){
+    if( form.password.trim() && !regexName.test(form.password.trim()) ){
         errors.password = "La contraseña ingresada es incorrecta"
     }
 
@@ -43,19 +43,17 @@ export default function Login() {
                 }
                 <span className={style.labelContainer}>
                     <label className={style.label}>Correo electronico</label>
-                    <input id={style.mail} className={style.input} type="email" name="email" placeholder="Escribe tu email" onBlur={handleBlur} onChange={handleChange} value={form.email} required></input>
-                    {errors.email && <p className={style.errores}> {errors.email} </p>}
+                    <input id={style.mail} className={`${style.input} ${ errors.email ? style.errores : ''}`} type="email" name="email" placeholder="Escribe tu email" onBlur={handleBlur} onChange={handleChange} value={form.email} required></input>
 
                     <label className={style.label}>Contraseña</label>
-                    <input id={style.password} className={style.input} type="password" name="password" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.password} required></input>
-                    {errors.password && <p className={style.errores}> {errors.password} </p>}
+                    <input id={style.password} className={`${style.input} ${ errors.password ? style.errores : ''}`} type="password" name="password" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.password} required></input>
                 </span>
 
                 <span className={style.botonContainer}>
                     <button type="submit" className={style.boton}>Ingresar</button>
                 </span>
             </form>
-            <span className={style.registrarse}>¿Aún no tienes cuenta?<Link to='/registrarse' className={style.link}>Registrate</Link></span>
+            <span className={style.registrarse}>¿Aún no tienes cuenta?  <Link to='/registrarse' className={style.link}> Registrate </Link></span>
         </div>
         </>
     )

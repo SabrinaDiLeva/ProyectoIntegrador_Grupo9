@@ -2,6 +2,7 @@ import style from './Card.module.css'
 import { Icons } from '../ui/icons';
 import Boton from '../Botones/BotonLinkTo';
 import Estrellas from "../Tarjeta-Producto/subcomponents/CalificacionEstrellas"
+import Imagen from "../ImagenWrapper/Imagen"
 
 export default function Card(props) {
 
@@ -9,7 +10,7 @@ export default function Card(props) {
         <>
             <span className={style.tarjeta}>
                 <div className={style.infoContainerImagen}>
-                    <img className={style.cardImage} src={props.imagen} alt="producto"></img>
+                    <Imagen className={style.cardImage} src={props.imagen} alt="producto"/>
                 </div>
                 <div className={style.infoContainerDetalle}>
                     <div className={style.detalleContainer}>
@@ -17,7 +18,7 @@ export default function Card(props) {
                             <p className={style.cardCategoria}>{props.category.toUpperCase()}</p>
                             <Estrellas totalStars={5} activeStars={props.calificacion * 5 / 10}/>
                         </div>
-                        <h1 className={style.cardNombre}>{props.title}</h1>
+                        <h1 className={style.cardNombre}>{props.name}</h1>
                         <p className={style.cardLocation}>{Icons.location} {props.location}</p>
                         <span className={style.textoContainer}>
                             <span className={style.cardDescripcion}>{props.description}</span>

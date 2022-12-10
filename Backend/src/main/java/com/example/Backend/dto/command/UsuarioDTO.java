@@ -1,9 +1,9 @@
-package com.dto.command;
+package com.example.Backend.dto.command;
 
 import java.io.Serializable;
 
-import com.model.Rol;
-import com.model.Usuario;
+import com.example.Backend.model.Rol;
+import com.example.Backend.model.Usuario;
 
 public class UsuarioDTO implements Serializable {
     public static final int NOMBRE_MAX_LENGTH = 45;
@@ -19,6 +19,7 @@ public class UsuarioDTO implements Serializable {
     private String contrasenia;
     private String ciudad;
     private Long rol_id;
+    private RolDTO rol;
 
     public UsuarioDTO(Long id, String nombre, String apellido, String email, String contrasenia, String ciudad, Long rol_id){
         this.id=id;
@@ -28,6 +29,16 @@ public class UsuarioDTO implements Serializable {
         this.contrasenia=contrasenia;
         this.ciudad=ciudad;
         this.rol_id=rol_id;
+    }
+
+    public UsuarioDTO(Usuario usuario){
+        this.id= usuario.getId();
+        this.nombre=usuario.getNombre();
+        this.apellido=usuario.getApellido();
+        this.email=usuario.getEmail();
+        this.contrasenia=usuario.getContrasenia();
+        this.ciudad=usuario.getCiudad();
+        this.rol=new RolDTO(usuario.getRol().getId(),usuario.getRol().getNombre());
     }
 
     public Usuario newUsuario(Rol rol) {
@@ -103,5 +114,13 @@ public class UsuarioDTO implements Serializable {
 
     public void setRolId(Long id){
         this.rol_id=id;
+    }
+
+    public RolDTO getRol() {
+        return rol;
+    }
+
+    public void setRol(RolDTO rol) {
+        this.rol = rol;
     }
 }

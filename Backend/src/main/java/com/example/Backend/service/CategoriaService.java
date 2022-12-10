@@ -1,9 +1,10 @@
-package com.service;
+package com.example.Backend.service;
 
-import com.dto.command.CategoriaDTO;
-import com.model.Categoria;
-import com.repository.ICategoriaRepository;
-import com.repository.IImagenRepository;
+import com.example.Backend.dto.command.CategoriaDTO;
+import com.example.Backend.dto.command.UsuarioDTO;
+import com.example.Backend.model.Categoria;
+import com.example.Backend.repository.ICategoriaRepository;
+import com.example.Backend.repository.IImagenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -50,5 +51,10 @@ public class CategoriaService implements IService<Categoria,CategoriaDTO> {
     public Categoria modificar(Long id, CategoriaDTO dto) {
         Categoria categoria = this.buscar(id);
         return this.guardar(dto.update(categoria));
+    }
+
+    @Override
+    public UsuarioDTO findByCorreo(String email) {
+        return null;
     }
 }

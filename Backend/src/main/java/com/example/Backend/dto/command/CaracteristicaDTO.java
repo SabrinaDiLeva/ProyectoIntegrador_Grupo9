@@ -1,6 +1,6 @@
-package com.dto.command;
+package com.example.Backend.dto.command;
 
-import com.model.Caracteristica;
+import com.example.Backend.model.Caracteristica;
 
 import java.io.Serializable;
 
@@ -11,6 +11,9 @@ public class CaracteristicaDTO implements Serializable {
     private String nombre;
     private String descripcion;
 
+    public CaracteristicaDTO(){
+
+    }
     public CaracteristicaDTO(Long id, String nombre, String descripcion) {
         this.id = id;
         this.nombre = nombre;

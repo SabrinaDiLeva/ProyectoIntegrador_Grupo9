@@ -1,8 +1,10 @@
-package com.repository;
+package com.example.Backend.repository;
 
-import com.model.Reserva;
+import com.example.Backend.model.Reserva;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface IReservaRepository extends JpaRepository<Reserva,Long> {
+import java.util.List;
 
+public interface IReservaRepository extends JpaRepository<Reserva,Long> {
+    List<Reserva> findAllByUsuario_Id(Long id);
 }

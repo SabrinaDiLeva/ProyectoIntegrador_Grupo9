@@ -1,8 +1,7 @@
-package com.controller;
-
-import com.dto.command.ReservaDTO;
-import com.model.Reserva;
-import com.service.ReservaService;
+package com.example.Backend.controller;
+import com.example.Backend.dto.command.ReservaDTO;
+import com.example.Backend.model.Reserva;
+import com.example.Backend.service.ReservaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
 @RequestMapping("/reserva")
 public class ReservaController {
     @Autowired
@@ -21,10 +21,14 @@ public class ReservaController {
         return ResponseEntity.ok(reservaService.guardar(reserva));
     }
 
-    @CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
     @GetMapping
     public ResponseEntity<List<Reserva>>  listar() {
         return ResponseEntity.ok(reservaService.listar());
+    }
+
+    @GetMapping("/usuario/{id}")
+    public ResponseEntity<List<Reserva>>  listarPorUsuario(@PathVariable Long id) {
+        return ResponseEntity.ok(reservaService.listarPorIdUsuario(id));
     }
 
     @GetMapping("/{id}")

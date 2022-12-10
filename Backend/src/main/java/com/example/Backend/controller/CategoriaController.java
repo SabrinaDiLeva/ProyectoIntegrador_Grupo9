@@ -1,8 +1,8 @@
-package com.controller;
+package com.example.Backend.controller;
 
-import com.dto.command.CategoriaDTO;
-import com.model.Categoria;
-import com.service.CategoriaService;
+import com.example.Backend.dto.command.CategoriaDTO;
+import com.example.Backend.model.Categoria;
+import com.example.Backend.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,7 @@ public class CategoriaController {
         return ResponseEntity.ok(categoriaService.guardar(categoria));
     }
 
-    // @CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
     public ResponseEntity<List<Categoria>>  listar() {
         return ResponseEntity.ok(categoriaService.listar());

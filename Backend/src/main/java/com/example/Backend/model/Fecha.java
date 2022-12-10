@@ -1,11 +1,7 @@
-package com.model;
+package com.example.Backend.model;
 import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
+
 @Entity
 @Table(name="fecha")
 public class Fecha {

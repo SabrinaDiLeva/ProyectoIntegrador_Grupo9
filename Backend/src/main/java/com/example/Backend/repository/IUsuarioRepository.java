@@ -1,8 +1,12 @@
-package com.repository;
+package com.example.Backend.repository;
 
-import com.model.Usuario;
+import com.example.Backend.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface IUsuarioRepository extends JpaRepository<Usuario,Long> {
+@Repository
+public interface IUsuarioRepository extends JpaRepository<Usuario, Long> {
+
+    Usuario findByEmail(String email);
 
 }

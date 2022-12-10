@@ -1,10 +1,5 @@
-package com.model;
+package com.example.Backend.model;
 import javax.persistence.*;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name="rol")
@@ -16,10 +11,10 @@ public class Rol {
     @Column
     private String nombre;
 
-    //relacion con usuario
+    /*relacion con usuario
     @OneToMany(mappedBy = "rol")
     @JsonIgnore
-    private Set<Usuario> usuarios = new HashSet<>();
+    private Set<Usuario> usuarios = new HashSet<>();*/
     
     public Rol(){
 

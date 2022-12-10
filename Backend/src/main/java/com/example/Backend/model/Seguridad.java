@@ -1,4 +1,4 @@
-package com.model;
+package com.example.Backend.model;
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;

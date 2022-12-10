@@ -1,10 +1,10 @@
-package com.dto.command;
+package com.example.Backend.dto.command;
 
-import com.model.Categoria;
-import com.model.Ciudad;
-import com.model.Producto;
+import com.example.Backend.model.*;
 
 import java.io.Serializable;
+import java.util.Set;
+
 
 public class ProductoDTO implements Serializable {
     public static final int NOMBRE_MAX_LENGTH = 45;
@@ -20,13 +20,17 @@ public class ProductoDTO implements Serializable {
     private int calificacion;
     private String titulo;
     private String descripcion;
-    private String fechas_disponibles;
-    private String normas;
-    private String seguridad;
-    private String cancelacion;
+    private Set<Caracteristica> caracteristicas;
+    private Set<Fecha> fechas_disponibles;
+    private Set<Norma> normas;
+    private Set<Seguridad> seguridad;
+    private Set<Cancelacion> cancelacion;
     private Long ciudadId;
     private Long categoriaId;
 
+    public ProductoDTO(){
+
+    }
     public ProductoDTO(Long id, String nombre, int calificacion, String titulo, String descripcion, Long categoriaId, Long ciudadId) {
         this.id = id;
         this.nombre = nombre;
@@ -36,8 +40,25 @@ public class ProductoDTO implements Serializable {
         this.ciudadId = ciudadId;
         this.categoriaId = categoriaId;
     }
+
+
+    public ProductoDTO(Long id, String nombre, int calificacion, String titulo, String descripcion, Long categoriaId, Long ciudadId, Set<Caracteristica> caracteristicas,Set<Fecha>fechas,Set<Norma> normas, Set<Seguridad> seguridad, Set<Cancelacion> cancelacion ) {
+        this.id = id;
+        this.nombre = nombre;
+        this.calificacion = calificacion;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.ciudadId = ciudadId;
+        this.categoriaId = categoriaId;
+        this.caracteristicas=caracteristicas;
+        this.fechas_disponibles=fechas;
+        this.normas=normas;
+        this.seguridad=seguridad;
+        this.cancelacion=cancelacion;
+    }
+
     public Producto newProducto(Categoria categoria, Ciudad ciudad) {
-        return new Producto( this.id , this.nombre,this.calificacion,this.titulo,this.descripcion,categoria,ciudad);
+        return new Producto( this.id , this.nombre,this.calificacion,this.titulo,this.descripcion,categoria,ciudad, this.caracteristicas,this.fechas_disponibles,this.normas,this.seguridad,this.cancelacion);
     }
 
     public ProductoDTO update(Producto producto){
@@ -87,38 +108,6 @@ public class ProductoDTO implements Serializable {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public String getFechas_disponibles() {
-        return fechas_disponibles;
-    }
-
-    public void setFechas_disponibles(String fechas_disponibles) {
-        this.fechas_disponibles = fechas_disponibles;
-    }
-
-    public String getNormas() {
-        return normas;
-    }
-
-    public void setNormas(String normas) {
-        this.normas = normas;
-    }
-
-    public String getSeguridad() {
-        return seguridad;
-    }
-
-    public void setSeguridad(String seguridad) {
-        this.seguridad = seguridad;
-    }
-
-    public String getCancelacion() {
-        return cancelacion;
-    }
-
-    public void setCancelacion(String cancelacion) {
-        this.cancelacion = cancelacion;
     }
 
     public Long getCiudadId() {

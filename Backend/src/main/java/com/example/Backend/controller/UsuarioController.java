@@ -1,27 +1,40 @@
-package com.controller;
+package com.example.Backend.controller;
 
-import com.dto.command.UsuarioDTO;
-import com.model.Usuario;
-import com.service.UsuarioService;
+import com.example.Backend.dto.command.UsuarioDTO;
+import com.example.Backend.model.Usuario;
+import com.example.Backend.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
+    @CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
 @RequestMapping("/usuario")
 public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @PostMapping
-    public ResponseEntity<Usuario> guardar(@RequestBody UsuarioDTO usuario) {
-        return ResponseEntity.ok(usuarioService.guardar(usuario));
+    public ResponseEntity<Map<String, Object>> crear(@RequestBody UsuarioDTO usuarioDTO){
+        Map<String, Object> response = new HashMap<>();
+        String passWEncrypt = passwordEncoder.encode(usuarioDTO.getContrasenia());
+        usuarioDTO.setContrasenia(passWEncrypt);
+        response.put("respuesta",usuarioService.guardar(usuarioDTO));
+        return new ResponseEntity(response, HttpStatus.CREATED);
     }
 
-    @CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
+
+
+    /*
     @GetMapping
     public ResponseEntity<List<Usuario>>  listar() {
         return ResponseEntity.ok(usuarioService.listar());
@@ -43,4 +56,5 @@ public class UsuarioController {
     public ResponseEntity<Usuario> modificar(@PathVariable( name = "id") Long id, @RequestBody UsuarioDTO usuario) {
         return ResponseEntity.ok(usuarioService.modificar(id, usuario));
     }
+     */
 }

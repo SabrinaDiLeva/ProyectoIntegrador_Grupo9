@@ -1,6 +1,5 @@
-package com.dto.command;
-
-import com.model.Categoria;
+package com.example.Backend.dto.command;
+import com.example.Backend.model.Categoria;
 
 import java.io.Serializable;
 
@@ -13,6 +12,9 @@ public class CategoriaDTO implements Serializable {
     private String descripcion;
     private String url;
 
+    public CategoriaDTO(){
+
+    }
     public CategoriaDTO(Long id, String titulo, String descripcion, String url){
         this.id = id;
         this.titulo = titulo;

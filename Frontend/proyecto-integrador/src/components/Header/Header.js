@@ -6,16 +6,21 @@ import { Link, Routes, Route } from "react-router-dom";
 import {sessionClosed} from '../../hooks/sessionStorage';
 import NavBar from './navBar';
 
-const session = sessionStorage.getItem('sessionIniciada')
+const session = localStorage.getItem('jwt')
 
 const Header = (props) => {
 
-  if(session){
+  if(session !== null){
+
+    let base64Url = session.split('.')[1];
+    //let base64 = base64Url.replace('-', '+').replace('_', '/');
+    const decode = atob(base64Url);
+
     var loggedUser = {
-      mail: JSON.parse(session)[0].mail,
-      password: JSON.parse(session)[0].password,
-      // name: `${JSON.parse(session)[0].nombre.charAt(0).toUpperCase()}${JSON.parse(session)[0].nombre.slice(1)}`,
-      // apellido: `${JSON.parse(session)[0].apellido.charAt(0).toUpperCase()}${JSON.parse(session)[0].apellido.slice(1)}`,
+      nameLetter: `${JSON.parse(decode).name[0].toUpperCase()}`,
+      lastNameLetter: `${JSON.parse(decode).lastName[0].toUpperCase()}`,
+      name: `${JSON.parse(decode).name[0].toUpperCase()}${JSON.parse(decode).name.slice(1)}`,
+      lastName: `${JSON.parse(decode).lastName[0].toUpperCase()}${JSON.parse(decode).lastName.slice(1)}`
     }
   }
 
@@ -41,14 +46,11 @@ const Header = (props) => {
           <div className={loggedUser ? style.sessionIniciada : style.iniciarSession}>
             <div className={style.usuarioSessionIniciada}>
                 <div className={style.avatarContainer}>
-                  <span className={style.avatar}>MF</span>
-                    {/* {loggedUser ? `${loggedUser.name.charAt(0)} ${loggedUser.apellido.charAt(0)}` : '' } ESTO VA DENTRO DEL SPAN EN LUGAR DE MF*/}
+                  <span className={style.avatar}>{loggedUser ? `${loggedUser.nameLetter}${loggedUser.lastNameLetter}` : '' }</span>
                 </div>
                 <span className={style.perfilUsuario}>
               <a className={style.linkPerfil} href="/">
-                <p className={style.saludo}>Hola,</p>
-                <p className={style.saludo2}>{loggedUser ? loggedUser.mail.split("@")[0] : ''}</p>
-                {/* {loggedUser ? `${loggedUser.name} ${loggedUser.apellido}` : '' } ESTO VA DENTRO DEL P EN LUGAR DE MF  */}
+                <p className={style.saludo}>Hola, {loggedUser ? `${loggedUser.name} ${loggedUser.lastName}` : '' }</p>
               </a>
               </span>
               <button className={style.button} href="/" onClick={sessionClosed}>Cerrar Sesión</button>

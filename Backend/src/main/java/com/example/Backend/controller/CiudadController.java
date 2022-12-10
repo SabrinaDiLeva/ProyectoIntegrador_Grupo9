@@ -1,8 +1,8 @@
-package com.controller;
+package com.example.Backend.controller;
 
-import com.dto.command.CiudadDTO;
-import com.model.Ciudad;
-import com.service.CiudadService;
+import com.example.Backend.dto.command.CiudadDTO;
+import com.example.Backend.model.Ciudad;
+import com.example.Backend.service.CiudadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

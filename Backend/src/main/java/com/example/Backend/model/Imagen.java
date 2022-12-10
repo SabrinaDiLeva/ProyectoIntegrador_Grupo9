@@ -1,7 +1,6 @@
-package com.model;
+package com.example.Backend.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 import javax.persistence.*;
 
 @Entity

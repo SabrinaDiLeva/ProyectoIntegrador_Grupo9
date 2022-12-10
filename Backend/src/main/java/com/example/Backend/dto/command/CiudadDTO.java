@@ -1,6 +1,6 @@
-package com.dto.command;
+package com.example.Backend.dto.command;
 
-import com.model.Ciudad;
+import com.example.Backend.model.Ciudad;
 
 import java.io.Serializable;
 
@@ -11,6 +11,9 @@ public class CiudadDTO implements Serializable {
     private String nombre;
     private String pais;
 
+    public CiudadDTO(){
+
+    }
     public CiudadDTO(Long id, String nombre, String pais) {
         this.id = id;
         this.nombre = nombre;

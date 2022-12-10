@@ -1,6 +1,6 @@
-package com.repository;
+package com.example.Backend.repository;
 
-import com.model.Imagen;
+import com.example.Backend.model.Imagen;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

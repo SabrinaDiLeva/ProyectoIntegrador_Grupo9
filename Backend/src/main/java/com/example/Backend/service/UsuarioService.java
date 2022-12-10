@@ -1,25 +1,28 @@
-package com.service;
+package com.example.Backend.service;
 
-import com.dto.command.UsuarioDTO;
-import com.model.Rol;
-import com.model.Usuario;
-import com.repository.IUsuarioRepository;
-import com.repository.IRolRepository;
+import com.example.Backend.dto.command.UsuarioDTO;
+import com.example.Backend.model.Rol;
+import com.example.Backend.model.Usuario;
+import com.example.Backend.repository.IRolRepository;
+import com.example.Backend.repository.IUsuarioRepository;
+import com.example.Backend.util.MapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
-public class UsuarioService implements IService<Usuario,UsuarioDTO> {
+public class UsuarioService implements IService<Usuario, UsuarioDTO> {
     private IUsuarioRepository iUsuarioRepository;
     private IRolRepository iRolRepository;
 
     @Autowired
-    public UsuarioService(IUsuarioRepository iUsuarioRepository,IRolRepository iRolRepository) {
+    private MapperUtil mapperUtil;
+
+    @Autowired
+    public UsuarioService(IUsuarioRepository iUsuarioRepository, IRolRepository iRolRepository) {
         this.iUsuarioRepository = iUsuarioRepository;
         this.iRolRepository = iRolRepository;
     }
@@ -51,6 +54,11 @@ public class UsuarioService implements IService<Usuario,UsuarioDTO> {
     public Usuario modificar(Long id, UsuarioDTO dto) {
         Usuario usuario = this.buscar(id);
         return this.guardar(dto.update(usuario));
+    }
+
+    @Override
+    public UsuarioDTO findByCorreo(String email) {
+        return new UsuarioDTO(iUsuarioRepository.findByEmail(email));
     }
 
 }

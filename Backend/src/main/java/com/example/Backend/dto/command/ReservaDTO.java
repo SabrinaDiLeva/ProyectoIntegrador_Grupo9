@@ -1,10 +1,10 @@
-package com.dto.command;
+package com.example.Backend.dto.command;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-import com.model.Producto;
-import com.model.Reserva;
-import com.model.Usuario;
+import com.example.Backend.model.Producto;
+import com.example.Backend.model.Reserva;
+import com.example.Backend.model.Usuario;
 
 public class ReservaDTO implements Serializable {
     private Long id;
@@ -13,6 +13,9 @@ public class ReservaDTO implements Serializable {
     private Long usuarioId;
     private Long productoId;
 
+    public ReservaDTO(){
+
+    }
     public ReservaDTO(Long id, LocalDateTime inicio, LocalDateTime fin, Long usuario, Long producto){
         this.id=id;
         this.inicio=inicio;

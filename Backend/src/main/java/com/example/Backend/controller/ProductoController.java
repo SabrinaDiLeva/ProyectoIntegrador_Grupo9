@@ -1,14 +1,15 @@
-package com.controller;
+package com.example.Backend.controller;
 
-import com.dto.command.ProductoDTO;
-import com.model.Producto;
-import com.service.ProductoService;
+import com.example.Backend.dto.command.ProductoDTO;
+import com.example.Backend.model.Producto;
+import com.example.Backend.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.time.LocalDate;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
@@ -22,19 +23,16 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.guardar(producto));
     }
 
-        // @CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
     @GetMapping
     public ResponseEntity<List<Producto>>  listar() {
         return ResponseEntity.ok(productoService.listar());
     }
 
-        // @CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
     @GetMapping("/random")
     public ResponseEntity<List<Producto>>  listarRandom() {
         return ResponseEntity.ok(productoService.listarRandom());
     }
 
-        // @CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
     @GetMapping("/categoria/{id}")
     public ResponseEntity<List<Producto>>  listarPorCategoria(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCategoria(id));
@@ -43,7 +41,14 @@ public class ProductoController {
     public ResponseEntity<List<Producto>>  listarPorCiudad(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCiudad(id));
     }
-        // @CrossOrigin(origins = {"http://localhost:3000", "http://grupo9c7front.s3-website.us-east-2.amazonaws.com"})
+
+    @GetMapping("/filtrar/{ciudad}/{inicio}/{fin}")
+    public ResponseEntity<List<Producto>>  filtrarBusqueda(@PathVariable Long ciudad,@PathVariable String inicio, @PathVariable String fin) {
+        LocalDate i = LocalDate.parse(inicio);
+        LocalDate f = LocalDate.parse(fin);
+        return ResponseEntity.ok(productoService.filtrarBusqueda(ciudad,i,f));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Producto> buscar(@PathVariable Long id) {
         Producto producto = productoService.buscar(id);

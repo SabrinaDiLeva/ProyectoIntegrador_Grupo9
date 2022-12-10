@@ -1,7 +1,7 @@
-package com.dto.command;
+package com.example.Backend.dto.command;
 
-import com.model.Imagen;
-import com.model.Producto;
+import com.example.Backend.model.Imagen;
+import com.example.Backend.model.Producto;
 
 import java.io.Serializable;
 

@@ -1,12 +1,13 @@
-package com.service;
+package com.example.Backend.service;
 
-import com.dto.command.ReservaDTO;
-import com.model.Producto;
-import com.model.Reserva;
-import com.model.Usuario;
-import com.repository.IProductoRepository;
-import com.repository.IReservaRepository;
-import com.repository.IUsuarioRepository;
+import com.example.Backend.dto.command.ReservaDTO;
+import com.example.Backend.dto.command.UsuarioDTO;
+import com.example.Backend.model.Producto;
+import com.example.Backend.model.Reserva;
+import com.example.Backend.model.Usuario;
+import com.example.Backend.repository.IProductoRepository;
+import com.example.Backend.repository.IReservaRepository;
+import com.example.Backend.repository.IUsuarioRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -58,5 +59,15 @@ public class ReservaService implements IService<Reserva,ReservaDTO> {
         Reserva reserva = this.buscar(id);
         return this.guardar(dto.update(reserva));
     }
+
+    @Override
+    public UsuarioDTO findByCorreo(String email) {
+        return null;
+    }
+
+    public List<Reserva> listarPorIdUsuario(Long id){
+        return iReservaRepository.findAllByUsuario_Id(id);
+    }
+
 
 }

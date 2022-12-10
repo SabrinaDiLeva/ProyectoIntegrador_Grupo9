@@ -1,10 +1,10 @@
-package com.service;
-
-import com.dto.command.ImagenDTO;
-import com.model.Imagen;
-import com.model.Producto;
-import com.repository.IImagenRepository;
-import com.repository.IProductoRepository;
+package com.example.Backend.service;
+import com.example.Backend.dto.command.ImagenDTO;
+import com.example.Backend.dto.command.UsuarioDTO;
+import com.example.Backend.model.Imagen;
+import com.example.Backend.model.Producto;
+import com.example.Backend.repository.IImagenRepository;
+import com.example.Backend.repository.IProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -56,6 +56,11 @@ public class ImagenService implements IService<Imagen, ImagenDTO>{
     public Imagen modificar(Long id, ImagenDTO dto) {
         Imagen imagen = this.buscar(id);
         return this.guardar(dto.update(imagen));
+    }
+
+    @Override
+    public UsuarioDTO findByCorreo(String email) {
+        return null;
     }
 
     public List<Imagen> listarPorProducto(Long id) {

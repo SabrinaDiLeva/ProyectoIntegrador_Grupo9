@@ -1,8 +1,9 @@
-package com.service;
+package com.example.Backend.service;
 
-import com.dto.command.CaracteristicaDTO;
-import com.model.Caracteristica;
-import com.repository.ICaracteristicaRepository;
+import com.example.Backend.dto.command.CaracteristicaDTO;
+import com.example.Backend.dto.command.UsuarioDTO;
+import com.example.Backend.model.Caracteristica;
+import com.example.Backend.repository.ICaracteristicaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -45,5 +46,10 @@ public class CaracteristicaService implements IService<Caracteristica, Caracteri
     public Caracteristica modificar(Long id, CaracteristicaDTO dto) {
         Caracteristica caracteristica = this.buscar(id);
         return this.guardar(dto.update(caracteristica));
+    }
+
+    @Override
+    public UsuarioDTO findByCorreo(String email) {
+        return null;
     }
 }

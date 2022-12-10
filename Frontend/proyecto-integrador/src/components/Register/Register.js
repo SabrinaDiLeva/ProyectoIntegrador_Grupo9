@@ -20,18 +20,24 @@ const validationForm = (form) => {
         errors.nombre = "Ingresar tu 'nombre'"
     }else if (!regexName.test(form.nombre.trim())) {
         errors.nombre = "El nombre ingresado es incorrecto"
+    }else{
+        errors.nombre = ""
     }
 
     if (!form.apellido.trim()) {
         errors.apellido = "Ingresar tu 'apellido'"
     }else if (!regexName.test(form.apellido.trim())) {
         errors.apellido = "El apellido ingresado es incorrecto"
+    }else{
+        errors.apellido = ""
     }
 
     if (!form.email.trim()) {
         errors.email = "Ingresar tu 'email'"
     }else if (!regexEmail.test(form.email.trim())) {
         errors.email = "El email ingresado es incorrecto"
+    }else{
+        errors.email = ""
     }
 
     if (!form.password.trim()) {
@@ -39,17 +45,20 @@ const validationForm = (form) => {
     }else if (!regexPassword.test(form.password.trim())) {
         errors.password = "La contraseña ingresada es incorrecta"
     }else if (form.password.trim().length < 6) {
-        errors.password = "La contraseña debe contener al menos 6 o 8 caracteres"
+        errors.password = "La contraseña debe contener al menos 6 caracteres"
+    }else{
+        errors.password = ""
     }
 
     if (!form.repassword.trim()) {
         errors.repassword = "Confirma tu 'contraseña'"
     }else if (!regexPassword.test(form.repassword.trim())) {
         errors.repassword = "La contraseña ingresada es incorrecta"
-    }else if (form.password.trim().length < 6 || form.password.trim().length < 8) {
-        errors.repassword = "La contraseña debe contener al menos 6 o 8 caracteres"
+    }else if (form.password.trim().length < 6) {
+        errors.repassword = "La contraseña debe contener al menos 6 caracteres"
+    }else{
+        errors.repassword = ""
     }
-
 
     return errors;
 };
@@ -97,3 +106,4 @@ export default function Register() {
             </div>
     )
 }
+

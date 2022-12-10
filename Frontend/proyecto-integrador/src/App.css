@@ -23,6 +23,7 @@ html{
 
 #root{
   height: 100%;
+  font-size:20px
 }
 
 .container {
@@ -43,4 +44,19 @@ a:visited{
 a:link{
     text-decoration: none;
     color: inherit;
+}
+
+button--link:visited, a:visited{
+  color: transparent;
+}
+
+* a{
+  text-decoration: none;
+}
+
+
+@media (min-width: 420px) {
+  #root{
+    font-size:25px
+  }
 }

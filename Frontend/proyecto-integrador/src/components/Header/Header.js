@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './Header.module.css'
-import data from './headerInfo.json'
-import Logo from '../ui/logo.png'
-import { Link, Routes, Route } from "react-router-dom";
-import {sessionClosed} from '../../hooks/sessionStorage';
-import NavBar from './navBar';
+import NavBar from './minicomponents/navBar';
+import Logo from './minicomponents/Logo';
+import Slogan from './minicomponents/Slogan';
+import Burger from './minicomponents/Burger';
 
+<<<<<<< HEAD
 const session = localStorage.getItem('jwt')
+=======
+>>>>>>> 25438d6619a45bc2b00414899280f6f215393c10
 
 const Header = (props) => {
+    const [navbarOpen, setNavbarOpen] = useState(false)
+    const [scroll, setScroll] = useState(true)
 
+<<<<<<< HEAD
   if(session !== null){
 
     let base64Url = session.split('.')[1];
@@ -21,63 +26,51 @@ const Header = (props) => {
       lastNameLetter: `${JSON.parse(decode).lastName[0].toUpperCase()}`,
       name: `${JSON.parse(decode).name[0].toUpperCase()}${JSON.parse(decode).name.slice(1)}`,
       lastName: `${JSON.parse(decode).lastName[0].toUpperCase()}${JSON.parse(decode).lastName.slice(1)}`
+=======
+    const handleToggle = () => {
+        setNavbarOpen(!navbarOpen)
+>>>>>>> 25438d6619a45bc2b00414899280f6f215393c10
     }
-  }
 
-  const randomSloganIndex = Math.round(Math.random() * 3);
+    const closeMenu = () => {
+      setNavbarOpen(false)
+    }
+
+    useEffect( () => {
+      function handleResize() {
+          setNavbarOpen(window.innerWidth > 424? false : navbarOpen )
+      }
+      window.addEventListener('resize', handleResize)
+  })
+    useEffect( () => {
+      setScroll(window.innerWidth > 424? true : navbarOpen)
+  }, [navbarOpen])
+    useEffect( () => {
+      var element = document.getElementById("body");
+      if (!element) {
+        return
+    }
+    console.log(element)
+
+    element.style.overflowY = scroll ? 'scroll' : 'hidden';
+    element.style.height = scroll ? '89%' : 'unset';
+  }, [scroll])
 
   return (
     <>
       <header className={style.header}>
-        <div className={style.headerContainer}>
-        
-          <div className={style.headerLogo}>
-            <a className={style.link} href='/'>
-              <div className={style.LogoSlogan}>
-                <img className={style.images} src={Logo} alt={props.nombre}/>
-                <span className={style.slogan}> {data[randomSloganIndex].slogan} </span>
-              {/* termina logoSlogan */}
-              </div> 
-            </a>
-          {/* termina headerLogo */}
+        <div className={style.subHeaderIzquierda}>
+          <a href='/' className={style.home}>
+          <Logo/>
+          <Slogan/>
+          </a>
+        </div>
+        <div className={`${style.subHeaderDerecha} ${navbarOpen ? style.cover : style.contain} `}>
+          <div className={style.burger}>
+              <Burger open={navbarOpen} handleToggle={handleToggle} />
           </div>
-          <NavBar/>
-          
-          <div className={loggedUser ? style.sessionIniciada : style.iniciarSession}>
-            <div className={style.usuarioSessionIniciada}>
-                <div className={style.avatarContainer}>
-                  <span className={style.avatar}>{loggedUser ? `${loggedUser.nameLetter}${loggedUser.lastNameLetter}` : '' }</span>
-                </div>
-                <span className={style.perfilUsuario}>
-              <a className={style.linkPerfil} href="/">
-                <p className={style.saludo}>Hola, {loggedUser ? `${loggedUser.name} ${loggedUser.lastName}` : '' }</p>
-              </a>
-              </span>
-              <button className={style.button} href="/" onClick={sessionClosed}>Cerrar Sesión</button>
-            {/* cierra usuarioSessionIniciada */}
-            </div>
-            
-            <div className={style.usuarioIniciarSession}>
-              <Routes>
-                <Route path='/*' element={<>
-                  <button id={style.buttonLogin} className={style.button} type="button"><Link to='/iniciar_sesion'>Iniciar Sesion</Link></button>
-                  <button id={style.buttonRegister} className={style.button} type="button"><Link to='/registrarse'>Registrarse</Link></button>
-                </>}/> 
-
-                <Route path='/iniciar_sesion' element={<>
-                  <button id={style.buttonRegister} className={style.button} type="button"><Link to='/registrarse'>Registrarse</Link></button>
-                </>}/> 
-                
-                <Route path='/registrarse' element={<>
-                  <button id={style.buttonLogin} className={style.button} type="button"><Link to='/iniciar_sesion'>Iniciar Sesion</Link></button>
-                </>}/>
-              </Routes> 
-            {/* cierra usuarioIniciarSession */}
-            </div>
-          </div>
-        {/* cierra headerContainer */}
-        </div>  
-      {/* cierra header */}
+          <NavBar hide={!navbarOpen} handleToggle={handleToggle} closeMenu={closeMenu}/>
+        </div>
       </header>
     </>
   );

@@ -37,6 +37,7 @@ public class ProductoController {
     public ResponseEntity<List<Producto>>  listarPorCategoria(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCategoria(id));
     }
+
     @GetMapping("/ciudad/{id}")
     public ResponseEntity<List<Producto>>  listarPorCiudad(@PathVariable Long id) {
         return ResponseEntity.ok(productoService.listarPorIdCiudad(id));

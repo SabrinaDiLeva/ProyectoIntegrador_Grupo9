@@ -21,15 +21,6 @@ public class Producto {
     private String titulo;
     @Column
     private String descripcion;
-    //@Column(name = "fechas_disponibles")
-    //private String fechasDisponibles;
-    //@Column
-    //private String normas;
-    //@Column
-    //private String seguridad;
-    //@Column
-    //private String cancelacion;
-
 
     @OneToMany(mappedBy = "producto")
     @JsonIgnore

@@ -11,7 +11,6 @@ import style from './Buscador.module.css';
 const Buscador = () => {
     // Provincias selector state
     const [provincias, setProvincias] = useState([])
-
     useEffect(() => {
         if (provincias.length === 0) {
             getCiudades().then((data) => {
@@ -32,7 +31,7 @@ const Buscador = () => {
                         <Calendario />
                     </div>
                     <div className={style.containerBoton}>
-                        <Boton to={`/`} text={"Buscar"} />
+                        <Boton to={`/exito`} text={"Buscar"} />
                     </div>
                 </div>
             </div>

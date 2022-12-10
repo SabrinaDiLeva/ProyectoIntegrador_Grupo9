@@ -70,3 +70,7 @@
     color: red;
     margin-bottom: 1%;
 }
+
+.link {
+  color: var(--colorBackgroundPrincipalOpacity)
+}

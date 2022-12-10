@@ -1,0 +1,14 @@
+.slogan {
+    display: none;
+    color: #545776;
+    font-size: 20px;
+    font-style: italic;
+}
+
+@media(min-width: 1000px) {
+    .slogan {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

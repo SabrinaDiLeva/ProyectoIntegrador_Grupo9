@@ -34,7 +34,7 @@ public class CaracteristicaController {
 /*
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
-        Caracteristica caracteristicaBuscada=caracteristicaService.buscar(id);
+        Caracteristica caracteristicaBuscada = caracteristicaService.buscar(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 

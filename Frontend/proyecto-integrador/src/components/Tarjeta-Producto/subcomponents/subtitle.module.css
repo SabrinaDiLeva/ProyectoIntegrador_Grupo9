@@ -1,0 +1,9 @@
+h2 {
+    text-align: left;
+    margin: 2vw;
+}
+
+.subtitle {
+    width: 100%;
+    border-bottom: 1px solid var(--colorTextoSecundario);
+}

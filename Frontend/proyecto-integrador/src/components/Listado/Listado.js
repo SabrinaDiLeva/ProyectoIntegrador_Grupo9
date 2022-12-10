@@ -4,8 +4,6 @@ import { useEffect, useState } from "react"
 import { getProductosRandom } from "../../service/productoApi"
 import { getImagenesPorProducto } from "../../service/imagenApi"
 
-
-
 export default function Listado() {
     const [recomendados, setRecomendados] = useState([])
     const [portadas, setPortadas] = useState([])
@@ -30,7 +28,7 @@ export default function Listado() {
         }
         )
     }, [recomendados])
-
+    
     return (
         <>
         <div className={style.container}>

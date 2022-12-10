@@ -1,0 +1,341 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2vh 0;
+}
+
+.titulo1{
+    text-align: left;
+    padding: 2vh 0 1vh 3vw;
+    background-color: var(--colorBackgroundSecundario);
+}
+
+.subContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+}
+
+.productoInfoContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+}
+
+.infoContainer1{
+    display: flex;
+    flex-direction: column;
+    margin: 0 4vw;
+    text-align: left;
+}
+
+.infoContainer2{
+    display: flex;
+    flex-direction: column;
+    margin: 0 4vw;
+    text-align: left;
+}
+
+.infoLabel{
+    width: 10em;
+    margin: 1vh 0 0 3vw;
+}
+.inputContainer{
+    position: relative;
+    width: 100%;
+}
+
+.infoLabelContainer{
+    width: 100%;
+}
+
+.inputContainer > .infoInput{
+    width: 95%;
+}
+
+.inputListado {
+    background-color: var(--colorBackgroundSecundario);
+    color: var(--colorTextoSecundario);
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--borderShadow);
+    list-style-type: none;
+    overflow-y: auto;
+    position: absolute;
+    top: 3vh;
+    /* bottom: 0; */
+    z-index: 1;
+    width: 94%;
+    margin: 0.5vh 3vw;
+}
+
+.inputListado::-webkit-scrollbar {
+    display: none;
+}
+
+.inputListado:focus {
+    outline: 3px solid #ddd;
+}
+
+.infoInput{
+    width: 90%;
+    border: 2px solid #607D8B;
+    border-radius: 5px;
+    box-shadow: var(--borderShadow);
+    margin: 0.5vh 3vw;
+    padding: 1vh;
+    font-style: italic;
+}
+
+.descriptionInput{
+    width: 90%;
+    border: 2px solid #607D8B;
+    border-radius: 5px;
+    box-shadow: var(--borderShadow);
+    margin: 0.5vh 3vw;
+    padding: 1vh;
+    height: 10vh;
+    font-style: italic;
+}
+
+.titulo2{
+    text-align: left;
+    width: 10em;
+    margin: 1vh 0 0 3vw;
+}
+
+.productoCaracteristicasContainer{
+    display: flex;
+    background-color: var(--colorBackgroundSecundario);
+    padding: 1vh;
+    align-items: center;
+}
+
+.caracteristicasContainer1{
+    width: 70%;
+}
+
+.caracteristicasContainer2{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+.caracteristicasSubContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 0 4vw;
+    text-align: left;
+}
+
+.buttonAgregarContainer{
+    display: flex;
+    justify-content: flex-start;
+    margin: 3vh 0 0 0;
+}
+
+.buttonAgregar{
+    text-decoration: none;
+    color: var(--colorTextoPrimario);
+    border: 2px solid var(--colorBackgroundPrincipal);
+    background-color: var(--colorBackgroundPrincipal);
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+    aspect-ratio: 1;
+    /* margin: 3vh 0 0 0; */
+}
+
+.buttonAgregar >*{
+    font-size: 3em;
+}
+
+.caracteristicaLabel{
+    width: 10em;
+    margin: 1vh 0 0 3vw;
+}
+
+.caracteristicaInput{
+    width: 100%;
+    border: 2px solid #607D8B;
+    border-radius: 5px;
+    box-shadow: var(--borderShadow);
+    margin: 0.5vh 3vw;
+    padding: 1vh;
+    font-style: italic;
+}
+
+.productoPoliticasContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 1vh;
+}
+
+.politicaContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 0 4vw;
+    text-align: left;
+}
+
+.titulo3{
+    text-align: left;
+    width: 10em;
+    margin: 1vh 0 0 1vw;
+}
+
+.politicaLabel{
+    width: 10em;
+    margin: 1vh 0 0 3vw;
+}
+
+.politicaInput{
+    width: 90%;
+    border: 2px solid #607D8B;
+    border-radius: 5px;
+    box-shadow: var(--borderShadow);
+    margin: 0.5vh 3vw;
+    padding: 1vh;
+    height: 10vh;
+    font-style: italic;
+}
+
+.imagenContainer{
+    display: flex;
+    background-color: var(--colorBackgroundSecundario);
+    padding: 1vh;
+}
+
+.imagenInput{
+    width: 70%;
+    border: 2px solid #607D8B;
+    border-radius: 5px;
+    box-shadow: var(--borderShadow);
+    margin: 0 0.5vw 0 7vw;
+    padding: 1vh;
+    font-style: italic;
+}
+
+.imagenContainer > .button{
+    box-sizing: border-box; 
+    width: 10%;
+    aspect-ratio: 1;
+    padding: none;
+    margin: 0 2vw;
+    position: relative; /* needed for float */
+    float: left; /* make element align from left to right, then top to bottom */
+}
+
+.imagenContainer > .button > *{
+    font-size: 2.5em;
+}
+
+.BotonContainer{
+    display: flex;
+    justify-content: center;
+    margin: 5vh 12vw 5vh 7vw;
+    padding: 1vh;
+}
+
+.BotonContainer >*{
+    padding: 2.5vh !important; 
+}
+
+.button {
+    text-decoration: none;
+    color: var(--colorTextoPrimario);
+    border: 2px solid var(--colorBackgroundPrincipal);
+    background-color: var(--colorBackgroundPrincipal);
+    border-radius: 5px;
+    width: 3vh;
+    aspect-ratio: 1;
+    transition: all 0.3s ease-out;
+}
+
+.button:hover {
+    background-color: var(--colorBackgroundSecundario);
+    color: var(--colorTextoSecundario);
+}
+
+@media(min-width: 768px) {
+    .subContainer{
+        border: 2px solid #607D8B;
+        border-radius: 5px;
+        margin: 2vh;
+    }
+
+    .infoContainer1{
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .infoInput{
+        width: 80%;
+        font-size: 1em; 
+    }
+
+    .inputListado{
+        width: 85%;
+    }
+    
+    .descriptionInput{
+        width: 90%;
+        font-size: 1em; 
+    }
+
+    .caracteristicaInput{
+        width: 100%;
+        font-size: 1em; 
+    }
+
+    .politicaInput{
+        width: 90%;
+        font-size: 1em; 
+    }
+
+    .imagenInput{
+        width: 70%;
+        font-size: 1em; 
+    }
+    
+    .imagenContainer > .button{
+        width: 7%;
+    }
+}
+
+@media(min-width: 1024px) {
+    .caracteristicasContainer1{
+        display: flex;
+        width: 100%;
+        font-size: 1em;
+        justify-content: space-between;
+    }
+
+    .caracteristicasSubContainer{
+        width: 100%;
+        margin: 0 0 0 4vw;
+    }
+
+    .caracteristicasContainer2{
+        width: 30%;
+        margin: 0 0 0 2vw;
+    }
+
+    .caracteristicaInput{
+        width: 100%;
+    }
+    
+    .imagenInput{
+        width: 80%;
+    }
+    
+    .imagenContainer > .button{
+        width: 3%;
+        margin: 0;
+    }
+}
+

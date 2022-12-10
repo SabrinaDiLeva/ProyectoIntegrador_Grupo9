@@ -54,7 +54,7 @@ export const useForm = (initialForm, validateForm) => {
             })
         }else{
             session.push({mail: form.email, password: form.password, nombre: form.nombre, apellido: form.apellido})
-            sessionStorage.setItem('sessionRegistrada', JSON.stringify(session) )
+            sessionStorage.setItem('sessionIniciada', JSON.stringify(session) )
             window.history.back()
         }
     }

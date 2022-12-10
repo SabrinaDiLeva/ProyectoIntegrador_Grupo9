@@ -58,7 +58,7 @@ export const useForm = (initialForm, validateForm) => {
                     localStorage.setItem('jwt', JSON.stringify(data.respuesta.token));
                 
                     //sessionStorage.setItem('jwt', JSON.stringify(data.jwt));
-                    window.location()
+                    window.location.href = window.location.origin
                 }
             }).catch(err => console.error(`Error: ${err}`))
     };

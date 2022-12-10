@@ -15,6 +15,7 @@ const validationForm = (form) => {
     let errors = {};
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    let regexPassword = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,8}$/;
 
     if (!form.nombre.trim()) {
         errors.nombre = "Ingresar tu 'nombre'"
@@ -36,18 +37,18 @@ const validationForm = (form) => {
 
     if (!form.password.trim()) {
         errors.password = "Ingresar tu 'contraseña'"
-    }else if (!regexName.test(form.password.trim())) {
+    }else if (!regexPassword.test(form.password.trim())) {
         errors.password = "La contraseña ingresada es incorrecta"
     }else if (form.password.trim().length < 6) {
-        errors.password = "La contraseña debe contener al menos 6 caracteres"
+        errors.password = "La contraseña debe contener al menos 6 o 8 caracteres"
     }
 
     if (!form.repassword.trim()) {
         errors.repassword = "Confirma tu 'contraseña'"
-    }else if (!regexName.test(form.repassword.trim())) {
+    }else if (!regexPassword.test(form.repassword.trim())) {
         errors.repassword = "La contraseña ingresada es incorrecta"
-    }else if (form.password.trim().length < 6) {
-        errors.repassword = "La contraseña debe contener al menos 6 caracteres"
+    }else if (form.password.trim().length < 6 || form.password.trim().length < 8) {
+        errors.repassword = "La contraseña debe contener al menos 6 o 8 caracteres"
     }
 
 
@@ -65,7 +66,7 @@ export default function Register() {
                     <div className={style.firstContainer}>
                         <span className={style.labelContainer}>
                             <label className={style.label}>Nombre</label>
-                            <input className={style.input} type="text" id={style.name}name="nombre" placeholder="Escribe tu nombre" onBlur={handleBlur} onChange={handleChange} value={form.nombre} required />
+                            <input className={style.input} type="text" id={style.name} name="nombre" placeholder="Escribe tu nombre" onBlur={handleBlur} onChange={handleChange} value={form.nombre} required />
                         </span>
 
                         <span className={style.labelContainer}>
@@ -80,12 +81,12 @@ export default function Register() {
     
                     <span className={style.labelContainer}>
                         <label className={style.label}>Contraseña</label>
-                        <input type="password" id={style.password} className={style.input}name="password" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.password} required />
+                        <input type="password" id={style.password} className={style.input} name="password" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.password} required />
                     </span>
 
                     <span className={style.labelContainer}>
                         <label className={style.label}>Confirmar Contraseña</label>
-                        <input type="password" id={style.repassword} className={style.input}name="repassword" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.repassword} required />
+                        <input type="password" id={style.repassword} className={style.input} name="repassword" placeholder="Escribe tu contraseña" onBlur={handleBlur} onChange={handleChange} value={form.repassword} required />
                     </span>
 
                     <span className={style.botonContainer}>

@@ -5,17 +5,13 @@ import Logo from './minicomponents/Logo';
 import Slogan from './minicomponents/Slogan';
 import Burger from './minicomponents/Burger';
 
-<<<<<<< HEAD
 const session = localStorage.getItem('jwt')
-=======
->>>>>>> 25438d6619a45bc2b00414899280f6f215393c10
 
 const Header = (props) => {
-    const [navbarOpen, setNavbarOpen] = useState(false)
-    const [scroll, setScroll] = useState(true)
+  const [navbarOpen, setNavbarOpen] = useState(false)
+  const [scroll, setScroll] = useState(true)
 
-<<<<<<< HEAD
-  if(session !== null){
+  if (session !== null) {
 
     let base64Url = session.split('.')[1];
     //let base64 = base64Url.replace('-', '+').replace('_', '/');
@@ -26,29 +22,29 @@ const Header = (props) => {
       lastNameLetter: `${JSON.parse(decode).lastName[0].toUpperCase()}`,
       name: `${JSON.parse(decode).name[0].toUpperCase()}${JSON.parse(decode).name.slice(1)}`,
       lastName: `${JSON.parse(decode).lastName[0].toUpperCase()}${JSON.parse(decode).lastName.slice(1)}`
-=======
-    const handleToggle = () => {
-        setNavbarOpen(!navbarOpen)
->>>>>>> 25438d6619a45bc2b00414899280f6f215393c10
     }
+  }
+  const handleToggle = () => {
+    setNavbarOpen(!navbarOpen)
+  }
 
-    const closeMenu = () => {
-      setNavbarOpen(false)
+  const closeMenu = () => {
+    setNavbarOpen(false)
+  }
+
+  useEffect(() => {
+    function handleResize() {
+      setNavbarOpen(window.innerWidth > 424 ? false : navbarOpen)
     }
-
-    useEffect( () => {
-      function handleResize() {
-          setNavbarOpen(window.innerWidth > 424? false : navbarOpen )
-      }
-      window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize)
   })
-    useEffect( () => {
-      setScroll(window.innerWidth > 424? true : navbarOpen)
+  useEffect(() => {
+    setScroll(window.innerWidth > 424 ? true : navbarOpen)
   }, [navbarOpen])
-    useEffect( () => {
-      var element = document.getElementById("body");
-      if (!element) {
-        return
+  useEffect(() => {
+    var element = document.getElementById("body");
+    if (!element) {
+      return
     }
     console.log(element)
 
@@ -61,15 +57,15 @@ const Header = (props) => {
       <header className={style.header}>
         <div className={style.subHeaderIzquierda}>
           <a href='/' className={style.home}>
-          <Logo/>
-          <Slogan/>
+            <Logo />
+            <Slogan />
           </a>
         </div>
         <div className={`${style.subHeaderDerecha} ${navbarOpen ? style.cover : style.contain} `}>
           <div className={style.burger}>
-              <Burger open={navbarOpen} handleToggle={handleToggle} />
+            <Burger open={navbarOpen} handleToggle={handleToggle} />
           </div>
-          <NavBar hide={!navbarOpen} handleToggle={handleToggle} closeMenu={closeMenu}/>
+          <NavBar hide={!navbarOpen} handleToggle={handleToggle} closeMenu={closeMenu} />
         </div>
       </header>
     </>

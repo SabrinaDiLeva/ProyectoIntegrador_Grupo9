@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example.Backend</groupId>
-	<artifactId>Backend</artifactId>
+	<artifactId>PIGrupo9</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Backend</name>
 	<description>Proyecto integrador del grupo 9</description>

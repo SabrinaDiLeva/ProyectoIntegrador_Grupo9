@@ -1,5 +1,5 @@
 # Configuration
-.idea
+./.idea
 /Backend/.idea
 /Backend/target
 /Frontend/.idea

@@ -33,9 +33,9 @@ public class ProductoController {
         return ResponseEntity.ok(productoService.listarRandom());
     }
 
-    @GetMapping("/categoria/{id}")
-    public ResponseEntity<List<Producto>>  listarPorCategoria(@PathVariable Long id) {
-        return ResponseEntity.ok(productoService.listarPorIdCategoria(id));
+    @GetMapping("/categoria/{titulo}")
+    public ResponseEntity<List<Producto>>  listarPorCategoria(@PathVariable String titulo) {
+        return ResponseEntity.ok(productoService.listarPorCategoria(titulo));
     }
 
     @GetMapping("/ciudad/{id}")

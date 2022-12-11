@@ -6,6 +6,10 @@
     margin: 7px;
 }
 
+.tarjeta:hover {
+    opacity: 75%;
+}
+
 .tarjeta img {
     width: 100%;
     height: 30vh;

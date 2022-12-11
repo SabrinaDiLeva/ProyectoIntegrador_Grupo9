@@ -7,8 +7,8 @@ export const getProducto = async (id) => {
     return response.data
 }
 
-export const getProductosPorCategoria = async (id) => {
-    const endpoint = `${BASEURL}/producto/categoria/${id}`
+export const getProductosPorCategoria = async (categoria) => {
+    const endpoint = `${BASEURL}/producto/categoria/${categoria}`
     const response = await axios.get(endpoint);
     return response.data
 }

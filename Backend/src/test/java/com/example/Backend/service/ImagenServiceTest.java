@@ -154,8 +154,4 @@
         assertThrows(ResponseStatusException.class, () -> imagenService.guardar(imagenDTO));
     }
     */
-<<<<<<< HEAD
 // }
-=======
-}
->>>>>>> a0f6cca8d324b4f3f83c73ee6688717e54780948

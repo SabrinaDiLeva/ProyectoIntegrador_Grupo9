@@ -5,9 +5,9 @@ import { getCategorias } from "../../service/categoriaApi"
 import { getProductosPorCategoria } from "../../service/productoApi"
 
 
-export default function SeccionCategoria() {
+export default function SeccionCategoria(props) {
     const [categorias, setCategorias] = useState([])
-    const [cantidadPorCategoria, setCantidadPorCategoria] = useState([])
+    const [cantidadPorCategoria, setCantidadPorCategoria] = useState({})
 
     useEffect(() => {
         if (categorias.length === 0) {
@@ -20,23 +20,26 @@ export default function SeccionCategoria() {
     
     useEffect(() => {
             categorias.forEach(categoria => 
-                getProductosPorCategoria(categoria.id)
+                getProductosPorCategoria(categoria.titulo)
                 .then(data => {
-                    setCantidadPorCategoria(oldArray => [...oldArray, data.length])
+                    let property = categoria.titulo
+                    let value = data.length
+                    let newValue = {}
+                    newValue[property] = value
+                    setCantidadPorCategoria( old => ({...old, ...newValue}))
                 })
-                .catch(() => 0)
             )
+
+            console.log(cantidadPorCategoria)
     }, [categorias])
 
-
-    const handleClick = () => {}
 
     return (
         <>
             <div className={style.body}>
                 <h1 className={style.titulo}>Busca tu tipo de Alojamiento</h1>
                 <div className={style.tarjetaContainer}>
-                    {categorias.map((categoria, index) => <Categoria key={categoria.id} onClick={handleClick} imagen={categoria.imagen} titulo={categoria.titulo} caption={`${cantidadPorCategoria[index] ? cantidadPorCategoria[index] : 0} resultados encontrados`} />)}
+                    {categorias.map((categoria) => <Categoria key={categoria.id} filter={props.filter} imagen={categoria.imagen} titulo={categoria.titulo} caption={`${cantidadPorCategoria[categoria.titulo] ? cantidadPorCategoria[categoria.titulo] : 0} resultados encontrados`} />)}
                 </div>
             </div>
         </>

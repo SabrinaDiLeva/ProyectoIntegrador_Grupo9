@@ -6,7 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8484e9ea-6d9d-4b6a-9b47-fc22bd8d8a5c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/EndPoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/EndPoint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/Backend/controller/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/Backend/controller/ProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/Backend/repository/IProductoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/Backend/repository/IProductoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/example/Backend/service/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/example/Backend/service/ProductoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/example/Backend/service/CategoriaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/example/Backend/service/CategoriaServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/example/Backend/service/ImagenServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/example/Backend/service/ImagenServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/com/example/Backend/service/ProductoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/com/example/Backend/service/ProductoServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Categoria/Categoria.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Categoria/Categoria.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Categoria/Categoria.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Categoria/Categoria.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Categoria/SeccionCategoria.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Categoria/SeccionCategoria.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Listado/Listado.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Listado/Listado.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/productoApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/productoApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +36,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="home" />
+                    <option name="lastUsedInstant" value="1670789953" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main2" />
                     <option name="lastUsedInstant" value="1670788992" />
@@ -111,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670733450289</updated>
       <workItem from="1670733453502" duration="1202000" />
-      <workItem from="1670772974809" duration="1068000" />
+      <workItem from="1670772974809" duration="3900000" />
     </task>
     <servers />
   </component>

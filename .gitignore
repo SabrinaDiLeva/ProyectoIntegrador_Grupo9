@@ -1,7 +1,6 @@
 # Configuration
-./.idea
+.idea
 /Backend/.idea
-/Backend/target
 /Frontend/.idea
 /Frontend/.mvn 
 /Frontend/proyecto-integrador/.idea

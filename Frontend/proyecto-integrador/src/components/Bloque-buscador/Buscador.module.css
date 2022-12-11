@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: space-around;
     background-color: var(--colorBackgroundPrincipalOpacity);
-    width: 100vw;
     padding: 5px 0px;
 }
 

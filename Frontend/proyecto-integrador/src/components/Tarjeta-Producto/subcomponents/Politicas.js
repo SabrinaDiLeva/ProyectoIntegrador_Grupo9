@@ -1,9 +1,10 @@
 import style from "./politicas.module.css"
+import Subtitle from "./Subtitle"
 
 export default function Politicas(props) {
     return (
         <div className={style.politicasAllContainer}>
-            <h2>Qué tenés que saber</h2>
+            <Subtitle subtitle={"Que tenés que saber"}/>
             <span className={style.politicasContainer}>
                 <span className={style.politica}>
                     <h4>Normas de la casa</h4>

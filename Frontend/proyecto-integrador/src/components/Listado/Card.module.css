@@ -1,4 +1,4 @@
-.tarjeta{
+.tarjeta {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
@@ -17,7 +17,7 @@
     border-radius: 8px 8px 0px 0px;
 }
 
-.tarjeta .infoContainerDetalle{
+.tarjeta .infoContainerDetalle {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,7 +30,7 @@
     padding: 10px;
 }
 
-.cardCategoria{
+.cardCategoria {
     color: gray;
     font-size: 0.85em;
     font-weight: bold;
@@ -42,21 +42,21 @@
     justify-content: space-between;
 }
 
-.cardNombre{
+.cardNombre {
     font-size: 1.4em;
     font-weight: bold;
-    padding: 2px 0px 15px;
+    padding: 1px 0px 6px;
 }
 
-.cardLocation{
+.cardLocation {
     font-size: 1em;
     padding: 0px 0px 15px;
 }
 
-.cardDescripcion{
-     display: -webkit-box;   
-    -webkit-line-clamp: 4;   
-    -webkit-box-orient: vertical;     
+.cardDescripcion {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -67,19 +67,32 @@
     margin: 5px;
 }
 
-@media (min-width: 430px){
-    .tarjeta{
+.textoContainer{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.verMas {
+    position: absolute;
+    bottom: -15px;
+    right: -2px;
+    white-space: nowrap;
+}
+
+@media (min-width: 430px) {
+    .tarjeta {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
     .tarjeta img {
-        width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 8px 0px 0px 8px;
     }
 
-    .infoContainerDetalle{
+    .infoContainerDetalle {
         justify-content: space-evenly;
     }
 }

@@ -1,0 +1,51 @@
+.perfil{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.avatar{
+  aspect-ratio: 1;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--colorBackgroundPrincipal);
+  border: 1.5px solid black;
+  color: var(--colorTextoPrimario);
+  font-size: 70%;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.perfilUsuario{
+  display: flex;
+  flex-direction: column;
+  margin: 0 1vh;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkPerfil{
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.saludo{
+  margin: 0;
+  padding: 0;
+  color: var(--colorTextoPrimario);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.saludo2{
+  margin: 0;
+  padding: 0;
+  color: var(--colorTextoPrimario);
+  font-size: 16px;
+}

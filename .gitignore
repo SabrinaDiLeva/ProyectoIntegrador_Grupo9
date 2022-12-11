@@ -1,32 +1,7 @@
-HELP.md
-!.mvn/wrapper/maven-wrapper.jar
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-Backend/.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-Frontend/proyecto-integrador/application.properties
-./Backend/ProyectoIntegrador_Grupo9.war
+# Configuration
+./.idea
+/Backend/.idea
+/Backend/target
+/Frontend/.idea
+/Frontend/.mvn 
+/Frontend/proyecto-integrador/.idea

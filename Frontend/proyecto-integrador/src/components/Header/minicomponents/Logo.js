@@ -1,11 +1,11 @@
-import React from 'react'
-import logo from '../../ui/logo.png'
+import style from "./logo.module.css"
+import Logo from '../../ui/logo.png'
 
-const Logo = () => {
+export default function LogoSlogan(props) {
+
   return (
-    <img src={logo} alt='Logo Digital Booking' />
+    <div className={style.container}>
+      <img className={style.logo} src={Logo} alt={props.nombre} />
+    </div>
   )
 }
-
-export default Logo
-

@@ -34,7 +34,7 @@ export default function Detalles(props) {
                             <hr />
                             {/* Checkout: Fecha de salida*/}
                         </div>
-                        <button type="submit" className={style.button}><Link to='/exito' className={style.link}>Confirmar reserva</Link></button>
+                        <button type="submit" className={style.button}><Link to='/reserva/exito' className={style.link}>Confirmar reserva</Link></button>
                         {/* Boton de confirmación de reserva */}
                     </div>
                 </div>
@@ -42,9 +42,3 @@ export default function Detalles(props) {
         </>
     )
 }
-/*
-categroy
-image
-title
-city
-*/

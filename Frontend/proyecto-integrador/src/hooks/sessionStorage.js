@@ -1,7 +1,7 @@
 export const sessionClosed = () => {
-    var session = sessionStorage.getItem('sessionIniciada')
+    var session = localStorage.getItem('jwt')
     if(session){
-        sessionStorage.removeItem('sessionIniciada')
+        localStorage.clear();
     }
     window.location.href = window.location.origin
 }

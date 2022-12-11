@@ -56,11 +56,14 @@
 }
 
 .errores{
-  color: red;
-  margin-bottom: 5%;
+  background-color: rgba(255, 0, 0, 0.2);
 }
 
 .errorGeneral{
   color: red;
   margin-bottom: 1%;
+}
+
+.link {
+  color: var(--colorBackgroundPrincipalOpacity)
 }

@@ -1,8 +1,9 @@
 .container {
+    /*
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
+    */
 }
 
 .subHeaderDerecha>p {
@@ -41,11 +42,21 @@
 
 .iniciarReservaContainer {
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 0.8em;
     box-shadow: var(--borderShadow);
+}
+
+.imgContainer{
+    position: relative;
+    width:100%;
+}
+
+.galeria{
+    position: relative;
 }
 
 .BotonContainer {
@@ -58,7 +69,10 @@
     margin: 15px 10px;
     text-align: left;
 }
-
+.subtitle {
+    width: 100%;
+    margin: 15px 10px;
+}
 
 div .calendarContainer {
     margin: 0px 15px;
@@ -67,36 +81,6 @@ div .calendarContainer {
     box-shadow: var(--borderShadow);
 }
 
-/*
-CARROUSEL
-*/
-
-.carrousel {
-    position: absolute;
-    top: 10vh;
-    left: 0;
-    backdrop-filter: blur(5px);
-    height: calc(100vh - 15vh);
-}
-
-.imagenCarrousel {
-    width: 90%;
-}
-
-.carrouselContainer .carrouselButton {
-    position: fixed;
-    top: 12vh;
-    right: 5vh;
-    z-index: 10;
-    cursor: pointer;
-    font-size: 3vh;
-    background: var(--colorBackgroundSecundario);
-    border: none;
-}
-
-.carrouselContainer .carrouselButton svg {
-    display: flex;
-}
 
 @media (min-width: 420px) {
     .iniciarReservaContainer {
@@ -108,6 +92,11 @@ CARROUSEL
     .title {
         width: 50%;
         font-size: 0.8em;
+    }
+    .subtitle {
+        width: 50%;
+        font-size: 0.8em;
+        text-align: left;
     }
 
     .BotonContainer {
@@ -122,12 +111,14 @@ CARROUSEL
         justify-content: center;
         align-items: center;
     }
+        .subtitle {
+        text-align: center;
+    }
 
     .iniciarReservaContainer {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: fit-content;
         height: max-content;
     }
 

@@ -6,7 +6,7 @@ export default function Titulo(props) {
         <div className={style.container}>
             <div className={style.header}>
                 <span className={style.headerIzquierda}>
-                    <h3>{props.category}</h3>
+                    <h3>{props.category.toUpperCase()}</h3>
                     <h1>{props.name}</h1>
                 </span>
                 <span className={style.headerDerecha}>

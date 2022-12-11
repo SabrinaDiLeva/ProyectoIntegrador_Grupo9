@@ -12,8 +12,16 @@ export default function DisplayBusqueda(props) {
         setSearchTerm(event.target.value);
     };
 
+    const setBuscador = (term) => {
+        var listado = document.getElementById("inputListado");
+
+        setSearchTerm(term);
+
+        listado.style.display = 'none';
+    }
+
     useEffect(() => {
-        const results = (searchTerm === "")? [] : props.provincias.filter(prov =>
+        const results = (searchTerm.length < 3)? [] : props.provincias.filter(prov =>
             prov.nombre.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setSearchResults(results);
@@ -31,7 +39,7 @@ export default function DisplayBusqueda(props) {
         });
     
         input.addEventListener('focusout', function () {
-            listado.style.display = 'none';
+            //listado.style.display = 'none';
         });
     }, [] );
 
@@ -39,7 +47,7 @@ export default function DisplayBusqueda(props) {
         <div className={style.opcionContainer} ref={refOne}>
             <input id="inputDestino" className={style.inputDestino} type="search" value={searchTerm} onChange={handleChange} placeholder={`¿A dónde vamos?`}></input>
             <ul className={style.inputListado} id="inputListado" >
-                {searchResults.map((value) => <Location key={value.nombre} provincia={value} />)}
+                {searchResults.map((value) => <Location key={value.nombre} provincia={value} setBuscador={setBuscador} />)}
             </ul>
         </div>
     )

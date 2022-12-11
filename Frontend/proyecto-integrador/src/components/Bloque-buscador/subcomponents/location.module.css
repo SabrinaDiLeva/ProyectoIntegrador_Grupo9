@@ -3,7 +3,6 @@
     flex-direction: row;
     text-align: left;
     padding:  16px 0px 16px 16px;
-    max-width: fit-content;
 }
 
 .locations:hover {

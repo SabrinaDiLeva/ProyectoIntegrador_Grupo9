@@ -71,8 +71,8 @@ public class ProductoService implements IService<Producto, ProductoDTO>{
         return null;
     }
 
-    public List<Producto> listarPorIdCategoria(Long id) {
-        return iProductoRepository.findAllByCategoria_Id(id);
+    public List<Producto> listarPorCategoria(String categoria) {
+        return iProductoRepository.findAllByCategoria_Titulo(categoria.toLowerCase());
     }
     public List<Producto> listarPorIdCiudad(Long id) {
         return iProductoRepository.findAllByCiudad_Id(id);

@@ -28,8 +28,6 @@ export default function SeccionCategoria(props) {
                     setCantidadPorCategoria( old => ({...old, ...newValue}))
                 })
             )
-
-            console.log(cantidadPorCategoria)
     }, [categorias])
 
 

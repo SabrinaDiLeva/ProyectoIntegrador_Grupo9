@@ -7,7 +7,6 @@ export default function Listado(props) {
     const [portadas, setPortadas] = useState([])
     const imagenDummy = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdummyimage.com%2F&psig=AOvVaw15z8_2NnfqZjrLR59929kC&ust=1669243062702000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJCN2ZLtwvsCFQAAAAAdAAAAABAD"
 
-
     useEffect(() => {
         setPortadas([])
         props.productos.forEach(producto =>{

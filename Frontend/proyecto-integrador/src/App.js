@@ -1,9 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import SeccionCategoria from './components/Categoria/SeccionCategoria';
-import Listado from './components/Listado/Listado';
-import Buscador from './components/Bloque-buscador/Buscador';
 import Layout from './components/Layout/Layout'
+import Home from './components/Home/Home'
 import Producto from './components/Tarjeta-Producto/Producto'
 import ReservaWrapper from './components/Reserva/ReservaWrapper'
 import ReservaExito from './components/ReservaExito/ReservaExito'
@@ -19,33 +17,15 @@ function App() {
     <div className="container">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path='/' element={<>
-              <Buscador />
-              <SeccionCategoria />
-              <Listado />
-            </>} />
-            <Route path='/iniciar_sesion' element={<>
-              <Login />
-            </>} />
-            <Route path='/registrarse' element={<>
-              <Register />
-            </>} />
-            <Route path='/administracion/crearproducto' element={<>
-              <CrearProducto />
-            </>} />
-            <Route path='/administracion/crearproducto/exito' element={<>
-              <ProductoExito />
-            </>} />
-            <Route path='/producto/:id' element={
-              <Producto />
-            } />
-            <Route path='/reserva/producto/:id' element={
-              <ReservaWrapper />
-            } />
-            <Route path='reserva/exito' element={<>
-              <ReservaExito />
-            </>} />
+          <Route path="/" element={<Layout/>}>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/iniciar_sesion' element={<Login/>}/>
+            <Route path='/registrarse' element={<Register/>} />
+            <Route path='/administracion/crearproducto' element={<CrearProducto />} />
+            <Route path='/administracion/crearproducto/exito' element={<ProductoExito />} />
+            <Route path='/producto/:id' element={<Producto />} />
+            <Route path='/reserva/producto/:id' element={<ReservaWrapper />} />
+            <Route path='reserva/exito' element={<ReservaExito />} />
           </Route>
         </Routes>
       </BrowserRouter>

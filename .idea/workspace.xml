@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8484e9ea-6d9d-4b6a-9b47-fc22bd8d8a5c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Bloque-buscador/Buscador.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Bloque-buscador/Buscador.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Register/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Reserva/bloques/Detalles.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Reserva/bloques/Detalles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Tarjeta-Producto/Producto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Tarjeta-Producto/Producto.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/EndPoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/EndPoint.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +15,31 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main2" />
+                    <option name="lastUsedInstant" value="1670788992" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1670787934" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -54,26 +73,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "2e427c268ac1768b9add94b65e2d6c14"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2e427c268ac1768b9add94b65e2d6c14&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Backend" />
@@ -92,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670733450289</updated>
       <workItem from="1670733453502" duration="1202000" />
-      <workItem from="1670772974809" duration="702000" />
+      <workItem from="1670772974809" duration="1068000" />
     </task>
     <servers />
   </component>

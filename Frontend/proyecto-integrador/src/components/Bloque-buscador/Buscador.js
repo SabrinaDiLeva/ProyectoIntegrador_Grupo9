@@ -31,7 +31,7 @@ const Buscador = () => {
                         <Calendario />
                     </div>
                     <div className={style.containerBoton}>
-                        <Boton to={`/exito`} text={"Buscar"} />
+                        <Boton to={`/`} text={"Buscar"} />
                     </div>
                 </div>
             </div>

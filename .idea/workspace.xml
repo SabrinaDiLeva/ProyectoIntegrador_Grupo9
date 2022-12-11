@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8484e9ea-6d9d-4b6a-9b47-fc22bd8d8a5c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/grupo-09.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Bloque-buscador/Buscador.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Bloque-buscador/Buscador.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Reserva/bloques/Detalles.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Reserva/bloques/Detalles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Tarjeta-Producto/Producto.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/components/Tarjeta-Producto/Producto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/EndPoint.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/proyecto-integrador/src/service/EndPoint.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +70,8 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "2e427c268ac1768b9add94b65e2d6c14"
   }
 }]]></component>
   <component name="RunManager">
@@ -88,7 +91,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670733450289</updated>
-      <workItem from="1670733453502" duration="685000" />
+      <workItem from="1670733453502" duration="1202000" />
+      <workItem from="1670772974809" duration="702000" />
     </task>
     <servers />
   </component>

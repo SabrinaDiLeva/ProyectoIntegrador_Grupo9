@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getProducto } from "../../service/productoApi"
 import { getImagenesPorProducto } from "../../service/imagenApi"
 import Reserva from "./Reserva";
+import { objectLoaded } from "../../utils/utils";
 
 export default function ReservaWrapper() {
 
@@ -11,7 +12,6 @@ export default function ReservaWrapper() {
     const [imagenes, setImagenes] = useState([])
 
     useEffect(() => {
-        console.log("HOLAAAAAAAAAAA")
         getProducto(id).then((data) => {
             console.log(data);
             setProducto(data);
@@ -19,7 +19,6 @@ export default function ReservaWrapper() {
     }, [id])
 
     useEffect(() => {
-        console.log("HOLAAAAAAAAAAA")
         getImagenesPorProducto(id).then((data) => {
             console.log(data);
             setImagenes(data);
@@ -28,7 +27,7 @@ export default function ReservaWrapper() {
 
     return (
         <>
-           { (imagenes.length !== 0 && producto !== undefined)? <Reserva categoria={producto.categoria.titulo} ciudad={producto.ciudad.provincia} titulo={producto.titulo} seguridad={producto.seguridad} cancelacion={producto.cancelacion} normas={producto.normas} imagenes={imagenes} /> : <></>}
+           { (imagenes.length > 0 && objectLoaded(producto) )? <Reserva categoria={producto.categoria.titulo} ciudad={producto.ciudad.provincia} titulo={producto.titulo} seguridad={producto.seguridad} cancelacion={producto.cancelacion} normas={producto.normas} imagenes={imagenes} /> : <></>}
         </>
     )
 }

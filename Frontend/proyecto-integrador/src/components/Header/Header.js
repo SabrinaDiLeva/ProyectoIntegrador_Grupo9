@@ -29,6 +29,7 @@ const Header = (props) => {
   }
 
   const closeMenu = () => {
+    setScroll(true)
     setNavbarOpen(false)
   }
 
@@ -38,18 +39,19 @@ const Header = (props) => {
     }
     window.addEventListener('resize', handleResize)
   })
+
   useEffect(() => {
-    setScroll(window.innerWidth > 424 ? true : navbarOpen)
+      setScroll(window.innerWidth > 424 ? true : !navbarOpen)
   }, [navbarOpen])
+
   useEffect(() => {
     var element = document.getElementById("body");
     if (!element) {
       return
     }
-    console.log(element)
-
-    element.style.overflowY = scroll ? 'scroll' : 'hidden';
-    element.style.height = scroll ? '89%' : 'unset';
+    console.log(`SCROLL: ${scroll}`)
+    element.style.overflowY = scroll ? 'unset' : 'hidden';
+    //element.style.height = scroll ? '89%' : 'unset';
   }, [scroll])
 
   return (

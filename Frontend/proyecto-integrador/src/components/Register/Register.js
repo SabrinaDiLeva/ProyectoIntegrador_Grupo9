@@ -15,6 +15,7 @@ const validationForm = (form) => {
     let errors = {};
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
+    let regexPassword = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{6,8}$/;
 
     if (!form.nombre.trim()) {
         errors.nombre = "Ingresar tu 'nombre'"

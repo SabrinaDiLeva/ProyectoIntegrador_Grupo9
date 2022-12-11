@@ -19,37 +19,37 @@ function App() {
     <div className="container">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout/>}>
+          <Route path="/" element={<Layout />}>
             <Route path='/' element={<>
-              <Buscador/> 
-              <SeccionCategoria/>
-              <Listado/>
-            </>}/> 
+              <Buscador />
+              <SeccionCategoria />
+              <Listado />
+            </>} />
             <Route path='/iniciar_sesion' element={<>
-              <Login/>
-            </>}/> 
+              <Login />
+            </>} />
             <Route path='/registrarse' element={<>
-              <Register/>
-            </>}/> 
+              <Register />
+            </>} />
             <Route path='/administracion/crearproducto' element={<>
               <CrearProducto />
-            </>}/>
+            </>} />
             <Route path='/administracion/crearproducto/exito' element={<>
-              <ProductoExito/>
-            </>}/>
+              <ProductoExito />
+            </>} />
             <Route path='/producto/:id' element={
-              <Producto/>
-            }/>
+              <Producto />
+            } />
             <Route path='/reserva/producto/:id' element={
               <ReservaWrapper />
-            }/> 
-            <Route path='/exito' element={<>
-              <ReservaExito/>
-            </>}/> 
+            } />
+            <Route path='reserva/exito' element={<>
+              <ReservaExito />
+            </>} />
           </Route>
         </Routes>
       </BrowserRouter>
-   </div>
+    </div>
   );
 }
 

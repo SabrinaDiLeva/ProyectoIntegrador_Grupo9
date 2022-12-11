@@ -14,7 +14,6 @@ export default function SeccionCategoria(props) {
             getCategorias().then((data) => {
                 setCategorias(data);
             })
-
         }
     }, [])
     

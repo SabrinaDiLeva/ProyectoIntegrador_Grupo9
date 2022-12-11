@@ -20,6 +20,10 @@
     width: 100%;
 }
 
+.inputListado > * {
+    border-bottom: 1px solid rgb(112, 107, 38);
+}
+
 .inputDestino {
     font-size: 16px;
     color: var(--colorTextoPrimario);

@@ -4,6 +4,17 @@
     height: auto;
 }
 
+.name {
+    font-size: 0.9rem;
+}
+
+.category {
+    font-size: 0.8rem
+}
+
+.dates {
+    font-size: 0.9rem
+}
 .title {
     margin: 10px 0px 5px 5px;
     padding: 10px 0px 5px 5px;

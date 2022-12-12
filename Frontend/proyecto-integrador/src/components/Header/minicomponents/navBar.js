@@ -20,7 +20,7 @@ const NavBar = (props) => {
           nameLetter: `${JSON.parse(decode).name[0].toUpperCase()}`,
           lastNameLetter: `${JSON.parse(decode).lastName[0].toUpperCase()}`,
           name: `${JSON.parse(decode).name[0].toUpperCase()}${JSON.parse(decode).name.slice(1)}`,
-          lastName: `${JSON.parse(decode).lastName[0].toUpperCase()}${JSON.parse(decode).lastName.slice(1)}`
+          lastname: `${JSON.parse(decode).lastName[0].toUpperCase()}${JSON.parse(decode).lastName.slice(1)}`
         }
     }
 

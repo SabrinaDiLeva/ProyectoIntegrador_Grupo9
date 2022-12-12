@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState } from "react"
+import BASEURL from '../service/EndPoint';
+const url = BASEURL
+
 //import { renderMatches } from "react-router-dom";
 
 export const useForm = (initialForm, validateForm) => {
     const [form, setForm] = useState(initialForm);
     const [errors, setErros] = useState({});
-    const url = 'http://localhost:8080'
 
     const handleChange = (e) => {
         const { name,value } = e.target;
@@ -30,6 +32,8 @@ export const useForm = (initialForm, validateForm) => {
             contrasenia: contrasenia.value
         };
 
+        console.log(`PAYLOAD: ${JSON.stringify(payload)}`)
+
         //la configuracion de la petición
         const settings = {
             method: 'POST',
@@ -52,7 +56,7 @@ export const useForm = (initialForm, validateForm) => {
                 return response.json();
             })
             .then(data => {
-                console.log("Promesa cumplida:", data.respuesta.token);
+                console.log("Promesa cumplida:", data);
                 if (data.respuesta.token != null) {
                     //guardo en LocalStorage el objeto con el token
                     localStorage.setItem('jwt', JSON.stringify(data.respuesta.token));
@@ -78,7 +82,7 @@ export const useForm = (initialForm, validateForm) => {
             email: email.value,
             contrasenia: contrasenia.value,
             ciudad: "bogota",
-            rol_id: 1
+            rol_id: 2
         };
 
         //la configuracion de la petición
@@ -110,10 +114,10 @@ export const useForm = (initialForm, validateForm) => {
         }else if(contrasenia.value !== contrasenia2.value){
             setErros({
                 ...errors,
-                "errorGeneral":"La contraseña es incorrecta"
+                "errorGeneral":"Las contraseñas no coinciden"
             })
         }
-        form.reset();
+        setForm({});
     }
 
     return {

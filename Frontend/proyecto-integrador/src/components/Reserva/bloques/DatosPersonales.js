@@ -1,7 +1,9 @@
 import style from "./datosPersonales.module.css"
 import { useEffect, useState } from "react";
 
-const session = sessionStorage.getItem('sessionRegistrada')
+
+const session = localStorage.getItem('jwt');
+
 
 export default function DatosPersonales() {
 
@@ -11,18 +13,21 @@ export default function DatosPersonales() {
     const [ciudad, setCiudad] = useState("");
 
     if(session){
+        let base64Url = session.split('.')[1];
+        //let base64 = base64Url.replace('-', '+').replace('_', '/');
+        const decode = atob(base64Url);
         var loggedUser = {
-          mail: JSON.parse(session)[0].mail,
-          password: JSON.parse(session)[0].password,
-          name: `${JSON.parse(session)[0].nombre.charAt(0).toUpperCase()}${JSON.parse(session)[0].nombre.slice(1)}`,
-          apellido: `${JSON.parse(session)[0].apellido.charAt(0).toUpperCase()}${JSON.parse(session)[0].apellido.slice(1)}`,
-        }
+            nameLetter: `${JSON.parse(decode).name[0].toUpperCase()}`,
+            lastNameLetter: `${JSON.parse(decode).lastName[0].toUpperCase()}`,
+            name: `${JSON.parse(decode).name[0].toUpperCase()}${JSON.parse(decode).name.slice(1)}`,
+            lastname: `${JSON.parse(decode).lastName[0].toUpperCase()}${JSON.parse(decode).lastName.slice(1)}`
+          }
     }
 
     useEffect(() => {
       if(loggedUser){
         setName(loggedUser.name)
-        setLastname(loggedUser.apellido)
+        setLastname(loggedUser.lastname)
         setEmail(loggedUser.mail)
       }
     })

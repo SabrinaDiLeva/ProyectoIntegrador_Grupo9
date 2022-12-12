@@ -74,14 +74,6 @@
     margin: 15px 10px;
 }
 
-div .calendarContainer {
-    margin: 0px 15px;
-    border: 2px solid white;
-    border-radius: 5px;
-    box-shadow: var(--borderShadow);
-}
-
-
 @media (min-width: 420px) {
     .iniciarReservaContainer {
         display: flex;
@@ -122,7 +114,4 @@ div .calendarContainer {
         height: max-content;
     }
 
-    .calendarContainer {
-        width: 60%;
-    }
 }

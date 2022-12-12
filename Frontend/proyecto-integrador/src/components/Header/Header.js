@@ -5,25 +5,10 @@ import Logo from './minicomponents/Logo';
 import Slogan from './minicomponents/Slogan';
 import Burger from './minicomponents/Burger';
 
-const session = localStorage.getItem('jwt')
-
 const Header = (props) => {
   const [navbarOpen, setNavbarOpen] = useState(false)
   const [scroll, setScroll] = useState(true)
 
-  if (session !== null) {
-
-    let base64Url = session.split('.')[1];
-    //let base64 = base64Url.replace('-', '+').replace('_', '/');
-    const decode = atob(base64Url);
-
-    var loggedUser = {
-      nameLetter: `${JSON.parse(decode).name[0].toUpperCase()}`,
-      lastNameLetter: `${JSON.parse(decode).lastName[0].toUpperCase()}`,
-      name: `${JSON.parse(decode).name[0].toUpperCase()}${JSON.parse(decode).name.slice(1)}`,
-      lastName: `${JSON.parse(decode).lastName[0].toUpperCase()}${JSON.parse(decode).lastName.slice(1)}`
-    }
-  }
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen)
   }
@@ -49,7 +34,6 @@ const Header = (props) => {
     if (!element) {
       return
     }
-    console.log(`SCROLL: ${scroll}`)
     element.style.overflowY = scroll ? 'unset' : 'hidden';
     //element.style.height = scroll ? '89%' : 'unset';
   }, [scroll])

@@ -12,18 +12,16 @@ export default function Producto(){
     const [imagenes, setImagenes] = useState([])
 
     useEffect( () => {
-         getProducto(id).then( (data) => {
-             console.log(data);
-             setProducto(data);
-         })
-     }, [id])
+        getProducto(id).then( (data) => {
+            setProducto(data);
+        })
+    }, [id])
     
      useEffect( () => {
-         getImagenesPorProducto(id).then( (data) => {
-             console.log(data);
-             setImagenes(data);
-         })
-     }, [id])
+        getImagenesPorProducto(id).then( (data) => {
+            setImagenes(data);
+        })
+    }, [id])
 
     return (
         <>

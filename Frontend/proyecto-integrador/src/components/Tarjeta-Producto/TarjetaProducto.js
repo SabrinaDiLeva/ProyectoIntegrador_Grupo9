@@ -67,27 +67,15 @@ export default function TarjetaProducto(props) {
                     </div>
 
                     <Caracteristicas caracteristicas={props.caracteristicas} />
-{/* Comentado porque nos dijeron que era redundante tener el calendario a menos que guardemos la información de reserva.
-                    <div className={style.calendarWrap}>
-                        <div className={style.title}>
-                            <h2>Fechas disponibles</h2>
+                    <div className={style.iniciarReservaContainer}>
+                        <div className={style.subtitle}>
+                            <h3>Agrega tus fechas de viaje para obtener precios exactos</h3>
                         </div>
-                        <div className={style.containerCalendarReserva}>
-                            <div className={style.calendarContainer}>
-                                <Calendario formValues={form} handleChange={handleChangeManual} />
-                            </div>
 
+                        <div className={style.BotonContainer}>
+                            <Boton to={sessionStorage.getItem('sessionIniciada') ? `/reserva/producto/${props.id}` : `/iniciar_sesion`} text={"Iniciar reserva"} />
                         </div>
                     </div>
-*/}                           <div className={style.iniciarReservaContainer}>
-                                <div className={style.subtitle}>
-                                    <h3>Agrega tus fechas de viaje para obtener precios exactos</h3>
-                                </div>
-
-                                <div className={style.BotonContainer}>
-                                    <Boton to={sessionStorage.getItem('sessionIniciada') ? `/reserva/producto/${props.id}` : `/iniciar_sesion`} text={"Iniciar reserva"} />
-                                </div>
-                            </div>
 
                     <Politicas normasDeLaCasa={props.normasDeLaCasa} saludSeguridad={props.saludSeguridad} politicaDeCancelacion={props.politicaDeCancelacion} />
 

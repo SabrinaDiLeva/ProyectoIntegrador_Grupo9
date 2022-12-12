@@ -31,7 +31,7 @@ frontend_build_job:
     - cd ./Frontend/proyecto-integrador
     - echo "Start building App"
     - npm install
-    - CI=false node --max-old-space-size=2048 npm run build
+    - CI=false npm run build
     - echo "Build successfully!"
   artifacts:
     paths:

@@ -4,7 +4,7 @@ export default function Perfil(props) {
     return (
         <div className={style.perfil}>
             <span className={style.avatar}>
-                    {props.user ? `${props.user.name.charAt(0)}${props.user.lastname.charAt(0)}` : 'N/A'}
+                {props.user ? `${props.user.nameLetter}${props.user.lastNameLetter}` : 'N/A'}
             </span>
             <span className={style.perfilUsuario}>
                 <a className={style.linkPerfil} href="/">

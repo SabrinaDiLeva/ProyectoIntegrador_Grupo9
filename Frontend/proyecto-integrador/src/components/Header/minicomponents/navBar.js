@@ -8,16 +8,19 @@ import Social from '../../Footer/Social';
 
 const NavBar = (props) => {
 
-    const session = sessionStorage.getItem('sessionIniciada')
+    const session = localStorage.getItem('jwt');
 
-    if (session) {
+    if (session !== null) {
+
+        let base64Url = session.split('.')[1];
+        //let base64 = base64Url.replace('-', '+').replace('_', '/');
+        const decode = atob(base64Url);
+    
         var loggedUser = {
-            mail: JSON.parse(session)[0].mail,
-            password: JSON.parse(session)[0].password,
-            //name: `${JSON.parse(session)[0].nombre.charAt(0).toUpperCase()}${JSON.parse(session)[0].nombre.slice(1)}`,
-            //lastname: `${JSON.parse(session)[0].apellido.charAt(0).toUpperCase()}${JSON.parse(session)[0].apellido.slice(1)}`,
-            name: "Marcos",
-            lastname: "Ferro"
+          nameLetter: `${JSON.parse(decode).name[0].toUpperCase()}`,
+          lastNameLetter: `${JSON.parse(decode).lastName[0].toUpperCase()}`,
+          name: `${JSON.parse(decode).name[0].toUpperCase()}${JSON.parse(decode).name.slice(1)}`,
+          lastName: `${JSON.parse(decode).lastName[0].toUpperCase()}${JSON.parse(decode).lastName.slice(1)}`
         }
     }
 

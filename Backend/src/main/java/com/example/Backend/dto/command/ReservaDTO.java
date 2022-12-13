@@ -10,17 +10,17 @@ public class ReservaDTO implements Serializable {
     private Long id;
     private LocalDateTime inicio;
     private LocalDateTime fin;
-    private Long usuarioId;
+    private String usuarioemail;
     private Long productoId;
 
     public ReservaDTO(){
 
     }
-    public ReservaDTO(Long id, LocalDateTime inicio, LocalDateTime fin, Long usuario, Long producto){
+    public ReservaDTO(Long id, LocalDateTime inicio, LocalDateTime fin, String usuarioemail, Long producto){
         this.id=id;
         this.inicio=inicio;
         this.fin=fin;
-        this.usuarioId=usuario;
+        this.usuarioemail=usuarioemail;
         this.productoId=producto;
     }
 
@@ -29,9 +29,9 @@ public class ReservaDTO implements Serializable {
     }
 
     public ReservaDTO update(Reserva reserva){
-        Long usuarioId = ( this.usuarioId == null )? reserva.getUsuario().getId() : this.usuarioId;
+        String usuarioemail = ( this.usuarioemail == null )? reserva.getUsuario().getEmail() : this.usuarioemail;
         Long productoId = ( this.productoId == null )? reserva.getProducto().getId() : this.productoId;
-        return new ReservaDTO(reserva.getId(), reserva.getInicio(),reserva.getFin(),usuarioId,productoId);
+        return new ReservaDTO(reserva.getId(), reserva.getInicio(),reserva.getFin(),usuarioemail,productoId);
     }
 
     public Long getId() {
@@ -58,12 +58,12 @@ public class ReservaDTO implements Serializable {
         this.fin=fin;
     }
 
-    public Long getUsuario(){
-        return usuarioId;
+    public String getUsuarioemail() {
+        return usuarioemail;
     }
 
-    public void setUsuario(Long usuario){
-        this.usuarioId=usuario;
+    public void setUsuarioemail(String usuarioemail) {
+        this.usuarioemail = usuarioemail;
     }
 
     public Long getProducto(){
@@ -73,5 +73,7 @@ public class ReservaDTO implements Serializable {
     public void setProducto(Long producto){
         this.productoId=producto;
     }
+
+
 
 }

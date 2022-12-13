@@ -37,7 +37,9 @@ public class ReservaService implements IService<Reserva,ReservaDTO> {
 
     @Override
     public Reserva guardar(ReservaDTO reserva) {
-        Usuario usuario = iUsuarioRepository.findById(reserva.getUsuario()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        String mail = reserva.getUsuarioemail();
+        Optional<Usuario> user = iUsuarioRepository.findByEmail(mail);
+        Usuario usuario = iUsuarioRepository.findByEmail(reserva.getUsuarioemail()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         Producto producto = iProductoRepository.findById(reserva.getProducto()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         Reserva r = reserva.newReserva(usuario,producto);
         return iReservaRepository.save(r);
@@ -62,7 +64,7 @@ public class ReservaService implements IService<Reserva,ReservaDTO> {
 
     @Override
     public UsuarioDTO findByCorreo(String email) {
-        return null;
+        return new UsuarioDTO(iUsuarioRepository.findByEmail(email).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
     }
 
     public List<Reserva> listarPorIdUsuario(Long id){

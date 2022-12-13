@@ -34,9 +34,14 @@ public class UsuarioService implements IService<Usuario, UsuarioDTO> {
 
     @Override
     public Usuario guardar(UsuarioDTO usuario) {
-        Rol rol = iRolRepository.findById(usuario.getRolId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        Usuario u = usuario.newUsuario(rol);
-        return iUsuarioRepository.save(u);
+        if (!iUsuarioRepository.findByEmail(usuario.getEmail()).isPresent()){
+            Rol rol = iRolRepository.findById(usuario.getRolId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+            Usuario u = usuario.newUsuario(rol);
+            return iUsuarioRepository.save(u);
+        }else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
+
     }
 
     @Override
@@ -58,7 +63,7 @@ public class UsuarioService implements IService<Usuario, UsuarioDTO> {
 
     @Override
     public UsuarioDTO findByCorreo(String email) {
-        return new UsuarioDTO(iUsuarioRepository.findByEmail(email));
+        return new UsuarioDTO(iUsuarioRepository.findByEmail(email).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
     }
 
 }

@@ -31,8 +31,6 @@ public class UsuarioController {
         return new ResponseEntity(response, HttpStatus.CREATED);
     }
 
-
-
     /*
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping
